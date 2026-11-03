@@ -3,8 +3,8 @@
 ## Principle
 The book is human-readable. Each chapter has a distinct, intentionally fictional agency communications layer that can be linked and previewed. **The fictional agency is not a company offering services or jobs.** The campaign is the literary hook, not a factual offer.
 
-The controlled single source of truth is content/chapters/index.json → chapter.campaign. The chapter markdown remains unmodified. The static build renders:
-- A small, visibly labeled fiction/campaign introduction before the unchanged literary chapter.
+The controlled single source of truth is content/chapters/index.json → chapter.campaign. The prose stays intact; editorial working-version subtitles are removed in the public chapter files. The static build renders:
+- A reader-first literary chapter, followed by clearly labeled fictional campaign content.
 - An individual SEO title and meta description mentioning the novel and relevant topic.
 - An individual Open Graph/Twitter title, description and **generated 1200×630 PNG** under /share/{chapter-id}.png.
 - A canonical URL at https://folgenreich.benjamin-lam.de/roman/{chapter-id}/.

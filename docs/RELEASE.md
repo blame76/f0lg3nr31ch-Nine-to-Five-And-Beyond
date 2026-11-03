@@ -1,14 +1,20 @@
-# Autorenfreigabe und öffentliche Veröffentlichung
+# Redaktionelle Veröffentlichung und Qualitätssicherung
 
-**Privat:** `blame76/f0lg3nr31ch` – Autorenarbeit, Entwürfe, Reviews, Quellen und Kanon.
+Der Reader zeigt die Lesertexte, nicht redaktionelle Aufgaben oder interne Freigabehinweise. Die Kapitelmarkdowns enthalten keine Arbeitsfassungs-Untertitel, TODOs oder Statuslabels.
 
-**Öffentlich:** `blame76/f0lg3nr31ch-Nine-to-Five-And-Beyond` – statischer Reader, Release-Kandidaten und nach Freigabe veröffentlichte Texte.
+## Vor einer indexierbaren Veröffentlichung
 
-Die drei aktuellen Texte sind unverändert aus folgenden Arbeits-Branches übernommen:
-1. `die-null-am-ende` – korrigierte Fassung, Blob `9883631543aede824dde25ff77ede068280bf7a7`.
-2. `wer-haelt-die-verantwortung-fest` – überarbeitete Dienstag-Fassung, Blob `00ab91aef5f440958389637489b43253951d4084`.
-3. `how-to-service` – Mittwoch-Fassung, Blob `9fe033c5909fca92eef1ef91187bd514f86ec554`.
+- Romantexte und sichtbare Seiten auf sachliche, literarische und redaktionelle Fehler prüfen.
+- Lizenz- und Rechtefragen, Impressum sowie die konkrete Cloudflare-Datenverarbeitung prüfen.
+- Mobile Darstellung, native Leseansicht, Kapitelnavigation, 404, Canonicals und Social Previews testen.
+- Im Manifest die Kapitel ausdrücklich mit `approved`, `approved_by` und `approved_at` freigeben.
+- Erst nach tatsächlicher Rechtsprüfung `legal_reviewed_for_launch` auf `true` setzen.
+- Erst nach ausdrücklicher Autorenfreigabe `release_approved` auf `true` setzen.
 
-Die Übernahme ins öffentliche Repo geschieht auf ausdrückliche Anweisung; sie ersetzt **nicht** die finale Romanfreigabe oder rechtliche Abnahme. Release-Kandidaten dürfen im Reader als öffentlich zugängliche Vorschau angezeigt werden, werden aber nicht als kanonisch endgültig bezeichnet und tragen `noindex`.
+Solange die Voraussetzungen fehlen, erzeugt die Seite `noindex` und keine Sitemap. Das ist ein technisches Gate und **kein öffentlich anzuzeigender Redaktionstext**.
 
-**Prüfungen vor indexierbarer Freigabe:** Romantext, Quellen, Rechte Dritter, Impressum, Datenschutz, Cloudflare-Setup, LinkedIn-Share-Vorschau, Canonicals, 404 und mobile Darstellung. Erst anschließend die Freigabe-Felder setzen. Spätere Textkorrekturen mit Versionshistorie dokumentieren. Keine automatischen Imports aus dem privaten Repository ohne neues Autorengate.
+## Herkunft und Leserfassung
+
+Im Manifest stehen Verweise auf die Textquellen. Für die Leserfassung wurden ausschließlich editorische Fassungs-Untertitel entfernt; die Prosatexte blieben unverändert. Die ursprünglichen Quell-Hashes bezeichnen die Herkunftstexte und sind nicht die Hashes der hier bereinigten Leserdateien.
+
+Spätere Korrekturen müssen dokumentiert werden. Eine neue Fassung ersetzt nicht automatisch eine zuvor geprüfte Veröffentlichung.

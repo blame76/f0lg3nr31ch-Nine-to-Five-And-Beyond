@@ -1,6 +1,4 @@
 # How to Service
-*Dritte Geschichte · Mittwoch · Arbeitsfassung*
-
 Nora hatte das Feld mit der Unterschrift nicht erfunden.
 
 Es war schon auf dem alten Formular gewesen, zusammen mit Kästchen für die Projektbezeichnung, den Rechnungsempfänger und die Telefonnummer im Notfall. Als sie die Vorlage im Sommer überarbeitet hatte, war es das einzige Feld gewesen, das sie nicht anfassen wollte.
