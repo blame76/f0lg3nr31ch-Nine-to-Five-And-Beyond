@@ -1,7 +1,9 @@
 {
   "name": "f0lg3nr31ch",
   "subtitle": "Nine to Five. And Beyond.",
-  "site_url": null,
-  "release_approved": false,
-  "legal_reviewed_for_launch": false
+  "site_url": "https://folgenreich.benjamin-lam.de",
+  "description": "Ein fortlaufender Agenturroman über Menschen, Arbeit und die Folgen ihrer Entscheidungen. Ein ausdrücklich fiktionales Literatur-, Software- und SEO/GEO-Experiment.",
+  "author_name": "Benjamin Lam",
+  "legal_reviewed_for_launch": false,
+  "release_approved": false
 }

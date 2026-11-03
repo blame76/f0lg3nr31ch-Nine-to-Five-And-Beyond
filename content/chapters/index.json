@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "chapters": [
+    {
+      "id": "die-null-am-ende",
+      "title": "Die Null am Ende",
+      "description": "Ein langjähriger E-Commerce-Kunde sucht seine vertraute Ansprechpartnerin. Der Servicevertrag läuft, doch Zuständigkeiten sind unklar.",
+      "source_ref": "story/how-to-service-2026-11-03",
+      "source_blob_sha": "9883631543aede824dde25ff77ede068280bf7a7",
+      "status": "release-candidate",
+      "position": 1,
+      "path": "content/chapters/die-null-am-ende.md"
+    },
+    {
+      "id": "wer-haelt-die-verantwortung-fest",
+      "title": "Wer hält die Verantwortung fest?",
+      "description": "Martin muss nach einer Umstrukturierung klären, wer die Verantwortung für einen Kunden übernimmt.",
+      "source_ref": "story/wer-haelt-die-verantwortung-2026-11-02",
+      "source_blob_sha": "00ab91aef5f440958389637489b43253951d4084",
+      "status": "release-candidate",
+      "position": 2,
+      "path": "content/chapters/wer-haelt-die-verantwortung-fest.md"
+    },
+    {
+      "id": "how-to-service",
+      "title": "How to Service",
+      "description": "Eine geplante Serviceübernahme trifft auf fehlende Vertragsunterlagen, offene Zuständigkeiten und ein unterschriftsreifes Formular.",
+      "source_ref": "story/how-to-service-2026-11-03",
+      "source_blob_sha": "9fe033c5909fca92eef1ef91187bd514f86ec554",
+      "status": "release-candidate",
+      "position": 3,
+      "path": "content/chapters/how-to-service.md"
+    }
+  ]
+}
