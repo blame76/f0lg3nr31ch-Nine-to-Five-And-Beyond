@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 import {inflateSync} from 'node:zlib';
 import {spawnSync} from 'node:child_process';
 import {renderCampaignImage} from '../scripts/social-image.mjs';
+import {escapeMeta} from '../scripts/lib.mjs';
 
 const chapters=JSON.parse(readFileSync('content/chapters/index.json','utf8')).chapters;
 test('Every novel chapter has a distinct fictional campaign and social preview',()=>{
@@ -43,7 +44,14 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
   const html=readFileSync('dist/roman/'+c.id+'/index.html','utf8');
   assert.match(html,/name="robots" content="noindex,follow"/);
   assert.ok(html.includes('property="og:image" content="https://folgenreich.benjamin-lam.de/'+c.campaign.image+'"'));
-  assert.ok(html.includes('property="og:title" content="'+c.campaign.social_title.replace(/&/g,'&amp;')+'"'));
+  assert.ok(html.includes('property="og:title" content="'+escapeMeta(c.campaign.social_title)+'"'));
+  assert.ok(html.includes('property="og:description" content="'+escapeMeta(c.campaign.social_description)+'"'));
+  assert.ok(html.includes('name="twitter:description" content="'+escapeMeta(c.campaign.social_description)+'"'));
+  assert.ok(html.includes('property="og:site_name" content="f0lg3nr31ch &#8211; Nine to Five. And Beyond."'));
+  const head=html.slice(html.indexOf('<head>'),html.indexOf('</head>'));
+  assert.ok(!/[\u0080-\uFFFF]/.test(head),'entire HTML head must be ASCII-only for legacy social crawlers');
+  assert.ok(!head.includes('fÃ¼r'));
+  assert.ok(!head.includes('â'));
   assert.ok(html.includes('Fiktive Agenturkampagne aus dem Roman'));
   // The native browser reader should discover the prose, not a pre-chapter campaign.
   const article=html.indexOf('<article class="reader"');
@@ -70,4 +78,13 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
  assert.match(css,/\.header-inner\{[^}]*padding:1\.1rem 1\.25rem/);
  assert.match(css,/@media print/);
 
+});
+
+test('UTF-8 social metadata becomes safe ASCII-only numeric HTML references',()=>{
+ assert.equal(escapeMeta('für – Verantwortung'), 'f&#252;r &#8211; Verantwortung');
+ assert.equal(escapeMeta('Ä & <Kunde>'), '&#196; &amp; &lt;Kunde&gt;');
+ const headers=readFileSync('public/_headers','utf8');
+ assert.match(headers,/\/roman\/\*\s+Content-Type: text\/html; charset=utf-8/);
+ assert.match(headers,/^\/\s+Content-Type: text\/html; charset=utf-8/m);
+ assert.ok(!headers.includes('/share/*\n  Content-Type'));
 });

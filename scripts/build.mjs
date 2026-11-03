@@ -1,6 +1,6 @@
 import {readFileSync,writeFileSync,mkdirSync,rmSync,cpSync} from 'node:fs';
 import path from 'node:path';
-import {root,readJson,escapeHtml,normUrl,absoluteUrl,validateManifest,markdownToHtml} from './lib.mjs';
+import {root,readJson,escapeHtml,escapeMeta,normUrl,absoluteUrl,validateManifest,markdownToHtml} from './lib.mjs';
 import {about,imprint,privacy,license} from './pages.mjs';
 import {renderCampaignImage} from './social-image.mjs';
 
@@ -14,7 +14,7 @@ const dist=path.join(root,'dist');
 rmSync(dist,{recursive:true,force:true});mkdirSync(dist,{recursive:true});
 cpSync(path.join(root,'public'),dist,{recursive:true});
 const abs=p=>absoluteUrl(site,p);
-const e=escapeHtml;
+const e=escapeHtml, em=escapeMeta;
 function output(f,body){const target=path.join(dist,f);mkdirSync(path.dirname(target),{recursive:true});writeFileSync(target,body,'utf8');}
 function structured(obj){return '<script type="application/ld+json">'+JSON.stringify(obj).replace(/</g,'\\u003c')+'</script>';}
 function page({title,description=config.description,slug='',type='website',body,schema=null,ogTitle=null,ogDescription=null,ogImage='share-preview.png',ogAlt='f0lg3nr31ch – Nine to Five. And Beyond. Fiktiver Agenturroman und Experiment.'}){
@@ -23,31 +23,31 @@ function page({title,description=config.description,slug='',type='website',body,
  '<meta charset="utf-8">',
  '<meta name="viewport" content="width=device-width, initial-scale=1">',
  '<meta name="robots" content="'+(ready?'index,follow':'noindex,follow')+'">',
- '<meta name="description" content="'+e(description)+'">',
- '<meta property="og:site_name" content="f0lg3nr31ch – Nine to Five. And Beyond.">',
+ '<meta name="description" content="'+em(description)+'">',
+ '<meta property="og:site_name" content="'+em('f0lg3nr31ch – Nine to Five. And Beyond.')+'">',
  '<meta property="og:type" content="'+(type==='chapter'?'article':'website')+'">',
- '<meta property="og:title" content="'+e(ogTitle||fullTitle)+'">',
- '<meta property="og:description" content="'+e(ogDescription||description)+'">',
+ '<meta property="og:title" content="'+em(ogTitle||fullTitle)+'">',
+ '<meta property="og:description" content="'+em(ogDescription||description)+'">',
  '<meta property="og:locale" content="de_DE">',
- '<meta name="twitter:title" content="'+e(ogTitle||fullTitle)+'">',
- '<meta name="twitter:description" content="'+e(ogDescription||description)+'">',
+ '<meta name="twitter:title" content="'+em(ogTitle||fullTitle)+'">',
+ '<meta name="twitter:description" content="'+em(ogDescription||description)+'">',
  '<meta name="twitter:card" content="summary_large_image">',
- ...(type==='chapter'?['<meta name="author" content="'+e(config.author_name)+'">']:[]),
+ ...(type==='chapter'?['<meta name="author" content="'+em(config.author_name)+'">']:[]),
  '<link rel="stylesheet" href="/style.css">'
  ];
  if(site){
-   head.push('<link rel="canonical" href="'+e(url)+'">');
-   head.push('<meta property="og:url" content="'+e(url)+'">');
-   head.push('<meta property="og:image" content="'+e(abs(ogImage))+'">');
-   head.push('<meta property="og:image:secure_url" content="'+e(abs(ogImage))+'">');
+   head.push('<link rel="canonical" href="'+em(url)+'">');
+   head.push('<meta property="og:url" content="'+em(url)+'">');
+   head.push('<meta property="og:image" content="'+em(abs(ogImage))+'">');
+   head.push('<meta property="og:image:secure_url" content="'+em(abs(ogImage))+'">');
    head.push('<meta property="og:image:type" content="image/png">');
    head.push('<meta property="og:image:width" content="1200">');
    head.push('<meta property="og:image:height" content="630">');
-   head.push('<meta property="og:image:alt" content="'+e(ogAlt)+'">');
-   head.push('<meta name="twitter:image" content="'+e(abs(ogImage))+'">');
+   head.push('<meta property="og:image:alt" content="'+em(ogAlt)+'">');
+   head.push('<meta name="twitter:image" content="'+em(abs(ogImage))+'">');
  }
  if(ready && schema) head.push(structured(schema));
- return '<!doctype html><html lang="de"><head><title>'+e(fullTitle)+'</title>'+head.join('')+'</head><body>'+
+ return '<!doctype html><html lang="de"><head><title>'+em(fullTitle)+'</title>'+head.join('')+'</head><body>'+
  '<a class="skip" href="#main">Zum Inhalt springen</a>'+
  '<header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">f0lg3nr31ch<span class="tagline">Nine to Five. And Beyond.</span></a><nav aria-label="Hauptnavigation"><a href="/roman/">Roman</a><a href="/experiment/">Über das Projekt</a></nav></div></header>'+
  '<main id="main" class="wrap">'+body+'</main>'+

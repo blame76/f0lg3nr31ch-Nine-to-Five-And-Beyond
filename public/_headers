@@ -3,3 +3,22 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Explicit UTF-8 on HTML documents for crawlers that ignore the meta charset
+/
+  Content-Type: text/html; charset=utf-8
+
+/roman/*
+  Content-Type: text/html; charset=utf-8
+
+/experiment/*
+  Content-Type: text/html; charset=utf-8
+
+/impressum/*
+  Content-Type: text/html; charset=utf-8
+
+/datenschutz/*
+  Content-Type: text/html; charset=utf-8
+
+/lizenz/*
+  Content-Type: text/html; charset=utf-8

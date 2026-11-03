@@ -3,6 +3,8 @@ import path from 'node:path';
 export const root = path.resolve(import.meta.dirname,'..');
 export const readJson = file => JSON.parse(readFileSync(path.join(root,file),'utf8'));
 export const escapeHtml = value => String(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+// Social crawlers sometimes misread UTF-8 bytes: ASCII-only numeric entities in metadata preserve meaning.
+export const escapeMeta = value => escapeHtml(value).replace(/[^\x00-\x7F]/gu,ch=>'&#'+ch.codePointAt(0)+';');
 export const normUrl = value => value ? String(value).replace(/\/$/,'') : null;
 export const absoluteUrl = (base,slug='') => base ? base + '/' + String(slug).replace(/^\//,'') : null;
 export function validateManifest(config,manifest,base=root) {
