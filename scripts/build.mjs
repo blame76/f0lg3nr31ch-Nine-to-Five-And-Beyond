@@ -32,6 +32,7 @@ function page({title,description=config.description,slug='',type='website',body,
  '<meta name="twitter:title" content="'+e(ogTitle||fullTitle)+'">',
  '<meta name="twitter:description" content="'+e(ogDescription||description)+'">',
  '<meta name="twitter:card" content="summary_large_image">',
+ ...(type==='chapter'?['<meta name="author" content="'+e(config.author_name)+'">']:[]),
  '<link rel="stylesheet" href="/style.css">'
  ];
  if(site){
@@ -49,18 +50,17 @@ function page({title,description=config.description,slug='',type='website',body,
  return '<!doctype html><html lang="de"><head><title>'+e(fullTitle)+'</title>'+head.join('')+'</head><body>'+
  '<a class="skip" href="#main">Zum Inhalt springen</a>'+
  '<header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">f0lg3nr31ch<span class="tagline">Nine to Five. And Beyond.</span></a><nav aria-label="Hauptnavigation"><a href="/roman/">Roman</a><a href="/experiment/">Über das Projekt</a></nav></div></header>'+
- '<div class="fiction-ribbon"><div class="wrap">Fiktive Agentur · KI-gestützter Roman · offenes SEO-/GEO-Experiment · <a href="/experiment/">Hintergründe</a></div></div>'+
  '<main id="main" class="wrap">'+body+'</main>'+
- '<footer class="site-footer"><div class="wrap footer-inner"><p>f0lg3nr31ch – Nine to Five. And Beyond. · Die Agentur ist erfunden.</p><nav aria-label="Rechtliches"><a href="/experiment/">Über</a><a href="/lizenz/">Lizenz</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></nav></div></footer></body></html>';
+ '<footer class="site-footer"><div class="wrap"><p class="footer-disclosure">Fiktive Agentur · KI-gestützter Roman · öffentliches SEO-/GEO-Experiment · <a href="/experiment/">Hintergründe</a></p><div class="footer-inner"><p>f0lg3nr31ch – Nine to Five. And Beyond. · Die Agentur ist erfunden.</p><nav aria-label="Rechtliches"><a href="/experiment/">Über</a><a href="/lizenz/">Lizenz</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></nav></div></div></footer></body></html>';
 }
 const list=manifest.chapters;
 for(const chapter of list)output(chapter.campaign.image,renderCampaignImage(chapter));
-const notices=ready?'':'<div class="notice"><strong>Öffentliche Vorschau – keine endgültige Veröffentlichung.</strong> Diese Texte sind Release-Kandidaten. Die finale Autoren- und Datenschutzfreigabe steht noch aus.</div>';
+const notices=ready?'':'<aside class="notice" aria-label="Veröffentlichungsstand"><strong>Öffentliche Vorschau – keine endgültige Veröffentlichung.</strong> Diese Texte sind Release-Kandidaten. Die finale Autoren- und Datenschutzfreigabe steht noch aus.</aside>';
 const indexItems=list.map((c,i)=>'<li><a href="/roman/'+e(c.id)+'/">'+e(c.title)+'</a><small>Folge '+(i+1)+' · '+e(c.description)+'</small><small>Fiktive Agenturkampagne: '+e(c.campaign.headline)+' '+e(c.campaign.subheadline)+'</small></li>').join('');
 const items='<ol class="list">'+indexItems+'</ol>';
 const book={'@context':'https://schema.org','@type':'Book',name:'f0lg3nr31ch – Nine to Five. And Beyond.',inLanguage:'de',genre:'Roman',author:{'@type':'Person',name:config.author_name},isAccessibleForFree:true};
-output('index.html',page({title:'Nine to Five. And Beyond.',body:'<section class="hero"><p class="eyebrow">Roman · Digitalagentur · Experiment</p><h1>f0lg3nr31ch</h1><p class="lead">Nine to Five. And Beyond.</p><p>Ein fortlaufender Agenturroman über Menschen, Arbeit und die Folgen ihrer Entscheidungen.</p></section>'+notices+'<section><h2>Die Geschichten</h2>'+items+'<p><a href="/experiment/">Wie entsteht dieser Roman?</a></p></section>',schema:{'@context':'https://schema.org','@type':'WebSite',name:config.name,alternateName:'Folgenreich',url:site,description:config.description}}));
-output('roman/index.html',page({title:'Alle Folgen',slug:'roman/',body:'<section class="hero"><p class="eyebrow">Roman</p><h1>Alle Folgen</h1><p>Die Agentur ist Fiktion. Die Texte stehen bis zur Abnahme in einer gekennzeichneten Vorschau.</p></section>'+notices+items,schema:book}));
+output('index.html',page({title:'Nine to Five. And Beyond.',body:'<section class="hero"><p class="eyebrow">Roman · Fiktion · Experiment</p><h1>f0lg3nr31ch</h1><p class="lead">Nine to Five. And Beyond.</p><p>Ein fortlaufender Agenturroman über Menschen, Arbeit und die Folgen ihrer Entscheidungen.</p></section><section><h2>Die Geschichten</h2>'+items+'<p><a href="/experiment/">Wie entsteht dieser Roman?</a></p></section>'+notices,schema:{'@context':'https://schema.org','@type':'WebSite',name:config.name,alternateName:'Folgenreich',url:site,description:config.description}}));
+output('roman/index.html',page({title:'Alle Folgen',slug:'roman/',body:'<section class="hero"><p class="eyebrow">Roman</p><h1>Alle Folgen</h1><p>Die Agentur ist Fiktion. Die Texte stehen bis zur Abnahme in einer gekennzeichneten Vorschau.</p></section>'+items+notices,schema:book}));
 for(let i=0;i<list.length;i++){
  const c=list[i],raw=readFileSync(path.join(root,c.path),'utf8').replace(/^# [^\n]+\n+/,'');
  const prev=i?'<a href="/roman/'+e(list[i-1].id)+'/">← Vorherige Folge</a>':'';
@@ -71,7 +71,11 @@ for(let i=0;i<list.length;i++){
  '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
  '<p>'+e(campaign.promise)+'</p><p class="campaign-context">'+e(campaign.context)+'</p>'+
  '<p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman – keine echte Stellenanzeige und kein buchbares Dienstleistungsangebot.</p></aside>';
- const body=notices+bridge+'<article class="reader"><p class="meta">Folge '+(i+1)+' · Roman · Fiktion</p><h1>'+e(c.title)+'</h1>'+markdownToHtml(raw)+'</article><nav class="pager" aria-label="Folgen-Navigation">'+prev+next+'</nav>';
+ const body='<article class="reader" id="romantext" lang="de" aria-labelledby="chapter-title">'+
+ '<header class="chapter-heading"><p class="meta">Folge '+(i+1)+' · Roman</p><h1 id="chapter-title">'+e(c.title)+'</h1></header>'+
+ '<div class="chapter-text">'+markdownToHtml(raw)+'</div></article>'+
+ '<nav class="pager" aria-label="Folgen-Navigation">'+prev+next+'</nav>'+
+ '<div class="afterword" aria-label="Hintergründe zur Folge">'+bridge+notices+'</div>';
  output('roman/'+c.id+'/index.html',page({title:campaign.seo_title,description:campaign.seo_description,ogTitle:campaign.social_title,ogDescription:campaign.social_description,ogImage:campaign.image,ogAlt:campaign.image_alt,slug:'roman/'+c.id+'/',type:'chapter',body,schema:chapter}));
 }
 for(const [slug,title,body] of [['experiment','Über das Experiment',about],['impressum','Impressum',imprint],['datenschutz','Datenschutz',privacy],['lizenz','Lizenz und Urheberschaft',license]]){

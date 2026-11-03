@@ -45,10 +45,29 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
   assert.ok(html.includes('property="og:image" content="https://folgenreich.benjamin-lam.de/'+c.campaign.image+'"'));
   assert.ok(html.includes('property="og:title" content="'+c.campaign.social_title.replace(/&/g,'&amp;')+'"'));
   assert.ok(html.includes('Fiktive Agenturkampagne aus dem Roman'));
-  assert.ok(html.includes('<h1>'+c.title+'</h1>'));
+  // The native browser reader should discover the prose, not a pre-chapter campaign.
+  const article=html.indexOf('<article class="reader"');
+  const articleEnd=html.indexOf('</article>',article);
+  const pager=html.indexOf('<nav class="pager"',articleEnd);
+  const campaign=html.indexOf('<aside class="campaign-bridge"',pager);
+  const publicationNote=html.indexOf('<aside class="notice"',campaign);
+  assert.ok(article>0&&articleEnd>article&&pager>articleEnd&&campaign>pager&&publicationNote>campaign);
+  assert.ok(html.includes('<div class="chapter-text">'));
+  assert.ok(html.includes('<meta name="author" content="Benjamin Lam">'));
+  assert.ok((html.slice(article,articleEnd).match(/<p>/g)||[]).length>20);
+  assert.ok(!html.slice(html.indexOf('<body>')).includes('<img'), 'OG images belong in metadata, not body');
+  assert.ok(html.indexOf('class="footer-disclosure"')>html.indexOf('</main>'));
+  assert.ok(!html.includes('class="fiction-ribbon"'));
+  assert.ok(html.includes('<h1 id="chapter-title">'+c.title+'</h1>'));
   assert.ok(!html.includes('"@type":"JobPosting"'));
   assert.ok(!html.includes('"@type":"LocalBusiness"'));
   assert.deepEqual([...readFileSync('dist/'+c.campaign.image).subarray(0,8)],[137,80,78,71,13,10,26,10]);
  }
  assert.match(readFileSync('dist/robots.txt','utf8'),/Allow: \//);
+ const home=readFileSync('dist/index.html','utf8');
+ assert.ok(home.indexOf('<ol class="list">')<home.indexOf('<aside class="notice"'));
+ const css=readFileSync('dist/style.css','utf8');
+ assert.match(css,/\.header-inner\{[^}]*padding:1\.1rem 1\.25rem/);
+ assert.match(css,/@media print/);
+
 });
