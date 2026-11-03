@@ -9,7 +9,29 @@
       "source_blob_sha": "9883631543aede824dde25ff77ede068280bf7a7",
       "status": "release-candidate",
       "position": 1,
-      "path": "content/chapters/die-null-am-ende.md"
+      "path": "content/chapters/die-null-am-ende.md",
+      "campaign": {
+        "category": "Karriere · Fiktive Stellenanzeige",
+        "headline": "Wir suchen dich.",
+        "subheadline": "Kundenberatung & Key Account Management (m/w/d)",
+        "promise": "Flache Hierarchien. Eigenverantwortung. Langjährige Kundenbeziehungen.",
+        "context": "Die fiktive Agentur sucht Menschen für ihre Kundenbeziehungen. In der Geschichte sucht ein langjähriger Kunde seine bisherige Ansprechpartnerin – sie arbeitet dort nicht mehr.",
+        "seo_title": "Die Null am Ende – Kundenberatung",
+        "seo_description": "Die Null am Ende: Roman über Kundenberatung und unklare Verantwortung. Die fiktive Agentur f0lg3nr31ch inszeniert dazu eine erfundene Stellenanzeige.",
+        "social_title": "Wir suchen dich. | f0lg3nr31ch – Romanfolge 01",
+        "social_description": "Fiktive Stellenanzeige für Kundenberatung. Im Roman sucht ein Kunde seine verschwundene Ansprechpartnerin. Die Null am Ende – Folge 01.",
+        "image": "share/die-null-am-ende.png",
+        "image_alt": "Fiktive Karriereanzeige der Romanagentur f0lg3nr31ch: Wir suchen dich. Kundenberatung und Key Account Management. Romanfolge 01.",
+        "image_lines": [
+          "WIR SUCHEN",
+          "DICH."
+        ],
+        "image_detail": [
+          "KUNDENBERATUNG",
+          "KEY ACCOUNT MANAGEMENT"
+        ],
+        "accent": "#D1DFE3"
+      }
     },
     {
       "id": "wer-haelt-die-verantwortung-fest",
@@ -19,7 +41,29 @@
       "source_blob_sha": "00ab91aef5f440958389637489b43253951d4084",
       "status": "release-candidate",
       "position": 2,
-      "path": "content/chapters/wer-haelt-die-verantwortung-fest.md"
+      "path": "content/chapters/wer-haelt-die-verantwortung-fest.md",
+      "campaign": {
+        "category": "E-Commerce · Fiktives Serviceversprechen",
+        "headline": "Ihr Shop. Unsere Verantwortung.",
+        "subheadline": "Betreuung & Wartung von E-Commerce-Systemen",
+        "promise": "Verlässlicher Betrieb braucht klare Zuständigkeiten.",
+        "context": "Die fiktive Agentur verspricht Betreuung und Wartung. Die Romanfolge fragt, wer nach einer Umstrukturierung die Verantwortung für einen laufenden Servicevertrag trägt.",
+        "seo_title": "Wer hält die Verantwortung fest? – E-Commerce-Wartung",
+        "seo_description": "E-Commerce-Betreuung und Wartung im fiktiven Agenturroman f0lg3nr31ch: Wer trägt Verantwortung, wenn ein langjähriger Servicevertrag weiterläuft?",
+        "social_title": "Ihr Shop. Unsere Verantwortung. | Romanfolge 02",
+        "social_description": "Ein fiktives E-Commerce-Serviceversprechen – und ein Roman über denjenigen, der die Verantwortung wirklich übernehmen muss.",
+        "image": "share/wer-haelt-die-verantwortung-fest.png",
+        "image_alt": "Fiktive Servicekampagne aus f0lg3nr31ch: Ihr Shop. Unsere Verantwortung. Romanfolge 02.",
+        "image_lines": [
+          "IHR SHOP.",
+          "UNSERE VERANTWORTUNG."
+        ],
+        "image_detail": [
+          "E-COMMERCE BETREUUNG",
+          "UND WARTUNG"
+        ],
+        "accent": "#BFD3CA"
+      }
     },
     {
       "id": "how-to-service",
@@ -29,7 +73,29 @@
       "source_blob_sha": "9fe033c5909fca92eef1ef91187bd514f86ec554",
       "status": "release-candidate",
       "position": 3,
-      "path": "content/chapters/how-to-service.md"
+      "path": "content/chapters/how-to-service.md",
+      "campaign": {
+        "category": "Serviceübernahme · Fiktives Agenturangebot",
+        "headline": "Sie kümmern sich um Ihr Geschäft.",
+        "subheadline": "Wir kümmern uns um den Rest.",
+        "promise": "Service-Onboarding und Übergabe mit nachvollziehbarer Verantwortung.",
+        "context": "Das Versprechen der fiktiven Agentur klingt einfach. In der Geschichte zeigt eine Serviceübernahme, warum Verträge, Zuständigkeiten und Unterschriften entscheidend sind.",
+        "seo_title": "How to Service – E-Commerce-Serviceübernahme",
+        "seo_description": "Service-Onboarding und E-Commerce-Serviceübernahme im Agenturroman f0lg3nr31ch: Ein fiktives Versprechen trifft auf die Realität einer komplizierten Übergabe.",
+        "social_title": "Wir kümmern uns um den Rest. | Romanfolge 03",
+        "social_description": "Ein fiktives Versprechen zur Serviceübernahme. Doch eine Unterschrift fehlt – in How to Service, Folge 03 des Agenturromans.",
+        "image": "share/how-to-service.png",
+        "image_alt": "Fiktive Serviceübernahme-Kampagne der Agentur f0lg3nr31ch: Sie kümmern sich um Ihr Geschäft. Wir um den Rest. Romanfolge 03.",
+        "image_lines": [
+          "SIE KUEMMERN SICH",
+          "UM IHR GESCHAEFT."
+        ],
+        "image_detail": [
+          "WIR KUEMMERN UNS",
+          "UM DEN REST."
+        ],
+        "accent": "#E1D3BD"
+      }
     }
   ]
 }

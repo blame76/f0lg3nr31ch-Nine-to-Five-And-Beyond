@@ -22,6 +22,21 @@ export function validateManifest(config,manifest,base=root) {
     if(!/^[a-f0-9]{40}$/.test(c.source_blob_sha||'')) errors.push('Missing source provenance: '+c.id);
     if(c.status==='approved'&&(!c.approved_by||!/^\d{4}-\d{2}-\d{2}$/.test(c.approved_at||''))) errors.push('Approval missing: '+c.id);
   }
+  for(const c of manifest.chapters||[]){
+    if(!c || typeof c!=='object') continue;
+    const campaign=c.campaign;
+    if(!campaign || typeof campaign!=='object'){errors.push('Missing fictional campaign: '+c.id);continue;}
+    const fields=['category','headline','subheadline','promise','context','seo_title','seo_description','social_title','social_description','image_alt'];
+    for(const name of fields) if(typeof campaign[name]!=='string'||campaign[name].trim().length<6||campaign[name].length>320) errors.push('Invalid campaign '+name+': '+c.id);
+    if(campaign.image!=='share/'+c.id+'.png') errors.push('Invalid social image path: '+c.id);
+    if(!/^#[0-9a-fA-F]{6}$/.test(campaign.accent||'')) errors.push('Invalid image accent: '+c.id);
+    for(const name of ['image_lines','image_detail']){
+      if(!Array.isArray(campaign[name])||campaign[name].length<1||campaign[name].length>3||
+         campaign[name].some(s=>typeof s!=='string'||s.length>42||!/^[A-Z0-9 .&/-]+$/.test(s))) errors.push('Invalid campaign '+name+': '+c.id);
+    }
+    if(!/fiktiv|roman/i.test(campaign.seo_description+' '+campaign.social_description)) errors.push('Fiction disclosure missing: '+c.id);
+    if(!/fiktiv/i.test(campaign.category+' '+campaign.image_alt)) errors.push('Fiction label missing: '+c.id);
+  }
   return errors;
 }
 const inline=s=>escapeHtml(s).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/\*([^*]+)\*/g,'<em>$1</em>');
