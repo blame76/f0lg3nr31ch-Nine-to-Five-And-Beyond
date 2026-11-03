@@ -13,3 +13,11 @@ a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}a:
 .pager{display:flex;gap:1rem;justify-content:space-between;max-width:68ch;margin:0 auto 4rem}
 @media(prefers-color-scheme:dark){:root{--bg:#15191c;--ink:#e9ebeb;--muted:#b0b8bc;--line:#353f43;--accent:#8fcfe2;--panel:#20272b}}
 @media(max-width:520px){.hero{padding-top:2.6rem}.reader{margin-top:2.5rem}.pager{flex-wrap:wrap}}
+
+/* The fictional agency voice is intentionally distinct from the unchanged novel prose. */
+.campaign-bridge{background:var(--panel);border-left:4px solid var(--accent);max-width:74ch;margin:2.2rem auto 0;padding:1.15rem 1.65rem 1.3rem}
+.campaign-bridge h2{font-size:clamp(1.35rem,3vw,2.05rem);letter-spacing:-.03em;line-height:1.2;margin:.45rem 0 .35rem}
+.campaign-bridge p{margin:.5rem 0}.campaign-bridge .eyebrow{font-size:.7rem}
+.campaign-subline{font-weight:650;font-size:1.05rem}.campaign-context{color:var(--muted);font-size:.94rem}
+.campaign-disclaimer{border-top:1px solid var(--line);padding-top:.65rem;color:var(--muted);font-size:.76rem}
+@media(max-width:520px){.campaign-bridge{padding:1rem 1.15rem}.campaign-bridge h2{font-size:1.4rem}}
