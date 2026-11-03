@@ -1,6 +1,4 @@
 # Die Null am Ende
-*Erste Geschichte · Arbeitsfassung*
-
 Die Telefonnummer endete auf null. So stand sie noch auf dem Aufkleber neben der Kasse, den manche Kunden vor Jahren bekommen hatten, und so stand sie auf den Rechnungen, inzwischen unter einem anderen Logo.
 
 Miriam meldete sich mit dem Namen der Agentur. Den Zusatz mit der Unternehmensgruppe ließ sie weg. Bis sie den ausgesprochen hatte, sagten die meisten Anrufer ohnehin schon, wen sie sprechen wollten.

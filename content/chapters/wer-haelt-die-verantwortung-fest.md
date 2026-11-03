@@ -1,6 +1,4 @@
 # Wer hält die Verantwortung fest?
-*Zweite Geschichte · Dienstag · überarbeitete Arbeitsfassung*
-
 Martin hatte die Nachricht am Montag um 17:43 Uhr gelesen.
 
 *Reimers. Wir müssen klären, wer den laufenden Service verantwortet. Kannst du dich morgen kurz melden? Alex.*

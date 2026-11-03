@@ -2,24 +2,24 @@
 
 ## Reader-first HTML
 
-Each chapter is a static HTML document with one `<main>`, a standalone `<article class="reader">`, a chapter title `<h1>`, contiguous literary paragraphs, and author metadata. The article is the first content inside `<main>`. Chapter navigation, the fictional agency campaign, and release notices appear **after** the article and outside its semantic boundary.
+Each chapter is a static HTML document with one `<main>`, a standalone `<article class="reader">`, a chapter title `<h1>`, and contiguous literary paragraphs. The article is the first content inside `<main>`. Chapter navigation and the clearly fictional campaign appear **after** the article.
 
-The fiction and experiment identification remains in the page's metadata, afterword, and footer, without interrupting the chapter.
+No internal editorial statuses or review notes belong in the article or any visible public page. Fiction is identified in metadata, the afterword and the footer.
 
-Browsers decide for themselves whether their native Reader View is eligible. The site doesn't attempt to invoke a browser-specific mode with a fake JavaScript button. Firefox, Safari, and Chrome vary by platform and version.
+Browsers independently decide whether their native Reader View is eligible. The site does not invoke a fake browser-specific reading mode.
 
 ## Manual checks
 
-- Firefox Desktop/Android: open a full chapter and look for the native reader mode icon.
-- Safari: use Reader on the chapter when available.
-- Chrome: try Reading mode on a chapter; the entry point depends on browser and platform.
-- The extracted document should start with the story title and prose, not the fictional advertising campaign.
-- Print view contains just the story, without navigation or extra content.
+- Firefox Desktop/Android: open a chapter and look for native reading mode.
+- Safari: use Reader on the chapter when offered.
+- Chrome: try Reading mode on a chapter; the entry point varies.
+- Extracted text must begin with the story title and prose.
+- Print view must exclude the site navigation and surrounding content.
 
-## SEO and social sharing
+## SEO and sharing
 
-The Open Graph preview images are retained in the `<head>` as absolute URLs under `https://folgenreich.benjamin-lam.de/share/` but are not visible in the reading area. Individual campaign titles and accurate novel meta descriptions remain available for the SEO/GEO experiment. The three original chapter markdown files and their provenance hashes remain unchanged.
+The chapter-specific Open Graph images remain in the HTML `<head>` as absolute URLs, and never appear in the reading area. Factual fiction labels and chapter descriptions remain present for the search experiment. The reader text removes only editorial status lines; provenance references still identify the original source snapshots.
 
 ## Automated regression
 
-The campaign test verifies HTML order: article → pagination → fictional campaign → release notice. It also checks that no share preview image is rendered into the visible body, that author metadata exists, and that header padding isn't lost.
+Tests verify the order article → pagination → fictional campaign and ensure that no internal status notice, visible share preview image or editorial drafting label is rendered. They also check author metadata and header spacing.

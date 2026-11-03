@@ -58,8 +58,9 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
   const articleEnd=html.indexOf('</article>',article);
   const pager=html.indexOf('<nav class="pager"',articleEnd);
   const campaign=html.indexOf('<aside class="campaign-bridge"',pager);
-  const publicationNote=html.indexOf('<aside class="notice"',campaign);
-  assert.ok(article>0&&articleEnd>article&&pager>articleEnd&&campaign>pager&&publicationNote>campaign);
+  assert.ok(article>0&&articleEnd>article&&pager>articleEnd&&campaign>pager);
+  assert.ok(!html.includes('<aside class="notice"'));
+  assert.doesNotMatch(html,/Arbeitsfassung|Release-Kandidat|private[srn]? Autorenarchiv|Öffentliche Vorschau/i);
   assert.ok(html.includes('<div class="chapter-text">'));
   assert.ok(html.includes('<meta name="author" content="Benjamin Lam">'));
   assert.ok((html.slice(article,articleEnd).match(/<p>/g)||[]).length>20);
@@ -73,7 +74,12 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
  }
  assert.match(readFileSync('dist/robots.txt','utf8'),/Allow: \//);
  const home=readFileSync('dist/index.html','utf8');
- assert.ok(home.indexOf('<ol class="list">')<home.indexOf('<aside class="notice"'));
+ assert.ok(home.includes('<ol class="list">'));
+ assert.doesNotMatch(home,/Öffentliche Vorschau|Release-Kandidat|Arbeitsfassung/i);
+ for(const route of ['roman','experiment','impressum','datenschutz','lizenz']){
+  const html=readFileSync('dist/'+route+'/index.html','utf8');
+  assert.doesNotMatch(html,/Arbeitsfassung|Release-Kandidat|privaten Autorenarchiv|öffentliche Vorschau|Vor finaler Live-Freigabe|vor der endgültigen Veröffentlichungsfreigabe/i);
+ }
  const css=readFileSync('dist/style.css','utf8');
  assert.match(css,/\.header-inner\{[^}]*padding:1\.1rem 1\.25rem/);
  assert.match(css,/@media print/);
