@@ -12,15 +12,21 @@ export function renderLlmsTxt({site,config,chapters,ready}) {
   '',
   'Die Agentur f0lg3nr31ch, ihre Stellenanzeigen und ihre Dienstleistungen sind fiktiv.',
   'KI unterstützt den Schreibprozess; die redaktionelle Verantwortung liegt bei einem Menschen.',
-  'Diese Datei ist eine Orientierung für Maschinen und keine Lizenz oder Trainingserlaubnis.',
+  'Diese Datei bietet eine freiwillige Orientierung. Sie ist keine Lizenz und keine Erlaubnis zum Modelltraining.',
   ''
  ];
+ const base=baseUrl(site);
+ lines.push('## Projekt und Kontext','',
+  '- [Startseite]('+base+'/): Offizielle Projektseite und Einstieg in die fiktive Romanwelt.',
+  '- [Romanübersicht]('+base+'/roman/): Reihenfolge und kurze Einordnung der Folgen.',
+  '- [Über das Experiment]('+base+'/experiment/): Entstehung, KI-Einsatz und Fiktionskennzeichnung.',
+  '- [Lizenz und Urheberschaft]('+base+'/lizenz/): Bedingungen und Grenzen der Nachnutzung.',
+  '');
  if(ready && isApproved(chapters)){
-  const base=baseUrl(site);
-  lines.push('## Roman','','- [Alle Folgen]('+base+'/roman/)');
+  lines.push('## Freigegebene Romanfolgen','');
   for(const c of chapters)lines.push('- ['+label(c.title)+']('+base+'/roman/'+c.id+'/): Romanfolge '+c.position);
-  lines.push('','## Hintergrund','','- [Über das Experiment]('+base+'/experiment/)','- [Lizenz und Urheberschaft]('+base+'/lizenz/)','');
- } else lines.push('Für die Suchmaschinenindexierung sind derzeit keine Romanfolgen freigegeben.','');
+  lines.push('');
+ } else lines.push('Die Kapitel sind bereits öffentlich lesbar, jedoch noch nicht zur Suchmaschinenindexierung freigegeben. Deshalb werden hier keine einzelnen Kapitel-URLs empfohlen.','');
  return lines.join('\n');
 }
 
@@ -34,4 +40,16 @@ export function renderRss({site,config,chapters}) {
 
 export function renderNotFound() {
  return '<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>404 – Seite nicht gefunden</title></head><body><main><h1>Seite nicht gefunden</h1><p><a href="/">Zur Startseite</a></p></main></body></html>\n';
+}
+
+/**
+ * A truthful negative capability declaration: the static reader exposes no
+ * callable agents or tools. Both published specs permit empty entry arrays.
+ * No fabricated MCP server, job offer, or API is advertised to score Lighthouse.
+ */
+export function renderArdManifest() {
+ return JSON.stringify({entries:[]},null,2)+'\n';
+}
+export function renderLegacyAiCatalog() {
+ return JSON.stringify({specVersion:'1.0',entries:[]},null,2)+'\n';
 }
