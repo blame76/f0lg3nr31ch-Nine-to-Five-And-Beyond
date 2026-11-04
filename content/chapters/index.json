@@ -7,7 +7,7 @@
       "description": "Ein langjähriger E-Commerce-Kunde sucht seine vertraute Ansprechpartnerin. Der Servicevertrag läuft, doch Zuständigkeiten sind unklar.",
       "source_ref": "story/how-to-service-2026-11-03",
       "source_blob_sha": "9883631543aede824dde25ff77ede068280bf7a7",
-      "status": "release-candidate",
+      "status": "approved",
       "position": 1,
       "path": "content/chapters/die-null-am-ende.md",
       "campaign": {
@@ -31,7 +31,9 @@
           "KEY ACCOUNT MANAGEMENT"
         ],
         "accent": "#D1DFE3"
-      }
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-04"
     },
     {
       "id": "wer-haelt-die-verantwortung-fest",
@@ -39,7 +41,7 @@
       "description": "Martin muss nach einer Umstrukturierung klären, wer die Verantwortung für einen Kunden übernimmt.",
       "source_ref": "story/wer-haelt-die-verantwortung-2026-11-02",
       "source_blob_sha": "00ab91aef5f440958389637489b43253951d4084",
-      "status": "release-candidate",
+      "status": "approved",
       "position": 2,
       "path": "content/chapters/wer-haelt-die-verantwortung-fest.md",
       "campaign": {
@@ -63,7 +65,9 @@
           "UND WARTUNG"
         ],
         "accent": "#BFD3CA"
-      }
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-04"
     },
     {
       "id": "how-to-service",
@@ -71,7 +75,7 @@
       "description": "Eine geplante Serviceübernahme trifft auf fehlende Vertragsunterlagen, offene Zuständigkeiten und ein unterschriftsreifes Formular.",
       "source_ref": "story/how-to-service-2026-11-03",
       "source_blob_sha": "9fe033c5909fca92eef1ef91187bd514f86ec554",
-      "status": "release-candidate",
+      "status": "approved",
       "position": 3,
       "path": "content/chapters/how-to-service.md",
       "campaign": {
@@ -95,7 +99,9 @@
           "UM DEN REST."
         ],
         "accent": "#E1D3BD"
-      }
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-04"
     }
   ]
 }

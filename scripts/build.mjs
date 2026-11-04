@@ -3,7 +3,7 @@ import path from 'node:path';
 import {root,readJson,escapeHtml,escapeMeta,normUrl,absoluteUrl,validateManifest,markdownToHtml} from './lib.mjs';
 import {about,imprint,privacy,license} from './pages.mjs';
 import {renderCampaignImage} from './social-image.mjs';
-import {renderLlmsTxt,renderRss,renderNotFound} from './discovery.mjs';
+import {renderLlmsTxt,renderRss,renderNotFound,renderArdManifest,renderLegacyAiCatalog} from './discovery.mjs';
 
 const config=readJson('config/site.json');
 const manifest=readJson('content/chapters/index.json');
@@ -11,6 +11,8 @@ const errors=validateManifest(config,manifest);
 if(errors.length) throw new Error(errors.join('\n'));
 const site=normUrl(config.site_url);
 const ready=!!site && config.release_approved===true && config.legal_reviewed_for_launch===true && manifest.chapters.length>0 && manifest.chapters.every(c=>c.status==='approved');
+// The author opted in to indexing already-public informational pages, not unapproved chapter texts.
+const publicIndexReady=!!site && config.public_pages_indexing_approved===true;
 const dist=path.join(root,'dist');
 rmSync(dist,{recursive:true,force:true});mkdirSync(dist,{recursive:true});
 cpSync(path.join(root,'public'),dist,{recursive:true});
@@ -23,7 +25,7 @@ function page({title,description=config.description,slug='',type='website',body,
  const head=[
  '<meta charset="utf-8">',
  '<meta name="viewport" content="width=device-width, initial-scale=1">',
- '<meta name="robots" content="'+(ready?'index,follow':'noindex,follow')+'">',
+ '<meta name="robots" content="'+(ready || (publicIndexReady && type!=='chapter')?'index,follow':'noindex,follow')+'">',
  '<meta name="description" content="'+em(description)+'">',
  '<meta property="og:site_name" content="'+em('f0lg3nr31ch – Nine to Five. And Beyond.')+'">',
  '<meta property="og:type" content="'+(type==='chapter'?'article':'website')+'">',
@@ -83,12 +85,15 @@ for(let i=0;i<list.length;i++){
 for(const [slug,title,body] of [['experiment','Über das Experiment',about],['impressum','Impressum',imprint],['datenschutz','Datenschutz',privacy],['lizenz','Lizenz und Urheberschaft',license]]){
  output(slug+'/index.html',page({title,slug:slug+'/',body}));
 }
-if(ready){
- const slugs=['','roman/',...list.map(c=>'roman/'+c.id+'/'),'experiment/','impressum/','datenschutz/','lizenz/'];
+if(ready || publicIndexReady){
+ // Only indexable URLs belong in the sitemap; no unapproved chapter URLs.
+ const slugs=['','roman/',...(ready?list.map(c=>'roman/'+c.id+'/'):[]),'experiment/','impressum/','datenschutz/','lizenz/'];
  output('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+slugs.map(s=>'<url><loc>'+e(abs(s))+'</loc></url>').join('')+'</urlset>');
- output('feed.xml',renderRss({site,config,chapters:list}));
 }
-output('robots.txt','User-agent: *\nAllow: /\n'+(ready?'Sitemap: '+abs('sitemap.xml')+'\n':''));
-output('llms.txt',renderLlmsTxt({site,config,chapters:list,ready}));
+if(ready)output('feed.xml',renderRss({site,config,chapters:list}));
+output('robots.txt','User-agent: *\nAllow: /\n'+(ready || publicIndexReady?'Sitemap: '+abs('sitemap.xml')+'\n':''));
+output('llms.txt',renderLlmsTxt({site,config,chapters:list,ready,publicIndexReady}));
+output('.well-known/ard.json',renderArdManifest());
+output('.well-known/ai-catalog.json',renderLegacyAiCatalog());
 output('404.html',renderNotFound());
 console.log('Pages build finished: '+list.length+' chapters; SEO index '+(ready?'ENABLED':'DISABLED')+'; URL '+(site||'not set'));

@@ -75,6 +75,22 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
  assert.match(readFileSync('dist/robots.txt','utf8'),/Allow: \//);
  const home=readFileSync('dist/index.html','utf8');
  assert.ok(home.includes('<ol class="list">'));
+ assert.match(home,/name="robots" content="index,follow"/);
+ for(const route of ['roman','experiment','impressum','datenschutz','lizenz']){
+  const html=readFileSync('dist/'+route+'/index.html','utf8');
+  assert.match(html,/name="robots" content="index,follow"/);
+ }
+ const map=readFileSync('dist/sitemap.xml','utf8');
+ assert.ok(map.includes('https://folgenreich.benjamin-lam.de/roman/'));
+ assert.ok(!map.includes('https://folgenreich.benjamin-lam.de/roman/die-null-am-ende/'),'unapproved chapter URLs excluded from sitemap');
+ const llms=readFileSync('dist/llms.txt','utf8');
+ assert.match(llms,/\[Startseite\]\(https:\/\/folgenreich\.benjamin-lam\.de\/\)/);
+ assert.match(llms,/\[Lizenz und Urheberschaft\]/);
+ assert.ok(!llms.includes('/roman/die-null-am-ende/'),'unapproved chapter URLs excluded from llms.txt');
+ assert.deepEqual(JSON.parse(readFileSync('dist/.well-known/ard.json','utf8')),{entries:[]});
+ assert.deepEqual(JSON.parse(readFileSync('dist/.well-known/ai-catalog.json','utf8')),{specVersion:'1.0',entries:[]});
+ assert.ok(!readFileSync('dist/robots.txt','utf8').includes('Disallow: /'));
+ assert.ok(!readFileSync('dist/robots.txt','utf8').includes('noindex'));
  assert.doesNotMatch(home,/Öffentliche Vorschau|Release-Kandidat|Arbeitsfassung/i);
  for(const route of ['roman','experiment','impressum','datenschutz','lizenz']){
   const html=readFileSync('dist/'+route+'/index.html','utf8');

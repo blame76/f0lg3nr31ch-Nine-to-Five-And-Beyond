@@ -11,6 +11,7 @@ export function validateManifest(config,manifest,base=root) {
   const errors=[];
   if(config.name!=='f0lg3nr31ch'||config.subtitle!=='Nine to Five. And Beyond.') errors.push('Brand name/subtitle must remain exact');
   if(config.site_url!==null && !(typeof config.site_url==='string' && /^https:\/\/[^/]+\.[^/]+\/?$/.test(config.site_url))) errors.push('site_url must be null or HTTPS origin');
+  if(typeof config.public_pages_indexing_approved!=='boolean') errors.push('public_pages_indexing_approved must be boolean');
   if(manifest.schema_version!==1 || !Array.isArray(manifest.chapters)) errors.push('Invalid chapters manifest');
   if(config.release_approved===true && (!config.site_url || config.legal_reviewed_for_launch!==true || !manifest.chapters?.length || manifest.chapters.some(c=>c.status!=='approved'))) errors.push('Release requires domain, legal review and approved chapters');
   const ids=new Set();
