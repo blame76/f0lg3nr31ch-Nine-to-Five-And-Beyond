@@ -5,6 +5,7 @@ Der Reader zeigt die Lesertexte, nicht redaktionelle Aufgaben oder interne Freig
 ## Vor einer indexierbaren Veröffentlichung
 
 - Romantexte und sichtbare Seiten auf sachliche, literarische und redaktionelle Fehler prüfen.
+- **Pflicht pro Folge:** Fachquellen-Gate im Manifest (`research.status=linked` mit geprüftem Quellenkatalog oder `research.status=none` mit Begründung und Prüftag). `pending` ist für `approved` verboten. Prüfung nach [RESEARCH-SOURCES.md](RESEARCH-SOURCES.md); externe Links fachlich und live überprüfen. Keine Zwangsverlinkung.
 - Lizenz- und Rechtefragen, Impressum sowie die konkrete Cloudflare-Datenverarbeitung prüfen.
 - Mobile Darstellung, native Leseansicht, Kapitelnavigation, 404, Canonicals und Social Previews testen.
 - Im Manifest die Kapitel ausdrücklich mit `approved`, `approved_by` und `approved_at` freigeben.
