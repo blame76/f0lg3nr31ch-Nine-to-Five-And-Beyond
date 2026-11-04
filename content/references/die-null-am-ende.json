@@ -17,7 +17,7 @@
     {
       "id": "contract-vs-health",
       "placement": "inline",
-      "anchor": "Grün hieß aktiv.",
+      "anchor": "Grün hieß aktiv. Die letzte automatische Rechnung war am Freitag verschickt worden.",
       "title": "Ein aktiver Vertrag sagt nichts über den Zustand des Shops",
       "description": "Google SRE trennt messbare Service-Indikatoren, interne Qualitätsziele und Service-Level-Vereinbarungen. Der grüne Vertragsstatus in der Geschichte belegt allein einen administrativen Zustand, nicht die korrekte Zahlung im Shop.",
       "publisher": "Google SRE",
