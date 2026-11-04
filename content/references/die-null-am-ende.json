@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "chapter_id": "die-null-am-ende",
+  "reviewed_on": "2026-11-04",
+  "editorial_note": "Der Roman erzählt von fiktiven Personen und einer fiktiven Agentur. Die verlinkten Fachquellen erklären reale Arbeitsweisen; sie bestätigen weder diesen Vorfall noch die Existenz oder die Pflichten des fiktiven Unternehmens.",
+  "sources": [
+    {
+      "id": "first-response",
+      "placement": "inline",
+      "anchor": "„Ich kläre, wer sich darum kümmert, und Sie bekommen innerhalb einer halben Stunde einen Rückruf.“",
+      "title": "Eine Rückmeldung ist noch keine Fehlerbehebung",
+      "description": "Das Incident-Response-Kapitel von Google unterscheidet Koordination, Kommunikation und technische Behebung. Miriams Rückrufzusage ist eine Kommunikationszusage – keine Zusage, wann der Checkout wieder funktioniert.",
+      "publisher": "Google SRE",
+      "source_title": "Incident Response (SRE Workbook)",
+      "url": "https://sre.google/workbook/incident-response/"
+    },
+    {
+      "id": "contract-vs-health",
+      "placement": "inline",
+      "anchor": "Grün hieß aktiv. Die letzte automatische Rechnung war am Freitag verschickt worden.",
+      "title": "Ein aktiver Vertrag sagt nichts über den Zustand des Shops",
+      "description": "Google SRE trennt messbare Service-Indikatoren, interne Qualitätsziele und Service-Level-Vereinbarungen. Der grüne Vertragsstatus in der Geschichte belegt allein einen administrativen Zustand, nicht die korrekte Zahlung im Shop.",
+      "publisher": "Google SRE",
+      "source_title": "Service Level Objectives",
+      "url": "https://sre.google/sre-book/service-level-objectives/"
+    },
+    {
+      "id": "handover",
+      "placement": "inline",
+      "anchor": "„Es gab doch eine Übergabe“, sagte er.",
+      "title": "Eine Übergabe braucht eine bestätigte Zuständigkeit",
+      "description": "Googles Incident-Management-Kapitel beschreibt ausdrückliche Übergaben mit Benennung der neuen verantwortlichen Person und nachvollziehbarem Lagebild. Das Prinzip ist für einen akuten Vorfall beschrieben und lässt sich auf die hier fehlende organisatorische Übergabe übertragen.",
+      "publisher": "Google SRE",
+      "source_title": "Managing Incidents",
+      "url": "https://sre.google/sre-book/managing-incidents/"
+    },
+    {
+      "id": "debugging",
+      "placement": "inline",
+      "anchor": "„Ich hätte außerdem gern einen Testzugang, bevor ich irgendwas an der Zahlung anfasse. Nicht einfach in Produktion herumprobieren.“",
+      "title": "Diagnose zuerst, riskante Eingriffe kontrolliert",
+      "description": "Google SRE empfiehlt reproduzierbare Fehlerfälle, das Prüfen einzelner Systemgrenzen und – wo möglich – risikoreichere Experimente außerhalb der Produktionsumgebung. Jamals Wunsch nach einem Testzugang ist daher sinnvoll; eine Testumgebung allein garantiert noch keine sichere Diagnose.",
+      "publisher": "Google SRE",
+      "source_title": "Effective Troubleshooting",
+      "url": "https://sre.google/sre-book/effective-troubleshooting/"
+    }
+  ]
+}

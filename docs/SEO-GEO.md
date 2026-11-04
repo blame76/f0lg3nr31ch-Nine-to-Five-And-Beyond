@@ -39,3 +39,7 @@ Google Search Central: https://developers.google.com/search/docs/appearance/ai-f
 - HTTP-Status, Content-Type und Suchindexierung müssen nach Deployment live geprüft werden; CI validiert lediglich die lokalen Buildartefakte.
 
 Quellen: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide ; https://developers.cloudflare.com/pages/configuration/serving-pages/ ; https://llmstxt.org/
+
+## Recherchierte Quellen als sichtbare zweite Leseebene (04.11.2026)
+
+Die vorhandenen Kapitel besitzen fachlich geprüfte Hintergrundkataloge und kleine interne Fußnotenverweise auf einen Quellenblock **nach** dem Romantext. Weitere Folgen brauchen vor Freigabe eine explizite Entscheidung (Quellen oder begründetes `none`); siehe [RESEARCH-SOURCES.md](RESEARCH-SOURCES.md). Das ist eine redaktionelle Qualitätsregel, kein Rankingfaktor. Die Quellen ändern weder Romantext noch Strukturdatenaussagen. `noindex`, Fiktionskennzeichnung, Lizenz- und Rechte-Gates bleiben unangetastet.

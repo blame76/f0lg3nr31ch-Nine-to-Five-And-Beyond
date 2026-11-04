@@ -24,6 +24,16 @@ export function validateManifest(config,manifest,base=root) {
     if(c.path!==`content/chapters/${c.id}.md` || !existsSync(path.join(base,c.path||''))) errors.push('Missing or invalid text path: '+c.id);
     if(!/^[a-f0-9]{40}$/.test(c.source_blob_sha||'')) errors.push('Missing source provenance: '+c.id);
     if(c.status==='approved'&&(!c.approved_by||!/^\d{4}-\d{2}-\d{2}$/.test(c.approved_at||''))) errors.push('Approval missing: '+c.id);
+    // Each public chapter has an explicit, reviewed research decision, even when no links are suitable.
+    const research=c.research;
+    if(!research || !['linked','none','pending'].includes(research.status)) errors.push('Missing research decision: '+c.id);
+    else {
+      if(research.status==='pending' && c.status==='approved') errors.push('Approved chapter requires completed research decision: '+c.id);
+      if(research.status!=='pending' && !/^\d{4}-\d{2}-\d{2}$/.test(research.reviewed_on||'')) errors.push('Research review date missing: '+c.id);
+      if(research.status==='linked' && (research.path!==`content/references/${c.id}.json` || !existsSync(path.join(base,research.path||'')))) errors.push('Missing research catalog: '+c.id);
+      if(research.status==='none' && (research.path || typeof research.reason!=='string' || research.reason.trim().length<30)) errors.push('Unlinked chapter requires documented rationale: '+c.id);
+    }
+
   }
   for(const c of manifest.chapters||[]){
     if(!c || typeof c!=='object') continue;

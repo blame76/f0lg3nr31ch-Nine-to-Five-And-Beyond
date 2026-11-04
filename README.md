@@ -28,6 +28,6 @@ Die erzeugten Dateien stehen in `dist/`. Deployment erfolgt über Cloudflare Pag
 
 Der Roman entsteht mit Unterstützung von KI. Mehr über die Geschichte und den Schreibprozess steht auf der Seite [Über das Projekt](https://folgenreich.benjamin-lam.de/experiment/).
 
-Vor der Freigabe zur Suchmaschinenindexierung gelten Qualitäts- und Rechtsprüfungen. Technische Hinweise: [Veröffentlichung](docs/RELEASE.md), [Leseansicht](docs/READING-MODE.md), [fachliche Quellen](docs/RESEARCH-SOURCES.md) und [SEO/GEO](docs/SEO-GEO.md).
+Vor der Freigabe zur Suchmaschinenindexierung gelten Qualitäts- und Rechtsprüfungen. Technische Hinweise: [Veröffentlichung](docs/RELEASE.md), [Leseansicht](docs/READING-MODE.md), [fachliche Quellen](docs/RESEARCH-SOURCES.md) und [SEO/GEO](docs/SEO-GEO.md). Für **jede neue Folge** ist vor Freigabe eine dokumentierte Entscheidung über geprüfte Links oder bewusst keine Verweise Pflicht; die Zahl der Links ist keine Qualitätsmetrik.
 
 Das Repository ist öffentlich einsehbar. Daraus folgt keine allgemeine Lizenzfreigabe für den Roman oder den Website-Code.
