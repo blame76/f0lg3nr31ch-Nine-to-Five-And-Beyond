@@ -12,7 +12,12 @@ test('Public chapter markdown omits internal editorial labels',()=>{
   assert.doesNotMatch(opening,/Arbeitsfassung|Release-Kandidat|Redaktionsnotiz|TODO|FIXME/i,chapter.id);
  }
 });
-test('Release candidates are not approved',()=>{assert.ok(m.chapters.every(x=>x.status==='release-candidate'));assert.equal(c.release_approved,false);assert.equal(c.legal_reviewed_for_launch,false);});
+test('Author-approved chapters remain unindexed until independent legal release gate',()=>{
+ assert.ok(m.chapters.every(x=>x.status==='approved' && x.approved_by==='Benjamin Lam' && x.approved_at==='2026-11-04'));
+ assert.equal(c.release_approved,false);
+ assert.equal(c.legal_reviewed_for_launch,false);
+ assert.equal(c.public_pages_indexing_approved,true);
+});
 test('Manifest validation',()=>{assert.deepEqual(validateManifest(c,m),[]);const bad=structuredClone(m);bad.chapters[0].status='draft';assert.ok(validateManifest(c,bad).length>0);});
 test('Escaping in markdown reader',()=>{assert.match(markdownToHtml('Hello <script>'),/&lt;script&gt;/);});
 test('Validation executable',()=>{const r=spawnSync(process.execPath,['scripts/check.mjs'],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);});

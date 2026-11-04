@@ -17,17 +17,17 @@ test('llms.txt describes fiction without discovering unapproved chapters',()=>{
  assert.ok(early.length>50);
  assert.ok((early.match(/\]\(https:\/\//g)||[]).length>=3);
  assert.doesNotMatch(early,/\/roman\/die-null-am-ende\//);
- assert.doesNotMatch(renderLlmsTxt({site,config,chapters,ready:true}),/## Freigegebene Romanfolgen/);
- const approved=chapters.map(c=>({...c,status:'approved',approved_by:'Autor',approved_at:'2026-11-04'}));
- const published=renderLlmsTxt({site,config,chapters:approved,ready:true});
+ const pending=chapters.map(c=>({...c,status:'release-candidate',approved_by:undefined,approved_at:undefined}));
+ assert.doesNotMatch(renderLlmsTxt({site,config,chapters:pending,ready:true}),/## Freigegebene Romanfolgen/);
+ const published=renderLlmsTxt({site,config,chapters,ready:true});
  assert.match(published,/## Freigegebene Romanfolgen/);
  for(const c of chapters)assert.ok(published.includes(site+'/roman/'+c.id+'/'));
 });
 
 test('RSS requires explicit approvals and does not invent dates',()=>{
- assert.throws(()=>renderRss({site,config,chapters}),/approved/);
- const approved=chapters.map(c=>({...c,status:'approved',approved_by:'Autor',approved_at:'2026-11-04'}));
- const feed=renderRss({site,config,chapters:approved});
+ const pending=chapters.map(c=>({...c,status:'release-candidate',approved_by:undefined,approved_at:undefined}));
+ assert.throws(()=>renderRss({site,config,chapters:pending}),/approved/);
+ const feed=renderRss({site,config,chapters});
  assert.match(feed,/<rss version="2.0">/);
  assert.equal((feed.match(/<item>/g)||[]).length,chapters.length);
  assert.doesNotMatch(feed,/<pubDate>/);
