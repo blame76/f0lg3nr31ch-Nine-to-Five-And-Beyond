@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "chapter_id": "how-to-service",
+  "reviewed_on": "2026-11-04",
+  "editorial_note": "Fachliche Hintergründe zu realen Fragen der fiktionalen Handlung. Die Quellen belegen keine konkreten Vorgänge, Personen oder Rechtsverstöße im Roman.",
+  "sources": [
+    {
+      "id": "onboarding",
+      "placement": "inline",
+      "anchor": "„Das ist unser Onboarding“, sagte sie.",
+      "title": "Eine Betriebsübernahme braucht eine Prüfung",
+      "description": "Google SRE beschreibt Production Readiness Reviews mit dienstspezifischen Checklisten und einer schrittweisen Übertragung der Verantwortung. Das ist eine Parallele zu Noras Aufnahmeprüfung, keine Vorlage für ihre konkrete Firma.",
+      "publisher": "Google SRE",
+      "source_title": "The Evolving SRE Engagement Model",
+      "url": "https://sre.google/sre-book/evolving-sre-engagement-model/"
+    },
+    {
+      "id": "restore",
+      "placement": "inline",
+      "anchor": "„Gibt es einen getesteten Restore?“",
+      "title": "Ein Backup ist noch kein getesteter Restore",
+      "description": "Das BSI unterscheidet ausdrücklich zwischen Datensicherung und Wiederherstellung. CON.3.A15 fordert regelmäßige Tests, ob Daten zuverlässig und in angemessener Zeit zurückgespielt werden können.",
+      "publisher": "BSI",
+      "source_title": "CON.3 Datensicherungskonzept (PDF)",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/03_CON_Konzepte_und_Vorgehensweisen/CON_3_Datensicherungskonzept_Edition_2023.pdf?__blob=publicationFile&v=3"
+    },
+    {
+      "id": "roles",
+      "placement": "inline",
+      "anchor": "Neben jeder Tätigkeit standen Felder für einen Namen und eine Vertretung.",
+      "title": "Wer arbeitet – und wer entscheidet?",
+      "description": "Eine RACI-Matrix trennt unter anderem die ausführende von der rechenschaftspflichtigen Rolle. Noras Liste erinnert daran, ersetzt aber weder Vertragsprüfung noch rechtliche Verantwortung.",
+      "publisher": "Atlassian",
+      "source_title": "RACI-Diagramm: Definition und Anwendung",
+      "url": "https://www.atlassian.com/de/work-management/project-management/raci-chart"
+    },
+    {
+      "id": "decision-record",
+      "placement": "inline",
+      "anchor": "Dann öffnete sie die Entscheidungsakte.",
+      "title": "Warum Entscheidungsgründe dokumentiert werden",
+      "description": "MADR ist eine schlanke Markdown-Vorlage für Entscheidungen mit Kontext, Alternativen und Begründung. Die fiktive Akte SERVICE-2026-011 überträgt dieses Prinzip auf die Organisation des Service.",
+      "publisher": "MADR",
+      "source_title": "Markdown Architectural Decision Records",
+      "url": "https://adr.github.io/madr/"
+    },
+    {
+      "id": "contract",
+      "placement": "inline",
+      "anchor": "Option 3: Vertragspartnerwechsel zur Servicegesellschaft.",
+      "title": "Eine Vertragsübernahme ist mehr als ein interner Zuständigkeitswechsel",
+      "description": "Bei einer vollständigen Vertragsübernahme tritt eine neue Vertragspartei in die gesamte Rechtsposition ein. Dafür ist grundsätzlich die Mitwirkung aller Beteiligten notwendig. Die konkrete rechtliche Einordnung bleibt von den Verträgen abhängig.",
+      "publisher": "Max-Planck-Institut für ausländisches und internationales Privatrecht",
+      "source_title": "Vertragsübernahme – Handwörterbuch des Europäischen Privatrechts",
+      "url": "https://hwb-eup2009.mpipriv.de/index.php/Vertrags%C3%BCbernahme"
+    },
+    {
+      "id": "subprocessor",
+      "placement": "inline",
+      "anchor": "„Wir können im Hintergrund arbeiten. Aber das müssen wir sauber vereinbaren.“",
+      "title": "Datenschutz bei zusätzlichen Dienstleistern",
+      "description": "Art. 28 DSGVO regelt Auftragsverarbeitung und weitere Auftragsverarbeiter. Ob die fiktive Servicegesellschaft ein Unterauftragsverarbeiter wäre, hängt von den tatsächlichen Datenflüssen, Rollen und Verträgen ab; es folgt nicht allein aus dem Konzernverhältnis.",
+      "publisher": "Europäische Union",
+      "source_title": "Datenschutz-Grundverordnung – Art. 28",
+      "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679"
+    },
+    {
+      "id": "payment",
+      "placement": "further",
+      "title": "Zahlungsdienstleister und verteilte Pflichten",
+      "description": "Das PCI Security Standards Council erläutert Nachweise und Zuständigkeiten zwischen Third-Party-Service-Providern und ihren Kunden. Ein auf die alte Agentur registriertes Payment-Konto ist für sich genommen noch kein nachgewiesener PCI-DSS-Verstoß.",
+      "publisher": "PCI Security Standards Council",
+      "source_title": "FAQ 1576: Nachweise und Zuständigkeiten von Drittanbietern",
+      "url": "https://www.pcisecuritystandards.org/faqs/1576/"
+    },
+    {
+      "id": "patches",
+      "placement": "further",
+      "title": "Wartung dokumentieren, bevor ihr Zustand bewertet wird",
+      "description": "Das BSI fordert für Patch- und Änderungsmanagement geregelte Zuständigkeiten, Bewertung, Genehmigung und Dokumentation. Ein nicht verifizierter Wartungsstand beweist nicht, dass keine Updates erfolgt sind.",
+      "publisher": "BSI",
+      "source_title": "OPS.1.1.3 Patch- und Änderungsmanagement (PDF)",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2022/04_OPS_Betrieb/OPS_1_1_3_Patch_und_Aenderungsmanagement_Edition_2022.pdf?__blob=publicationFile&v=3"
+    }
+  ]
+}
