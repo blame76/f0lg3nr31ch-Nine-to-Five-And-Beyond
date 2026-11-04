@@ -3,6 +3,7 @@ import path from 'node:path';
 import {root,readJson,escapeHtml,escapeMeta,normUrl,absoluteUrl,validateManifest,markdownToHtml} from './lib.mjs';
 import {about,imprint,privacy,license} from './pages.mjs';
 import {renderCampaignImage} from './social-image.mjs';
+import {renderLlmsTxt,renderRss,renderNotFound} from './discovery.mjs';
 
 const config=readJson('config/site.json');
 const manifest=readJson('content/chapters/index.json');
@@ -33,6 +34,7 @@ function page({title,description=config.description,slug='',type='website',body,
  '<meta name="twitter:description" content="'+em(ogDescription||description)+'">',
  '<meta name="twitter:card" content="summary_large_image">',
  ...(type==='chapter'?['<meta name="author" content="'+em(config.author_name)+'">']:[]),
+ ...(ready?['<link rel="alternate" type="application/rss+xml" title="Romanfolgen" href="'+em(abs('feed.xml'))+'">']:[]),
  '<link rel="stylesheet" href="/style.css">'
  ];
  if(site){
@@ -46,6 +48,7 @@ function page({title,description=config.description,slug='',type='website',body,
    head.push('<meta property="og:image:alt" content="'+em(ogAlt)+'">');
    head.push('<meta name="twitter:image" content="'+em(abs(ogImage))+'">');
  }
+ if(site) head.push('<link rel="describedby" type="text/plain" href="'+em(abs('llms.txt'))+'">');
  if(ready && schema) head.push(structured(schema));
  return '<!doctype html><html lang="de"><head><title>'+em(fullTitle)+'</title>'+head.join('')+'</head><body>'+
  '<a class="skip" href="#main">Zum Inhalt springen</a>'+
@@ -57,14 +60,14 @@ const list=manifest.chapters;
 for(const chapter of list)output(chapter.campaign.image,renderCampaignImage(chapter));
 const indexItems=list.map((c,i)=>'<li><a href="/roman/'+e(c.id)+'/">'+e(c.title)+'</a><small>Folge '+(i+1)+' · '+e(c.description)+'</small><small>Fiktive Agenturkampagne: '+e(c.campaign.headline)+' '+e(c.campaign.subheadline)+'</small></li>').join('');
 const items='<ol class="list">'+indexItems+'</ol>';
-const book={'@context':'https://schema.org','@type':'Book',name:'f0lg3nr31ch – Nine to Five. And Beyond.',inLanguage:'de',genre:'Roman',author:{'@type':'Person',name:config.author_name},isAccessibleForFree:true};
-output('index.html',page({title:'Nine to Five. And Beyond.',body:'<section class="hero"><p class="eyebrow">Fortsetzungsroman</p><h1>f0lg3nr31ch</h1><p class="lead">Nine to Five. And Beyond.</p><p>Ein fortlaufender Agenturroman über Menschen, Arbeit und die Folgen ihrer Entscheidungen.</p></section><section><h2>Die Geschichten</h2>'+items+'<p><a href="/experiment/">Wie entsteht dieser Roman?</a></p></section>',schema:{'@context':'https://schema.org','@type':'WebSite',name:config.name,alternateName:'Folgenreich',url:site,description:config.description}}));
+const book={'@context':'https://schema.org','@type':'Book','@id':abs('roman/#book'),url:abs('roman/'),name:'f0lg3nr31ch – Nine to Five. And Beyond.',inLanguage:'de',genre:'Roman',author:{'@type':'Person',name:config.author_name},isAccessibleForFree:true};
+output('index.html',page({title:'Nine to Five. And Beyond.',body:'<section class="hero"><p class="eyebrow">Fortsetzungsroman</p><h1>f0lg3nr31ch</h1><p class="lead">Nine to Five. And Beyond.</p><p>Ein fortlaufender Agenturroman über Menschen, Arbeit und die Folgen ihrer Entscheidungen.</p></section><section><h2>Die Geschichten</h2>'+items+'<p><a href="/experiment/">Wie entsteht dieser Roman?</a></p></section>',schema:{'@context':'https://schema.org','@type':'WebSite','@id':abs('#website'),name:config.name,alternateName:'Folgenreich',url:site+'/',inLanguage:'de',description:config.description}}));
 output('roman/index.html',page({title:'Alle Folgen',slug:'roman/',body:'<section class="hero"><p class="eyebrow">Roman</p><h1>Alle Folgen</h1><p>Geschichten aus dem Alltag einer fiktiven Agentur.</p></section>'+items,schema:book}));
 for(let i=0;i<list.length;i++){
  const c=list[i],raw=readFileSync(path.join(root,c.path),'utf8').replace(/^# [^\n]+\n+/,'');
  const prev=i?'<a href="/roman/'+e(list[i-1].id)+'/">← Vorherige Folge</a>':'';
  const next=i+1<list.length?'<a href="/roman/'+e(list[i+1].id)+'/">Nächste Folge →</a>':'';
- const chapter={'@context':'https://schema.org','@type':'Chapter',name:c.title,description:c.description,inLanguage:'de',url:abs('roman/'+c.id+'/'),isPartOf:{'@type':'Book',name:book.name},author:{'@type':'Person',name:config.author_name}};
+ const chapter={'@context':'https://schema.org','@type':'Chapter','@id':abs('roman/'+c.id+'/#chapter'),name:c.title,description:c.description,inLanguage:'de',url:abs('roman/'+c.id+'/'),position:i+1,isPartOf:{'@type':'Book','@id':book['@id'],name:book.name,url:book.url},author:{'@type':'Person',name:config.author_name}};
  const campaign=c.campaign;
  const bridge='<aside class="campaign-bridge" aria-label="Fiktive Agenturkommunikation"><p class="eyebrow">Aus der fiktiven Agentur · '+e(campaign.category)+'</p>'+
  '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
@@ -83,6 +86,9 @@ for(const [slug,title,body] of [['experiment','Über das Experiment',about],['im
 if(ready){
  const slugs=['','roman/',...list.map(c=>'roman/'+c.id+'/'),'experiment/','impressum/','datenschutz/','lizenz/'];
  output('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+slugs.map(s=>'<url><loc>'+e(abs(s))+'</loc></url>').join('')+'</urlset>');
+ output('feed.xml',renderRss({site,config,chapters:list}));
 }
 output('robots.txt','User-agent: *\nAllow: /\n'+(ready?'Sitemap: '+abs('sitemap.xml')+'\n':''));
+output('llms.txt',renderLlmsTxt({site,config,chapters:list,ready}));
+output('404.html',renderNotFound());
 console.log('Pages build finished: '+list.length+' chapters; SEO index '+(ready?'ENABLED':'DISABLED')+'; URL '+(site||'not set'));
