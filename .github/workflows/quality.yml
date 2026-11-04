@@ -18,3 +18,6 @@ jobs:
       - run: npm run build
       - run: test -f dist/share-preview.png
       - run: test -f dist/roman/how-to-service/index.html
+      - run: test -f dist/404.html
+      - run: test -f dist/llms.txt
+      - run: test ! -f dist/feed.xml && test ! -f dist/sitemap.xml

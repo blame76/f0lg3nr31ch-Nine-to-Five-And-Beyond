@@ -27,3 +27,15 @@ The image headline is **not** the same as the SEO title: social teasers can soun
 - If and when independent researched background articles are published, link them as distinct human-readable resources with attributed primary sources; do not hide separate “machine-readable” essays.
 
 Google Search Central: https://developers.google.com/search/docs/appearance/ai-features and https://developers.google.com/search/docs/appearance/structured-data/sd-policies
+
+
+## Unsichtbare Discovery-Artefakte (04.11.2026)
+
+- `/404.html` verhindert bei Cloudflare Pages den SPA-Fallback für unbekannte Pfade: Fehlt eine Agentenressource, ist die Antwort eine echte 404 statt HTML unter einem Ressourcennamen.
+- `/llms.txt` entsteht beim Build aus der bestehenden Konfiguration und dem freigegebenen Kapitelmanifest. Das Dokument erklärt Fiktion und menschliche redaktionelle Verantwortung. Kapitelverweise erscheinen ausschließlich bei vollständiger Releasefreigabe. Das Format ist experimentell und kein Google-Rankingfaktor.
+- Nach Freigabe werden `/sitemap.xml`, `/feed.xml` (RSS 2.0) und konsistente Book-/Chapter-JSON-LD-Identitäten ausgeliefert. RSS erfindet keine Veröffentlichungsdaten, denn das Manifest enthält aktuell nur Freigabedaten. Ohne Freigabe existieren Sitemap, RSS und JSON-LD nicht; alle Seiten bleiben `noindex`.
+- Es gibt bewusst keinen `ai-catalog.json` oder `ard.json`: Die statische Literaturseite bietet keine aufrufbaren Agenten/Tools. Keine JobPosting-/LocalBusiness-Daten für die fiktive Agentur.
+- `robots.txt` bleibt offen für Crawler, aber `noindex` ist bis zur bewussten Freigabe maßgeblich. Such-Crawling und KI-Training sind separate Entscheidungen; kein willkürliches Blockieren/Erlauben einzelner Bots ohne Autorentscheidung.
+- HTTP-Status, Content-Type und Suchindexierung müssen nach Deployment live geprüft werden; CI validiert lediglich die lokalen Buildartefakte.
+
+Quellen: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide ; https://developers.cloudflare.com/pages/configuration/serving-pages/ ; https://llmstxt.org/
