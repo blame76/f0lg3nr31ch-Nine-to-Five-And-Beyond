@@ -4,12 +4,13 @@ const e = escapeHtml;
 const safeUrl = value => typeof value==='string' && /^https:\/\/[^\s<>"']+$/.test(value);
 const key = id => 'hintergrund-'+id;
 
-export function validateResearchSources(chapterText, catalog) {
+export function validateResearchSources(chapterText, catalog, expectedChapterId=catalog?.chapter_id) {
   const errors=[];
-  if(catalog?.schema_version!==1 || catalog?.chapter_id!=='how-to-service' || !Array.isArray(catalog?.sources)) return ['Ungültiger Quellenkatalog'];
+  if(catalog?.schema_version!==1 || catalog?.chapter_id!==expectedChapterId || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(expectedChapterId||'') || !Array.isArray(catalog?.sources)) return ['Ungültiger Quellenkatalog'];
   if(!/^\d{4}-\d{2}-\d{2}$/.test(catalog.reviewed_on||'')) errors.push('Fehlendes Quellen-Prüfdatum');
   if(!catalog.editorial_note || catalog.editorial_note.length<30) errors.push('Fehlende redaktionelle Einordnung');
   const ids=new Set(), html=markdownToHtml(chapterText);
+  let lastAnchorPosition=-1;
   for(const source of catalog.sources) {
     if(!source || typeof source!=='object') {errors.push('Ungültiger Quelleneintrag');continue;}
     if(!/^[a-z0-9-]+$/.test(source.id||'') || ids.has(source.id)) errors.push('Doppelte oder ungültige Quellen-ID: '+source.id);
@@ -19,15 +20,17 @@ export function validateResearchSources(chapterText, catalog) {
     for(const field of ['title','description','publisher','source_title']) if(typeof source[field]!=='string' || source[field].trim().length<(field==='publisher'?3:8)) errors.push('Fehlendes Quellenfeld '+field+': '+source.id);
     if(source.placement==='inline') {
       if(typeof source.anchor!=='string'||source.anchor.length<18 || chapterText.split(source.anchor).length!==2 || html.split(e(source.anchor)).length!==2) errors.push('Textanker fehlt oder ist nicht eindeutig: '+source.id);
+      else { const index=chapterText.indexOf(source.anchor); if(index<=lastAnchorPosition) errors.push('Textanker nicht in Lesereihenfolge: '+source.id); lastAnchorPosition=index; }
     } else if(source.anchor) errors.push('Vertiefungsquelle darf keinen Textanker haben: '+source.id);
   }
-  if(catalog.sources.filter(s=>s.placement==='inline').length!==6) errors.push('Erwartet werden sechs dezente Textverweise');
-  if(catalog.sources.filter(s=>s.placement==='further').length!==2) errors.push('Erwartet werden zwei zusätzliche Vertiefungen');
+  const inlineCount=catalog.sources.filter(s=>s.placement==='inline').length;
+  if(inlineCount<1 || inlineCount>6) errors.push('Verlinkte Folge: 1 bis 6 dezente Textverweise erlaubt');
+  if(catalog.sources.filter(s=>s.placement==='further').length>4) errors.push('Maximal vier zusätzliche Vertiefungen');
   return errors;
 }
 
-export function renderResearchChapter(chapterText, catalog) {
-  const errors=validateResearchSources(chapterText,catalog);
+export function renderResearchChapter(chapterText, catalog, expectedChapterId=catalog?.chapter_id) {
+  const errors=validateResearchSources(chapterText,catalog,expectedChapterId);
   if(errors.length) throw new Error(errors.join('\n'));
   let html=markdownToHtml(chapterText), i=0;
   for(const source of catalog.sources.filter(s=>s.placement==='inline')) {
@@ -45,7 +48,7 @@ export function renderResearchChapter(chapterText, catalog) {
     '<p class="eyebrow">Hinter der Geschichte</p><h2 id="research-notes-title">Weiterführende Hintergründe</h2>'+
     '<p>'+e(catalog.editorial_note)+'</p>'+
     '<ol class="research-list">'+inline.map((s,j)=>item(s,j+1)).join('')+'</ol>'+
-    '<h3 class="research-more">Weitere Vertiefungen</h3><ul class="research-list research-further">'+further.map(s=>item(s,null)).join('')+'</ul>'+
+    (further.length?'<h3 class="research-more">Weitere Vertiefungen</h3><ul class="research-list research-further">'+further.map(s=>item(s,null)).join('')+'</ul>':'')+
     '<p class="research-date">Quellen redaktionell geprüft am '+e(catalog.reviewed_on.split('-').reverse().join('.'))+'. Rechts- und Sicherheitsfragen erfordern immer die Prüfung des konkreten Einzelfalls.</p></section>';
   return {chapterHtml:html,notesHtml:notes};
 }

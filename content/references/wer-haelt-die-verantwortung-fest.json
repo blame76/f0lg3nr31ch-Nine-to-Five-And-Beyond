@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "chapter_id": "wer-haelt-die-verantwortung-fest",
+  "reviewed_on": "2026-11-04",
+  "editorial_note": "Diese Quellen erläutern fachliche Zusammenhänge hinter einer erfundenen Umstrukturierung. Sie belegen keine konkreten Organisationsfehler, Vertragsverletzungen oder persönliche Verantwortung der Romanfiguren.",
+  "sources": [
+    {
+      "id": "capacity",
+      "placement": "inline",
+      "anchor": "Neu war, dass beide inzwischen zu unterschiedlichen Gesellschaften gehörten und die Stunden nicht mehr einfach zwischen den Teams verschoben werden konnten.",
+      "title": "Kapazität lässt sich nicht allein durch eine Organigramm-Linie verschieben",
+      "description": "Atlassians Praxisanleitung erfasst tatsächliche verfügbare Arbeitsstunden einschließlich Störungsbehebung, Abstimmungen und ungeplanter Arbeit. Das hilft zu verstehen, warum neue Organisationsgrenzen auch verbindliche Kapazitätsentscheidungen brauchen.",
+      "publisher": "Atlassian",
+      "source_title": "Kapazitätsplanung im Team",
+      "url": "https://www.atlassian.com/de/team-playbook/plays/capacity-planning"
+    },
+    {
+      "id": "ownerless",
+      "placement": "inline",
+      "anchor": "In der ursprünglichen Agentur war aber auch keine neue Verantwortlichkeit hinterlegt.",
+      "title": "Nicht zugewiesene Zuständigkeiten sichtbar machen",
+      "description": "Atlassians Rollen-Workshop sieht ausdrücklich eine Sammlung nicht zugeteilter Aufgaben vor, die geklärt und einem verantwortlichen Rolleninhaber zugeordnet werden. Das trifft den Kern des fiktiven Reimers-Eintrags.",
+      "publisher": "Atlassian",
+      "source_title": "Rollen und Zuständigkeiten definieren",
+      "url": "https://www.atlassian.com/de/team-playbook/plays/roles-and-responsibilities"
+    },
+    {
+      "id": "service-takeover",
+      "placement": "inline",
+      "anchor": "„Aber ich habe niemanden dafür eingeplant.“",
+      "title": "Betriebsverantwortung setzt eine vorbereitete Übernahme voraus",
+      "description": "Google SRE beschreibt die abgestimmte Aufnahme von Produktionsdiensten und die Prüfung der Betriebsreife. Die Serviceleitung kann eine Bestandsaufnahme anbieten, ohne dadurch schon Regelbetrieb oder Ressourcen zuzusagen.",
+      "publisher": "Google SRE",
+      "source_title": "The Evolving SRE Engagement Model",
+      "url": "https://sre.google/sre-book/evolving-sre-engagement-model/"
+    },
+    {
+      "id": "incident-vs-service",
+      "placement": "inline",
+      "anchor": "„Beim Vorfall. Nicht beim laufenden Vertrag.“",
+      "title": "Akute Störungsbearbeitung und dauerhafter Service sind verschiedene Aufgaben",
+      "description": "Google SRE beschreibt klare Rollen für die Bearbeitung und Kommunikation eines Incidents. Das ist nicht dasselbe wie eine langfristige vertragliche Betriebszusage – genau diese Differenz macht Alex deutlich.",
+      "publisher": "Google SRE",
+      "source_title": "Managing Incidents",
+      "url": "https://sre.google/sre-book/managing-incidents/"
+    },
+    {
+      "id": "decision-rights",
+      "placement": "inline",
+      "anchor": "„Wissen, was ich entscheiden darf.“",
+      "title": "Wer bereitet eine Entscheidung vor – und wer trifft sie?",
+      "description": "Das DACI-Modell benennt Driver, Approver, Contributors und Informed. Es zeigt, warum der Wunsch nach Entscheidungsbefugnissen etwas Konkreteres ist als ein allgemeiner Appell zu Selbstorganisation.",
+      "publisher": "Atlassian",
+      "source_title": "DACI-Framework zur Entscheidungsfindung",
+      "url": "https://www.atlassian.com/de/team-playbook/plays/daci"
+    },
+    {
+      "id": "service-promise",
+      "placement": "inline",
+      "anchor": "„Ich will dir keinen Vorwurf machen, Martin. Ich möchte nur wissen, wofür wir jeden Monat bezahlen.“",
+      "title": "Was genau ist die versprochene Serviceleistung?",
+      "description": "Das SRE-Handbuch unterscheidet tatsächliche Messwerte, Qualitätsziele und vertragliche Leistungsvereinbarungen. Eine monatliche Rechnung erklärt nicht den Leistungsumfang; ob eine bestimmte Zusage verletzt wurde, lässt sich ohne den konkreten Vertrag nicht beurteilen.",
+      "publisher": "Google SRE",
+      "source_title": "Service Level Objectives",
+      "url": "https://sre.google/sre-book/service-level-objectives/"
+    }
+  ]
+}

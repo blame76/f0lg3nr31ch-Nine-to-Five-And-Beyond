@@ -33,7 +33,12 @@
         "accent": "#D1DFE3"
       },
       "approved_by": "Benjamin Lam",
-      "approved_at": "2026-11-04"
+      "approved_at": "2026-11-04",
+      "research": {
+        "status": "linked",
+        "path": "content/references/die-null-am-ende.json",
+        "reviewed_on": "2026-11-04"
+      }
     },
     {
       "id": "wer-haelt-die-verantwortung-fest",
@@ -67,7 +72,12 @@
         "accent": "#BFD3CA"
       },
       "approved_by": "Benjamin Lam",
-      "approved_at": "2026-11-04"
+      "approved_at": "2026-11-04",
+      "research": {
+        "status": "linked",
+        "path": "content/references/wer-haelt-die-verantwortung-fest.json",
+        "reviewed_on": "2026-11-04"
+      }
     },
     {
       "id": "how-to-service",
@@ -101,7 +111,12 @@
         "accent": "#E1D3BD"
       },
       "approved_by": "Benjamin Lam",
-      "approved_at": "2026-11-04"
+      "approved_at": "2026-11-04",
+      "research": {
+        "status": "linked",
+        "path": "content/references/how-to-service.json",
+        "reviewed_on": "2026-11-04"
+      }
     }
   ]
 }
