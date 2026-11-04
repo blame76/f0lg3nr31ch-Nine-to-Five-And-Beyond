@@ -15,7 +15,7 @@ test('Sechs dezente Fußnoten im Prosatext, acht Belege nach dem Text',()=>{
  assert.equal((notesHtml.match(/<li id="hintergrund-/g)||[]).length,8);
  assert.match(notesHtml,/Hinter der Geschichte/);
  assert.match(notesHtml,/2026/);
- assert.match(chapterHtml,/Das Feld <em>Betriebsübernahme bestätigt<\/em>/);
+ assert.match(chapterHtml,/<em>Betriebsübernahme bestätigt\.<\/em>/);
  assert.doesNotMatch(chapterHtml,/PCI Security Standards Council|https:\/\/sre.google/);
 });
 test('Drift durch Änderung oder doppelte Verankerung fällt auf',()=>{
