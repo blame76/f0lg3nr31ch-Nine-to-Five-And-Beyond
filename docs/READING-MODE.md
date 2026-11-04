@@ -23,3 +23,7 @@ The chapter-specific Open Graph images remain in the HTML `<head>` as absolute U
 ## Automated regression
 
 Tests verify the order article → pagination → fictional campaign and ensure that no internal status notice, visible share preview image or editorial drafting label is rendered. They also check author metadata and header spacing.
+
+## Recherchierte Hintergründe (Folge 3)
+
+Die sechs sehr kleinen Quellenmarker sind echte Textlinks auf die Quellenliste **nach** dem Romanartikel und der Folgennavigation. Die externe Fachquellen-Liste ist kein Teil der Prosa und bleibt außerhalb der nativen Leseansicht. Ausdrucke enthalten nur den literarischen Text. Details: [RESEARCH-SOURCES.md](RESEARCH-SOURCES.md). Beim manuellen Reader-View-Test auf störende Markierungen achten; die Funktion selbst wird vom Browser entschieden.

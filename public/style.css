@@ -35,3 +35,19 @@ a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}a:
 .footer-disclosure a{color:inherit}
 @media(max-width:520px){.header-inner{padding:1.1rem 1.25rem}.reader{margin:2.2rem auto 2.8rem}.afterword{margin:3rem auto 4rem}}
 @media print{.site-header,.site-footer,.skip,.pager,.afterword{display:none!important}main.wrap{max-width:100%;padding:0}.reader{max-width:100%;margin:0;color:#000;font-size:11pt;line-height:1.55}.chapter-heading{margin:0 0 1.5rem}a{color:#000}}
+
+/* Fachliche Randnotizen: Text bleibt Literatur, Details erst nach der Folge. */
+.research-sup{font-family:system-ui,-apple-system,sans-serif;font-size:.66em;line-height:0;vertical-align:super;white-space:nowrap}
+.research-marker{display:inline-block;min-width:1.2em;padding:0 .22em;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line);font-weight:650}
+.research-marker:hover{text-decoration:underline;text-underline-offset:2px}
+.research-notes{max-width:74ch;margin:0 auto 3rem;padding:1.25rem 0 2.5rem;border-bottom:1px solid var(--line);font-size:.92rem;line-height:1.65}
+.research-notes>h2{font-size:1.4rem;letter-spacing:-.02em;line-height:1.35;margin:.2rem 0 .8rem}
+.research-notes>p{color:var(--muted)}
+.research-list{list-style:none;margin:1.5rem 0 1.8rem;padding:0;display:grid;gap:1.5rem}
+.research-list li{border-top:1px solid var(--line);padding-top:.95rem;scroll-margin-top:1rem}
+.research-list h3{font-size:1rem;margin:0 0 .35rem;line-height:1.4}
+.research-list p{margin:.3rem 0}
+.research-list li p:last-child{font-size:.87rem}
+.research-more{font-size:1.05rem;margin:2rem 0 0}
+.research-date{font-size:.78rem}
+@media print{.research-sup,.research-notes{display:none!important}}
