@@ -17,8 +17,9 @@ const errors=validateManifest(config,manifest);
 if(errors.length) throw new Error(errors.join('\n'));
 const site=normUrl(config.site_url);
 const ready=!!site && config.release_approved===true && config.legal_reviewed_for_launch===true && manifest.chapters.length>0 && manifest.chapters.every(c=>c.status==='approved');
-// The author opted in to indexing already-public informational pages, not unapproved chapter texts.
+// Indexing decisions are independent of the legal/full-release gate.
 const publicIndexReady=!!site && config.public_pages_indexing_approved===true;
+const chapterIndexReady=!!site && config.published_chapters_indexing_approved===true;
 const dist=path.join(root,'dist');
 rmSync(dist,{recursive:true,force:true});mkdirSync(dist,{recursive:true});
 cpSync(path.join(root,'public'),dist,{recursive:true});
@@ -60,12 +61,12 @@ const abs=p=>absoluteUrl(site,p);
 const e=escapeHtml, em=escapeMeta;
 function output(f,body){const target=path.join(dist,f);mkdirSync(path.dirname(target),{recursive:true});writeFileSync(target,body,'utf8');}
 function structured(obj){return '<script type="application/ld+json">'+JSON.stringify(obj).replace(/</g,'\\u003c')+'</script>';}
-function page({title,description=config.description,slug='',type='website',body,schema=null,ogTitle=null,ogDescription=null,ogImage='share-preview.png',ogAlt='f0lg3nr31ch – Nine to Five. And Beyond. Fiktiver Agenturroman und Experiment.'}){
+function page({title,description=config.description,slug='',type='website',body,schema=null,ogTitle=null,ogDescription=null,ogImage='share-preview.png',ogAlt='f0lg3nr31ch – Nine to Five. And Beyond. Fiktiver Agenturroman und Experiment.',indexApprovedChapter=false}){
  const url=abs(slug),fullTitle=title+' | f0lg3nr31ch';
  const head=[
  '<meta charset="utf-8">',
  '<meta name="viewport" content="width=device-width, initial-scale=1">',
- '<meta name="robots" content="'+(ready || (publicIndexReady && type!=='chapter')?'index,follow':'noindex,follow')+'">',
+ '<meta name="robots" content="'+(ready || (publicIndexReady && type!=='chapter') || (chapterIndexReady && type==='chapter' && indexApprovedChapter)?'index,follow':'noindex,follow')+'">',
  '<meta name="description" content="'+em(description)+'">',
  '<meta property="og:site_name" content="'+em('f0lg3nr31ch – Nine to Five. And Beyond.')+'">',
  '<meta property="og:type" content="'+(type==='chapter'?'article':'website')+'">',
@@ -91,7 +92,7 @@ function page({title,description=config.description,slug='',type='website',body,
    head.push('<meta name="twitter:image" content="'+em(abs(ogImage))+'">');
  }
  if(site) head.push('<link rel="describedby" type="text/plain" href="'+em(abs('llms.txt'))+'">');
- if(ready && schema) head.push(structured(schema));
+ if(schema && (ready || (chapterIndexReady && type==='chapter' && indexApprovedChapter))) head.push(structured(schema));
  return '<!doctype html><html lang="de"><head><title>'+em(fullTitle)+'</title>'+head.join('')+'</head><body>'+
  '<a class="skip" href="#main">Zum Inhalt springen</a>'+
  '<header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">f0lg3nr31ch<span class="tagline">Nine to Five. And Beyond.</span></a><nav aria-label="Hauptnavigation"><a href="/roman/">Roman</a><a href="/experiment/">Über das Projekt</a></nav></div></header>'+
@@ -152,20 +153,20 @@ for(let i=0;i<list.length;i++){
  '<div class="chapter-text">'+chapterHtml+'</div></article>'+
  '<nav class="pager" aria-label="Folgen-Navigation">'+prev+next+'</nav>'+research.notesHtml+
  '<div class="afterword" aria-label="Hintergründe zur Folge">'+bridge+'</div>';
- output('roman/'+c.id+'/index.html',page({title:campaign.seo_title,description:campaign.seo_description,ogTitle:campaign.social_title,ogDescription:campaign.social_description,ogImage:campaign.image,ogAlt:campaign.image_alt,slug:'roman/'+c.id+'/',type:'chapter',body,schema:chapter}));
+ output('roman/'+c.id+'/index.html',page({title:campaign.seo_title,description:campaign.seo_description,ogTitle:campaign.social_title,ogDescription:campaign.social_description,ogImage:campaign.image,ogAlt:campaign.image_alt,slug:'roman/'+c.id+'/',type:'chapter',indexApprovedChapter:c.status==='approved',body,schema:chapter}));
 }
 for(const [slug,title,body] of [['experiment','Über das Experiment',about],['impressum','Impressum',imprint],['datenschutz','Datenschutz',privacy],['lizenz','Lizenz und Urheberschaft',license]]){
  output(slug+'/index.html',page({title,slug:slug+'/',body}));
 }
-if(ready || publicIndexReady){
+if(ready || publicIndexReady || chapterIndexReady){
  // Only indexable URLs belong in the sitemap; no unapproved chapter URLs.
- const slugs=['','roman/',...(ready?list.map(c=>'roman/'+c.id+'/'):[]),'experiment/','impressum/','datenschutz/','lizenz/','partnerwelt/','partnerwelt/palettenpalaver/','partnerwelt/belegballett/','partnerwelt/warteschleifenwunder/',...SOCIAL_SLUGS];
+ const slugs=['','roman/',...((ready || chapterIndexReady)?list.filter(c=>c.status==='approved').map(c=>'roman/'+c.id+'/'):[]),'experiment/','impressum/','datenschutz/','lizenz/','partnerwelt/','partnerwelt/palettenpalaver/','partnerwelt/belegballett/','partnerwelt/warteschleifenwunder/',...SOCIAL_SLUGS];
  output('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+slugs.map(s=>'<url><loc>'+e(abs(s))+'</loc></url>').join('')+'</urlset>');
 }
 if(ready)output('feed.xml',renderRss({site,config,chapters:list}));
 output('robots.txt','User-agent: *\nAllow: /\n'+(ready || publicIndexReady?'Sitemap: '+abs('sitemap.xml')+'\n':''));
-output('llms.txt',renderLlmsTxt({site,config,chapters:list,ready,publicIndexReady}));
+output('llms.txt',renderLlmsTxt({site,config,chapters:list,ready,publicIndexReady,chapterIndexReady}));
 output('.well-known/ard.json',renderArdManifest());
 output('.well-known/ai-catalog.json',renderLegacyAiCatalog());
 output('404.html',renderNotFound());
-console.log('Pages build finished: '+list.length+' chapters; SEO index '+(ready?'ENABLED':'DISABLED')+'; URL '+(site||'not set'));
+console.log('Pages build finished: '+list.length+' chapters; approved chapter indexing '+(ready || chapterIndexReady?'ENABLED':'DISABLED')+'; full release '+(ready?'ENABLED':'PENDING')+'; URL '+(site||'not set'));
