@@ -115,11 +115,30 @@ for(let i=0;i<list.length;i++){
   ? (()=>{if(!research.chapterHtml.includes(adAnchor))throw new Error('Admin book-ad placement anchor missing');
      return research.chapterHtml.replace(adAnchor,adAnchor+renderAdminBookAd());})()
   : research.chapterHtml;
+ // Explicitly labelled fictional advertising is a separate reader-layer insertion;
+ // neither the approved prose nor research markers are rewritten.
+ if(c.id==='verfuegbar'){
+   const timeAnchor='<p>Noch gut drei Stunden.</p>';
+   if(!chapterHtml.includes(timeAnchor))throw new Error('Verfügbar: ad anchor missing');
+   const fictionalAd='<aside class="fictional-sla-ad" aria-labelledby="fictional-sla-heading">'+
+    '<p class="eyebrow">Anzeige · fiktive Werbung aus der Partnerwelt</p>'+
+    '<h2 id="fictional-sla-heading">Vier Stunden. Zwei Uhren.</h2>'+
+    '<p>Vier Stunden Reaktionszeit? Das hängt davon ab, welche Uhr läuft. Ein kurzer, erklärender Social-Post einer erfundenen Servicefirma.</p>'+
+    '<p><a href="/partnerwelt/share/vier-stunden-zwei-uhren/">Anzeige ansehen und die zwei Uhren vergleichen →</a></p>'+
+    '<p class="fictional-ad-note">Fiktive Kampagne aus f0lg3nr31ch. Keine echte Serviceleistung.</p></aside>';
+   chapterHtml=chapterHtml.replace(timeAnchor,timeAnchor+fictionalAd);
+ }
  const prev=i?'<a href="/roman/'+e(list[i-1].id)+'/">← Vorherige Folge</a>':'';
  const next=i+1<list.length?'<a href="/roman/'+e(list[i+1].id)+'/">Nächste Folge →</a>':'';
  const chapter={'@context':'https://schema.org','@type':'Chapter','@id':abs('roman/'+c.id+'/#chapter'),name:c.title,description:c.description,inLanguage:'de',url:abs('roman/'+c.id+'/'),position:i+1,isPartOf:{'@type':'Book','@id':book['@id'],name:book.name,url:book.url},author:{'@type':'Person',name:config.author_name}};
  const campaign=c.campaign;
- const bridge=campaign.recipe_card
+ const bridge=campaign.streaming_card
+ ? '<aside class="campaign-bridge" aria-label="Fiktive Streamingwerbung: prscnm"><p class="eyebrow">Anzeige · Fiktive Streamingkampagne · Romanfolge '+(i+1)+'</p>'+
+   '<h2>'+e('prscnm – Es wird wieder spät.')+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
+   '<p>'+e(campaign.promise)+'</p><p class="campaign-context">'+e(campaign.context)+'</p>'+
+   '<p><a href="/partnerwelt/prscnm/">Fiktiven Streamingkanal prscnm entdecken →</a></p>'+
+   '<p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman – der Kanal, die Serien und die Angebote sind erfunden; es gibt keine Abos.</p></aside>'
+ : campaign.recipe_card
  ? '<aside class="campaign-bridge" aria-label="Rezept aus der fiktiven Admin-Küche"><p class="eyebrow">Aus der fiktiven Admin-Küche · Romanfolge '+(i+1)+'</p>'+
  '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
  '<p>'+e(campaign.promise)+'</p><p class="campaign-context">'+e(campaign.context)+'</p>'+
