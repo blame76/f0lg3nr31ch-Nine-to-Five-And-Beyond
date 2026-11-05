@@ -4,6 +4,8 @@ Ein fortlaufender Agenturroman. Die Agentur, ihre Stellenangebote und Servicever
 
 **Lesen:** https://folgenreich.benjamin-lam.de
 
+**Partnerwelt:** https://folgenreich.benjamin-lam.de/partnerwelt/ – drei fiktive, ausdrücklich gekennzeichnete Firmen mit praxisnahen Angeboten und eigens generierten KI-Bildern.
+
 ## Die Geschichten
 
 1. Die Null am Ende

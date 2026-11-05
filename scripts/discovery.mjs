@@ -19,6 +19,7 @@ export function renderLlmsTxt({site,config,chapters,ready}) {
  lines.push('## Projekt und Kontext','',
   '- [Startseite]('+base+'/): Offizielle Projektseite und Einstieg in die fiktive Romanwelt.',
   '- [Romanübersicht]('+base+'/roman/): Reihenfolge und kurze Einordnung der Folgen.',
+  '- [Partnerwelt]('+base+'/partnerwelt/): Drei vollständig fiktive Dienstleister mit fachlich plausiblen Beispielen zu Fulfillment, Commerce Operations und Kundenservice; Teamabbildungen sind KI-generiert.',
   '- [Über das Experiment]('+base+'/experiment/): Entstehung, KI-Einsatz und Fiktionskennzeichnung.',
   '- [Lizenz und Urheberschaft]('+base+'/lizenz/): Bedingungen und Grenzen der Nachnutzung.',
   '');
