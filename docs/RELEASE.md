@@ -20,6 +20,12 @@ Der Reader zeigt die Lesertexte, nicht redaktionelle Aufgaben oder interne Freig
 
 **Die Kapitel bleiben bis zur vollständigen Veröffentlichungsfreigabe `noindex,follow`** und fehlen weiterhin in der Sitemap, im RSS-Feed und in einzelnen Kapitel-Links der `llms.txt`. `legal_reviewed_for_launch=false` und `release_approved=false` bleiben bewusst unverändert. Das technische Freigabe-Gate wird erst nach tatsächlichem Rechtsreview und einem gesonderten Release-Beschluss aktiviert. Der technische Status darf nicht in der Leserfassung erscheinen.
 
+## Partnerwelt – eigenständiger Veröffentlichungsbereich (05.11.2026)
+
+Auf ausdrücklichen Veröffentlichungsauftrag des Autors wird die freigegebene Partnerwelt unter `/partnerwelt/` mit drei Firmen-Unterseiten als eigenständige fiktionale Informationsseiten ausgeliefert. Alle abgebildeten Teams sind KI-generiert und sichtbar gekennzeichnet. Fachliche Referenz-Anbieterlinks wurden zugunsten klickbarer Fiktionshinweise entfernt. Die rechtlichen Unterseiten innerhalb der Partnerwelt bleiben `noindex`; die vier redaktionellen Firmen-/Übersichtsseiten sind als öffentliche Informationsseiten indexierbar. Das ist **keine** zusätzliche juristische Freigabe der Romanfolgen.
+
+Die geprüfte HTML-/Asset-Fassung liegt als deterministisches Release-Bundle unter `bundles/partnerwelt-2026-11-05.tar.gz.base64` und wird beim Reader-Build mit SHA-256-Prüfung in `dist/partnerwelt/` entpackt. Dies vermeidet Änderungen an bestehenden Reader- und Kapiteldateien; spätere redaktionelle Änderungen erfordern ein neues geprüftes Bundle. Kapitel bleiben `noindex`, bis die getrennten Freigabegates erfüllt sind.
+
 ## Herkunft und Leserfassung
 
 Im Manifest stehen Verweise auf die Textquellen. Für die Leserfassung wurden ausschließlich editorische Fassungs-Untertitel entfernt; die Prosatexte blieben unverändert. Die ursprünglichen Quell-Hashes bezeichnen die Herkunftstexte und sind nicht die Hashes der hier bereinigten Leserdateien.
