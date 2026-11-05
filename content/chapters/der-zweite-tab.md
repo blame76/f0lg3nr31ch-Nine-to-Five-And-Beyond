@@ -82,14 +82,6 @@ Er betrachtete die Tüte.
 
 Leon nahm drei Pistazien. Der Admin schraubte das Gefäß zu und schlug sein Buch wieder auf.
 
-„Hast du schon diese KI-Schulung gemacht?“, fragte Leon.
-
-„Nein. Aber ich freu mich drauf.“
-
-„Du bist heute dran?“
-
-„Gleich. Werde berichten.“
-
 Leon tippte auf den Buchtitel.
 
 „Die Kunst, Post-its richtig zu kleben? Lohnt sich das?“
