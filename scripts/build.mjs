@@ -6,6 +6,7 @@ import {root,readJson,escapeHtml,escapeMeta,normUrl,absoluteUrl,validateManifest
 import {about,imprint,privacy,license} from './pages.mjs';
 import {renderCampaignImage} from './social-image.mjs';
 import {renderResearchChapter} from './references.mjs';
+import {renderAdminBookAd} from './book-ad.mjs';
 import {renderLlmsTxt,renderRss,renderNotFound,renderArdManifest,renderLegacyAiCatalog} from './discovery.mjs';
 
 const config=readJson('config/site.json');
@@ -100,6 +101,13 @@ output('roman/index.html',page({title:'Alle Folgen',slug:'roman/',body:'<section
 for(let i=0;i<list.length;i++){
  const c=list[i],raw=readFileSync(path.join(root,c.path),'utf8').replace(/^# [^\n]+\n+/,'');
  const research=c.research.status==='linked' ? renderResearchChapter(raw,readJson(c.research.path),c.id) : {chapterHtml:markdownToHtml(raw),notesHtml:''};
+ // A static, clearly separated fictional ad replaces the removed kitchen
+ // dialogue only in episode 04. The novel prose remains an independent text.
+ const adAnchor='<p>Leon nahm drei Pistazien. Der Admin schraubte das Gefäß zu und schlug sein Buch wieder auf.</p>';
+ const chapterHtml=c.id==='der-zweite-tab'
+  ? (()=>{if(!research.chapterHtml.includes(adAnchor))throw new Error('Admin book-ad placement anchor missing');
+     return research.chapterHtml.replace(adAnchor,adAnchor+'\\n'+renderAdminBookAd());})()
+  : research.chapterHtml;
  const prev=i?'<a href="/roman/'+e(list[i-1].id)+'/">← Vorherige Folge</a>':'';
  const next=i+1<list.length?'<a href="/roman/'+e(list[i+1].id)+'/">Nächste Folge →</a>':'';
  const chapter={'@context':'https://schema.org','@type':'Chapter','@id':abs('roman/'+c.id+'/#chapter'),name:c.title,description:c.description,inLanguage:'de',url:abs('roman/'+c.id+'/'),position:i+1,isPartOf:{'@type':'Book','@id':book['@id'],name:book.name,url:book.url},author:{'@type':'Person',name:config.author_name}};
@@ -115,7 +123,7 @@ for(let i=0;i<list.length;i++){
  '<p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman – keine echte Stellenanzeige und kein buchbares Dienstleistungsangebot.</p></aside>';
  const body='<article class="reader" id="romantext" lang="de" aria-labelledby="chapter-title">'+
  '<header class="chapter-heading"><p class="meta">Folge '+(i+1)+' · Roman</p><h1 id="chapter-title">'+e(c.title)+'</h1></header>'+
- '<div class="chapter-text">'+research.chapterHtml+'</div></article>'+
+ '<div class="chapter-text">'+chapterHtml+'</div></article>'+
  '<nav class="pager" aria-label="Folgen-Navigation">'+prev+next+'</nav>'+research.notesHtml+
  '<div class="afterword" aria-label="Hintergründe zur Folge">'+bridge+'</div>';
  output('roman/'+c.id+'/index.html',page({title:campaign.seo_title,description:campaign.seo_description,ogTitle:campaign.social_title,ogDescription:campaign.social_description,ogImage:campaign.image,ogAlt:campaign.image_alt,slug:'roman/'+c.id+'/',type:'chapter',body,schema:chapter}));
