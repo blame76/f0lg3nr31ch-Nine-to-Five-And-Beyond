@@ -38,6 +38,7 @@ test('Buchkachel wird nur im Reader von Folge 04 an der Küchenstelle ergänzt',
  const builder=readFileSync('scripts/build.mjs','utf8');
  assert.match(builder,/c.id==='der-zweite-tab'/);
  assert.ok(builder.includes('renderAdminBookAd()'));
+ assert.ok(builder.includes('adAnchor+renderAdminBookAd()'), 'ad must be inserted directly, without a literal escaped newline');
  assert.match(builder,/chapterHtml/);
 });
 

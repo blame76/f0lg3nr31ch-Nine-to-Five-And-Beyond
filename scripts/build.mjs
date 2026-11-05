@@ -110,7 +110,7 @@ for(let i=0;i<list.length;i++){
  const adAnchor='<p>Leon nahm drei Pistazien. Der Admin schraubte das Gefäß zu und schlug sein Buch wieder auf.</p>';
  const chapterHtml=c.id==='der-zweite-tab'
   ? (()=>{if(!research.chapterHtml.includes(adAnchor))throw new Error('Admin book-ad placement anchor missing');
-     return research.chapterHtml.replace(adAnchor,adAnchor+'\\n'+renderAdminBookAd());})()
+     return research.chapterHtml.replace(adAnchor,adAnchor+renderAdminBookAd());})()
   : research.chapterHtml;
  const prev=i?'<a href="/roman/'+e(list[i-1].id)+'/">← Vorherige Folge</a>':'';
  const next=i+1<list.length?'<a href="/roman/'+e(list[i+1].id)+'/">Nächste Folge →</a>':'';
