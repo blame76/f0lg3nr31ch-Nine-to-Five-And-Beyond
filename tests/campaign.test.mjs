@@ -52,7 +52,7 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
   assert.ok(!/[\u0080-\uFFFF]/.test(head),'entire HTML head must be ASCII-only for legacy social crawlers');
   assert.ok(!head.includes('fÃ¼r'));
   assert.ok(!head.includes('â'));
-  assert.ok(html.includes('Fiktive Agenturkampagne aus dem Roman'));
+  assert.ok(html.includes(c.campaign.recipe_card?'Fiktives Rezeptmotiv aus dem Agenturroman':'Fiktive Agenturkampagne aus dem Roman'));
   // The native browser reader should discover the prose, not a pre-chapter campaign.
   const article=html.indexOf('<article class="reader"');
   const articleEnd=html.indexOf('</article>',article);
