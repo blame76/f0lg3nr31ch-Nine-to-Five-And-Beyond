@@ -10,7 +10,7 @@ The controlled single source of truth is content/chapters/index.json → chapter
 - A canonical URL at https://folgenreich.benjamin-lam.de/roman/{chapter-id}/.
 - Upon explicit author/legal release: Book/Chapter JSON-LD and XML sitemap; **never JobPosting or LocalBusiness for the fictional agency**.
 
-## Four campaigns (04 nur als unveröffentlichter Release-Kandidat)
+## Four campaigns (Folge 04 redaktionell freigegeben, weiterhin ohne Indexierungsfreigabe)
 1. Die Null am Ende → recruiting / Kundenberatung & Key Account Management → “Wir suchen dich.” The fictional vacancy reflects the absence of the customer's familiar account manager.
 2. Wer hält die Verantwortung fest? → E-Commerce Betreuung & Wartung → “Ihr Shop. Unsere Verantwortung.”
 3. How to Service → Serviceübernahme and onboarding → “Sie kümmern sich um Ihr Geschäft. Wir um den Rest.”
