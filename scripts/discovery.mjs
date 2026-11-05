@@ -20,6 +20,7 @@ export function renderLlmsTxt({site,config,chapters,ready}) {
   '- [Startseite]('+base+'/): Offizielle Projektseite und Einstieg in die fiktive Romanwelt.',
   '- [Romanübersicht]('+base+'/roman/): Reihenfolge und kurze Einordnung der Folgen.',
   '- [Partnerwelt]('+base+'/partnerwelt/): Drei vollständig fiktive Dienstleister mit fachlich plausiblen Beispielen zu Fulfillment, Commerce Operations und Kundenservice; Teamabbildungen sind KI-generiert.',
+  '- [Social-Labor]('+base+'/partnerwelt/share/): Sechs teilbare fiktive Social-Media-Beiträge, eigene Social-Vorschauen und kompakte How-to-Erklärungen zu Hook, Beleg und CTA; KI-unterstützt gestaltete Bilder.',
   '- [Über das Experiment]('+base+'/experiment/): Entstehung, KI-Einsatz und Fiktionskennzeichnung.',
   '- [Lizenz und Urheberschaft]('+base+'/lizenz/): Bedingungen und Grenzen der Nachnutzung.',
   '');
