@@ -5,7 +5,7 @@ import {spawnSync} from 'node:child_process';
 import {validateManifest,markdownToHtml} from '../scripts/lib.mjs';
 const c=JSON.parse(readFileSync('config/site.json','utf8')),m=JSON.parse(readFileSync('content/chapters/index.json','utf8'));
 test('Exact brand and canonical site',()=>{assert.equal(c.name,'f0lg3nr31ch');assert.equal(c.subtitle,'Nine to Five. And Beyond.');assert.equal(c.site_url,'https://folgenreich.benjamin-lam.de');});
-test('Five author-approved chapter snapshots',()=>{assert.equal(m.chapters.length,5);assert.equal(new Set(m.chapters.map(x=>x.id)).size,4);for(const x of m.chapters){assert.ok(existsSync(x.path));assert.match(x.source_blob_sha,/^[a-f0-9]{40}$/);assert.ok(readFileSync(x.path,'utf8').length>8000);}});
+test('Five author-approved chapter snapshots',()=>{assert.equal(m.chapters.length,5);assert.equal(new Set(m.chapters.map(x=>x.id)).size,5);for(const x of m.chapters){assert.ok(existsSync(x.path));assert.match(x.source_blob_sha,/^[a-f0-9]{40}$/);assert.ok(readFileSync(x.path,'utf8').length>8000);}});
 test('Public chapter markdown omits internal editorial labels',()=>{
  for(const chapter of m.chapters){
   const opening=readFileSync(chapter.path,'utf8').split(String.fromCharCode(10)).slice(0,8).join(' ');
