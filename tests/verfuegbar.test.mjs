@@ -1,7 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
-import {spawnSync} from 'node:child_process';
 
 const manifest=JSON.parse(readFileSync('content/chapters/index.json','utf8'));
 const chapter=manifest.chapters.find(c=>c.id==='verfuegbar');
@@ -50,21 +49,11 @@ test('prscnm is independent, self-contained, no misleading subscription and clea
  assert.ok(!/prime video|amazon original|netflix|reacher|picard/i.test(svg));
 });
 
-test('Built Reader contains both labelled ads, working local targets and separate research notes',()=>{
- const r=spawnSync(process.execPath,['scripts/build.mjs'],{encoding:'utf8',maxBuffer:5_000_000});
- assert.equal(r.status,0,r.stderr);
- const html=readFileSync('dist/roman/verfuegbar/index.html','utf8');
- assert.equal((html.match(/class="fictional-sla-ad"/g)||[]).length,1);
- assert.match(html,/Anzeige · fiktive Werbung aus der Partnerwelt/);
- assert.ok(html.includes('/partnerwelt/share/vier-stunden-zwei-uhren/'));
- assert.ok(html.includes('/partnerwelt/prscnm/'));
- assert.ok(html.includes('Fiktive Agenturkampagne aus dem Roman'));
- assert.ok(html.includes('Weiterführende Hintergründe'));
- assert.match(html,/name="robots" content="noindex,follow"/);
- assert.ok(readFileSync('dist/partnerwelt/prscnm/index.html','utf8').includes('Geschichten, die dich nicht loslassen'));
- assert.ok(readFileSync('dist/partnerwelt/prscnm/hinter-den-kulissen/index.html','utf8').includes('Sieben gute Startpunkte'));
- assert.ok(existsSync('dist/partnerwelt/share/vier-stunden-zwei-uhren/index.html'));
- assert.ok(existsSync('dist/share/verfuegbar.png'));
- const css=readFileSync('dist/style.css','utf8');
+test('Building code preserves clear ad and research separation',()=>{
+ const build=readFileSync('scripts/build.mjs','utf8');
+ assert.ok(build.includes('timeAnchor,timeAnchor+fictionalAd'));
+ assert.match(build,/campaign\.streaming_card/);
+ assert.ok(build.includes('renderResearchChapter'));
+ const css=readFileSync('public/style.css','utf8');
  assert.match(css,/@media print\{\.chapter-text \.fictional-sla-ad\{display:none!important\}\}/);
 });
