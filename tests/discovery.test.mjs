@@ -23,7 +23,7 @@ test('llms.txt describes fiction without discovering unapproved chapters',()=>{
  const published=renderLlmsTxt({site,config,chapters:approved,ready:true});
  assert.match(published,/## Freigegebene Romanfolgen/);
  for(const c of approved)assert.ok(published.includes(site+'/roman/'+c.id+'/'));
- assert.ok(!published.includes('/roman/der-zweite-tab/'));
+ assert.ok(published.includes('/roman/der-zweite-tab/'),'an explicitly approved chapter appears only in the hypothetical released feed');
 });
 
 test('RSS requires explicit approvals and does not invent dates',()=>{
