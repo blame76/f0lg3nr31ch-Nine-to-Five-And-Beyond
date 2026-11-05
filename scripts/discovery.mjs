@@ -4,7 +4,7 @@ const label = value => String(value).replace(/[\[\]\\]/g,'').replace(/\s+/g,' ')
 const isApproved = chapters => chapters.length > 0 && chapters.every(c=>c.status==='approved' && !!c.approved_by && /^\d{4}-\d{2}-\d{2}$/.test(c.approved_at||''));
 const baseUrl = site => String(site).replace(/\/$/,'');
 
-export function renderLlmsTxt({site,config,chapters,ready}) {
+export function renderLlmsTxt({site,config,chapters,ready,chapterIndexReady=false}) {
  const lines=[
   '# f0lg3nr31ch – Nine to Five. And Beyond.',
   '',
@@ -24,9 +24,12 @@ export function renderLlmsTxt({site,config,chapters,ready}) {
   '- [Über das Experiment]('+base+'/experiment/): Entstehung, KI-Einsatz und Fiktionskennzeichnung.',
   '- [Lizenz und Urheberschaft]('+base+'/lizenz/): Bedingungen und Grenzen der Nachnutzung.',
   '');
- if(ready && isApproved(chapters)){
+ const indexableChapters=(ready || chapterIndexReady)
+  ? chapters.filter(c=>c.status==='approved' && !!c.approved_by && /^\d{4}-\d{2}-\d{2}$/.test(c.approved_at||''))
+  : [];
+ if(indexableChapters.length){
   lines.push('## Freigegebene Romanfolgen','');
-  for(const c of chapters)lines.push('- ['+label(c.title)+']('+base+'/roman/'+c.id+'/): Romanfolge '+c.position);
+  for(const c of indexableChapters)lines.push('- ['+label(c.title)+']('+base+'/roman/'+c.id+'/): Romanfolge '+c.position);
   lines.push('');
  } else lines.push('Die Kapitel sind bereits öffentlich lesbar, jedoch noch nicht zur Suchmaschinenindexierung freigegeben. Deshalb werden hier keine einzelnen Kapitel-URLs empfohlen.','');
  return lines.join('\n');
