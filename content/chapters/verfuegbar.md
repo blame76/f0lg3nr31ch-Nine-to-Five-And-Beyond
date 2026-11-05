@@ -56,9 +56,11 @@ Jamal las das Ticket zweimal.
 
 Dann öffnete er die Dokumentation der Schnittstelle und die bestehenden Module im Projekt.
 
-Ein paar Minuten später wusste er, was er bauen wollte.
+Er fand einen eigenen Resolver für Lieferhinweise. Die Warenwirtschaft lieferte die Codes, der Resolver übersetzte sie fürs Shop-Frontend. Für die Zuordnung gab es eine projektspezifische Schnittstelle. Die Kaufbarkeit wurde anderswo entschieden.
 
-Die verfügbaren Status sollten an einer Stelle übersetzt werden. Unbekannte Werte durften keine falsche Lieferzusage erzeugen. Die Erweiterung sollte nur den Lieferhinweis verändern, nicht die eigentliche Bestands- oder Bestelllogik.
+Ein paar Minuten später wusste er, wo er ansetzen wollte.
+
+Die neuen Status brauchten eine eigene Zuordnung, die sich an den Resolver anschließen ließ. Unbekannte Werte durften keine falsche Lieferzusage erzeugen. Die Erweiterung sollte nur den Lieferhinweis verändern, nicht die eigentliche Bestands- oder Bestelllogik.
 
 Er öffnete einen neuen Branch.
 
@@ -80,13 +82,11 @@ Auf dem Bildschirm erschien eine Aktivitätsanzeige.
 
 Jamal lehnte sich zurück.
 
-Früher hätte er vermutlich einen halben Vormittag damit verbracht, das Grundgerüst für das Modul zusammenzustellen. Die Composer-Datei, die Registrierung, die Moduldefinition, die Klassenstruktur und die Konfiguration.
+Früher hätte er dafür ein vorhandenes Modul kopiert und ausgedünnt. Composer-Datei, Registrierung, Moduldefinition, Klassenstruktur, Konfiguration. Das war keine Kunst. Nur die alten Abhängigkeiten musste man jedes Mal finden, bevor sie mit ins neue Modul wanderten.
 
-Nicht alles von Hand. Dafür gab es schon lange Vorlagen, Skripte und die Möglichkeit, Code aus einem anderen Projekt zu übernehmen.
+Heute nahm ihm die KI diese Arbeit ab.
 
-Aber man musste die richtige Vorlage finden, anpassen und darauf achten, nichts mitzukopieren, was dort nur zufällig funktioniert hatte.
-
-Heute erledigte die KI einen großen Teil davon.
+Ob sie die richtige Stelle im Projekt erwischte, würde der Diff zeigen.
 
 Angenehm.
 
@@ -160,11 +160,11 @@ Die Grundstruktur war ordentlich. Die Abhängigkeiten waren sauber deklariert, d
 
 Er fand trotzdem etwas.
 
-Für die Anpassung hatte die KI einen Interceptor vorgeschlagen, der mehr Verhalten abfing, als nötig war.
+Die KI hatte ein `around`-Plugin an den Lieferhinweis-Resolver gehängt. Damit saß sie in dessen Aufrufkette. Nicht nur für die neuen Statuswerte.
 
-Jamal entfernte ihn.
+Jamal öffnete die DI-Konfiguration. Die Schnittstelle für die Statuszuordnung gab es längst. Er hatte sie in seiner Anweisung nicht beim Namen genannt.
 
-Die bestehende Schnittstelle reichte aus.
+Er entfernte das Plugin, band die neue Mapping-Klasse über die vorhandene Schnittstelle ein und kontrollierte die Änderungen noch einmal.
 
 Dann las er die Tests.
 
@@ -172,19 +172,19 @@ Drei bekannte Werte. Ein unbekannter Wert. Ein leerer Wert.
 
 Er ergänzte einen weiteren Fall.
 
-Die Warenwirtschaft lieferte manchmal Statuscodes mit abweichender Großschreibung. In der Schnittstellendokumentation stand nichts davon, in einem älteren Log hatte er es aber gesehen.
+In einem älteren Log hatte er denselben Lieferstatus einmal vollständig großgeschrieben gesehen. Die Schnittstellendokumentation erwähnte das nicht. Er prüfte das Beispiel noch einmal und ergänzte den Fall.
 
 Er ließ die Tests laufen.
 
-Vier grüne Meldungen.
+Fünf grüne Meldungen.
 
 Eine rote.
 
-Der Test mit dem abweichenden Status schlug fehl.
+Die neue Variante fiel auf den neutralen Hinweis zurück, obwohl der Status bekannt war.
 
-Jamal sah sich die Normalisierung an, korrigierte sie und startete die Tests erneut.
+Jamal sah sich die Normalisierung an. Sie fand erst nach dem Nachschlagen statt. Er zog sie vor die Zuordnung und startete die Tests erneut.
 
-Jetzt waren alle grün.
+Sechs grüne Meldungen.
 
 Als Nächstes liefen die statische Analyse und die Coding-Standards. Ein Hinweis auf einen unnötigen Import. Zwei kleinere Formatierungen.
 
@@ -454,11 +454,11 @@ Jamal antwortete mit dem Verweis auf die abgestimmte Anforderung und ergänzte e
 
 Sascha bestätigte das Review.
 
-Jamal wollte gerade den Pull Request mergen, als ihm auffiel, dass die Integration in die gemeinsame Testumgebung erst mit dem nächsten regulären Build vorgesehen war.
+Jamal öffnete den Pull Request. Freigegeben. Die Checks grün. Der Merge-Button war da.
 
-Also kein sofortiger Merge.
+Nur der gemeinsame Teststand wurde bei ihnen nicht nach jedem einzelnen Pull Request aktualisiert. Zum nächsten Integrationslauf würde die Änderung in den Integrationsbranch gemergt; erst danach baute die Pipeline die gemeinsame Testumgebung neu.
 
-Er ließ den Pull Request freigegeben stehen und dokumentierte den nächsten Schritt. Der vorgesehene Integrationslauf würde die Änderung aufnehmen; danach musste sie in der gemeinsamen Umgebung noch einmal geprüft werden.
+Jamal ließ den Pull Request offen und notierte den nächsten Schritt im Ticket. Dort musste der Lieferhinweis mit den Testdaten der Warenwirtschaft noch einmal geprüft werden.
 
 Wieder warten.
 
