@@ -9,10 +9,10 @@ const manifest=readJson('content/chapters/index.json');
 const readProse=c=>readFileSync(c.path,'utf8').replace(/^# [^\n]+\n+/,'');
 const catalogs=manifest.chapters.filter(c=>c.research?.status==='linked').map(c=>({chapter:c,catalog:readJson(c.research.path),prose:readProse(c)}));
 
-test('Three approved chapters and one release candidate have traceable research decisions',()=>{
+test('All four author-approved chapters have traceable research decisions',()=>{
  assert.equal(manifest.chapters.length,4);
- assert.equal(manifest.chapters.filter(c=>c.status==='approved').length,3);
- assert.equal(manifest.chapters.filter(c=>c.status==='release-candidate').length,1);
+ assert.equal(manifest.chapters.filter(c=>c.status==='approved').length,4);
+ assert.equal(manifest.chapters.filter(c=>c.status==='release-candidate').length,0);
  assert.ok(manifest.chapters.every(c=>c.research.status==='linked'));
  assert.deepEqual(validateManifest(config,manifest),[]);
  assert.equal(catalogs.length,4);
