@@ -8,6 +8,7 @@ import {renderCampaignImage} from './social-image.mjs';
 import {renderResearchChapter} from './references.mjs';
 import {renderAdminBookAd} from './book-ad.mjs';
 import {renderLlmsTxt,renderRss,renderNotFound,renderArdManifest,renderLegacyAiCatalog} from './discovery.mjs';
+import {installPartnerweltRedesign} from './partnerwelt-redesign.mjs';
 
 const config=readJson('config/site.json');
 const manifest=readJson('content/chapters/index.json');
@@ -48,6 +49,9 @@ function installPartnerwelt() {
  console.log('Partnerwelt '+release+': '+count+' static files installed');
 }
 installPartnerwelt();
+// The reviewed visual layer is applied after the integrity-checked static bundle.
+// It only edits the fictional support company, not the reader or other partner pages.
+installPartnerweltRedesign(dist);
 
 const abs=p=>absoluteUrl(site,p);
 const e=escapeHtml, em=escapeMeta;
