@@ -124,7 +124,7 @@
       "description": "Ein Angebot gelingt dank KI. Während Leon zufrieden ist, erklärt eine Schulung, weshalb der Weg dorthin nicht ganz unproblematisch war.",
       "source_ref": "feature/der-zweite-tab-draft-20261104",
       "source_blob_sha": "6051359e9ff1cd953a1ffa238e3ad011460ea6fa",
-      "status": "release-candidate",
+      "status": "approved",
       "position": 4,
       "path": "content/chapters/der-zweite-tab.md",
       "campaign": {
@@ -154,7 +154,9 @@
         "status": "linked",
         "path": "content/references/der-zweite-tab.json",
         "reviewed_on": "2026-11-05"
-      }
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-05"
     }
   ]
 }
