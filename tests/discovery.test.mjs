@@ -6,7 +6,7 @@ const config=JSON.parse(readFileSync('config/site.json','utf8'));
 const chapters=JSON.parse(readFileSync('content/chapters/index.json','utf8')).chapters;
 const site=config.site_url;
 
-test('llms.txt describes fiction without discovering unapproved chapters',()=>{
+test('llms.txt describes fiction and lists only explicitly approved, indexable chapters',()=>{
  const early=renderLlmsTxt({site,config,chapters,ready:false});
  assert.match(early,/^# f0lg3nr31ch/);
  assert.match(early,/fiktiv/i);
@@ -18,12 +18,18 @@ test('llms.txt describes fiction without discovering unapproved chapters',()=>{
  assert.ok((early.match(/\]\(https:\/\//g)||[]).length>=3);
  assert.doesNotMatch(early,/\/roman\/die-null-am-ende\//);
  const pending=chapters.map(c=>({...c,status:'release-candidate',approved_by:undefined,approved_at:undefined}));
- assert.doesNotMatch(renderLlmsTxt({site,config,chapters:pending,ready:true}),/## Freigegebene Romanfolgen/);
+ assert.doesNotMatch(renderLlmsTxt({site,config,chapters:pending,ready:false,chapterIndexReady:true}),/## Freigegebene Romanfolgen/);
+ const live=renderLlmsTxt({site,config,chapters,ready:false,chapterIndexReady:true});
+ for(const c of chapters)assert.ok(live.includes(site+'/roman/'+c.id+'/'),c.id);
+ const mixed=renderLlmsTxt({site,config,chapters:[chapters[0],pending[1]],ready:false,chapterIndexReady:true});
+ assert.ok(mixed.includes(site+'/roman/'+chapters[0].id+'/'));
+ assert.ok(!mixed.includes(site+'/roman/'+chapters[1].id+'/'));
+
  const approved=chapters.filter(c=>c.status==='approved');
  const published=renderLlmsTxt({site,config,chapters:approved,ready:true});
  assert.match(published,/## Freigegebene Romanfolgen/);
  for(const c of approved)assert.ok(published.includes(site+'/roman/'+c.id+'/'));
- assert.ok(published.includes('/roman/der-zweite-tab/'),'an explicitly approved chapter appears only in the hypothetical released feed');
+ assert.ok(published.includes('/roman/der-zweite-tab/'),'an explicitly approved chapter appears in the chapter discovery list');
 });
 
 test('RSS requires explicit approvals and does not invent dates',()=>{
