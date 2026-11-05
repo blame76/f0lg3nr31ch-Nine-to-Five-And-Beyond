@@ -24,15 +24,15 @@ cpSync(path.join(root,'public'),dist,{recursive:true});
 function installPartnerwelt() {
  const release='2026-11-05', expected='80cea8d2fcd53374cc0d3fa472604432bccecdaffca6c120e3f90b35fe591b29';
  const encoded=readFileSync(path.join(root,'bundles','partnerwelt-'+release+'.tar.gz.base64'),'utf8');
- const compressed=Buffer.from(encoded.replace(/\\s/g,''),'base64');
+ const compressed=Buffer.from(encoded.replace(/\s/g,''),'base64');
  if(createHash('sha256').update(compressed).digest('hex')!==expected) throw new Error('Partnerwelt release archive failed integrity check');
  const archive=gunzipSync(compressed);
  let offset=0, count=0;
  while(offset+512<=archive.length){
   const header=archive.subarray(offset,offset+512);
-  const name=header.toString('utf8',0,100).split('\\0')[0];
+  const name=header.toString('utf8',0,100).split('\0')[0];
   if(!name)break;
-  const size=parseInt(header.toString('ascii',124,136).replace(/\\0/g,'').trim(),8);
+  const size=parseInt(header.toString('ascii',124,136).replace(/\0/g,'').trim(),8);
   const type=header[156];
   if(!name.startsWith('partnerwelt/') || path.posix.normalize(name)!==name || name.includes('..') ||
      type!==48 || !Number.isSafeInteger(size) || size<0 || offset+512+size>archive.length)
