@@ -38,6 +38,7 @@ Der genehmigte Text bleibt eine zusammenhängende `<article class="reader">`-Str
 | 01 · Die Null am Ende | 4 | 0 | Incident-Kommunikation, administrativer Vertrag vs. Servicezustand, ausdrückliche Übergabe, Fehlerdiagnose ohne riskante Produktivtests |
 | 02 · Wer hält die Verantwortung fest? | 6 | 0 | Teamkapazität, offene Rollen, Serviceaufnahme, Incident vs. Dauerbetrieb, DACI, konkrete Leistungszusagen |
 | 03 · How to Service | 6 | 2 | Onboarding, Restore, RACI, dokumentierte Entscheidungen, Vertragsübernahme, DSGVO, zusätzlich Payment und Patch-Management |
+| 04 · Der zweite Tab (**redaktionell freigegeben 05.11.2026**) | 2 | 1 | Shadow AI, Datenklassifikation / sichere KI-Eingaben, Einordnung möglicher Datenschutzvorfälle |
 
 Die Quellen und Einschränkungen stehen jeweils im JSON-Katalog, nicht in den Prosatexten. **Bewusst nicht aufgenommen:** BFSG in Folge 03 ohne erzählerischen Bezug; pauschaler Vorwurf eines PCI-Verstoßes; unbelegter Schluss, dass ein fehlender Wartungsnachweis fehlende Updates bedeutet.
 

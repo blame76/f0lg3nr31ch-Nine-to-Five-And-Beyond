@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "chapter_id": "der-zweite-tab",
+  "reviewed_on": "2026-11-05",
+  "editorial_note": "Fachliche Hintergründe zur erfundenen Handlung. Nicht der gute Angebotstext, sondern der Weg mit vertraulichen Unterlagen ist das Thema. Die Quellen belegen weder einen realen Vorfall noch, was der fiktive KI-Anbieter mit Leons Dateien tatsächlich getan hätte.",
+  "sources": [
+    {
+      "id": "shadow-ai",
+      "placement": "inline",
+      "anchor": "Ein privates Konto ist keine betriebliche Freigabe.",
+      "title": "Shadow AI: Der schnelle Weg am offiziellen Prozess vorbei",
+      "description": "Eine Untersuchung deutscher Unternehmenspraxis beschreibt, wie Beschäftigte ohne Freigabe auf vertraute generative KI-Werkzeuge zurückgreifen. Ungeklärte Datenflüsse und plausible, aber falsche Ausgaben sind Risiken; die praktische Antwort sind verständliche Regeln und brauchbare freigegebene Alternativen. Das ist ein allgemeines Muster, keine Behauptung über Leons Arbeitgeber.",
+      "publisher": "Springer Nature",
+      "source_title": "Von Schatten-IT zu Schatten-KI durch ChatGPT (2026)",
+      "url": "https://link.springer.com/article/10.1365/s35764-026-00588-3"
+    },
+    {
+      "id": "vertrauliche-daten",
+      "placement": "inline",
+      "anchor": "Und das Ergebnis prüfen Sie, wie jeden anderen Entwurf auch.",
+      "title": "Was vor der Eingabe sensibler Daten zu klären ist",
+      "description": "Die Datenschutzkonferenz erläutert die Auswahl und den Betrieb von KI-Anwendungen: Rechtsgrundlage, zulässige Daten, Rollen, Verträge und Schutzmaßnahmen müssen zur Nutzung passen. Das Entfernen eines Namens allein macht ein Dokument nicht automatisch unkritisch; auch vertrauliche Geschäftsunterlagen verlangen eine gesonderte Prüfung.",
+      "publisher": "Datenschutzkonferenz / LfD Niedersachsen",
+      "source_title": "Orientierungshilfen zu KI und Datenschutz (2024/2025)",
+      "url": "https://www.lfd.niedersachsen.de/dsk-ki/orientierungshilfen-zu-kunstlicher-intelligenz-239008.html"
+    },
+    {
+      "id": "datenschutzvorfall",
+      "placement": "further",
+      "title": "Wenn sensible Daten bereits weitergegeben wurden",
+      "description": "Die Leitlinien des Europäischen Datenschutzausschusses unterscheiden einen sicherheitsrelevanten Vorgang, eine festgestellte Verletzung des Schutzes personenbezogener Daten und deren risikobasierte Meldepflichten. Eine unautorisierte Eingabe ist ernst zu nehmen und intern zu prüfen; sie ist nicht automatisch eine festgestellte, extern meldepflichtige Datenschutzverletzung.",
+      "publisher": "Europäischer Datenschutzausschuss (EDSA)",
+      "source_title": "Leitlinien 9/2022 zur Meldung von Datenschutzverletzungen (Fassung 2023)",
+      "url": "https://www.edpb.europa.eu/documents/guideline/guidelines-92022-on-personal-data-breach-notification-under-gdpr_de"
+    }
+  ]
+}

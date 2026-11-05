@@ -8,9 +8,9 @@ import {escapeMeta} from '../scripts/lib.mjs';
 
 const chapters=JSON.parse(readFileSync('content/chapters/index.json','utf8')).chapters;
 test('Every novel chapter has a distinct fictional campaign and social preview',()=>{
- assert.equal(chapters.length,3);
- assert.equal(new Set(chapters.map(c=>c.campaign.image)).size,3);
- assert.equal(new Set(chapters.map(c=>c.campaign.social_title)).size,3);
+ assert.equal(chapters.length,4);
+ assert.equal(new Set(chapters.map(c=>c.campaign.image)).size,4);
+ assert.equal(new Set(chapters.map(c=>c.campaign.social_title)).size,4);
  for(const c of chapters){
   assert.match(c.campaign.category,/Fiktiv/i);
   assert.match(c.campaign.seo_description,/fiktiv|roman/i);
@@ -34,7 +34,7 @@ test('Each generated social image is a valid 1200x630 PNG, different from others
   assert.equal(inflateSync(image.subarray(41,41+size)).length,630*(1+1200*3));
   hashes.add(image.toString('base64').slice(-1200));
  }
- assert.equal(hashes.size,3);
+ assert.equal(hashes.size,4);
 });
 
 test('Build uses per-chapter OG images, truthful SEO, and preserves noindex before approval',()=>{
@@ -52,7 +52,7 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
   assert.ok(!/[\u0080-\uFFFF]/.test(head),'entire HTML head must be ASCII-only for legacy social crawlers');
   assert.ok(!head.includes('fÃ¼r'));
   assert.ok(!head.includes('â'));
-  assert.ok(html.includes('Fiktive Agenturkampagne aus dem Roman'));
+  assert.ok(html.includes(c.campaign.recipe_card?'Fiktives Rezeptmotiv aus dem Agenturroman':'Fiktive Agenturkampagne aus dem Roman'));
   // The native browser reader should discover the prose, not a pre-chapter campaign.
   const article=html.indexOf('<article class="reader"');
   const articleEnd=html.indexOf('</article>',article);

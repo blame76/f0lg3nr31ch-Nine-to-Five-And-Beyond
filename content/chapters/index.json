@@ -117,6 +117,46 @@
         "path": "content/references/how-to-service.json",
         "reviewed_on": "2026-11-04"
       }
+    },
+    {
+      "id": "der-zweite-tab",
+      "title": "Der zweite Tab",
+      "description": "Ein Angebot gelingt dank KI. Während Leon zufrieden ist, erklärt eine Schulung, weshalb der Weg dorthin nicht ganz unproblematisch war.",
+      "source_ref": "feature/der-zweite-tab-draft-20261104",
+      "source_blob_sha": "6051359e9ff1cd953a1ffa238e3ad011460ea6fa",
+      "status": "approved",
+      "position": 4,
+      "path": "content/chapters/der-zweite-tab.md",
+      "campaign": {
+        "category": "Admin-Küche · Fiktives Rezept",
+        "headline": "Aubergine. Reis. Rest.",
+        "subheadline": "Rezept für einen Freitag",
+        "promise": "Kreuzkümmel, Zitrone und eine Mittagspause, die ihren Namen verdient.",
+        "context": "Aus der fiktiven Agenturküche: Der Admin macht aus Reis, Auberginen und Resten ein gutes Essen. Währenddessen braucht Leon für ein Kundenangebot dringend einen guten Text. Wie sich beides verbindet, erzählt Folge 04.",
+        "seo_title": "Der zweite Tab – Shadow AI im Agenturalltag",
+        "seo_description": "Der zweite Tab: Fiktive Romanfolge über Shadow AI, vertrauliche Kundendaten und ein gutes Angebot, hinter dem ein unbemerkter Fehler steckt.",
+        "social_title": "Aubergine. Reis. Rest. | Aus der Admin-Küche",
+        "social_description": "Ein fiktives Rezept für einen Freitag in der Agenturküche. Was Leon währenddessen erledigt, erzählt „Der zweite Tab“ – Romanfolge 04.",
+        "image": "share/der-zweite-tab.png",
+        "image_alt": "Fiktive Rezeptkarte aus der Admin-Küche: Aubergine. Reis. Rest. Schale mit Reis, Aubergine, Kichererbsen, Kräutern und Granatapfel, Romanfolge 04.",
+        "image_lines": [
+          "AUBERGINE.",
+          "REIS. REST."
+        ],
+        "image_detail": [
+          "REZEPT FUER EINEN FREITAG",
+          "AUS DER ADMIN-KUECHE"
+        ],
+        "accent": "#87926B",
+        "recipe_card": true
+      },
+      "research": {
+        "status": "linked",
+        "path": "content/references/der-zweite-tab.json",
+        "reviewed_on": "2026-11-05"
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-05"
     }
   ]
 }

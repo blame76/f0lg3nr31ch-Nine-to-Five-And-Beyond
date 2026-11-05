@@ -61,7 +61,7 @@ function page({title,description=config.description,slug='',type='website',body,
 }
 const list=manifest.chapters;
 for(const chapter of list)output(chapter.campaign.image,renderCampaignImage(chapter));
-const indexItems=list.map((c,i)=>'<li><a href="/roman/'+e(c.id)+'/">'+e(c.title)+'</a><small>Folge '+(i+1)+' · '+e(c.description)+'</small><small>Fiktive Agenturkampagne: '+e(c.campaign.headline)+' '+e(c.campaign.subheadline)+'</small></li>').join('');
+const indexItems=list.map((c,i)=>'<li><a href="/roman/'+e(c.id)+'/">'+e(c.title)+'</a><small>Folge '+(i+1)+' · '+e(c.description)+'</small><small>'+(c.campaign.recipe_card?'Fiktives Rezept aus der Admin-Küche: ':'Fiktive Agenturkampagne: ')+e(c.campaign.headline)+' '+e(c.campaign.subheadline)+'</small></li>').join('');
 const items='<ol class="list">'+indexItems+'</ol>';
 const book={'@context':'https://schema.org','@type':'Book','@id':abs('roman/#book'),url:abs('roman/'),name:'f0lg3nr31ch – Nine to Five. And Beyond.',inLanguage:'de',genre:'Roman',author:{'@type':'Person',name:config.author_name},isAccessibleForFree:true};
 output('index.html',page({title:'Nine to Five. And Beyond.',body:'<section class="hero"><p class="eyebrow">Fortsetzungsroman</p><h1>f0lg3nr31ch</h1><p class="lead">Nine to Five. And Beyond.</p><p>Ein fortlaufender Agenturroman über Menschen, Arbeit und die Folgen ihrer Entscheidungen.</p></section><section><h2>Die Geschichten</h2>'+items+'<p><a href="/experiment/">Wie entsteht dieser Roman?</a></p></section>',schema:{'@context':'https://schema.org','@type':'WebSite','@id':abs('#website'),name:config.name,alternateName:'Folgenreich',url:site+'/',inLanguage:'de',description:config.description}}));
@@ -73,7 +73,12 @@ for(let i=0;i<list.length;i++){
  const next=i+1<list.length?'<a href="/roman/'+e(list[i+1].id)+'/">Nächste Folge →</a>':'';
  const chapter={'@context':'https://schema.org','@type':'Chapter','@id':abs('roman/'+c.id+'/#chapter'),name:c.title,description:c.description,inLanguage:'de',url:abs('roman/'+c.id+'/'),position:i+1,isPartOf:{'@type':'Book','@id':book['@id'],name:book.name,url:book.url},author:{'@type':'Person',name:config.author_name}};
  const campaign=c.campaign;
- const bridge='<aside class="campaign-bridge" aria-label="Fiktive Agenturkommunikation"><p class="eyebrow">Aus der fiktiven Agentur · '+e(campaign.category)+'</p>'+
+ const bridge=campaign.recipe_card
+ ? '<aside class="campaign-bridge" aria-label="Rezept aus der fiktiven Admin-Küche"><p class="eyebrow">Aus der fiktiven Admin-Küche · Romanfolge '+(i+1)+'</p>'+
+ '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
+ '<p>'+e(campaign.promise)+'</p><p class="campaign-context">'+e(campaign.context)+'</p>'+
+ '<p class="campaign-disclaimer">Fiktives Rezeptmotiv aus dem Agenturroman. Die Agentur und der Admin sind erfunden.</p></aside>'
+ : '<aside class="campaign-bridge" aria-label="Fiktive Agenturkommunikation"><p class="eyebrow">Aus der fiktiven Agentur · '+e(campaign.category)+'</p>'+
  '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
  '<p>'+e(campaign.promise)+'</p><p class="campaign-context">'+e(campaign.context)+'</p>'+
  '<p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman – keine echte Stellenanzeige und kein buchbares Dienstleistungsangebot.</p></aside>';

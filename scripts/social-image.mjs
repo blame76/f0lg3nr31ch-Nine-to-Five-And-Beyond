@@ -79,6 +79,67 @@ export function renderCampaignImage(chapter){
     if(glyph[gy][gx]==='1')fillRect(x+(n*6+gx)*scale,y+gy*scale,scale,scale,color);
   }
  }
+
+ // Recipe card for the admin's Friday meal. Deterministic, self-contained PNG;
+ // no remote image services or social-platform-specific HTML needed.
+ if(c.recipe_card===true) {
+  const wood=[198,166,124],paper=[247,239,217],ink=[55,69,43],
+   olive=[113,130,82],red=[157,78,54],cream=[228,212,167];
+  fillRect(0,0,W,H,wood);
+  for(let y=0;y<H;y+=54)fillRect(0,y,W,2,[180,143,106]);
+  for(let x=35;x<480;x+=114)fillRect(x,0,2,H,[190,154,115]);
+  function oval(cx,cy,rx,ry,color){
+   for(let dy=-ry;dy<=ry;dy++){
+    const dx=rx*Math.sqrt(Math.max(0,1-(dy*dy)/(ry*ry)));
+    fillRect(cx-dx,cy+dy,2*dx+1,1,color);
+   }
+  }
+  // Meal-prepped bowl: golden rice, roasted aubergine, chickpeas and garnish.
+  oval(275,303,228,228,[119,92,69]);
+  oval(275,294,218,213,[238,224,192]);
+  oval(275,294,193,186,[234,174,51]);
+  for(let i=0;i<600;i++){
+   const a=i*2.39996,r=182*Math.sqrt(((i*97)%601)/601);
+   fillRect(275+Math.cos(a)*r,294+Math.sin(a)*r,3+(i%3),2,[245,203,86]);
+  }
+  for(const [x,y,rx,ry] of [[189,223,55,31],[306,241,71,37],[247,358,78,33],[351,338,53,32]]){
+   oval(x,y,rx+5,ry+5,[70,57,50]);
+   oval(x,y,rx,ry,[78,45,75]);
+   oval(x,y,rx-11,ry-9,[142,83,54]);
+   oval(x-8,y-5,rx-23,ry-18,[183,120,68]);
+  }
+  for(let i=0;i<38;i++){
+   const a=i*2.76, r=158*Math.sqrt(((i*67)%41)/41),
+    x=275+Math.cos(a)*r,y=294+Math.sin(a)*r;
+   oval(x,y,7,6,i%2?[196,141,70]:[227,176,89]);
+  }
+  for(let i=0;i<43;i++){
+   const a=i*2.47, r=159*Math.sqrt(((i*23)%47)/47);
+   const col=i%3===0?[134,38,43]:i%3===1?[42,112,61]:[60,132,77];
+   oval(275+Math.cos(a)*r,294+Math.sin(a)*r,5+i%3,3+i%2,col);
+  }
+  // Off-white recipe card, deliberately independent of the standard campaign.
+  fillRect(533,39,624,555,[124,101,74]);
+  fillRect(522,28,624,555,paper);
+  fillRect(542,49,584,510,olive);
+  fillRect(545,52,578,504,paper);
+  fillRect(557,85,10,24,red);
+  text('AUS DER ADMIN-KUECHE',580,83,4,ink);
+  fillRect(565,134,535,3,olive);
+  text('AUBERGINE.',568,173,8,ink);
+  text('REIS. REST.',568,249,8,ink);
+  text('ZUTATEN',568,347,4,red);
+  fillRect(568,380,517,2,[180,171,139]);
+  text('REIS / AUBERGINE',568,402,4,ink);
+  text('KICHERERBSEN / KRAEUTER',568,439,3,ink);
+  text('PISTAZIEN / GRANATAPFEL',568,470,3,ink);
+  fillRect(557,508,557,35,red);
+  text('REZEPT FUER EINEN FREITAG',573,516,3,paper);
+  // Obvious fiction disclosure while retaining a playful food-first teaser.
+  fillRect(0,577,W,53,ink);
+  text('F0LG3NR31CH',38,591,4,paper);
+  text('FIKTIVES REZEPT - ROMANFOLGE '+String(position).padStart(2,'0'),620,592,3,paper);
+ } else {
  // Design is deterministic: a brand strip, campaign message, and conspicuous fiction disclosure.
  fillRect(72,54,12,72,accent);
  text('f0lg3nr31ch',110,63,8,fg);
@@ -90,6 +151,8 @@ export function renderCampaignImage(chapter){
  for(let i=0;i<c.image_detail.length;i++)text(c.image_detail[i],72,472+i*39,5,muted);
  fillRect(72,579,1056,1,muted);
  text('FIKTIVE AGENTURKAMPAGNE - ROMANFOLGE '+String(position).padStart(2,'0'),72,594,3,accent);
+ }
+
  const stride=W*3,raw=Buffer.alloc((stride+1)*H);
  for(let y=0;y<H;y++)data.copy(raw,y*(stride+1)+1,y*stride,(y+1)*stride);
  const ihdr=Buffer.alloc(13);ihdr.writeUInt32BE(W,0);ihdr.writeUInt32BE(H,4);ihdr[8]=8;ihdr[9]=2;
