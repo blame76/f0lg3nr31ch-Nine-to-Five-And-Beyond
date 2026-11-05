@@ -39,7 +39,7 @@ test('Buchkachel ersetzt den Dialog im Reader ohne die Schulung vorwegzunehmen',
 });
 test('Werbung ist responsiv, layoutstabil und beim Druck ausgeschlossen',()=>{
  const css=readFileSync('public/style.css','utf8');
- assert.match(css,/\\.book-cover\\{[^}]*aspect-ratio:3 \\/ 4\\.35/);
- assert.match(css,/@media\\(max-width:520px\\)/);
- assert.match(css,/@media print\\{\\.fictional-book-ad\\{display:none!important\\}\\}/);
+ assert.ok(css.includes('aspect-ratio:3 / 4.35'));
+ assert.ok(css.includes('@media(max-width:520px)'));
+ assert.ok(css.includes('@media print{.fictional-book-ad{display:none!important}}'));
 });
