@@ -9,6 +9,7 @@ import {renderResearchChapter} from './references.mjs';
 import {renderAdminBookAd} from './book-ad.mjs';
 import {renderLlmsTxt,renderRss,renderNotFound,renderArdManifest,renderLegacyAiCatalog} from './discovery.mjs';
 import {installPartnerweltRedesign} from './partnerwelt-redesign.mjs';
+import {installPartnerweltSocial,SOCIAL_SLUGS} from './partnerwelt-social.mjs';
 
 const config=readJson('config/site.json');
 const manifest=readJson('content/chapters/index.json');
@@ -52,6 +53,8 @@ installPartnerwelt();
 // The reviewed visual layer is applied after the integrity-checked static bundle.
 // It only edits the fictional support company, not the reader or other partner pages.
 installPartnerweltRedesign(dist);
+// Public, individually shareable fiction-marked Social-Labor and WCAG contrast correction.
+installPartnerweltSocial(dist);
 
 const abs=p=>absoluteUrl(site,p);
 const e=escapeHtml, em=escapeMeta;
@@ -137,7 +140,7 @@ for(const [slug,title,body] of [['experiment','Über das Experiment',about],['im
 }
 if(ready || publicIndexReady){
  // Only indexable URLs belong in the sitemap; no unapproved chapter URLs.
- const slugs=['','roman/',...(ready?list.map(c=>'roman/'+c.id+'/'):[]),'experiment/','impressum/','datenschutz/','lizenz/','partnerwelt/','partnerwelt/palettenpalaver/','partnerwelt/belegballett/','partnerwelt/warteschleifenwunder/'];
+ const slugs=['','roman/',...(ready?list.map(c=>'roman/'+c.id+'/'):[]),'experiment/','impressum/','datenschutz/','lizenz/','partnerwelt/','partnerwelt/palettenpalaver/','partnerwelt/belegballett/','partnerwelt/warteschleifenwunder/',...SOCIAL_SLUGS];
  output('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+slugs.map(s=>'<url><loc>'+e(abs(s))+'</loc></url>').join('')+'</urlset>');
 }
 if(ready)output('feed.xml',renderRss({site,config,chapters:list}));

@@ -6,6 +6,8 @@ Ein fortlaufender Agenturroman. Die Agentur, ihre Stellenangebote und Servicever
 
 **Partnerwelt:** https://folgenreich.benjamin-lam.de/partnerwelt/ – drei fiktive, ausdrücklich gekennzeichnete Firmen mit praxisnahen Angeboten und eigens generierten KI-Bildern.
 
+**Social-Labor:** https://folgenreich.benjamin-lam.de/partnerwelt/share/ – sechs ausdrücklich fiktive Social-Media-Beiträge mit eigenen Bildern und jeweils einer kurzen „Warum so?“-Erklärung. Technischer Hintergrund: [Social-Labor](docs/SOCIAL-LAB.md).
+
 ## Die Geschichten
 
 1. Die Null am Ende
