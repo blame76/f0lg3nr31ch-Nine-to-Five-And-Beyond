@@ -31,3 +31,11 @@ Die geprüfte HTML-/Asset-Fassung liegt als deterministisches Release-Bundle unt
 Im Manifest stehen Verweise auf die Textquellen. Für die Leserfassung wurden ausschließlich editorische Fassungs-Untertitel entfernt; die Prosatexte blieben unverändert. Die ursprünglichen Quell-Hashes bezeichnen die Herkunftstexte und sind nicht die Hashes der hier bereinigten Leserdateien.
 
 Spätere Korrekturen müssen dokumentiert werden. Eine neue Fassung ersetzt nicht automatisch eine zuvor geprüfte Veröffentlichung.
+
+## Folge 05 „Verfügbar“ und fiktive Werbung (05.11.2026)
+
+Der Autor hat die Aufnahme der aktuellen Reader-Fassung und den anschließenden Deploy auf `main` ausdrücklich beauftragt. Folge 05 ist mit diesem Stand redaktionell genehmigt und im Manifest als `approved` für den 05.11.2026 gekennzeichnet. Diese Genehmigung ist **keine abgeschlossene juristische Freigabe oder Genehmigung zur Indexierung**; `release_approved=false` und `legal_reviewed_for_launch=false` bleiben unverändert. Die Kapitel bleiben `noindex,follow`.
+
+Die Romanprosa in `content/chapters/verfuegbar.md` enthält keine Werbung. Der Reader-Build schaltet innerhalb der Geschichte bei „Noch gut drei Stunden.“ eine deutlich gekennzeichnete **fiktive Anzeige** ein, die zur bereits vorhandenen Seite `/partnerwelt/share/vier-stunden-zwei-uhren/` führt. Nach dem Kapitel ist die separate fiktive Streamingkampagne **prscnm** mit eigenem Frontend unter `/partnerwelt/prscnm/` verlinkt. Es gibt keine Abonnements, Videos oder Zahlungsvorgänge. Beide Werbebereiche sind redaktionelle Fiktion, nicht als reale Firma auszuzeichnen.
+
+Die sechs Quellen im Katalog `content/references/verfuegbar.json` wurden am 05.11.2026 überprüft; die fachlichen Hinweise sind eine zweite Leseebene und kein Teil der Prosahandlung. Die statische prscnm-Seite und die Hintergrundseite bleiben bewusst `noindex,follow`; die bestehende Partnerwelt und das Social-Labor werden nicht in ihren Freigabestatus verändert. Vor öffentlichen Social-Posts ist die Preview-Grafik auf den Zielplattformen zu prüfen.
