@@ -9,13 +9,13 @@ const manifest=readJson('content/chapters/index.json');
 const readProse=c=>readFileSync(c.path,'utf8').replace(/^# [^\n]+\n+/,'');
 const catalogs=manifest.chapters.filter(c=>c.research?.status==='linked').map(c=>({chapter:c,catalog:readJson(c.research.path),prose:readProse(c)}));
 
-test('All four author-approved chapters have traceable research decisions',()=>{
- assert.equal(manifest.chapters.length,4);
- assert.equal(manifest.chapters.filter(c=>c.status==='approved').length,4);
+test('All five author-approved chapters have traceable research decisions',()=>{
+ assert.equal(manifest.chapters.length,5);
+ assert.equal(manifest.chapters.filter(c=>c.status==='approved').length,5);
  assert.equal(manifest.chapters.filter(c=>c.status==='release-candidate').length,0);
  assert.ok(manifest.chapters.every(c=>c.research.status==='linked'));
  assert.deepEqual(validateManifest(config,manifest),[]);
- assert.equal(catalogs.length,4);
+ assert.equal(catalogs.length,5);
 });
 test('All chapter-specific source anchors are distinct, ordered and genuinely in the prose',()=>{
  for(const {chapter,catalog,prose} of catalogs){

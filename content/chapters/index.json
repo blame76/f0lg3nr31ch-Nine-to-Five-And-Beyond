@@ -157,6 +157,46 @@
       },
       "approved_by": "Benjamin Lam",
       "approved_at": "2026-11-05"
+    },
+    {
+      "id": "verfuegbar",
+      "title": "Verfügbar",
+      "description": "Ein gewöhnlicher Tag im Entwickler-Tunnel: Jamal baut mit KI eine Magento-Erweiterung, wartet auf Reviews und Kunden und erlebt den widersprüchlichen Rückweg ins Büro.",
+      "source_ref": "chat-editorial/verfuegbar-2026-11-05",
+      "source_blob_sha": "2d405495a613ae2ff4516c72aefe2f2e4ee4903c",
+      "status": "approved",
+      "position": 5,
+      "path": "content/chapters/verfuegbar.md",
+      "campaign": {
+        "category": "Streaming · Fiktive Werbung",
+        "headline": "Es wird wieder spät.",
+        "subheadline": "prscnm – Geschichten, die dich nicht loslassen.",
+        "promise": "Vier Serienideen. Viel Gesprächsstoff. Eine letzte Folge, die es nicht gibt.",
+        "context": "Eine fiktive Streamingkampagne begleitet Jamals Tag zwischen KI-Entwicklung, Büropräsenz und Seriengesprächen. Prscnm ist ein frei erfundener Kanal ohne Abos oder echte Videoinhalte.",
+        "seo_title": "Verfügbar – KI, Arbeitszeit und Entwickleralltag",
+        "seo_description": "Verfügbar ist eine fiktive Romanfolge über KI-gestützte Entwicklung, Reviews und die Rückkehr ins Büro. Dazu gehört die fiktive Streaming-Werbung prscnm.",
+        "social_title": "Es wird wieder spät. | prscnm – Romanfolge 05",
+        "social_description": "Fiktive Streaming-Werbung von prscnm: Geschichten, die dich nicht loslassen. Jamals normaler Entwickleralltag in Romanfolge 05 „Verfügbar“.",
+        "image": "share/verfuegbar.png",
+        "image_alt": "Fiktive Streamingkampagne prscnm: Es wird wieder spät. Geschichten, die dich nicht loslassen. Romanfolge 05.",
+        "image_lines": [
+          "ES WIRD WIEDER",
+          "SPAET."
+        ],
+        "image_detail": [
+          "PRSCNM ORIGINALS",
+          "FIKTIVER STREAMINGKANAL"
+        ],
+        "accent": "#FF7F93",
+        "streaming_card": true
+      },
+      "research": {
+        "status": "linked",
+        "path": "content/references/verfuegbar.json",
+        "reviewed_on": "2026-11-05"
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-05"
     }
   ]
 }

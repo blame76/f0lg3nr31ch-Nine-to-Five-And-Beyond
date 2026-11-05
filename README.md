@@ -15,8 +15,11 @@ Ein fortlaufender Agenturroman. Die Agentur, ihre Stellenangebote und Servicever
 3. How to Service
 
 4. Der zweite Tab
+5. Verfügbar
 
 **Redaktionell am 05.11.2026 freigegeben:** Folge 04 „Der zweite Tab“ mit Rezept-Share-Preview aus der Admin-Küche und freiwilligen Quellen zu Shadow AI und Datenschutz. Die Aufnahme in den öffentlichen Reader ist keine abgeschlossene juristische Prüfung oder Freigabe zur Suchmaschinenindexierung.
+
+**Neu (05.11.2026):** Folge 05 „Verfügbar“ folgt Jamal durch einen KI-gestützten Arbeitstag. Die im Lesetext gekennzeichnete fiktive Anzeige führt zum [Social-Labor „Vier Stunden. Zwei Uhren.“](https://folgenreich.benjamin-lam.de/partnerwelt/share/vier-stunden-zwei-uhren/). Die eigenständige [fiktive Streamingkampagne prscnm](https://folgenreich.benjamin-lam.de/partnerwelt/prscnm/) ist als zweites Experiment angebunden. [Quellen zur Folge](https://folgenreich.benjamin-lam.de/partnerwelt/prscnm/hinter-den-kulissen/).
 
 Jede Romanfolge hat eine eigene fiktive Agenturkampagne für Social Previews. Die Kapiteltexte stehen beim Lesen im Vordergrund.
 

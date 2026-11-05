@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "chapter_id": "verfuegbar",
+  "reviewed_on": "2026-11-05",
+  "editorial_note": "Fachliche Vertiefungen zu Jamals erfundenem Arbeitstag: KI kann Teilschritte beschleunigen, aber Freigaben, Reviews, Kontextwechsel und Teamorganisation bestimmen das Gesamtergebnis. Die Studien untersuchen verschiedene Arbeitssituationen und beweisen keine allgemeine Beschleunigung oder Verlangsamung; das Präsenzmodell der fiktiven Agentur wird nicht als Rechtsbehauptung dargestellt.",
+  "sources": [
+    {
+      "id": "hybridarbeit",
+      "placement": "inline",
+      "anchor": "Er hatte nur das Gefühl, früher mehr Kontakt zu den Kollegen gehabt zu haben.",
+      "title": "Hybride Arbeit und informelle Kontakte",
+      "description": "Fraunhofer IAO untersucht produktive, flexible Arbeitsmodelle und gleichzeitig den möglichen Verlust spontaner Kontakte. Jamals Eindruck ist eine Figurenbeobachtung und kein repräsentatives Studienergebnis.",
+      "publisher": "Fraunhofer IAO",
+      "source_title": "Back-to-Office oder doch Hybrid? Neue Studie gibt aktuelle und differenzierte Antworten (2025)",
+      "url": "https://www.iao.fraunhofer.de/de/presseservice/aktuelles/back-to-office-oder-doch-hybrid-neue-studie-gibt-aktuelle-und-differenzierte-antworten.html"
+    },
+    {
+      "id": "dora-system",
+      "placement": "inline",
+      "anchor": "Vorsorglich war oft ein anderes Wort für späteren Wartungsaufwand.",
+      "title": "Nicht die Codeproduktion allein zählt",
+      "description": "Der DORA-Bericht 2025 beschreibt KI als Verstärker der vorhandenen Fähigkeiten und Schwächen einer Organisation. Prüfungen, bewusste Architekturentscheidungen und Arbeitsorganisation bleiben Teil der Wertschöpfung.",
+      "publisher": "DORA / Google Cloud",
+      "source_title": "State of AI-assisted Software Development 2025",
+      "url": "https://dora.dev/research/2025/dora-report/"
+    },
+    {
+      "id": "ki-kosten",
+      "placement": "inline",
+      "anchor": "Sondern weil ein Entwicklungsprozess aus mehr bestand als der Geschwindigkeit, mit der jemand Code schreiben konnte.",
+      "title": "Die Kosten entstehen oft nach der Generierung",
+      "description": "Benjamin Lam beschreibt, warum KI-Unterstützung nach den gesamten Prüf-, Review-, Betriebs- und Fehlerfolgekosten beurteilt werden sollte. Eine schneller erzeugte Änderung ist noch keine schneller und zuverlässig ausgelieferte Leistung.",
+      "publisher": "Benjamin Lam · Quelle auf.",
+      "source_title": "KI lohnt sich dort, wo Prüfen und Irren billig bleiben (27.08.2026)",
+      "url": "https://benjamin-lam.github.io/quelle-auf/articles/wie-setze-ich-ki-oekonomisch-rational-beim-programmieren-ein-unter-zeitd/"
+    },
+    {
+      "id": "metr-2025",
+      "placement": "further",
+      "title": "Wenn KI die Arbeit erfahrener Entwickler verlängert",
+      "description": "Ein randomisiertes Experiment mit erfahrenen Open-Source-Maintainern und frühen KI-Werkzeugen von 2025 ergab im Mittel längere Bearbeitungszeiten. Das gilt nur für untersuchte Aufgaben und Werkzeuge.",
+      "publisher": "METR",
+      "source_title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+      "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/"
+    },
+    {
+      "id": "metr-2026",
+      "placement": "further",
+      "title": "Warum aktuelle Zeitgewinne schwer messbar bleiben",
+      "description": "METR schildert 2026 Stichprobenprobleme und parallele Agentenarbeit: Beschäftigte erledigen während des Wartens andere Aufgaben. Deshalb sind beobachtete Zeitunterschiede keine belastbaren allgemeinen Produktivitätszahlen.",
+      "publisher": "METR",
+      "source_title": "We are Changing our Developer Productivity Experiment Design (2026)",
+      "url": "https://metr.org/blog/2026-02-24-uplift-update/"
+    },
+    {
+      "id": "review-guidance",
+      "placement": "further",
+      "title": "Pull Requests prüfen, bevor sie übernommen werden",
+      "description": "GitHubs Dokumentation erklärt, wie KI-gestütztes Review im Pull-Request-Lebenszyklus eingesetzt werden kann. Automatische Hinweise ersetzen keine Freigabe durch Verantwortliche.",
+      "publisher": "GitHub Docs",
+      "source_title": "Use Copilot code review across the pull request lifecycle",
+      "url": "https://docs.github.com/en/copilot/tutorials/use-copilot-code-review-across-the-pull-request-lifecycle"
+    }
+  ]
+}
