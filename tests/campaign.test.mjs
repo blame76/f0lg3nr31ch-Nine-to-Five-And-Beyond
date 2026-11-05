@@ -8,7 +8,7 @@ import {escapeMeta} from '../scripts/lib.mjs';
 
 const chapters=JSON.parse(readFileSync('content/chapters/index.json','utf8')).chapters;
 test('Every novel chapter has a distinct fictional campaign and social preview',()=>{
- assert.equal(chapters.length,4);
+ assert.equal(chapters.length,5);
  assert.equal(new Set(chapters.map(c=>c.campaign.image)).size,4);
  assert.equal(new Set(chapters.map(c=>c.campaign.social_title)).size,4);
  for(const c of chapters){
