@@ -35,6 +35,10 @@ npm run build
 
 Die erzeugten Dateien stehen in `dist/`. Deployment erfolgt über Cloudflare Pages vom Branch `main`.
 
+## Öffentliches Review-Labor
+
+Der [Review-Workflow](review/README.md) dokumentiert Fachprüfungen, Entwicklungslektorat, offene Befunde und spätere Korrekturentscheidungen für die veröffentlichten Folgen. Das Review-Labor ändert keine Kapitel automatisch; die privaten Entwürfe bleiben getrennt.
+
 ## Über das Experiment
 
 Der Roman entsteht mit Unterstützung von KI. Mehr über die Geschichte und den Schreibprozess steht auf der Seite [Über das Projekt](https://folgenreich.benjamin-lam.de/experiment/).
