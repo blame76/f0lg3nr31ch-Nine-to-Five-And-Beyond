@@ -102,3 +102,20 @@ a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}a:
 }
 @media(max-width:360px){.book-ad-grid{grid-template-columns:1fr}.book-cover{width:min(55%,160px)}}
 @media print{.fictional-book-ad{display:none!important}}
+
+
+/* Fictional sponsor insert for episode 05. Clear advertisement labelling,
+   no overlays/scripts and no interruption of text selection or reader mode. */
+.chapter-text .fictional-sla-ad{
+ margin:2.2rem 0;padding:1.25rem 1.45rem;
+ border:1px solid #afbbc6;border-left:5px solid #426d77;
+ border-radius:.4rem;background:#eef4f4;color:#172e34;
+ font:400 .94rem/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+.chapter-text .fictional-sla-ad .eyebrow{margin:0 0 .45rem;color:#345967;font-size:.72rem;letter-spacing:.075em;text-transform:uppercase;font-weight:750}
+.chapter-text .fictional-sla-ad h2{margin:.2rem 0 .5rem;font-size:clamp(1.2rem,3vw,1.7rem);line-height:1.2;letter-spacing:-.025em}
+.chapter-text .fictional-sla-ad p{margin:.5rem 0}
+.chapter-text .fictional-sla-ad a{font-weight:750;color:#184d70;text-decoration:underline;text-underline-offset:.15em}
+.chapter-text .fictional-sla-ad .fictional-ad-note{color:#36545c;font-size:.76rem}
+@media(max-width:520px){.chapter-text .fictional-sla-ad{padding:1rem;margin:1.5rem 0}}
+@media print{.chapter-text .fictional-sla-ad{display:none!important}}
