@@ -33,7 +33,7 @@
 1. GitHub Issue mit Kategorie, Originalfundstelle und erwarteter Leser-/Praxiswirkung.
 2. Fachliche und redaktionelle Kommentare im Issue, inklusive Gegenpositionen.
 3. Autorentscheidung im Issue.
-4. **Getrennter** Kapitel-PR mit Text-Diff, Link zum Issue, Kontinuitäts- und Regres­sionsnotiz; keine unautorisierten Mehrfachänderungen.
+4. **Getrennter** Kapitel-PR mit Text-Diff, Link zum Issue, Kontinuitäts- und Regressionsnotiz; keine unautorisierten Mehrfachänderungen.
 5. Reader-Tests/Checks und menschliches Gegenlesen; Merge nur nach Autorenfreigabe.
 6. Leserfassung **nach Deployment** verifizieren (URL, Anker, neue Fassung); Issue mit Commit/URL schließen.
 
