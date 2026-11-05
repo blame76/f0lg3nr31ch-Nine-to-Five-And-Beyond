@@ -2,6 +2,12 @@
 
 Der Reader zeigt die Lesertexte, nicht redaktionelle Aufgaben oder interne Freigabehinweise. Die Kapitelmarkdowns enthalten keine Arbeitsfassungs-Untertitel, TODOs oder Statuslabels.
 
+## Suchmaschinenfreigabe der veröffentlichten Romanfolgen (05.11.2026)
+
+Der Autor hat am 05.11.2026 ausdrücklich die Indexierung von „Die Null am Ende“ und allen anderen bereits veröffentlichten Folgen beauftragt. Das gesonderte Flag `published_chapters_indexing_approved=true` aktiviert `index,follow` **nur** für Kapitel mit `status=approved`. Die freigegebenen Folgen 01–05 werden in die Sitemap und mit ihren kanonischen URLs in `llms.txt` aufgenommen; noch nicht freigegebene Kapitel bleiben `noindex,follow` und fehlen in beiden Verzeichnissen.
+
+Diese Anweisung hebt den früheren technischen Indexierungsaufschub auf, bestätigt aber **keine abgeschlossene juristische, Lizenz-, Datenschutz- oder Infrastrukturprüfung**. `release_approved=false` und `legal_reviewed_for_launch=false` bleiben unverändert. Der öffentliche Reader und die Suchmaschinenfreigabe sind weiterhin vom vollständigen Release-Gate getrennt. Eine tatsächliche Aufnahme in den Suchindex entscheidet die Suchmaschine selbst.
+
 ## Vor einer indexierbaren Veröffentlichung
 
 - Romantexte und sichtbare Seiten auf sachliche, literarische und redaktionelle Fehler prüfen.
@@ -18,7 +24,7 @@ Der Reader zeigt die Lesertexte, nicht redaktionelle Aufgaben oder interne Freig
 
 **Redaktionelle Autorenfreigabe am 05.11.2026:** Der Autor hat nun zusätzlich **Romanfolge 04 „Der zweite Tab“** ausdrücklich für die Aufnahme in den online lesbaren Reader freigegeben. Der Eintrag in `content/chapters/index.json` ist daher `status=approved`, `approved_by=Benjamin Lam`, `approved_at=2026-11-05`. Der Reader-Deploy auf `main` wird hiermit beauftragt. Die Freigabe umfasst **keine** bereits abgeschlossene juristische Prüfung, keine SEO-Indexierungsfreigabe und keine Freigabe für `legal_reviewed_for_launch=true`. Der aktuelle Stand bleibt deshalb wie bei Folgen 01–03 `noindex,follow`.
 
-**Die Kapitel bleiben bis zur vollständigen Veröffentlichungsfreigabe `noindex,follow`** und fehlen weiterhin in der Sitemap, im RSS-Feed und in einzelnen Kapitel-Links der `llms.txt`. `legal_reviewed_for_launch=false` und `release_approved=false` bleiben bewusst unverändert. Das technische Freigabe-Gate wird erst nach tatsächlichem Rechtsreview und einem gesonderten Release-Beschluss aktiviert. Der technische Status darf nicht in der Leserfassung erscheinen.
+**Historischer Stand vor der gesonderten Indexierungsfreigabe vom 05.11.2026:** Die Kapitel blieben `noindex,follow` und fehlten in der Sitemap, im RSS-Feed und in einzelnen Kapitel-Links der `llms.txt`. `legal_reviewed_for_launch=false` und `release_approved=false` bleiben bewusst unverändert. Das technische Freigabe-Gate wird erst nach tatsächlichem Rechtsreview und einem gesonderten Release-Beschluss aktiviert. Der technische Status darf nicht in der Leserfassung erscheinen.
 
 ## Partnerwelt – eigenständiger Veröffentlichungsbereich (05.11.2026)
 
