@@ -10,6 +10,8 @@ Ein fortlaufender Agenturroman. Die Agentur, ihre Stellenangebote und Servicever
 2. Wer hält die Verantwortung fest?
 3. How to Service
 
+**In Vorbereitung, noch nicht freigegeben:** Folge 04 „Der zweite Tab“ – eine Rezept-Share-Preview aus der Admin-Küche und freiwillige Quellen zu Shadow AI und Datenschutz. Die Aufnahme in einen Arbeitsbranch ist keine Veröffentlichung.
+
 Jede Romanfolge hat eine eigene fiktive Agenturkampagne für Social Previews. Die Kapiteltexte stehen beim Lesen im Vordergrund.
 
 ## Statische Website
