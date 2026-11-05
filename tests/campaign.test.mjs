@@ -9,8 +9,8 @@ import {escapeMeta} from '../scripts/lib.mjs';
 const chapters=JSON.parse(readFileSync('content/chapters/index.json','utf8')).chapters;
 test('Every novel chapter has a distinct fictional campaign and social preview',()=>{
  assert.equal(chapters.length,5);
- assert.equal(new Set(chapters.map(c=>c.campaign.image)).size,4);
- assert.equal(new Set(chapters.map(c=>c.campaign.social_title)).size,4);
+ assert.equal(new Set(chapters.map(c=>c.campaign.image)).size,5);
+ assert.equal(new Set(chapters.map(c=>c.campaign.social_title)).size,5);
  for(const c of chapters){
   assert.match(c.campaign.category,/Fiktiv/i);
   assert.match(c.campaign.seo_description,/fiktiv|roman/i);
@@ -34,7 +34,7 @@ test('Each generated social image is a valid 1200x630 PNG, different from others
   assert.equal(inflateSync(image.subarray(41,41+size)).length,630*(1+1200*3));
   hashes.add(image.toString('base64').slice(-1200));
  }
- assert.equal(hashes.size,4);
+ assert.equal(hashes.size,5);
 });
 
 test('Build uses per-chapter OG images, truthful SEO, and preserves noindex before approval',()=>{
@@ -71,6 +71,13 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
   assert.ok(!html.includes('"@type":"JobPosting"'));
   assert.ok(!html.includes('"@type":"LocalBusiness"'));
   assert.deepEqual([...readFileSync('dist/'+c.campaign.image).subarray(0,8)],[137,80,78,71,13,10,26,10]);
+  if(c.id==='verfuegbar'){
+    assert.ok(html.includes('/partnerwelt/share/vier-stunden-zwei-uhren/'));
+    assert.ok(html.includes('/partnerwelt/prscnm/'));
+    assert.match(html,/Anzeige · fiktive Werbung aus der Partnerwelt/);
+    assert.ok(readFileSync('dist/partnerwelt/prscnm/index.html','utf8').includes('Geschichten, die dich nicht loslassen'));
+    assert.ok(readFileSync('dist/partnerwelt/prscnm/hinter-den-kulissen/index.html','utf8').includes('Sieben gute Startpunkte'));
+  }
  }
  assert.match(readFileSync('dist/robots.txt','utf8'),/Allow: \//);
  const home=readFileSync('dist/index.html','utf8');
