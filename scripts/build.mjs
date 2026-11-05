@@ -1,5 +1,7 @@
 import {readFileSync,writeFileSync,mkdirSync,rmSync,cpSync} from 'node:fs';
 import path from 'node:path';
+import {createHash} from 'node:crypto';
+import {gunzipSync} from 'node:zlib';
 import {root,readJson,escapeHtml,escapeMeta,normUrl,absoluteUrl,validateManifest,markdownToHtml} from './lib.mjs';
 import {about,imprint,privacy,license} from './pages.mjs';
 import {renderCampaignImage} from './social-image.mjs';
@@ -17,6 +19,35 @@ const publicIndexReady=!!site && config.public_pages_indexing_approved===true;
 const dist=path.join(root,'dist');
 rmSync(dist,{recursive:true,force:true});mkdirSync(dist,{recursive:true});
 cpSync(path.join(root,'public'),dist,{recursive:true});
+
+/** Expand the versioned, self-contained fictional Partnerwelt without dependencies. */
+function installPartnerwelt() {
+ const release='2026-11-05', expected='80cea8d2fcd53374cc0d3fa472604432bccecdaffca6c120e3f90b35fe591b29';
+ const encoded=readFileSync(path.join(root,'bundles','partnerwelt-'+release+'.tar.gz.base64'),'utf8');
+ const compressed=Buffer.from(encoded.replace(/\\s/g,''),'base64');
+ if(createHash('sha256').update(compressed).digest('hex')!==expected) throw new Error('Partnerwelt release archive failed integrity check');
+ const archive=gunzipSync(compressed);
+ let offset=0, count=0;
+ while(offset+512<=archive.length){
+  const header=archive.subarray(offset,offset+512);
+  const name=header.toString('utf8',0,100).split('\\0')[0];
+  if(!name)break;
+  const size=parseInt(header.toString('ascii',124,136).replace(/\\0/g,'').trim(),8);
+  const type=header[156];
+  if(!name.startsWith('partnerwelt/') || path.posix.normalize(name)!==name || name.includes('..') ||
+     type!==48 || !Number.isSafeInteger(size) || size<0 || offset+512+size>archive.length)
+   throw new Error('Invalid Partnerwelt release entry: '+name);
+  const dest=path.join(dist,...name.split('/'));
+  mkdirSync(path.dirname(dest),{recursive:true});
+  writeFileSync(dest,archive.subarray(offset+512,offset+512+size));
+  offset+=512+Math.ceil(size/512)*512;
+  count++;
+ }
+ if(count!==27)throw new Error('Incomplete Partnerwelt release: '+count+' files');
+ console.log('Partnerwelt '+release+': '+count+' static files installed');
+}
+installPartnerwelt();
+
 const abs=p=>absoluteUrl(site,p);
 const e=escapeHtml, em=escapeMeta;
 function output(f,body){const target=path.join(dist,f);mkdirSync(path.dirname(target),{recursive:true});writeFileSync(target,body,'utf8');}
@@ -94,7 +125,7 @@ for(const [slug,title,body] of [['experiment','Über das Experiment',about],['im
 }
 if(ready || publicIndexReady){
  // Only indexable URLs belong in the sitemap; no unapproved chapter URLs.
- const slugs=['','roman/',...(ready?list.map(c=>'roman/'+c.id+'/'):[]),'experiment/','impressum/','datenschutz/','lizenz/'];
+ const slugs=['','roman/',...(ready?list.map(c=>'roman/'+c.id+'/'):[]),'experiment/','impressum/','datenschutz/','lizenz/','partnerwelt/','partnerwelt/palettenpalaver/','partnerwelt/belegballett/','partnerwelt/warteschleifenwunder/'];
  output('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+slugs.map(s=>'<url><loc>'+e(abs(s))+'</loc></url>').join('')+'</urlset>');
 }
 if(ready)output('feed.xml',renderRss({site,config,chapters:list}));
