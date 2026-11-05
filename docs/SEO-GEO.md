@@ -10,10 +10,11 @@ The controlled single source of truth is content/chapters/index.json → chapter
 - A canonical URL at https://folgenreich.benjamin-lam.de/roman/{chapter-id}/.
 - Upon explicit author/legal release: Book/Chapter JSON-LD and XML sitemap; **never JobPosting or LocalBusiness for the fictional agency**.
 
-## Three campaigns
+## Four campaigns (04 nur als unveröffentlichter Release-Kandidat)
 1. Die Null am Ende → recruiting / Kundenberatung & Key Account Management → “Wir suchen dich.” The fictional vacancy reflects the absence of the customer's familiar account manager.
 2. Wer hält die Verantwortung fest? → E-Commerce Betreuung & Wartung → “Ihr Shop. Unsere Verantwortung.”
 3. How to Service → Serviceübernahme and onboarding → “Sie kümmern sich um Ihr Geschäft. Wir um den Rest.”
+4. Der zweite Tab → Rezeptkarte aus der fiktiven Admin-Küche → “Aubergine. Reis. Rest.” (verrät das Shadow-AI-Thema nicht im Social-Teaser).
 
 The image headline is **not** the same as the SEO title: social teasers can sound like fictional agency marketing, whereas search descriptions explicitly classify the linked page as a novel chapter. The actual chapter text is never reworded to force SEO keywords.
 
