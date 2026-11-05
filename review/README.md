@@ -12,11 +12,11 @@ Dieses Verzeichnis ist der **separate redaktionelle Review-Workflow** für die �
 
 ## Transparenz und Grenzen
 
-- Die [GitHub Issues](../../issues) sind das öffentliche Befundprotokoll. Ein Issue braucht Fundstelle, Risiko, Belege, Gegenthese, Empfehlung und Entscheidung.
-- Ein [Pull Request](../../pulls) ist ein **Korrekturvorschlag**, keine stillschweigende Veröffentlichung. Ein Vergleich zwischen Vorher und Nachher bleibt lesbar; Ablehnungen und Nicht-Änderungen dürfen explizit begründet werden.
+- Die [GitHub Issues](https://github.com/blame76/f0lg3nr31ch-Nine-to-Five-And-Beyond/issues) sind das öffentliche Befundprotokoll. Ein Issue braucht Fundstelle, Risiko, Belege, Gegenthese, Empfehlung und Entscheidung.
+- Ein [Pull Requests](https://github.com/blame76/f0lg3nr31ch-Nine-to-Five-And-Beyond/pulls) ist ein **Korrekturvorschlag**, keine stillschweigende Veröffentlichung. Ein Vergleich zwischen Vorher und Nachher bleibt lesbar; Ablehnungen und Nicht-Änderungen dürfen explizit begründet werden.
 - Der Begriff „Expertise“ bezeichnet zunächst eine **benötigte Fachperspektive**, nicht eine tatsächlich konsultierte Person. KI-basierte Erstprüfungen sind als solche markiert. Eine externe bzw. unabhängige Fachprüfung darf erst mit dokumentiertem Namen/Rolle, Methode, Datum, Umfang und Einverständnis so bezeichnet werden.
 - Ein Quellenlink beweist, dass ein Text auf eine echte Quelle verweist – nicht, dass ein fiktives Ereignis so stattgefunden hat.
-- Korrektur-Patches im öffentlichen Reader-Repository betreffen nur **bereits öffentlich lesbare Kapitel**. Die private Werkstatt [blame76/f0lg3nr31ch] wird hier nicht gespiegelt.
+- Korrektur-Patches im öffentlichen Reader-Repository betreffen nur **bereits öffentlich lesbare Kapitel**. Die private Werkstatt bleibt von diesem öffentlichen Protokoll getrennt.
 - Keine Textkorrektur durch Review-Automatismus: **Autorentscheidung → gesonderter Text-PR → Checks → Merge → Live-Verifikation**. Fachliches und literarisches Urteil bleiben getrennt.
 - Ein öffentliches Review ist kein Ersatz für anwaltliche Prüfung oder ein Lektorat durch eine beauftragte Person.
 
