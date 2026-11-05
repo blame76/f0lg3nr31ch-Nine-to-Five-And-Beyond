@@ -111,7 +111,7 @@ for(let i=0;i<list.length;i++){
  // A static, clearly separated fictional ad replaces the removed kitchen
  // dialogue only in episode 04. The novel prose remains an independent text.
  const adAnchor='<p>Leon nahm drei Pistazien. Der Admin schraubte das Gefäß zu und schlug sein Buch wieder auf.</p>';
- const chapterHtml=c.id==='der-zweite-tab'
+ let chapterHtml=c.id==='der-zweite-tab'
   ? (()=>{if(!research.chapterHtml.includes(adAnchor))throw new Error('Admin book-ad placement anchor missing');
      return research.chapterHtml.replace(adAnchor,adAnchor+renderAdminBookAd());})()
   : research.chapterHtml;
