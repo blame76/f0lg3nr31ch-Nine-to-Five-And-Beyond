@@ -60,7 +60,12 @@ installPartnerweltSocial(dist);
 const abs=p=>absoluteUrl(site,p);
 const e=escapeHtml, em=escapeMeta;
 function output(f,body){const target=path.join(dist,f);mkdirSync(path.dirname(target),{recursive:true});writeFileSync(target,body,'utf8');}
-function structured(obj){return '<script type="application/ld+json">'+JSON.stringify(obj).replace(/</g,'\\u003c')+'</script>';}
+function structured(obj){
+ // Keep social-crawler head ASCII-safe, including JSON-LD chapter titles.
+ // Unicode escapes preserve the exact structured-data string values.
+ const json=JSON.stringify(obj).replace(/</g,'\\u003c').replace(/[^\x00-\x7F]/g,ch=>'\\u'+ch.charCodeAt(0).toString(16).padStart(4,'0'));
+ return '<script type="application/ld+json">'+json+'</script>';
+}
 function page({title,description=config.description,slug='',type='website',body,schema=null,ogTitle=null,ogDescription=null,ogImage='share-preview.png',ogAlt='f0lg3nr31ch – Nine to Five. And Beyond. Fiktiver Agenturroman und Experiment.',indexApprovedChapter=false}){
  const url=abs(slug),fullTitle=title+' | f0lg3nr31ch';
  const head=[
