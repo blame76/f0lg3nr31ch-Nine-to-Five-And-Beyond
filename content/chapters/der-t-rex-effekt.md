@@ -168,7 +168,7 @@ Er stand barfuß vor dem Tisch.
 
 Im Flur lagen zwei Paar Kinderschuhe, ein einzelner Gummistiefel und ein Turnbeutel.
 
-Alex wusste, dass der Turnbeutel dort gestern Abend noch nicht gelegen hatte.
+Der Turnbeutel lag halb unter einer Jacke. Alex hätte schwören können, dass er gestern Abend noch nicht dort gelegen hatte.
 
 „Hast du heute Sport?“
 
