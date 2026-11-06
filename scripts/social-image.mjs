@@ -82,7 +82,61 @@ export function renderCampaignImage(chapter){
 
  // Recipe card for the admin's Friday meal. Deterministic, self-contained PNG;
  // no remote image services or social-platform-specific HTML needed.
- if(c.recipe_card===true) {
+
+ // Familienkalender motif: a smiling pixel dinosaur and a readable calendar.
+ // No external asset, font or network request; social crawlers receive one 1200x630 PNG.
+ if(c.calendar_card===true) {
+  const cream=[250,247,236],ink=[30,48,62],mint=[210,238,223],
+   green=[57,151,112],dark=[28,100,80],orange=[247,180,66],
+   paper=[255,254,249],grid=[195,205,196],white=[255,255,255];
+  fillRect(0,0,W,H,cream); fillRect(0,0,542,H,mint);
+  fillRect(58,57,7,43,dark);
+  text('F0LG3NR31CH',85,67,4,ink);
+  text('FAMILIEN-',58,134,9,ink);
+  text('KALENDER',58,211,9,ink);
+  function oval(cx,cy,rx,ry,color) {
+   for(let dy=-ry;dy<=ry;dy++){
+    const dx=rx*Math.sqrt(Math.max(0,1-(dy*dy)/(ry*ry)));
+    fillRect(cx-dx,cy+dy,2*dx+1,1,color);
+   }
+  }
+  // A friendly, slightly blocky cartoon dinosaur with tail, feet and back plates.
+  for(let x=107;x<266;x++){
+    const t=(x-107)/159,half=8+37*t;
+    fillRect(x,421-half,1,2*half,green);
+  }
+  oval(278,416,136,86,green);
+  fillRect(340,336,53,93,green);
+  oval(390,338,92,64,green);
+  oval(425,369,71,25,green);
+  oval(333,481,25,43,dark);oval(240,478,25,45,dark);
+  fillRect(306,509,66,16,dark);fillRect(214,512,65,15,dark);
+  for(let i=0;i<5;i++){
+   const x=187+i*37,y=344+(i%2)*3;
+   for(let yy=0;yy<29;yy++)fillRect(x+Math.floor(yy/3),y+yy,26-Math.floor(yy/3),1,dark);
+  }
+  oval(411,316,15,20,white);oval(416,316,5,8,ink);
+  fillRect(453,347,8,7,dark);fillRect(409,375,56,4,dark);
+  // Sale sticker is a fictional visual joke, not a real checkout offer.
+  fillRect(59,532,444,57,orange); fillRect(64,537,434,47,orange);
+  text('100% RABATT',78,548,6,ink);
+  // Right-hand paper calendar with actual ruled entries.
+  fillRect(578,87,567,475,[191,205,197]);fillRect(565,75,567,475,paper);
+  fillRect(565,75,567,78,dark);
+  text('FREITAG',600,100,6,white);
+  text('07 12',598,183,4,dark);text('FRUEHSTUECK',768,183,4,ink);
+  fillRect(597,238,500,2,grid);
+  text('15 05',598,255,4,dark);text('SCHULE',768,255,4,ink);
+  fillRect(597,309,500,2,grid);
+  text('15 45',598,329,4,dark);text('KITA',768,329,4,ink);
+  fillRect(597,381,500,2,grid);
+  fillRect(596,400,503,94,[235,245,229]);
+  fillRect(596,400,8,94,green);
+  text('RESTAURANT',626,425,6,ink);
+  fillRect(597,509,502,2,grid);
+  fillRect(0,596,W,34,ink);
+  text('FIKTIVE KALENDERWERBUNG - ROMANFOLGE 06',39,604,3,white);
+ } else if(c.recipe_card===true) {
   const wood=[198,166,124],paper=[247,239,217],ink=[55,69,43],
    olive=[113,130,82],red=[157,78,54],cream=[228,212,167];
   fillRect(0,0,W,H,wood);
