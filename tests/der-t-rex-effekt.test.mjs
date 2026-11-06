@@ -12,7 +12,7 @@ test('Freitag als neue Folge 06: ausdrücklich nur der Morgen im Reader',()=>{
  assert.equal(chapter.position,6);
  assert.equal(chapter.status,'approved');
  assert.equal(chapter.source_ref,'draft/der-t-rex-effekt-vollfassung-20261106');
- assert.equal(chapter.source_blob_sha,'f926970d0ea0479493c4bb6294772dfaac9a9649');
+ assert.equal(chapter.source_blob_sha,'2af46204674aaa278409281d433a9ce799bc8cc1');
  assert.ok(novel.startsWith('# Der T-Rex-Effekt\n'));
  assert.ok(novel.trimEnd().endsWith('Um neun musste er im Meeting sein.'));
  for(const phrase of ['Um vierzehn Uhr zwölf','Das Gespräch in der Kita dauerte','Lotta','Emma','Ein Einhorn gegen einen Triceratops'])
