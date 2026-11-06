@@ -119,3 +119,8 @@ a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}a:
 .chapter-text .fictional-sla-ad .fictional-ad-note{color:#36545c;font-size:.76rem}
 @media(max-width:520px){.chapter-text .fictional-sla-ad{padding:1rem;margin:1.5rem 0}}
 @media print{.chapter-text .fictional-sla-ad{display:none!important}}
+
+/* Kapitel 06: kurzer nicht verlinkter Wochenendgruß nach der Miniatur. */
+.weekend-note{max-width:74ch;margin:0 auto 3rem;padding:1.1rem 0 1.6rem;border-bottom:1px solid var(--line);text-align:center}
+.weekend-note p{margin:0;color:var(--muted);font-weight:600;letter-spacing:.01em;line-height:1.7}
+@media print{.weekend-note{display:none!important}}

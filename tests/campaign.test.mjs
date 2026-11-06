@@ -8,9 +8,9 @@ import {escapeMeta} from '../scripts/lib.mjs';
 
 const chapters=JSON.parse(readFileSync('content/chapters/index.json','utf8')).chapters;
 test('Every novel chapter has a distinct fictional campaign and social preview',()=>{
- assert.equal(chapters.length,5);
- assert.equal(new Set(chapters.map(c=>c.campaign.image)).size,5);
- assert.equal(new Set(chapters.map(c=>c.campaign.social_title)).size,5);
+ assert.equal(chapters.length,6);
+ assert.equal(new Set(chapters.map(c=>c.campaign.image)).size,6);
+ assert.equal(new Set(chapters.map(c=>c.campaign.social_title)).size,6);
  for(const c of chapters){
   assert.match(c.campaign.category,/Fiktiv/i);
   assert.match(c.campaign.seo_description,/fiktiv|roman/i);
@@ -34,7 +34,7 @@ test('Each generated social image is a valid 1200x630 PNG, different from others
   assert.equal(inflateSync(image.subarray(41,41+size)).length,630*(1+1200*3));
   hashes.add(image.toString('base64').slice(-1200));
  }
- assert.equal(hashes.size,5);
+ assert.equal(hashes.size,6);
 });
 
 test('Build uses per-chapter OG images, truthful SEO, and preserves noindex before approval',()=>{
@@ -42,7 +42,7 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
  assert.equal(r.status,0,r.stderr);
  for(const c of chapters){
   const html=readFileSync('dist/roman/'+c.id+'/index.html','utf8');
-  assert.match(html,/name="robots" content="noindex,follow"/);
+  assert.match(html,/name="robots" content="index,follow"/);
   assert.ok(html.includes('property="og:image" content="https://folgenreich.benjamin-lam.de/'+c.campaign.image+'"'));
   assert.ok(html.includes('property="og:title" content="'+escapeMeta(c.campaign.social_title)+'"'));
   assert.ok(html.includes('property="og:description" content="'+escapeMeta(c.campaign.social_description)+'"'));
@@ -71,6 +71,15 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
   assert.ok(!html.includes('"@type":"JobPosting"'));
   assert.ok(!html.includes('"@type":"LocalBusiness"'));
   assert.deepEqual([...readFileSync('dist/'+c.campaign.image).subarray(0,8)],[137,80,78,71,13,10,26,10]);
+  if(c.id==='der-t-rex-effekt'){
+    assert.ok(html.includes('Wochenende! Offline! Make THE WORLD a BETTER place For CHILDREN!'));
+    assert.ok(html.includes('Fiktiver Familienkalender'));
+    assert.ok(html.includes('100 % Rabatt'));
+    assert.ok(!html.includes('Um vierzehn Uhr zwölf'));
+    assert.ok(!html.includes('Lotta'));
+    assert.ok(!html.includes('research-notes'));
+    assert.ok(html.includes('Um neun musste er im Meeting sein.'));
+  }
   if(c.id==='verfuegbar'){
     assert.ok(html.includes('/partnerwelt/share/vier-stunden-zwei-uhren/'));
     assert.ok(html.includes('/partnerwelt/prscnm/'));
@@ -89,11 +98,11 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
  }
  const map=readFileSync('dist/sitemap.xml','utf8');
  assert.ok(map.includes('https://folgenreich.benjamin-lam.de/roman/'));
- assert.ok(!map.includes('https://folgenreich.benjamin-lam.de/roman/die-null-am-ende/'),'unapproved chapter URLs excluded from sitemap');
+ assert.ok(map.includes('https://folgenreich.benjamin-lam.de/roman/der-t-rex-effekt/'),'approved Friday morning is discoverable');
  const llms=readFileSync('dist/llms.txt','utf8');
  assert.match(llms,/\[Startseite\]\(https:\/\/folgenreich\.benjamin-lam\.de\/\)/);
  assert.match(llms,/\[Lizenz und Urheberschaft\]/);
- assert.ok(!llms.includes('/roman/die-null-am-ende/'),'unapproved chapter URLs excluded from llms.txt');
+ assert.ok(llms.includes('/roman/der-t-rex-effekt/'),'approved morning appears in llms.txt');
  assert.deepEqual(JSON.parse(readFileSync('dist/.well-known/ard.json','utf8')),{entries:[]});
  assert.deepEqual(JSON.parse(readFileSync('dist/.well-known/ai-catalog.json','utf8')),{specVersion:'1.0',entries:[]});
  assert.ok(!readFileSync('dist/robots.txt','utf8').includes('Disallow: /'));

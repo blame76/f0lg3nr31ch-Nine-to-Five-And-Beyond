@@ -9,11 +9,12 @@ const manifest=readJson('content/chapters/index.json');
 const readProse=c=>readFileSync(c.path,'utf8').replace(/^# [^\n]+\n+/,'');
 const catalogs=manifest.chapters.filter(c=>c.research?.status==='linked').map(c=>({chapter:c,catalog:readJson(c.research.path),prose:readProse(c)}));
 
-test('All five author-approved chapters have traceable research decisions',()=>{
- assert.equal(manifest.chapters.length,5);
- assert.equal(manifest.chapters.filter(c=>c.status==='approved').length,5);
+test('All six approved chapters have reviewed research decisions; Friday has no external references',()=>{
+ assert.equal(manifest.chapters.length,6);
+ assert.equal(manifest.chapters.filter(c=>c.status==='approved').length,6);
  assert.equal(manifest.chapters.filter(c=>c.status==='release-candidate').length,0);
- assert.ok(manifest.chapters.every(c=>c.research.status==='linked'));
+ assert.equal(manifest.chapters.filter(c=>c.research.status==='linked').length,5);
+ assert.equal(manifest.chapters.find(c=>c.id==='der-t-rex-effekt').research.status,'none');
  assert.deepEqual(validateManifest(config,manifest),[]);
  assert.equal(catalogs.length,5);
 });

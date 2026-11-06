@@ -197,6 +197,46 @@
       },
       "approved_by": "Benjamin Lam",
       "approved_at": "2026-11-05"
+    },
+    {
+      "id": "der-t-rex-effekt",
+      "title": "Der T-Rex-Effekt",
+      "description": "Ein Freitagmorgen mit zwei Kindern, Dinosauriern, kaltem Kaffee und einem Termin, der nicht ganz in den Familienkalender passt.",
+      "source_ref": "draft/der-t-rex-effekt-vollfassung-20261106",
+      "source_blob_sha": "f926970d0ea0479493c4bb6294772dfaac9a9649",
+      "status": "approved",
+      "position": 6,
+      "path": "content/chapters/der-t-rex-effekt.md",
+      "campaign": {
+        "category": "Familienalltag · Fiktiver Kalender",
+        "headline": "Alle Termine. Ein Dinosaurier.",
+        "subheadline": "Der Familienkalender für das Leben zwischen Frühstück und Feierabend.",
+        "promise": "Restaurant eingetragen. 100 % Rabatt. Und irgendwer muss trotzdem los.",
+        "context": "Fiktive Werbung für einen Familienkalender mit Dinosaurier und einem geheimnisvollen Eintrag „Restaurant“. Keine App, kein Rabattcode und kein Kaufangebot – nur eine augenzwinkernde Share Preview zum Roman.",
+        "seo_title": "Der T-Rex-Effekt – Freitagmorgen mit zwei Kindern",
+        "seo_description": "Der T-Rex-Effekt: fiktive Romanminiatur über Familienmorgen, Kinder und einen Vater zwischen Brotdosen, Dinosauriern und Kalenderterminen.",
+        "social_title": "Familienkalender: Restaurant. 100 % Rabatt. | Der T-Rex-Effekt",
+        "social_description": "Fiktive Kalenderwerbung mit Dinosaurier, Restaurant-Eintrag und 100 % Rabatt. Dahinter steckt ein Freitagmorgen aus dem Roman f0lg3nr31ch.",
+        "image": "share/der-t-rex-effekt.png",
+        "image_alt": "Fiktive Werbung: familienfreundlicher Kalender mit grünem Dinosaurier, Termin Restaurant und 100 % Rabatt. Romanfolge Der T-Rex-Effekt.",
+        "image_lines": [
+          "FAMILIEN-",
+          "KALENDER"
+        ],
+        "image_detail": [
+          "RESTAURANT",
+          "100 PROZENT RABATT"
+        ],
+        "accent": "#67B5A1",
+        "calendar_card": true
+      },
+      "research": {
+        "status": "none",
+        "reviewed_on": "2026-11-06",
+        "reason": "Ein bewusst kleiner literarischer Freitagsmorgen ohne fachliche Sachbehauptungen, für den Quellen oder Links den Lesefluss nicht sinnvoll vertiefen; nur ein persönlicher Wochenendgruß erscheint."
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-06"
     }
   ]
 }
