@@ -108,7 +108,13 @@ output('index.html',page({title:'Nine to Five. And Beyond.',body:'<section class
 output('roman/index.html',page({title:'Alle Folgen',slug:'roman/',body:'<section class="hero"><p class="eyebrow">Roman</p><h1>Alle Folgen</h1><p>Geschichten aus dem Alltag einer fiktiven Agentur.</p></section>'+items,schema:book}));
 for(let i=0;i<list.length;i++){
  const c=list[i],raw=readFileSync(path.join(root,c.path),'utf8').replace(/^# [^\n]+\n+/,'');
- const research=c.research.status==='linked' ? renderResearchChapter(raw,readJson(c.research.path),c.id) : {chapterHtml:markdownToHtml(raw),notesHtml:''};
+ let research=c.research.status==='linked' ? renderResearchChapter(raw,readJson(c.research.path),c.id) : {chapterHtml:markdownToHtml(raw),notesHtml:''};
+ // Reader exception requested by the author: no academic sources or outbound links
+ // for this private-life miniaturе, only a short weekend sign-off.
+ if(c.id==='der-t-rex-effekt'){
+  if(c.research.status!=='none') throw new Error('Freitagsmorgen braucht Quellenentscheidung none');
+  research={...research,notesHtml:'<section class="weekend-note" aria-label="Wochenendgruß"><p>Wochenende! Offline! Make THE WORLD a BETTER place For CHILDREN!</p></section>'};
+ }
  // A static, clearly separated fictional ad replaces the removed kitchen
  // dialogue only in episode 04. The novel prose remains an independent text.
  const adAnchor='<p>Leon nahm drei Pistazien. Der Admin schraubte das Gefäß zu und schlug sein Buch wieder auf.</p>';
@@ -133,7 +139,12 @@ for(let i=0;i<list.length;i++){
  const next=i+1<list.length?'<a href="/roman/'+e(list[i+1].id)+'/">Nächste Folge →</a>':'';
  const chapter={'@context':'https://schema.org','@type':'Chapter','@id':abs('roman/'+c.id+'/#chapter'),name:c.title,description:c.description,inLanguage:'de',url:abs('roman/'+c.id+'/'),position:i+1,isPartOf:{'@type':'Book','@id':book['@id'],name:book.name,url:book.url},author:{'@type':'Person',name:config.author_name}};
  const campaign=c.campaign;
- const bridge=campaign.streaming_card
+ const bridge=campaign.calendar_card
+ ? '<aside class="campaign-bridge" aria-label="Fiktive Familienkalenderwerbung"><p class="eyebrow">Anzeige · Fiktiver Familienkalender · Romanfolge '+(i+1)+'</p>'+
+   '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
+   '<p>'+e(campaign.promise)+'</p><p class="campaign-context">'+e(campaign.context)+'</p>'+
+   '<p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman. 100 % Rabatt ist ein Scherz – kein echtes Produkt, keine Bestellung, kein Rabattcode.</p></aside>'
+ : campaign.streaming_card
  ? '<aside class="campaign-bridge" aria-label="Fiktive Streamingwerbung: prscnm"><p class="eyebrow">Anzeige · Fiktive Streamingkampagne · Romanfolge '+(i+1)+'</p>'+
    '<h2>'+e('prscnm – Es wird wieder spät.')+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
    '<p>'+e(campaign.promise)+'</p><p class="campaign-context">'+e(campaign.context)+'</p>'+
