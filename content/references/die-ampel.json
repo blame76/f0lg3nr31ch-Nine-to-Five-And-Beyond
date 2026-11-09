@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "chapter_id": "die-ampel",
+  "reviewed_on": "2026-11-09",
+  "editorial_note": "Die Geschichte zeigt eine Entscheidung unter Unsicherheit, kein fertiges Wirtschaftlichkeitsgutachten. KI kann Entwicklungsarbeit verändern, ersetzt aber weder belastbare Anforderungen noch einen Vergleich von Einführung, Betrieb, Pflege und Ausstieg. Diese Quellen erläutern allgemeine Prinzipien; sie belegen keine fiktiven Einsparungen.",
+  "sources": [
+    {
+      "id": "dora-2025",
+      "placement": "inline",
+      "anchor": "Warum sollten sie also jedes Mal kaufen, was sie selbst bauen konnten?",
+      "title": "KI verstärkt die Organisation, nicht nur den Code",
+      "description": "Der DORA-Bericht 2025 beschreibt KI als Verstärker bestehender organisatorischer Stärken und Schwächen. Daraus folgt keine pauschale Entscheidung zugunsten einer Eigenentwicklung. Martins Frage ist eine Hypothese, die er prüfen muss.",
+      "publisher": "DORA",
+      "source_title": "State of AI-assisted Software Development 2025",
+      "url": "https://dora.dev/research/2025/dora-report/"
+    },
+    {
+      "id": "alarmqualitaet",
+      "placement": "inline",
+      "anchor": "Sie weiß trotzdem nicht, warum wir bei einem Kunden den Alarm zehn Minuten später auslösen.",
+      "title": "Eine Ampel muss sinnvolle Alarme auslösen",
+      "description": "Google SRE erläutert, warum Alarme an Nutzerwirkung, Dringlichkeit und Handlungsfähigkeit ausgerichtet sein sollten. Eine grüne Oberfläche ist noch kein guter Alarmprozess; Sonderregeln und Zuständigkeiten gehören zum Betrieb.",
+      "publisher": "Google SRE",
+      "source_title": "Alerting on SLOs",
+      "url": "https://sre.google/workbook/alerting-on-slos/"
+    },
+    {
+      "id": "metr-2026",
+      "placement": "inline",
+      "anchor": "Ein Versuch ist auch nicht kostenlos.",
+      "title": "Ein schneller Prototyp ist kein belegter Produktivitätsgewinn",
+      "description": "METR berichtet im Februar 2026 über Selektions- und Messprobleme bei KI-Produktivitätsstudien. Das liefert keinen allgemeinen Prozentsatz für die Kosten einer Eigenentwicklung. Ein begrenzter Pilot muss Zeit, Qualität und Folgekosten vergleichen.",
+      "publisher": "METR",
+      "source_title": "We are Changing our Developer Productivity Experiment Design",
+      "url": "https://metr.org/blog/2026-02-24-uplift-update/"
+    },
+    {
+      "id": "opentelemetry",
+      "placement": "further",
+      "title": "Standardisierte Telemetrie statt alles neu zu bauen",
+      "description": "OpenTelemetry hilft beim Sammeln und Exportieren von Traces, Metriken und Logs; es ist keine fertige Monitoring-Oberfläche oder Alarmplattform. Es kann eine hybride Make-or-Buy-Option erleichtern.",
+      "publisher": "OpenTelemetry",
+      "source_title": "What is OpenTelemetry?",
+      "url": "https://opentelemetry.io/docs/what-is-opentelemetry/"
+    }
+  ]
+}
