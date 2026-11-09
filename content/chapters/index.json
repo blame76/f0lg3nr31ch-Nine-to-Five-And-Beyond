@@ -317,6 +317,45 @@
       },
       "approved_by": "Benjamin Lam",
       "approved_at": "2026-11-09"
+    },
+    {
+      "id": "nicht-betroffen",
+      "title": "Nicht betroffen",
+      "description": "Mara prüft beim Service-Onboarding von Reimers zwei Sicherheitsmeldungen und stellt fest: Ein erledigtes Update ersetzt keine vollständige Betriebsübernahme.",
+      "source_ref": "draft/2026-11-09-drei-folgen-sicherung",
+      "source_blob_sha": "efe25eef2e77d4b4e2435f1667148b436b0408e9",
+      "status": "approved",
+      "position": 9,
+      "path": "content/chapters/nicht-betroffen.md",
+      "campaign": {
+        "category": "Hosting · Fiktiver Hostinganbieter Häkchenhost",
+        "headline": "Alles im Griff. Außer dem Zugang.",
+        "subheadline": "Häkchenhost – Hosting mit Durchblick.",
+        "promise": "Ein Klick zum Überblick. Ein Häkchen zur Beruhigung.",
+        "context": "Ein erfundener Hostinganbieter wirbt mit Übersicht und Kontrolle. Bei Reimers funktioniert die technische Auslieferung längst, doch für eine vollständige Betriebsabnahme fehlen noch eigene Benutzerkonten im Hostingportal.",
+        "seo_title": "Nicht betroffen – Service-Onboarding und Sicherheitsnachweise",
+        "seo_description": "Nicht betroffen: Fiktive Romanfolge über Hostingzugänge, PHP-Sicherheitsupdates, OpenSSH und die Frage, wann eine Serviceübernahme wirklich abgeschlossen ist.",
+        "social_title": "Alles im Griff. Außer dem Zugang. | Nicht betroffen",
+        "social_description": "Fiktive Hosting-Werbung von Häkchenhost: Zugang ist nicht gleich Kontrolle. Romanfolge 09 »Nicht betroffen« – über Sicherheit und Serviceverantwortung.",
+        "image": "share/nicht-betroffen.png",
+        "image_alt": "Fiktive Hosting-Werbung von Häkchenhost. Alles im Griff. Außer dem Zugang. Romanfolge 09.",
+        "image_lines": [
+          "ALLES IM GRIFF.",
+          "AUSSER DEM ZUGANG."
+        ],
+        "image_detail": [
+          "HAEKCHENHOST / HOSTING",
+          "PORTAL / ZUGRIFF / STATUS"
+        ],
+        "accent": "#80CACC"
+      },
+      "research": {
+        "status": "linked",
+        "path": "content/references/nicht-betroffen.json",
+        "reviewed_on": "2026-11-10"
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-10"
     }
   ]
 }
