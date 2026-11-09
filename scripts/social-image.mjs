@@ -86,6 +86,51 @@ export function renderCampaignImage(chapter){
 
  // Familienkalender motif: a smiling pixel dinosaur and a readable calendar.
  // No external asset, font or network request; social crawlers receive one 1200x630 PNG.
+ // Self-contained fictional bakery and chocolate-cake visuals, generated as PNG.
+ if(c.bakery_card===true){
+  const cream=[251,232,197],espresso=[55,34,27],wood=[138,78,44],gold=[233,174,74],
+    dark=[83,49,31],crust=[194,113,50],bread=[240,179,97],cheese=[249,207,103];
+  fillRect(0,0,W,H,espresso);fillRect(675,0,525,H,cream);
+  for(let y=0;y<H;y+=53)fillRect(675,y,525,2,[236,204,156]);
+  fillRect(706,170,463,352,wood);fillRect(722,193,431,311,[90,58,40]);
+  fillRect(703,476,473,31,[67,37,24]);
+  function oval(cx,cy,rx,ry,color){for(let dy=-ry;dy<=ry;dy++){const dx=rx*Math.sqrt(Math.max(0,1-dy*dy/(ry*ry)));fillRect(cx-dx,cy+dy,2*dx+1,1,color);}}
+  for(const [cx,cy,rx,ry] of [[807,306,75,63],[963,306,77,62],[1097,307,70,60],[877,423,76,57],[1036,425,83,55]]){
+   oval(cx,cy+6,rx+4,ry+3,[69,43,30]);oval(cx,cy,rx,ry,crust);oval(cx-4,cy-7,rx-12,ry-14,bread);
+   for(let j=0;j<9;j++){const xx=cx-36+((j*19)%77),yy=cy-23+((j*29)%48);oval(xx,yy,15,7,cheese);}
+  }
+  fillRect(0,0,675,615,espresso);fillRect(35,48,9,41,gold);
+  text('F0LG3NR31CH',65,56,5,cream);text('BAECKEREI',55,138,6,gold);
+  text('WIR HABEN',55,226,10,cream);text('NOCH KAESE.',55,316,10,gold);
+  fillRect(54,406,570,4,gold);
+  text('ZWOELF AUF DER KARTE',55,438,4,cream);
+  text('FUENF IN DER AUSLAGE',55,480,4,cream);
+  fillRect(0,588,W,42,dark);text('FIKTIVE BAECKEREIANZEIGE - ROMANFOLGE 07',50,599,3,cream);
+ } else if(c.chocolate_card===true){
+  const cream=[253,235,213],dark=[47,25,26],choco=[105,54,40],
+   cake=[143,83,51],icing=[67,34,30],gold=[232,178,106],plate=[241,221,192];
+  fillRect(0,0,W,H,dark);fillRect(734,0,466,H,[235,205,174]);
+  function oval(cx,cy,rx,ry,color){for(let dy=-ry;dy<=ry;dy++){const dx=rx*Math.sqrt(Math.max(0,1-dy*dy/(ry*ry)));fillRect(cx-dx,cy+dy,2*dx+1,1,color);}}
+  oval(957,454,204,97,plate);oval(957,450,175,65,[218,185,148]);
+  for(let y=230;y<455;y++){const spread=(y-230)/225;fillRect(812+spread*10,y,280-spread*75,1,cake);}
+  for(let y=210;y<250;y++){const spread=(y-210)/40;fillRect(804+spread*8,y,288-spread*4,1,icing);}
+  for(let y=261;y<274;y++)fillRect(818,y,259,1,icing);
+  for(let y=348;y<361;y++)fillRect(827,y,226,1,icing);
+  for(let i=0;i<26;i++){const x=823+(i*53)%240,y=275+(i*43)%155;fillRect(x,y,2+i%3,3,choco);}
+  oval(917,212,25,10,[156,96,71]);oval(978,203,23,9,[184,117,82]);
+  fillRect(0,0,750,630,dark);fillRect(40,52,8,38,gold);
+  text('F0LG3NR31CH',72,58,5,cream);
+  text('SCHOKO-',49,126,11,cream);text('KUCHEN',49,219,11,cream);
+  text('FERTIG?',49,325,8,gold);
+  fillRect(48,405,632,3,gold);
+  text('200 G SCHOKOLADE / 150 G BUTTER',50,429,3,cream);
+  text('140 G ZUCKER / 3 EIER',50,456,3,cream);
+  text('120 G MEHL / 1 TL BACKPULVER',50,483,3,cream);
+  text('175 C  /  25-30 MIN',50,523,4,gold);
+  text('STAEBCHENPROBE',50,561,4,cream);
+  fillRect(0,608,W,22,[76,45,37]);
+  text('FIKTIVE REZEPTKARTE - ROMANFOLGE 08',46,613,2,cream);
+ } else
  if(c.calendar_card===true) {
   const cream=[250,247,236],ink=[30,48,62],mint=[210,238,223],
    green=[57,151,112],dark=[28,100,80],orange=[247,180,66],

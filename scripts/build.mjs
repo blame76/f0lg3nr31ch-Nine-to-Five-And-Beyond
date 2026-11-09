@@ -106,7 +106,7 @@ function page({title,description=config.description,slug='',type='website',body,
 }
 const list=manifest.chapters;
 for(const chapter of list)output(chapter.campaign.image,renderCampaignImage(chapter));
-const indexItems=list.map((c,i)=>'<li><a href="/roman/'+e(c.id)+'/">'+e(c.title)+'</a><small>Folge '+(i+1)+' · '+e(c.description)+'</small><small>'+(c.campaign.recipe_card?'Fiktives Rezept aus der Admin-Küche: ':'Fiktive Agenturkampagne: ')+e(c.campaign.headline)+' '+e(c.campaign.subheadline)+'</small></li>').join('');
+const indexItems=list.map((c,i)=>'<li><a href="/roman/'+e(c.id)+'/">'+e(c.title)+'</a><small>Folge '+(i+1)+' · '+e(c.description)+'</small><small>'+((c.campaign.recipe_card||c.campaign.chocolate_card)?'Fiktives Rezept: ':'Fiktive Agenturkampagne: ')+e(c.campaign.headline)+' '+e(c.campaign.subheadline)+'</small></li>').join('');
 const items='<ol class="list">'+indexItems+'</ol>';
 const book={'@context':'https://schema.org','@type':'Book','@id':abs('roman/#book'),url:abs('roman/'),name:'f0lg3nr31ch – Nine to Five. And Beyond.',inLanguage:'de',genre:'Roman',author:{'@type':'Person',name:config.author_name},isAccessibleForFree:true};
 output('index.html',page({title:'Nine to Five. And Beyond.',body:'<section class="hero"><p class="eyebrow">Fortsetzungsroman</p><h1>f0lg3nr31ch</h1><p class="lead">Nine to Five. And Beyond.</p><p>Ein fortlaufender Agenturroman über Menschen, Arbeit und die Folgen ihrer Entscheidungen.</p></section><section><h2>Die Geschichten</h2>'+items+'<p><a href="/experiment/">Wie entsteht dieser Roman?</a></p></section>',schema:{'@context':'https://schema.org','@type':'WebSite','@id':abs('#website'),name:config.name,alternateName:'Folgenreich',url:site+'/',inLanguage:'de',description:config.description}}));
@@ -144,7 +144,18 @@ for(let i=0;i<list.length;i++){
  const next=i+1<list.length?'<a href="/roman/'+e(list[i+1].id)+'/">Nächste Folge →</a>':'';
  const chapter={'@context':'https://schema.org','@type':'Chapter','@id':abs('roman/'+c.id+'/#chapter'),name:c.title,description:c.description,inLanguage:'de',url:abs('roman/'+c.id+'/'),position:i+1,isPartOf:{'@type':'Book','@id':book['@id'],name:book.name,url:book.url},author:{'@type':'Person',name:config.author_name}};
  const campaign=c.campaign;
- const bridge=campaign.calendar_card
+ const bridge=campaign.bakery_card
+ ? '<aside class="campaign-bridge" aria-label="Fiktive Bäckereianzeige"><p class="eyebrow">Anzeige · Fiktive Bäckerei · Romanfolge '+(i+1)+'</p>'+
+   '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p><p>'+e(campaign.promise)+'</p><p>'+e(campaign.context)+'</p>'+
+   '<p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman. Kein echtes Bäckereiangebot, keine bestellbaren Waren.</p></aside>'
+ : campaign.chocolate_card
+ ? '<aside class="campaign-bridge" aria-label="Fiktive Schokokuchen-Rezeptkarte"><p class="eyebrow">Rezept · Fiktive Karte · Romanfolge '+(i+1)+'</p>'+
+   '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
+   '<p>Für eine Form von etwa 20 cm: 200 g Zartbitterschokolade, 150 g Butter, 140 g Zucker, 3 Eier, 120 g Mehl, 1 TL Backpulver, 1 Prise Salz.</p>'+
+   '<p>Backofen auf 175 °C Ober-/Unterhitze vorheizen. Schokolade und Butter vorsichtig schmelzen, kurz abkühlen lassen. Eier und Zucker verrühren, Schokoladenmasse dazugeben, dann Mehl, Backpulver und Salz kurz unterheben. In eine gefettete Form füllen und etwa 25–30 Minuten backen. Stäbchenprobe: Für einen saftigen Kuchen dürfen feuchte Krümel haften, aber kein roher Teig. Vor dem Anschneiden abkühlen lassen.</p>'+
+   '<p class="campaign-context">'+e(campaign.context)+'</p>'+
+   '<p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman. Das Rezept ist eine begleitende, nicht kommerzielle Leseidee.</p></aside>'
+ : campaign.calendar_card
  ? '<aside class="campaign-bridge" aria-label="Fiktive Familienkalenderwerbung"><p class="eyebrow">Anzeige · Fiktiver Familienkalender · Romanfolge '+(i+1)+'</p>'+
    '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
    '<p>'+e(campaign.promise)+'</p><p class="campaign-context">'+e(campaign.context)+'</p>'+

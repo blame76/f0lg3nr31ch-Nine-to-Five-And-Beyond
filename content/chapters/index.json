@@ -237,6 +237,86 @@
       },
       "approved_by": "Benjamin Lam",
       "approved_at": "2026-11-06"
+    },
+    {
+      "id": "die-ampel",
+      "title": "Die Ampel",
+      "description": "Martin wägt die Konsolidierung der Gruppe ab. KI wirft die Frage auf, ob die bisher eingekaufte Shopüberwachung künftig selbst entwickelt werden sollte.",
+      "source_ref": "draft/martins-montag-make-or-buy-20261105",
+      "source_blob_sha": "d3f06a360c9c0ba53cc2319e9bad638e2df191b4",
+      "status": "approved",
+      "position": 7,
+      "path": "content/chapters/die-ampel.md",
+      "campaign": {
+        "category": "Bäckerei · Fiktive Anzeige",
+        "headline": "Wir haben noch Käse.",
+        "subheadline": "Zwölf auf der Karte. Fünf in der Auslage.",
+        "promise": "Frisch belegt – solange der Vorrat reicht.",
+        "context": "Eine fiktive Bäckereianzeige begleitet Martins Mittagspause zwischen Kennzahlen, knapper werdenden Aufträgen und einer Frage, auf die keine Software allein antworten kann.",
+        "seo_title": "Die Ampel – KI und Make-or-Buy",
+        "seo_description": "Die Ampel: Fiktive Romanfolge über Make-or-Buy, KI-gestützte Eigenentwicklung, Shopüberwachung und Konsolidierung einer Unternehmensgruppe.",
+        "social_title": "Wir haben noch Käse. | Die Ampel",
+        "social_description": "Fiktive Bäckereianzeige: Zwölf auf der Karte, fünf in der Auslage. In Die Ampel denkt Martin über KI, Eigenentwicklung und Kosten nach.",
+        "image": "share/die-ampel.png",
+        "image_alt": "Fiktive Bäckereianzeige mit Käsebrötchen und dem Satz Wir haben noch Käse. Romanfolge Die Ampel.",
+        "image_lines": [
+          "WIR HABEN",
+          "NOCH KAESE."
+        ],
+        "image_detail": [
+          "ZWOELF AUF DER KARTE",
+          "FUENF IN DER AUSLAGE"
+        ],
+        "accent": "#E9AE4D",
+        "bakery_card": true
+      },
+      "research": {
+        "status": "linked",
+        "path": "content/references/die-ampel.json",
+        "reviewed_on": "2026-11-09"
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-09"
+    },
+    {
+      "id": "was-davon-zaehlt",
+      "title": "Was davon zählt",
+      "description": "Alex sieht zwölf Tickets und null Abschlüsse. Er fragt nach, was Jamal wirklich erledigt hat und wer festlegt, wann Arbeit fertig ist.",
+      "source_ref": "draft/folge-06-was-davon-zaehlt-20261105",
+      "source_blob_sha": "49f247d61ff1c8b8f39cc80e7df22bc93432f28e",
+      "status": "approved",
+      "position": 8,
+      "path": "content/chapters/was-davon-zaehlt.md",
+      "campaign": {
+        "category": "Backrezept · Fiktive Rezeptkarte",
+        "headline": "Schokokuchen. Fertig?",
+        "subheadline": "Backzeit ist nicht gleich fertig.",
+        "promise": "Stäbchenprobe statt blindem Vertrauen in die Uhr.",
+        "context": "Eine fiktive Schokokuchen-Rezeptkarte macht die Frage aus Alex' Ticketübersicht greifbar: Wer bestimmt, wann das Ergebnis wirklich fertig ist und was vor dem Servieren noch fehlt?",
+        "seo_title": "Was davon zählt – Wann ist Arbeit fertig?",
+        "seo_description": "Was davon zählt: Fiktive Romanfolge über zwölf Tickets, null Abschlüsse, Definition of Done und blockierte Arbeit – mit einem Schokokuchen-Rezept.",
+        "social_title": "Schokokuchen. Fertig? | Was davon zählt",
+        "social_description": "Fiktive Schokokuchen-Rezeptkarte: Zeit abgelaufen bedeutet nicht immer fertig. Die Romanfolge fragt, wann Arbeit tatsächlich abgeschlossen ist.",
+        "image": "share/was-davon-zaehlt.png",
+        "image_alt": "Fiktive Schokokuchen-Rezeptkarte mit Zutaten, Backzeit und Stäbchenprobe. Romanfolge Was davon zählt.",
+        "image_lines": [
+          "SCHOKOKUCHEN",
+          "FERTIG?"
+        ],
+        "image_detail": [
+          "175 C / 25-30 MIN",
+          "STAEBCHENPROBE"
+        ],
+        "accent": "#E5AF73",
+        "chocolate_card": true
+      },
+      "research": {
+        "status": "linked",
+        "path": "content/references/was-davon-zaehlt.json",
+        "reviewed_on": "2026-11-09"
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-09"
     }
   ]
 }

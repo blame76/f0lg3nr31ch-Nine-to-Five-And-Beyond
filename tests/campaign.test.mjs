@@ -8,7 +8,7 @@ import {escapeMeta} from '../scripts/lib.mjs';
 
 const chapters=JSON.parse(readFileSync('content/chapters/index.json','utf8')).chapters;
 test('Every novel chapter has a distinct fictional campaign and social preview',()=>{
- assert.equal(chapters.length,6);
+ assert.equal(chapters.length,8);
  assert.equal(new Set(chapters.map(c=>c.campaign.image)).size,6);
  assert.equal(new Set(chapters.map(c=>c.campaign.social_title)).size,6);
  for(const c of chapters){
@@ -34,7 +34,7 @@ test('Each generated social image is a valid 1200x630 PNG, different from others
   assert.equal(inflateSync(image.subarray(41,41+size)).length,630*(1+1200*3));
   hashes.add(image.toString('base64').slice(-1200));
  }
- assert.equal(hashes.size,6);
+ assert.equal(hashes.size,8);
 });
 
 test('Build uses per-chapter OG images, truthful SEO, and preserves noindex before approval',()=>{

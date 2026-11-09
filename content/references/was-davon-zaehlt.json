@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "chapter_id": "was-davon-zaehlt",
+  "reviewed_on": "2026-11-09",
+  "editorial_note": "Fertig ist kein universeller Ticketstatus. Diese Folge unterscheidet entwickelte, geprüfte, integrierte und ausgelieferte Arbeit sowie die Verantwortung für Wartezeiten. Die Quellen sind keine Diagnose der Leistung fiktiver Personen, sondern Werkzeuge zum kritischen Lesen der Zahlen.",
+  "sources": [
+    {
+      "id": "space",
+      "placement": "inline",
+      "anchor": "Er hatte die Zahlen nicht falsch verstanden.",
+      "title": "Produktivität ist mehrdimensional",
+      "description": "Das SPACE-Framework berücksichtigt neben Arbeitsergebnissen etwa Aktivität, Kommunikation, Zufriedenheit und Arbeitsfluss. Ein einzelner Ticketabschlusszähler bildet die Arbeit einer Entwicklerin oder eines Entwicklers nicht ausreichend ab.",
+      "publisher": "Microsoft Research",
+      "source_title": "The SPACE of Developer Productivity: There’s more to it than you think",
+      "url": "https://www.microsoft.com/en-us/research/publication/the-space-of-developer-productivity-theres-more-to-it-than-you-think/"
+    },
+    {
+      "id": "definition-of-done",
+      "placement": "inline",
+      "anchor": "Die Erweiterung ist entwickelt und geprüft. Das Review ist abgeschlossen. Die Integration läuft beim nächsten regulären Build.",
+      "title": "Done ist eine abgestimmte Qualitätsgrenze",
+      "description": "Der Scrum Guide definiert Done als den Zustand, in dem ein Inkrement die vereinbarten Qualitätsmaßnahmen erfüllt. Verwendbarkeit, Integration und tatsächliche Auslieferung sind im konkreten Ablauf zu unterscheiden; das Team im Roman muss dafür nicht nach Scrum arbeiten.",
+      "publisher": "Scrum Guides",
+      "source_title": "The 2020 Scrum Guide – Definition of Done",
+      "url": "https://scrumguides.org/scrum-guide.html"
+    },
+    {
+      "id": "kanban",
+      "placement": "inline",
+      "anchor": "Die anderen Vorgänge sind größtenteils blockiert.",
+      "title": "Blockierte Arbeit sichtbar machen",
+      "description": "Der Kanban Guide 2025 beschreibt Work in Progress, Durchsatz, Alter offener Arbeit und Durchlaufzeit. Entscheidend ist die gemeinsame Definition des Arbeitsflusses. Ein offenes Ticket bedeutet nicht, dass niemand daran gearbeitet hat.",
+      "publisher": "Kanban Guides",
+      "source_title": "The Kanban Guide – May 2025",
+      "url": "https://kanbanguides.org/the-kanban-guide/"
+    }
+  ]
+}
