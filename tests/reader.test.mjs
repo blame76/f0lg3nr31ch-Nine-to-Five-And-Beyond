@@ -5,7 +5,7 @@ import {spawnSync} from 'node:child_process';
 import {validateManifest,markdownToHtml} from '../scripts/lib.mjs';
 const c=JSON.parse(readFileSync('config/site.json','utf8')),m=JSON.parse(readFileSync('content/chapters/index.json','utf8'));
 test('Exact brand and canonical site',()=>{assert.equal(c.name,'f0lg3nr31ch');assert.equal(c.subtitle,'Nine to Five. And Beyond.');assert.equal(c.site_url,'https://folgenreich.benjamin-lam.de');});
-test('Eight author-approved chapter snapshots, including the short Friday morning',()=>{assert.equal(m.chapters.length,8);assert.equal(new Set(m.chapters.map(x=>x.id)).size,8);for(const x of m.chapters){assert.ok(existsSync(x.path));assert.match(x.source_blob_sha,/^[a-f0-9]{40}$/);assert.ok(readFileSync(x.path,'utf8').length>(x.id==='der-t-rex-effekt'?6000:8000));}});
+test('At least nine author-approved chapter snapshots, including Friday and the service onboarding',()=>{assert.ok(m.chapters.length>=9);assert.equal(new Set(m.chapters.map(x=>x.id)).size,m.chapters.length);for(const x of m.chapters){assert.ok(existsSync(x.path));assert.match(x.source_blob_sha,/^[a-f0-9]{40}$/);assert.ok(readFileSync(x.path,'utf8').length>(x.id==='der-t-rex-effekt'?6000:8000));}});
 test('Public chapter markdown omits internal editorial labels',()=>{
  for(const chapter of m.chapters){
   const opening=readFileSync(chapter.path,'utf8').split(String.fromCharCode(10)).slice(0,8).join(' ');
@@ -17,6 +17,7 @@ test('Approved published chapters may be indexed independently of legal release 
  assert.equal(m.chapters.filter(x=>x.status==='approved' && x.approved_by==='Benjamin Lam' && x.approved_at==='2026-11-05').length,2);
  assert.equal(m.chapters.filter(x=>x.status==='approved' && x.approved_by==='Benjamin Lam' && x.approved_at==='2026-11-06').length,1);
  assert.equal(m.chapters.filter(x=>x.status==='approved' && x.approved_by==='Benjamin Lam' && x.approved_at==='2026-11-09').length,2);
+ assert.equal(m.chapters.filter(x=>x.status==='approved' && x.approved_by==='Benjamin Lam' && x.approved_at==='2026-11-10').length,1);
  assert.ok(m.chapters.every(x=>x.status==='approved'));
  assert.equal(c.release_approved,false);
  assert.equal(c.legal_reviewed_for_launch,false);

@@ -45,3 +45,10 @@ Der Autor hat die Aufnahme der aktuellen Reader-Fassung und den anschließenden 
 Die Romanprosa in `content/chapters/verfuegbar.md` enthält keine Werbung. Der Reader-Build schaltet innerhalb der Geschichte bei „Noch gut drei Stunden.“ eine deutlich gekennzeichnete **fiktive Anzeige** ein, die zur bereits vorhandenen Seite `/partnerwelt/share/vier-stunden-zwei-uhren/` führt. Nach dem Kapitel ist die separate fiktive Streamingkampagne **prscnm** mit eigenem Frontend unter `/partnerwelt/prscnm/` verlinkt. Es gibt keine Abonnements, Videos oder Zahlungsvorgänge. Beide Werbebereiche sind redaktionelle Fiktion, nicht als reale Firma auszuzeichnen.
 
 Die sechs Quellen im Katalog `content/references/verfuegbar.json` wurden am 05.11.2026 überprüft; die fachlichen Hinweise sind eine zweite Leseebene und kein Teil der Prosahandlung. Die statische prscnm-Seite und die Hintergrundseite bleiben bewusst `noindex,follow`; die bestehende Partnerwelt und das Social-Labor werden nicht in ihren Freigabestatus verändert. Vor öffentlichen Social-Posts ist die Preview-Grafik auf den Zielplattformen zu prüfen.
+
+
+## Folge 09 „Nicht betroffen“ (10.11.2026)
+
+Auf ausdrücklichen Veröffentlichungsauftrag wurde das am 09.11. im privaten Manuskript-PR gesicherte Kapitel „Nicht betroffen“ redaktionell freigegeben, geringfügig sprachlich korrigiert und für den Reader vorbereitet. Die Handlung unterscheidet verifizierte PHP-Updates von der noch offenen Betriebsaufnahme und stellt die Hosterbestätigung für OpenSSH nicht mit einer eigenen vollständigen Konfigurationsprüfung gleich.
+
+Die eigenständige Share-Preview ist eine fiktive Hosting-Anzeige für „Häkchenhost“ („Alles im Griff. Außer dem Zugang.“). Sie ist als erfundene Kampagne gekennzeichnet und keine reale Dienstleistung. Vier Quellenhinweise stehen außerhalb der Prosa bzw. dezent als Leseanker im Hintergrundbereich. Die Indexierungsfreigabe für veröffentlichte Folgen bleibt bestehen; `release_approved=false` und `legal_reviewed_for_launch=false` werden nicht verändert.

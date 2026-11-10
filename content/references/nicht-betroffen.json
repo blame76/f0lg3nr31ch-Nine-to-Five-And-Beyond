@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "chapter_id": "nicht-betroffen",
+  "reviewed_on": "2026-11-10",
+  "editorial_note": "Die Folge unterscheidet zwischen der Reaktion auf eine konkrete Sicherheitsmeldung und der umfassenden Verifikation im Service-Onboarding. Bestätigte Updates, fremde Hosting-Konfigurationen, Deployments und Zugangsrechte bilden unterschiedliche Nachweise. Die Quellen belegen technische Hintergründe, nicht die erfundenen Vorgänge bei Reimers.",
+  "sources": [
+    {
+      "id": "php-security",
+      "placement": "inline",
+      "anchor": "Für den 21. Oktober hatte das PHP-Projekt außerplanmäßige Sicherheitsupdates angekündigt.",
+      "title": "Warum PHP 8.2.35 ein Sicherheitsupdate war",
+      "description": "Das PHP-Projekt veröffentlichte PHP 8.2.35 am 21. Oktober 2026 zur Behebung zweier kritischer Schwachstellen. Die dokumentierte Version und eine Prüfung der produktiven Web-Laufzeit sind verschiedene Aspekte des Nachweises.",
+      "publisher": "PHP.net",
+      "source_title": "PHP Security Release vom 21. Oktober 2026",
+      "url": "https://www.php.net/archive/2026.php#2026-10-21-5"
+    },
+    {
+      "id": "deployment-secrets",
+      "placement": "inline",
+      "anchor": "Der Shop wurde weiterhin über eine Deployment-Pipeline ausgeliefert.",
+      "title": "Deployment-Secrets sind kein Hostingportal",
+      "description": "GitHub dokumentiert, wie vertrauliche Tokens und Schlüssel in Actions-Workflows verwaltet werden. Ein funktionierender Deploy-Zugang ersetzt weder eine eigene Benutzerrolle beim Hostinganbieter noch die Einsicht in dessen Verwaltungsoberfläche.",
+      "publisher": "GitHub Docs",
+      "source_title": "Using secrets in GitHub Actions",
+      "url": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets"
+    },
+    {
+      "id": "openssh-musl",
+      "placement": "inline",
+      "anchor": "Nicht jedes System mit Alpine Linux ist automatisch betroffen.",
+      "title": "OpenSSH: Nicht jede Alpine-Installation ist betroffen",
+      "description": "CVE-2026-123158 betrifft bestimmte Kombinationen aus OpenSSH, musl libc, Konfiguration und fehlender PAM-Einbindung. Eine belastbare Betroffenheitsprüfung muss die tatsächlich betriebene SSH-Konfiguration berücksichtigen.",
+      "publisher": "Red Hat",
+      "source_title": "CVE-2026-123158 – Security Advisory",
+      "url": "https://access.redhat.com/security/cve/cve-2026-123158"
+    },
+    {
+      "id": "patch-evidence",
+      "placement": "inline",
+      "anchor": "Der letzte regulär dokumentierte Wartungslauf stammt aus April.",
+      "title": "Patch- und Änderungsmanagement nachvollziehbar machen",
+      "description": "Der BSI-Grundschutzbaustein OPS.1.1.3 behandelt Planung, Dokumentation und Prüfung von Änderungen. Eine fehlende Serviceakte beweist nicht, dass seitdem keine Aktualisierung stattgefunden hat; sie macht die Nachweiskette unvollständig.",
+      "publisher": "BSI",
+      "source_title": "IT-Grundschutz OPS.1.1.3 – Patch- und Änderungsmanagement",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/04_OPS_Betrieb/OPS_1_1_3_Patch_und_Aenderungsmanagement_Edition_2023.pdf?__blob=publicationFile&v=3"
+    }
+  ]
+}
