@@ -52,3 +52,11 @@ Die sechs Quellen im Katalog `content/references/verfuegbar.json` wurden am 05.1
 Auf ausdrücklichen Veröffentlichungsauftrag wurde das am 09.11. im privaten Manuskript-PR gesicherte Kapitel „Nicht betroffen“ redaktionell freigegeben, geringfügig sprachlich korrigiert und für den Reader vorbereitet. Die Handlung unterscheidet verifizierte PHP-Updates von der noch offenen Betriebsaufnahme und stellt die Hosterbestätigung für OpenSSH nicht mit einer eigenen vollständigen Konfigurationsprüfung gleich.
 
 Die eigenständige Share-Preview ist eine fiktive Hosting-Anzeige für „Häkchenhost“ („Alles im Griff. Außer dem Zugang.“). Sie ist als erfundene Kampagne gekennzeichnet und keine reale Dienstleistung. Vier Quellenhinweise stehen außerhalb der Prosa bzw. dezent als Leseanker im Hintergrundbereich. Die Indexierungsfreigabe für veröffentlichte Folgen bleibt bestehen; `release_approved=false` und `legal_reviewed_for_launch=false` werden nicht verändert.
+
+## Mittwoch 11.11.2026 – Folgen 10 und 11
+
+Der Autor hat die Veröffentlichung der Miniaturen „Die gleiche Arbeit, nur schneller“ und „Die kleine Delle“ zusammen am Mittwoch ausdrücklich beauftragt. Die Prosa ist aus dem Hauptrepository übernommen; nur die interne Kennzeichnung „Arbeitsfassung“ wurde aus der Reader-Lesefassung von Folge 10 entfernt. „Die kleine Delle“ endet unverändert mit der Delle des Putzwagens; der neue Spionage-Charakter bleibt anonym. Beide Kapitel sind `approved` und für die bereits ausdrücklich freigegebene Kapitelindexierung vorgesehen, ohne die Flags für eine vollständige rechtliche Release-Freigabe zu verändern.
+
+Die neue Share-Preview für Folge 11 ist eine eigenständig generierte, ausdrücklich fiktive Monatskarte für Berufspendler (keine echte Fahrkarte). Nach dem Kapitel erscheint im abgetrennten Werbebereich eine fiktive Last-Minute-China-Anzeige des erfundenen „FERNWEHFORMULAR“-Reisebüros ohne reale Preise, Tickets oder Buchungsfunktionen. Folge 10 erhält eine eigene fiktive KI-Kampagnenpreview. Pro Folge wurden genau abgegrenzte Hintergrundlinks dokumentiert. Insbesondere ist bloße Informationsabschöpfung nicht automatisch gleichbedeutend mit Social Engineering.
+
+Freigabe: Benjamin Lam, 11.11.2026. Ein erfolgreicher Main-Merge stößt die Cloudflare-Pages-Bereitstellung an; die tatsächliche Live-Auslieferung ist gesondert zu prüfen.
