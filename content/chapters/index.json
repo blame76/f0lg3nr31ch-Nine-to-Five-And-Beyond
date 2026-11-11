@@ -435,6 +435,46 @@
       },
       "approved_by": "Benjamin Lam",
       "approved_at": "2026-11-11"
+    },
+    {
+      "id": "das-offene-hufeisen",
+      "title": "Das offene Hufeisen",
+      "description": "Mara erlebt einen KI-Prozess von der ersten Idee bis zur laufenden Anwendung – und denkt darüber nach, was ein Raum voller Menschen dazufügt.",
+      "source_ref": "manuscript/2026-11-11-das-offene-hufeisen",
+      "source_blob_sha": "bd5e700fb3ce6b9797c2c5f0c7c9b3b5fef97328",
+      "status": "approved",
+      "position": 12,
+      "path": "content/chapters/das-offene-hufeisen.md",
+      "campaign": {
+        "category": "Event · Fiktive Veranstaltung",
+        "headline": "Ideen auf Probe.",
+        "subheadline": "Erst hinterfragen. Dann bauen.",
+        "promise": "Impuls, Austausch und ein offener Abend für Ideen, KI und erste Prototypen.",
+        "context": "Eine ausdrücklich erfundene Community-Veranstaltung aus dem Roman: Ideen auf ihre Chancen prüfen, gemeinsam denken und danach vielleicht etwas bauen. Keine reale Einladung oder Anmeldung.",
+        "seo_title": "Das offene Hufeisen – KI-Ideen, Spezifikationen und Menschen",
+        "seo_description": "Fiktive Romanfolge über Mara auf einer KI-Veranstaltung: Ideen prüfen, eine erste Anwendung bauen und gemeinsam über Ergebnisse diskutieren.",
+        "social_title": "Ideen auf Probe. | Das offene Hufeisen",
+        "social_description": "Fiktive Community-Veranstaltung: Erst hinterfragen. Dann bauen. Mara beobachtet KI und Menschen im offenen Hufeisen – Romanfolge 12.",
+        "image": "share/das-offene-hufeisen.png",
+        "image_alt": "Fiktives Veranstaltungsmotiv aus dem Roman f0lg3nr31ch: Ideen auf Probe. Erst hinterfragen. Dann bauen. Keine echte Veranstaltung.",
+        "image_lines": [
+          "IDEEN AUF",
+          "PROBE."
+        ],
+        "image_detail": [
+          "ERST HINTERFRAGEN",
+          "DANN BAUEN"
+        ],
+        "accent": "#A9D4E8",
+        "event_card": true
+      },
+      "research": {
+        "status": "linked",
+        "path": "content/references/das-offene-hufeisen.json",
+        "reviewed_on": "2026-11-11"
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-11"
     }
   ]
 }
