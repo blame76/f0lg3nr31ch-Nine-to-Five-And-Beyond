@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "chapter_id": "das-offene-hufeisen",
+  "reviewed_on": "2026-11-11",
+  "editorial_note": "Der Abend und die gezeigte Anwendung sind vollständig fiktiv. Die verlinkte reale Community beschreibt ein Format aus Impuls, gemeinsamem Arbeiten und Austausch; sie belegt weder die fiktive Demo noch das im Roman dargestellte Skill-Verfahren. Einziger weiterführender Link auf Wunsch des Autors.",
+  "sources": [
+    {
+      "id": "vibe-coding-community",
+      "placement": "inline",
+      "anchor": "Die Stühle waren in einem Hufeisen angeordnet.",
+      "title": "KI gemeinsam ausprobieren statt nur darüber sprechen",
+      "description": "Die reale Vibe-Coding-Community beschreibt Veranstaltungen mit kurzem Impuls, Austausch und gemeinsamem Entwickeln. Die Geschichte und ihr fiktives Event sind davon unabhängig.",
+      "publisher": "Vibe Coding WTF",
+      "source_title": "Vibe-Coding-Community in Bremen",
+      "url": "https://vibe-coding.wtf/de"
+    }
+  ]
+}
