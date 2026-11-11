@@ -379,12 +379,12 @@
         "image": "share/die-gleiche-arbeit-nur-schneller.png",
         "image_alt": "Fiktive KI-Werbung: Zehnmal schneller? Und dann? Romanfolge 10.",
         "image_lines": [
-          "10X SCHNELLER?",
-          "UND DANN?"
+          "10X SCHNELLER",
+          "UND DANN"
         ],
         "image_detail": [
           "KI AGENTEN / AUTOMATION",
-          "WER FRAGT WARUM?"
+          "WER FRAGT WARUM"
         ],
         "accent": "#96D7E7"
       },
