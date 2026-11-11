@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "chapter_id": "die-gleiche-arbeit-nur-schneller",
+  "reviewed_on": "2026-11-11",
+  "editorial_note": "Jamal liest fiktive Behauptungen aus einem Social-Media-Feed. Studien bewerten reale, begrenzte Beobachtungen und belegen weder ein Zehnfach-Versprechen noch das Gegenteil für jede Entwicklungsaufgabe. Die Quellen dienen der Einordnung, nicht als Bestätigung der fiktiven Posts.",
+  "sources": [
+    {
+      "id": "dora-ai",
+      "placement": "inline",
+      "anchor": "Ein Video lief ohne Ton. Vier Fenster mit Code, daneben ein Diagramm mit steigender Kurve.",
+      "title": "KI als Verstärker bestehender Arbeitsweisen",
+      "description": "Der DORA-Bericht 2025 beschreibt KI als Verstärker vorhandener Stärken und Schwächen von Organisationen. Damit ist ein schnelleres Coding noch keine vollständige Transformation von Arbeitsabläufen.",
+      "publisher": "DORA",
+      "source_title": "State of AI-assisted Software Development 2025",
+      "url": "https://dora.dev/research/2025/dora-report/"
+    },
+    {
+      "id": "metr-productivity",
+      "placement": "inline",
+      "anchor": "Jamal öffnete das Kommentarfeld. Er wollte schreiben, dass es vielleicht nicht darum ging, ob KI den Code schneller schrieb.",
+      "title": "Produktivität von KI-Werkzeugen zuverlässig messen",
+      "description": "METR schildert im Februar 2026, wie schwer der Geschwindigkeitseffekt von KI-Tools in der realen Softwareentwicklung methodisch zu bestimmen ist. Frühere Messwerte sind keine allgemeingültige Aussage über jedes Team.",
+      "publisher": "METR",
+      "source_title": "We are Changing our Developer Productivity Experiment Design",
+      "url": "https://metr.org/blog/2026-02-24-uplift-update/"
+    }
+  ]
+}
