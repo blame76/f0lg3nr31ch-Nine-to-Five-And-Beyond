@@ -148,7 +148,7 @@ for(let i=0;i<list.length;i++){
  ? '<aside class="campaign-bridge" aria-label="Fiktive Veranstaltung: Ideen auf Probe"><p class="eyebrow">Anzeige · Fiktive Veranstaltung · Romanfolge '+(i+1)+'</p>'+
    '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
    '<p>'+e(campaign.promise)+'</p><p class="campaign-context">'+e(campaign.context)+'</p>'+
-   '<p class="campaign-disclaimer">Fiktive Veranstaltung aus dem Roman. Kein reales Event, keine Anmeldung und keine Tickets.</p></aside>'
+   '<p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman: Diese Veranstaltung ist erfunden. Keine Anmeldung und keine Tickets.</p></aside>'
  : campaign.bakery_card
  ? '<aside class="campaign-bridge" aria-label="Fiktive Bäckereianzeige"><p class="eyebrow">Anzeige · Fiktive Bäckerei · Romanfolge '+(i+1)+'</p>'+
    '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p><p>'+e(campaign.promise)+'</p><p>'+e(campaign.context)+'</p>'+
