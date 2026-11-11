@@ -60,3 +60,9 @@ Der Autor hat die Veröffentlichung der Miniaturen „Die gleiche Arbeit, nur sc
 Die neue Share-Preview für Folge 11 ist eine eigenständig generierte, ausdrücklich fiktive Monatskarte für Berufspendler (keine echte Fahrkarte). Nach dem Kapitel erscheint im abgetrennten Werbebereich eine fiktive Last-Minute-China-Anzeige des erfundenen „FERNWEHFORMULAR“-Reisebüros ohne reale Preise, Tickets oder Buchungsfunktionen. Folge 10 erhält eine eigene fiktive KI-Kampagnenpreview. Pro Folge wurden genau abgegrenzte Hintergrundlinks dokumentiert. Insbesondere ist bloße Informationsabschöpfung nicht automatisch gleichbedeutend mit Social Engineering.
 
 Freigabe: Benjamin Lam, 11.11.2026. Ein erfolgreicher Main-Merge stößt die Cloudflare-Pages-Bereitstellung an; die tatsächliche Live-Auslieferung ist gesondert zu prüfen.
+
+## Folge 12 „Das offene Hufeisen“ (11.11.2026)
+
+Auf ausdrücklichen Auftrag des Autors ist die Mara-Episode mit dem gewünschten offenen Ende redaktionell freigegeben. Der letzte erklärende Schlusssatz entfällt; keine zusätzlichen Dialog- oder Konfliktszenen. Die Manuskriptfassung ist separat im Arbeitsrepository gesichert.
+
+Die Share-Preview zeigt die ausdrücklich fiktive Community-Veranstaltung „Ideen auf Probe.“. Die Romanhandlung beschreibt keine tatsächliche Veranstaltung oder Vortragenden. Genau ein weiterführender Link verweist auf https://vibe-coding.wtf/de; er dient ausschließlich als Inspiration und belegt keine fiktiven Geschehnisse. Keine weiteren Artikel im Reader für dieses Kapitel. Die bestehende Autorenfreigabe zur Indexierung veröffentlichter Kapitel gilt; die vollständigen juristischen Release-Flags bleiben unverändert.
