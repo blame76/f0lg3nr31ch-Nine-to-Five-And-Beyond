@@ -356,6 +356,85 @@
       },
       "approved_by": "Benjamin Lam",
       "approved_at": "2026-11-10"
+    },
+    {
+      "id": "die-gleiche-arbeit-nur-schneller",
+      "title": "Die gleiche Arbeit, nur schneller",
+      "description": "Jamal scrollt durch einen Feed voller Versprechen über autonome KI-Entwicklung – bis eine konkrete Frage zum Kunden Reimers auftaucht.",
+      "source_ref": "publish/2026-11-11-mittwoch-zwei-texte",
+      "source_blob_sha": "83465d1d7676f8158783fac58585def58cf38ae3",
+      "status": "approved",
+      "position": 10,
+      "path": "content/chapters/die-gleiche-arbeit-nur-schneller.md",
+      "campaign": {
+        "category": "KI-Entwicklung · Fiktive Agenturwerbung",
+        "headline": "Zehnmal schneller. Und dann?",
+        "subheadline": "Das Versprechen vom autonomen KI-Team.",
+        "promise": "Tickets. Agenten. Tempo. Und die Frage, ob sich damit auch die Arbeit verändert.",
+        "context": "Fiktive Kampagne zum Feed, den Jamal am Mittwochmorgen liest. Zehnfaches Tempo ist ein unbelegtes Werbeversprechen.",
+        "seo_title": "Die gleiche Arbeit, nur schneller – KI-Agenten im Feed",
+        "seo_description": "Fiktive Romanfolge über KI-Agenten, Produktivitätsversprechen, Softwareentwicklung und die Frage, ob schneller arbeiten wirklich Veränderung bedeutet.",
+        "social_title": "10× schneller? Und dann? | f0lg3nr31ch",
+        "social_description": "Fiktive KI-Agenturkampagne zum Social-Media-Feed von Jamal: Die gleiche Arbeit, nur schneller. Romanfolge 10.",
+        "image": "share/die-gleiche-arbeit-nur-schneller.png",
+        "image_alt": "Fiktive KI-Werbung: Zehnmal schneller? Und dann? Romanfolge 10.",
+        "image_lines": [
+          "10X SCHNELLER?",
+          "UND DANN?"
+        ],
+        "image_detail": [
+          "KI AGENTEN / AUTOMATION",
+          "WER FRAGT WARUM?"
+        ],
+        "accent": "#96D7E7"
+      },
+      "research": {
+        "status": "linked",
+        "path": "content/references/die-gleiche-arbeit-nur-schneller.json",
+        "reviewed_on": "2026-11-11"
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-11"
+    },
+    {
+      "id": "die-kleine-delle",
+      "title": "Die kleine Delle",
+      "description": "Ein Mann kennt die Kollegen, Projekte und Zahlen einer Agenturgruppe ungewöhnlich genau. Erst im letzten Satz wird seine Arbeit sichtbar.",
+      "source_ref": "publish/2026-11-11-mittwoch-zwei-texte",
+      "source_blob_sha": "245c8ff4648dd37be020da4dd69ce2f8fc7c1fd0",
+      "status": "approved",
+      "position": 11,
+      "path": "content/chapters/die-kleine-delle.md",
+      "campaign": {
+        "category": "ÖPNV · Fiktive Monatskarte für Pendler",
+        "headline": "Für alle, die längst da sind.",
+        "subheadline": "Monatskarte für Berufspendler.",
+        "promise": "Einmal einsteigen. Jeden Tag ankommen. Und meistens merkt es niemand.",
+        "context": "Fiktive Nahverkehrskampagne über einen Mann, dessen Arbeitsweg unsichtbarer ist als seine Anwesenheit. Keine echte Fahrkarte.",
+        "seo_title": "Die kleine Delle – Betriebsspionage und blinde Flecken",
+        "seo_description": "Die kleine Delle: Fiktive Romanminiatur über vertrauliche Gespräche und einen Mitarbeiter im Hintergrund. Mit Social-Engineering-Hintergründen.",
+        "social_title": "Für alle, die längst da sind. | Die kleine Delle",
+        "social_description": "Fiktive ÖPNV-Monatskarte für Berufspendler. Eine Geschichte über jemanden, den alle kennen und kaum jemand wahrnimmt.",
+        "image": "share/die-kleine-delle.png",
+        "image_alt": "Fiktive ÖPNV-Monatskarte für Berufspendler mit Liniennetz und Hinweis Romanfolge 11. Keine echte Fahrkarte.",
+        "image_lines": [
+          "MONATSKARTE",
+          "FUER PENDLER"
+        ],
+        "image_detail": [
+          "JEDEN TAG DA",
+          "FIKTIVE FAHRKARTE"
+        ],
+        "accent": "#D4EBB9",
+        "transit_card": true
+      },
+      "research": {
+        "status": "linked",
+        "path": "content/references/die-kleine-delle.json",
+        "reviewed_on": "2026-11-11"
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-11"
     }
   ]
 }
