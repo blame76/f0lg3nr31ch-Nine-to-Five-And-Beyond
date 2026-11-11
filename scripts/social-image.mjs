@@ -87,7 +87,39 @@ export function renderCampaignImage(chapter){
  // Familienkalender motif: a smiling pixel dinosaur and a readable calendar.
  // No external asset, font or network request; social crawlers receive one 1200x630 PNG.
  // Self-contained fictional bakery and chocolate-cake visuals, generated as PNG.
- if(c.bakery_card===true){
+ if(c.transit_card===true) {
+  // Self-contained, clearly fictional commuter monthly pass. Not a real transit ticket.
+  const navy=[17,43,54],teal=[35,108,108],light=[229,240,219],
+   paper=[255,250,236],yellow=[238,203,105],white=[250,252,244],muted=[147,185,178];
+  fillRect(0,0,W,H,navy);
+  fillRect(566,0,634,H,light);
+  // Abstract transit lines behind the ticket; no real operator logo, barcode or QR code.
+  for(let i=0;i<7;i++){
+   fillRect(600+i*83,0,3,H,[197,217,198]);
+   fillRect(566,58+i*78,634,3,[197,217,198]);
+  }
+  fillRect(38,55,9,43,yellow);
+  text('F0LG3NR31CH',70,61,5,white);
+  text('JEDEN TAG.',39,174,9,white);
+  text('SCHON DA.',39,271,9,yellow);
+  fillRect(40,397,460,3,muted);
+  text('FUER BERUFSPENDLER',40,423,5,light);
+  text('DEIN WEG ZUR ARBEIT',40,467,4,light);
+  // Ticket on the right: readable product-first presentation.
+  fillRect(629,99,527,418,[56,106,99]);
+  fillRect(617,85,527,418,paper);
+  fillRect(617,85,527,100,teal);
+  text('MONATSKARTE',655,112,7,white);
+  fillRect(655,209,445,3,[172,194,178]);
+  text('BERUFSPENDLER',657,235,6,navy);
+  text('NOV 2026',657,313,8,teal);
+  fillRect(654,411,420,2,[172,194,178]);
+  text('EINSTEIGEN. ANKOMMEN.',655,431,3,navy);
+  // Distinct non-machine-readable decorative stripes.
+  for(let i=0;i<9;i++)fillRect(1005+i*10,358,4,31,i%2?teal:yellow);
+  fillRect(0,582,W,48,navy);
+  text('FIKTIVE MONATSKARTE - KEIN GUELTIGER FAHRSCHEIN - FOLGE 11',37,597,3,white);
+ } else if(c.bakery_card===true){
   const cream=[251,232,197],espresso=[55,34,27],wood=[138,78,44],gold=[233,174,74],
     dark=[83,49,31],crust=[194,113,50],bread=[240,179,97],cheese=[249,207,103];
   fillRect(0,0,W,H,espresso);fillRect(675,0,525,H,cream);

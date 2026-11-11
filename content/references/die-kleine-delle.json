@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "chapter_id": "die-kleine-delle",
+  "reviewed_on": "2026-11-11",
+  "editorial_note": "Die Szene zeigt zunächst möglichen Missbrauch legitimen Gebäudezutritts und das Sammeln von Informationen. Das ist nicht automatisch Social Engineering: Dafür müsste jemand gezielt Vertrauen oder das Verhalten anderer beeinflussen. Die Quellen erläutern das Risiko, nicht die Motive des Protagonisten.",
+  "sources": [
+    {
+      "id": "org-knowledge",
+      "placement": "inline",
+      "anchor": "Er wusste, wer morgens zuerst kam, wer regelmäßig Überstunden machte und wer auch nach Feierabend noch am Telefon hing.",
+      "title": "Warum Organisationswissen Angreifern hilft",
+      "description": "MITRE beschreibt, wie Kenntnisse über Rollen, Beziehungen und betriebliche Abläufe zielgerichtete Angriffe vorbereiten können. Es geht dabei nicht allein um Zugangsdaten oder technische Systeme.",
+      "publisher": "MITRE ATT&CK",
+      "source_title": "Gather Victim Org Information (T1591)",
+      "url": "https://attack.mitre.org/techniques/T1591/"
+    },
+    {
+      "id": "bsi-cleaning",
+      "placement": "inline",
+      "anchor": "Er nahm sich oft Arbeit mit nach Hause.",
+      "title": "Reinigungsdienste und vertrauliche Informationen",
+      "description": "Der IT-Grundschutz empfiehlt klare Regeln für externes Reinigungspersonal. Der BSI-Baustein nennt ausdrücklich Unterlagen auf Schreibtischen und in Papierkörben sowie mitgehörte Gespräche.",
+      "publisher": "BSI",
+      "source_title": "IT-Grundschutz INF.1 – Allgemeines Gebäude, Maßnahme M29",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/Umsetzungshinweise/Umsetzungshinweise_2020/Umsetzungshinweise_zum_Baustein_INF_1_Allgemeines_Gebaeude.pdf?__blob=publicationFile&v=1"
+    },
+    {
+      "id": "social-engineering",
+      "placement": "further",
+      "title": "Social Engineering ist mehr als Phishing",
+      "description": "MITRE ordnet Social Engineering als gezielte Beeinflussung von Menschen ein, etwa durch Vertrauensaufbau. Reines Beobachten wie in dieser Szene ist davon zu unterscheiden.",
+      "publisher": "MITRE ATT&CK",
+      "source_title": "Social Engineering (T1684)",
+      "url": "https://attack.mitre.org/techniques/T1684/"
+    }
+  ]
+}

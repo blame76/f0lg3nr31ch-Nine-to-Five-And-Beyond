@@ -124,3 +124,25 @@ a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}a:
 .weekend-note{max-width:74ch;margin:0 auto 3rem;padding:1.1rem 0 1.6rem;border-bottom:1px solid var(--line);text-align:center}
 .weekend-note p{margin:0;color:var(--muted);font-weight:600;letter-spacing:.01em;line-height:1.7}
 @media print{.weekend-note{display:none!important}}
+
+
+/* Eigenständige, klar als Fiktion markierte Reiseanzeige nach Folge 11. */
+.fictional-travel-ad {
+  margin-block: 1.5rem;
+  padding: clamp(1.25rem, 3.5vw, 2.25rem);
+  border: 1px solid #a9c3bc;
+  border-left: .6rem solid #167b70;
+  border-radius: .45rem;
+  color: #173e3c;
+  background: linear-gradient(125deg, #e9f4ed 0%, #fff7e5 100%);
+}
+.fictional-travel-ad .eyebrow { color: #315f5c; }
+.fictional-travel-ad .travel-brand {
+  margin-block: 1.1rem .4rem;
+  letter-spacing: .16em;
+  font-size: .86rem;
+  font-weight: 800;
+}
+.fictional-travel-ad h2 { margin-block: .2rem; color: #0e4541; }
+.fictional-travel-ad .travel-kicker { font-weight: 700; font-size: 1.15rem; }
+.fictional-travel-ad .campaign-disclaimer { margin-top: 1.4rem; color: #355957; font-size: .86rem; }

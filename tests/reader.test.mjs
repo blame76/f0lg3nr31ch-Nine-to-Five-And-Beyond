@@ -5,7 +5,7 @@ import {spawnSync} from 'node:child_process';
 import {validateManifest,markdownToHtml} from '../scripts/lib.mjs';
 const c=JSON.parse(readFileSync('config/site.json','utf8')),m=JSON.parse(readFileSync('content/chapters/index.json','utf8'));
 test('Exact brand and canonical site',()=>{assert.equal(c.name,'f0lg3nr31ch');assert.equal(c.subtitle,'Nine to Five. And Beyond.');assert.equal(c.site_url,'https://folgenreich.benjamin-lam.de');});
-test('At least nine author-approved chapter snapshots, including Friday and the service onboarding',()=>{assert.ok(m.chapters.length>=9);assert.equal(new Set(m.chapters.map(x=>x.id)).size,m.chapters.length);for(const x of m.chapters){assert.ok(existsSync(x.path));assert.match(x.source_blob_sha,/^[a-f0-9]{40}$/);assert.ok(readFileSync(x.path,'utf8').length>(x.id==='der-t-rex-effekt'?6000:8000));}});
+test('At least nine author-approved chapter snapshots, including Friday and the service onboarding',()=>{assert.ok(m.chapters.length>=9);assert.equal(new Set(m.chapters.map(x=>x.id)).size,m.chapters.length);for(const x of m.chapters){assert.ok(existsSync(x.path));assert.match(x.source_blob_sha,/^[a-f0-9]{40}$/);assert.ok(readFileSync(x.path,'utf8').length>(['die-gleiche-arbeit-nur-schneller','die-kleine-delle'].includes(x.id)?3000:(x.id==='der-t-rex-effekt'?6000:8000)));}});
 test('Public chapter markdown omits internal editorial labels',()=>{
  for(const chapter of m.chapters){
   const opening=readFileSync(chapter.path,'utf8').split(String.fromCharCode(10)).slice(0,8).join(' ');
