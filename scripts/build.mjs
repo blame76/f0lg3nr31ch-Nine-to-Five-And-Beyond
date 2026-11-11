@@ -175,11 +175,20 @@ for(let i=0;i<list.length;i++){
  '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
  '<p>'+e(campaign.promise)+'</p><p class="campaign-context">'+e(campaign.context)+'</p>'+
  '<p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman – keine echte Stellenanzeige und kein buchbares Dienstleistungsangebot.</p></aside>';
+ const travelAd=c.id==='die-kleine-delle'
+  ? '<aside class="fictional-travel-ad" aria-label="Fiktive Last-Minute-Reiseanzeige nach China">'+
+    '<p class="eyebrow">Anzeige · Fiktives Reisebüro</p>'+
+    '<p class="travel-brand">FERNWEHFORMULAR</p>'+
+    '<h2>Last Minute. China.</h2>'+
+    '<p class="travel-kicker">Morgen woanders.</p>'+
+    '<p>Großstädte, Landschaften und ein ganz anderer Alltag. Manchmal beginnt die Reise mit einem freien Termin im Kalender.</p>'+
+    '<p class="campaign-disclaimer">Fiktive Reisebüroanzeige aus f0lg3nr31ch. Kein reales Reiseangebot, keine verfügbaren Flüge oder Buchungsmöglichkeit.</p></aside>'
+  : '';
  const body='<article class="reader" id="romantext" lang="de" aria-labelledby="chapter-title">'+
  '<header class="chapter-heading"><p class="meta">Folge '+(i+1)+' · Roman</p><h1 id="chapter-title">'+e(c.title)+'</h1></header>'+
  '<div class="chapter-text">'+chapterHtml+'</div></article>'+
  '<nav class="pager" aria-label="Folgen-Navigation">'+prev+next+'</nav>'+research.notesHtml+
- '<div class="afterword" aria-label="Hintergründe zur Folge">'+bridge+'</div>';
+ '<div class="afterword" aria-label="Hintergründe zur Folge">'+bridge+travelAd+'</div>';
  output('roman/'+c.id+'/index.html',page({title:campaign.seo_title,description:campaign.seo_description,ogTitle:campaign.social_title,ogDescription:campaign.social_description,ogImage:campaign.image,ogAlt:campaign.image_alt,slug:'roman/'+c.id+'/',type:'chapter',indexApprovedChapter:c.status==='approved',body,schema:chapter}));
 }
 for(const [slug,title,body] of [['experiment','Über das Experiment',about],['impressum','Impressum',imprint],['datenschutz','Datenschutz',privacy],['lizenz','Lizenz und Urheberschaft',license]]){
