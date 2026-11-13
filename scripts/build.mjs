@@ -144,7 +144,12 @@ for(let i=0;i<list.length;i++){
  const next=i+1<list.length?'<a href="/roman/'+e(list[i+1].id)+'/">Nächste Folge →</a>':'';
  const chapter={'@context':'https://schema.org','@type':'Chapter','@id':abs('roman/'+c.id+'/#chapter'),name:c.title,description:c.description,inLanguage:'de',url:abs('roman/'+c.id+'/'),position:i+1,isPartOf:{'@type':'Book','@id':book['@id'],name:book.name,url:book.url},author:{'@type':'Person',name:config.author_name}};
  const campaign=c.campaign;
- const bridge=campaign.event_card
+ const bridge=campaign.bingo_card
+ ? '<aside class="campaign-bridge" aria-label="Fiktive Buzzword-Bingo-Karte"><p class="eyebrow">Anzeige · Fiktive Workshop-Karte · Romanfolge '+(i+1)+'</p>'+
+   '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
+   '<p>'+e(campaign.promise)+'</p><p class="campaign-context">'+e(campaign.context)+'</p>'+
+   '<p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman. Die Bingo-Karte ist eine Satire, kein reales Workshop-Angebot.</p></aside>'
+ : campaign.event_card
  ? '<aside class="campaign-bridge" aria-label="Fiktive Veranstaltung: Ideen auf Probe"><p class="eyebrow">Anzeige · Fiktive Veranstaltung · Romanfolge '+(i+1)+'</p>'+
    '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
    '<p>'+e(campaign.promise)+'</p><p class="campaign-context">'+e(campaign.context)+'</p>'+
