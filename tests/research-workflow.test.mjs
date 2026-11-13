@@ -55,3 +55,12 @@ test('Research catalogs cannot be reused for the wrong chapter or exceed subtle 
  for(let i=0;i<3;i++)tooMany.sources.push({...catalog.sources[0],id:'marker-'+i,anchor:'Ein völlig neuer Satz '+i});
  assert.ok(validateResearchSources(prose,tooMany,catalog.chapter_id).some(e=>e.includes('1 bis 6')));
 });
+
+test('Public research notes never expose internal editorial instructions',()=>{
+ const notePattern=/(?:auf (?:ausdrücklichen )?Wunsch des Autors|nur auf Wunsch des Autors|interne Anweisung|Redaktionsauftrag|TODO|Arbeitsfassung)/i;
+ for(const {chapter,catalog,prose} of catalogs){
+  const rendered=renderResearchChapter(prose,catalog,chapter.id);
+  assert.doesNotMatch(catalog.editorial_note,notePattern,chapter.id);
+  assert.doesNotMatch(rendered.notesHtml,notePattern,chapter.id);
+ }
+});
