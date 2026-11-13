@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "chapter_id": "die-fehlende-uebersetzungsfunktion",
+  "reviewed_on": "2026-11-13",
+  "editorial_note": "Jamal beobachtet einen realen Ausfall aus der Perspektive einer fiktiven Agentur. Die Quellen vertiefen die Störung, die Möglichkeit lokaler E-Mail-Kopien und die Frage nach verständlicher Fachsprache. Sie belegen keine Ereignisse oder Personen des Romans.",
+  "sources": [
+    {
+      "id": "microsoft-365-ausfall",
+      "placement": "inline",
+      "anchor": "Am Vortag hatte es bei Microsoft größere Probleme gegeben. Outlook, Teams und andere Dienste waren zeitweise nicht erreichbar gewesen.",
+      "title": "Microsoft 365: Was am 12. und 13. November ausfiel",
+      "description": "Die tagesschau berichtet über die weltweiten Microsoft-365-Störungen vom 12./13. November 2026, darunter Outlook und Teams. Welche Funktionen Jamals fiktive Agentur konkret verloren hat, ist Bestandteil der Erzählung.",
+      "publisher": "tagesschau",
+      "source_title": "Weltweite Störungen bei Microsoft-Diensten",
+      "url": "https://www.tagesschau.de/wirtschaft/digitales/microsoft-outlook-ausfall-100.html"
+    },
+    {
+      "id": "offline-postfach",
+      "placement": "inline",
+      "anchor": "Immerhin konnte er die alten, lokal gespeicherten Nachrichten lesen.",
+      "title": "Warum alte Nachrichten auch offline verfügbar sein können",
+      "description": "Microsoft beschreibt, wie Outlook bei eingerichtetem Offlinezugriff zuvor gespeicherte E-Mails lesen und Entwürfe lokal behalten kann. Das gilt abhängig von Version und Einstellungen; eine neue Zustellung ist bei fehlender Verbindung damit nicht garantiert.",
+      "publisher": "Microsoft Support",
+      "source_title": "Offlinearbeit in Outlook für Windows",
+      "url": "https://support.microsoft.com/de-de/outlook/getstarted/how-to-work-offline-in-outlook-for-windows"
+    },
+    {
+      "id": "fachsprache",
+      "placement": "inline",
+      "anchor": "Eigentlich eine ziemlich einfache Frage.",
+      "title": "Verständliche Sprache ist nicht dasselbe wie Vereinfachung",
+      "description": "Die GOV.UK-Schreibregeln empfehlen konkrete Aussagen statt leerer Buzzwords. Fachbegriffe dürfen bleiben, wenn sie nötig sind und erklärt werden. Jamals Frage nach dem konkreten Lernziel prüft genau diesen Unterschied.",
+      "publisher": "GOV.UK",
+      "source_title": "Use clear language",
+      "url": "https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/writing-guidelines/clear-language/"
+    },
+    {
+      "id": "cloud-notfall",
+      "placement": "further",
+      "title": "Cloud-Abhängigkeit und betriebliche Notfallvorsorge",
+      "description": "Der BSI-Grundschutzbaustein OPS.2.2 beschreibt Vorteile von Cloud-Diensten ebenso wie Ausfallrisiken, Abhängigkeiten und notwendige Notfallplanung. Daraus folgt nicht, dass lokale Technik grundsätzlich zuverlässiger oder die Cloud grundsätzlich schlechter wäre.",
+      "publisher": "BSI",
+      "source_title": "IT-Grundschutz OPS.2.2 – Cloud-Nutzung (Edition 2023)",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/04_OPS_Betrieb/OPS_2_2_Cloud-Nutzung_Edition_2023.pdf?__blob=publicationFile&v=3"
+    }
+  ]
+}
