@@ -126,3 +126,22 @@ test('UTF-8 social metadata becomes safe ASCII-only numeric HTML references',()=
  assert.match(headers,/^\/\s+Content-Type: text\/html; charset=utf-8/m);
  assert.ok(!headers.includes('/share/*\n  Content-Type'));
 });
+
+test('Episode 13 is author-approved and has one self-generated fictional Bingo image',()=>{
+ const c=chapters.find(ch=>ch.id==='die-fehlende-uebersetzungsfunktion');
+ assert.ok(c);
+ assert.equal(c.position,13);
+ assert.equal(c.status,'approved');
+ assert.equal(c.approved_at,'2026-11-13');
+ assert.equal(c.campaign.bingo_card,true);
+ assert.match(c.campaign.image_alt,/Fiktive Buzzword-Bingo-Karte/);
+ assert.match(c.campaign.context,/Workshop-Einladung/);
+ const image=renderCampaignImage(c);
+ assert.deepEqual([...image.subarray(0,8)],[137,80,78,71,13,10,26,10]);
+ assert.equal(image.readUInt32BE(16),1200);
+ assert.equal(image.readUInt32BE(20),630);
+ const html=readFileSync('dist/roman/die-fehlende-uebersetzungsfunktion/index.html','utf8');
+ assert.match(html,/Fiktive Buzzword-Bingo-Karte/);
+ assert.match(html,/Die fehlende Übersetzungsfunktion/);
+ assert.doesNotMatch(html,/Arbeitsfassung|auf Wunsch des Autors/i);
+});
