@@ -475,6 +475,46 @@
       },
       "approved_by": "Benjamin Lam",
       "approved_at": "2026-11-11"
+    },
+    {
+      "id": "die-fehlende-uebersetzungsfunktion",
+      "title": "Die fehlende Übersetzungsfunktion",
+      "description": "Jamal liest während eines Microsoft-Ausfalls alte Mails, entdeckt einen KI-Workshop voller Buzzwords und überlegt, wie er seiner Mutter seine Arbeit erklären soll.",
+      "source_ref": "main/episodes/texts/die-fehlende-uebersetzungsfunktion.md",
+      "source_blob_sha": "235e53bd9a2c735c700de83dbd06b35abf46bbe5",
+      "status": "approved",
+      "position": 13,
+      "path": "content/chapters/die-fehlende-uebersetzungsfunktion.md",
+      "campaign": {
+        "category": "Workshop · Fiktive Buzzword-Bingo-Karte",
+        "headline": "100 % Buzzword-free. Fast.",
+        "subheadline": "Bingo für das nächste Next-Gen-Bootcamp",
+        "promise": "25 Felder. Ein Workshop. Eine einfache Frage: Was lernen wir hier eigentlich?",
+        "context": "Die fiktive Bingo-Karte versammelt Schlagwörter aus Jamals interner Workshop-Einladung. Sie macht sichtbar, warum er trotz vertrauter Fachbegriffe nicht weiß, was in den zwei Stunden konkret passieren soll.",
+        "seo_title": "Die fehlende Übersetzungsfunktion – Buzzword-Bingo und Arbeitsalltag",
+        "seo_description": "Fiktive Romanfolge über Jamal, einen Microsoft-365-Ausfall, Buzzword-Bingo und die einfache Frage, wie man seiner Mutter die eigene Arbeit erklärt.",
+        "social_title": "Buzzword-Bingo | Die fehlende Übersetzungsfunktion",
+        "social_description": "Fiktive Workshop-Bingo-Karte zu einem Jamal-Kapitel aus dem Agenturroman: Next-Gen-Prompting, Offline-Outlook und die fehlende Übersetzung ins echte Leben.",
+        "image": "share/die-fehlende-uebersetzungsfunktion.png",
+        "image_alt": "Fiktive Buzzword-Bingo-Karte mit 25 Feldern voller Workshop-Begriffe. Romanfolge Die fehlende Übersetzungsfunktion.",
+        "image_lines": [
+          "BUZZWORD",
+          "BINGO"
+        ],
+        "image_detail": [
+          "NEXT-GEN PROMPTING",
+          "100% BUZZWORD-FREE"
+        ],
+        "accent": "#FFB76C",
+        "bingo_card": true
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-13",
+      "research": {
+        "status": "linked",
+        "path": "content/references/die-fehlende-uebersetzungsfunktion.json",
+        "reviewed_on": "2026-11-13"
+      }
     }
   ]
 }
