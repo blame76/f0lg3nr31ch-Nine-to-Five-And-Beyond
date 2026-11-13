@@ -47,3 +47,12 @@ Die Quellen und Einschränkungen stehen jeweils im JSON-Katalog, nicht in den Pr
 Bei Änderungen an einer veröffentlichten Folge Quellenanker erneut prüfen. Externe Links regelmäßig redaktionell stichprobenartig kontrollieren; eine HTTP-200-Antwort beweist nicht, dass die Aussage noch auf der Zielseite steht. Bei einer überholten Norm das Datum/die Ausgabe nennen, ggf. Quelle ersetzen und den PR begründen.
 
 Das Quellen-Gate ist **kein** Ersatz für Literaturreview, Rechteklärung, echte Accessibility-Tests oder fachlichen Einzelfallentscheid. Externe Quellen sind keine SEO-Garantien, keine Erlaubnis zur KI-Datennutzung und keine Pflicht zum maschinellen Indexieren.
+
+
+## Redaktioneller Grundsatz ab Folge 13 (13.11.2026)
+
+Die Quellen sind eine freiwillige zweite Leseebene, kein erklärendes Pflichtprogramm. **Weniger, dafür präzise textbezogene Links** sind einem langen allgemeinen Literaturverzeichnis vorzuziehen; ältere Folgen werden nicht allein wegen dieser Entwicklung umgeschrieben.
+
+Das Feld `editorial_note` wird vom Reader **öffentlich angezeigt**. Es darf deshalb ausschließlich sachliche Hinweise für Leserinnen und Leser enthalten: Einordnung, fachliche Grenze und Fiktionstrennung. **Keine** internen Aufträge, Autorwünsche, Statusmeldungen, QA-Anweisungen oder Produktionsnotizen in diesem Feld. Solche Hinweise stehen in PRs und Redaktionsdokumenten.
+
+Share-Preview-Grafiken der Romanfolgen entstehen **im Reader-Build** aus den versionierten Kampagnendaten; zusätzliche im Chat generierte Bilder werden nicht automatisch verwendet. Zusätzliche Renderings nur bei ausdrücklich beabsichtigter Verwendung und Einbindung.

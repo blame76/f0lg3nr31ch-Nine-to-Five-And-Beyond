@@ -66,3 +66,14 @@ Freigabe: Benjamin Lam, 11.11.2026. Ein erfolgreicher Main-Merge stößt die Clo
 Auf ausdrücklichen Auftrag des Autors ist die Mara-Episode mit dem gewünschten offenen Ende redaktionell freigegeben. Der letzte erklärende Schlusssatz entfällt; keine zusätzlichen Dialog- oder Konfliktszenen. Die Manuskriptfassung ist separat im Arbeitsrepository gesichert.
 
 Die Share-Preview zeigt die ausdrücklich fiktive Community-Veranstaltung „Ideen auf Probe.“. Die Romanhandlung beschreibt keine tatsächliche Veranstaltung oder Vortragenden. Genau ein weiterführender Link verweist auf https://vibe-coding.wtf/de; er dient ausschließlich als Inspiration und belegt keine fiktiven Geschehnisse. Keine weiteren Artikel im Reader für dieses Kapitel. Die bestehende Autorenfreigabe zur Indexierung veröffentlichter Kapitel gilt; die vollständigen juristischen Release-Flags bleiben unverändert.
+
+
+## Folge 13 „Die fehlende Übersetzungsfunktion“ (13.11.2026)
+
+Auf ausdrücklichen Auftrag des Autors wird die gesicherte Jamal-Episode veröffentlicht. Die Leserfassung übernimmt den Inhalt aus `blame76/f0lg3nr31ch/episodes/texts/die-fehlende-uebersetzungsfunktion.md` unverändert bis auf den entfernten internen Arbeitsfassungs-Untertitel. Die Fassung enthält die freigegebenen Korrekturen zum nicht erreichbaren Postfach, der allgemeinen Workshop-Einladung und dem Kanban-Sprint zum Drucker.
+
+Die Share-Preview ist eine **fiktive Buzzword-Bingo-Karte** und wird durch `scripts/social-image.mjs` im Reader-Build erzeugt; kein zusätzliches KI-Bild wird hochgeladen. Drei sparsame Inline-Hintergründe behandeln die tatsächliche Microsoft-365-Störung vom 12./13.11.2026, Outlooks konfigurationsabhängige Offline-Funktion und verständliche Fachsprache; eine zusätzliche BSI-Vertiefung erklärt Cloud-Abhängigkeit. Der Arbeitszeitbetrugs-Topos wird bewusst nicht als Rechtsurteil veröffentlicht.
+
+Aus dem Quellenhinweis von Folge 12 wurde eine **interne Anweisung** entfernt, die über `editorial_note` zuvor sichtbar wurde. Autorwünsche bleiben PR-/Redaktionsinformation, nicht Teil der öffentlichen Lesebegleitung. Die alten Romankapitel und deren Tonalität werden nicht vereinheitlicht. Fachquellenfreigabe und literarische Veröffentlichungsfreigabe sind voneinander getrennt.
+
+Freigabe: Benjamin Lam, 13.11.2026. Die bestehende Indexierungsfreigabe für veröffentlichte Folgen gilt; die rechtlichen Gesamt-Release-Flags bleiben unverändert.

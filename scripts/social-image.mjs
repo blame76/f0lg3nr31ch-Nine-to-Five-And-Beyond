@@ -87,7 +87,48 @@ export function renderCampaignImage(chapter){
  // Familienkalender motif: a smiling pixel dinosaur and a readable calendar.
  // No external asset, font or network request; social crawlers receive one 1200x630 PNG.
  // Self-contained fictional bakery and chocolate-cake visuals, generated as PNG.
- if(c.transit_card===true) {
+ if(c.bingo_card===true) {
+  // Deterministic author-approved social teaser. Built in the Reader; no additional AI image asset.
+  const navy=[23,39,54], cream=[255,248,236], ink=[27,48,62],
+    gold=[255,183,108], orange=[235,109,65], paper=[249,241,226], line=[58,80,95];
+  fillRect(0,0,W,H,navy);
+  fillRect(0,0,W,19,orange);
+  fillRect(40,29,12,38,gold);
+  text('F0LG3NR31CH',68,38,5,cream);
+  text('BUZZWORD BINGO',51,98,6,gold);
+  const cells=[
+   ['NEXT','GEN'],['AI','PROMPTING'],['AGENTIC','WORKFLOW'],['TECH','DEBT'],['VALUE','STREAM'],
+   ['RUBBER','DUCK'],['ZERO','FRICTION'],['CLOUD','SYNERGY'],['HIGH','IMPACT'],['YAK','SHAVING'],
+   ['PROMPT','MASTER'],['LOW','HANGING'],['FREIFELD','BINGO'],['SKILLSET','LEVEL'],['HEISEN','BUG'],
+   ['HUMAN','IN LOOP'],['DEEP','DIVE'],['BIG','PICTURE'],['END TO','END'],['META','VERSE'],
+   ['DIGITAL','NATIVE'],['QUICK','WIN'],['AI','GOVERNANCE'],['PROD','DEPLOY'],['ANALOG','VETERAN']
+  ];
+  for(let i=0;i<25;i++){
+   const col=i%5,row=Math.floor(i/5),x=50+col*115,y=160+row*80;
+   fillRect(x,y,115,80,line);
+   fillRect(x+2,y+2,111,76,i===12?gold:paper);
+   const lines=cells[i];
+   for(let j=0;j<lines.length;j++)
+    text(lines[j],x+7,y+17+j*24,2,ink);
+   if([1,7,19,23].includes(i)){
+    // Crossed-out fields deliberately resemble a partly played Bingo card.
+    for(let k=0;k<43;k++){
+      fillRect(x+33+k,y+17+k,3,3,orange);
+      fillRect(x+77-k,y+17+k,3,3,orange);
+    }
+   }
+  }
+  fillRect(683,156,8,382,orange);
+  text('DIE FEHLENDE',722,183,5,cream);
+  text('UEBERSETZUNGS',722,241,5,cream);
+  text('FUNKTION',722,307,7,gold);
+  text('WAS LERNEN',721,408,4,cream);
+  text('WIR HIER',721,449,5,cream);
+  fillRect(719,523,440,3,gold);
+  text('100% BUZZWORD-FREE',721,545,3,gold);
+  fillRect(0,589,W,41,navy);
+  text('FIKTIVE BINGO-KARTE - ROMANFOLGE 13',52,599,3,cream);
+ } else if(c.transit_card===true) {
   // Self-contained, clearly fictional commuter monthly pass. Not a real transit ticket.
   const navy=[17,43,54],teal=[35,108,108],light=[229,240,219],
    paper=[255,250,236],yellow=[238,203,105],white=[250,252,244],muted=[147,185,178];
