@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {renderCampaignImage} from '../scripts/social-image.mjs';
 const html=readFileSync(new URL('../public/partnerwelt/echt-jetzt/index.html',import.meta.url),'utf8');
 const build=readFileSync(new URL('../scripts/build.mjs',import.meta.url),'utf8');
 test('ECHT JETZT marks fiction and AI use before the agency offer',()=>{
@@ -22,4 +23,17 @@ test('ECHT JETZT has navigation and respects the public indexing decision in the
  assert.match(build,/const echtJetztSlug='partnerwelt\/echt-jetzt\/'/);
  assert.match(build,/href="\/partnerwelt\/echt-jetzt\/"/);
  assert.match(build,/\(ready \|\| publicIndexReady\)\?\[echtJetztSlug\]:\[\]/);
+});
+
+test('ECHT JETZT uses a dedicated 1200 by 630 PNG share card',()=>{
+ const url='https://folgenreich.benjamin-lam.de/partnerwelt/echt-jetzt/share-preview.png';
+ assert.ok(html.includes('property="og:image" content="'+url+'"'));
+ assert.ok(html.includes('name="twitter:image" content="'+url+'"'));
+ assert.match(html,/Dieses Bild ist KI\. Die anderen vielleicht nicht\./);
+ const png=renderCampaignImage({position:1,campaign:{accent:'#f5ce65',echt_jetzt_card:true}});
+ assert.equal(png.subarray(0,8).toString('hex'),'89504e470d0a1a0a');
+ assert.equal(png.readUInt32BE(16),1200);
+ assert.equal(png.readUInt32BE(20),630);
+ assert.ok(png.equals(renderCampaignImage({position:1,campaign:{accent:'#f5ce65',echt_jetzt_card:true}})));
+ assert.match(build,/echt_jetzt_card:true/);
 });
