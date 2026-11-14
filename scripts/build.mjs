@@ -65,6 +65,7 @@ const partnerNavEnd='</nav></header>';
 if(!partnerHtml.includes(partnerNavEnd))throw new Error('Missing Partnerwelt navigation for ECHT JETZT');
 writeFileSync(partnerIndex,partnerHtml.replace(partnerNavEnd,'<a href="/partnerwelt/echt-jetzt/">ECHT JETZT?!</a>'+partnerNavEnd),'utf8');
 const echtJetztPath=path.join(dist,echtJetztSlug,'index.html');
+writeFileSync(path.join(dist,echtJetztSlug,'share-preview.png'),renderCampaignImage({position:1,campaign:{accent:'#f5ce65',echt_jetzt_card:true}}));
 if(!(ready || publicIndexReady)){
  const html=readFileSync(echtJetztPath,'utf8');
  writeFileSync(echtJetztPath,html.replace('content="index,follow"','content="noindex,follow"'),'utf8');
