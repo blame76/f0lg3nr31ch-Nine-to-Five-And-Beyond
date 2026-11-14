@@ -57,6 +57,25 @@ installPartnerweltRedesign(dist);
 // Public, individually shareable fiction-marked Social-Labor and WCAG contrast correction.
 installPartnerweltSocial(dist);
 
+ // Separate fictional landing page; copied from public/ before bundle installation.
+const echtJetztSlug='partnerwelt/echt-jetzt/';
+const partnerIndex=path.join(dist,'partnerwelt','index.html');
+const partnerHtml=readFileSync(partnerIndex,'utf8');
+const partnerNavEnd='</nav></header>';
+if(!partnerHtml.includes(partnerNavEnd))throw new Error('Missing Partnerwelt navigation for ECHT JETZT');
+writeFileSync(partnerIndex,partnerHtml.replace(partnerNavEnd,'<a href="/partnerwelt/echt-jetzt/">ECHT JETZT?!</a>'+partnerNavEnd),'utf8');
+const echtJetztPath=path.join(dist,echtJetztSlug,'index.html');
+if(!(ready || publicIndexReady)){
+ const html=readFileSync(echtJetztPath,'utf8');
+ writeFileSync(echtJetztPath,html.replace('content="index,follow"','content="noindex,follow"'),'utf8');
+}else{
+ const partnerSitemap=path.join(dist,'partnerwelt','sitemap.xml');
+ const xml=readFileSync(partnerSitemap,'utf8');
+ if(!xml.includes('</urlset>'))throw new Error('Invalid Partnerwelt sitemap');
+ writeFileSync(partnerSitemap,xml.replace('</urlset>','<url><loc>'+absoluteUrl(site,echtJetztSlug)+'</loc></url></urlset>'),'utf8');
+}
+
+
 const abs=p=>absoluteUrl(site,p);
 const e=escapeHtml, em=escapeMeta;
 function output(f,body){const target=path.join(dist,f);mkdirSync(path.dirname(target),{recursive:true});writeFileSync(target,body,'utf8');}
@@ -206,7 +225,7 @@ for(const [slug,title,body] of [['experiment','Über das Experiment',about],['im
 }
 if(ready || publicIndexReady || chapterIndexReady){
  // Only indexable URLs belong in the sitemap; no unapproved chapter URLs.
- const slugs=['','roman/',...((ready || chapterIndexReady)?list.filter(c=>c.status==='approved').map(c=>'roman/'+c.id+'/'):[]),'experiment/','impressum/','datenschutz/','lizenz/','partnerwelt/','partnerwelt/palettenpalaver/','partnerwelt/belegballett/','partnerwelt/warteschleifenwunder/',...SOCIAL_SLUGS];
+ const slugs=['','roman/',...((ready || chapterIndexReady)?list.filter(c=>c.status==='approved').map(c=>'roman/'+c.id+'/'):[]),'experiment/','impressum/','datenschutz/','lizenz/','partnerwelt/','partnerwelt/palettenpalaver/','partnerwelt/belegballett/','partnerwelt/warteschleifenwunder/',...SOCIAL_SLUGS,...((ready || publicIndexReady)?[echtJetztSlug]:[])];
  output('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+slugs.map(s=>'<url><loc>'+e(abs(s))+'</loc></url>').join('')+'</urlset>');
 }
 if(ready)output('feed.xml',renderRss({site,config,chapters:list}));
