@@ -87,7 +87,41 @@ export function renderCampaignImage(chapter){
  // Familienkalender motif: a smiling pixel dinosaur and a readable calendar.
  // No external asset, font or network request; social crawlers receive one 1200x630 PNG.
  // Self-contained fictional bakery and chocolate-cake visuals, generated as PNG.
- if(c.bingo_card===true) {
+ if(c.echt_jetzt_card===true){
+  // Original satirical vector-like raster artwork, generated without external assets.
+  const dark=[17,46,38],cream=[255,246,222],gold=[255,205,91],pink=[223,98,91],red=[158,44,54],green=[40,114,76],white=[255,255,248];
+  fillRect(0,0,W,H,dark);
+  fillRect(0,0,W,12,gold);
+  // A completely implausible Christmas dinner: an octopus chef balancing
+  // eight festive puddings, rendered as intentionally artificial illustration.
+  function oval(cx,cy,rx,ry,color){for(let dy=-ry;dy<=ry;dy++){const dx=rx*Math.sqrt(Math.max(0,1-dy*dy/(ry*ry)));fillRect(cx-dx,cy+dy,2*dx+1,1,color);}}
+  function arm(x0,y0,x1,y1,bend){for(let t=0;t<=1;t+=.009){const x=x0+(x1-x0)*t+Math.sin(Math.PI*t)*bend,y=y0+(y1-y0)*t;oval(x,y,13-4*t,13-4*t,pink);}}
+  for(let i=0;i<36;i++){const x=805+(i*131)%360,y=30+(i*71)%510;oval(x,y,2+i%4,2+i%4,gold);}
+  oval(978,493,197,38,[12,27,24]);oval(978,485,179,28,cream);oval(978,482,145,16,[204,190,155]);
+  for(let i=0;i<8;i++){
+   const x=822+(i%4)*104,y=i<4?266:400;
+   arm(976,332,x,y+18,i%2?18:-18);
+   oval(x,y+17,38,8,cream);oval(x,y,21,22,red);oval(x,y-10,24,8,white);oval(x,y-21,5,5,gold);
+  }
+  oval(976,308,72,69,pink);
+  oval(951,300,11,13,white);oval(1002,300,11,13,white);
+  oval(951,302,5,7,dark);oval(1002,302,5,7,dark);
+  oval(977,327,18,9,red);
+  fillRect(930,219,92,39,cream);
+  oval(922,212,30,29,white);oval(975,197,37,39,white);oval(1029,211,30,30,white);
+  fillRect(936,245,78,5,[196,181,147]);
+  // A festive wreath atop the chef's hat.
+  for(let i=0;i<14;i++){const a=i*Math.PI/7;oval(976+Math.cos(a)*27,154+Math.sin(a)*11,8,6,green);}
+  oval(976,153,5,5,red);
+  fillRect(778,525,400,48,gold);text('GARANTIERT MENSCHLICH',793,541,3,dark);
+  // Add a literal question mark even though the legacy bitmap font has none.
+  fillRect(1150,537,14,4,dark);fillRect(1160,541,4,10,dark);fillRect(1155,550,9,4,dark);fillRect(1155,554,4,5,dark);fillRect(1155,564,4,4,dark);
+  fillRect(50,52,8,40,gold);text('ECHT JETZT',75,57,5,cream);
+  text('AGENTUR FUER',50,112,4,gold);text('MENSCHLICHE BILDGESTALTUNG',50,148,4,gold);
+  text('DIESES BILD',48,218,10,cream);text('IST KI.',48,307,13,gold);
+  text('DIE ANDEREN',49,432,7,cream);text('VIELLEICHT NICHT.',49,493,7,cream);
+  fillRect(0,590,W,40,[10,30,25]);text('KI-UNTERSTUETZT ERSTELLTE GRAFIK / FIKTIVE AGENTUR / FOLGENREICH',45,600,3,cream);
+ } else if(c.bingo_card===true) {
   // Deterministic author-approved social teaser. Built in the Reader; no additional AI image asset.
   const navy=[23,39,54], cream=[255,248,236], ink=[27,48,62],
     gold=[255,183,108], orange=[235,109,65], paper=[249,241,226], line=[58,80,95];
