@@ -77,3 +77,7 @@ Die Share-Preview ist eine **fiktive Buzzword-Bingo-Karte** und wird durch `scri
 Aus dem Quellenhinweis von Folge 12 wurde eine **interne Anweisung** entfernt, die über `editorial_note` zuvor sichtbar wurde. Autorwünsche bleiben PR-/Redaktionsinformation, nicht Teil der öffentlichen Lesebegleitung. Die alten Romankapitel und deren Tonalität werden nicht vereinheitlicht. Fachquellenfreigabe und literarische Veröffentlichungsfreigabe sind voneinander getrennt.
 
 Freigabe: Benjamin Lam, 13.11.2026. Die bestehende Indexierungsfreigabe für veröffentlichte Folgen gilt; die rechtlichen Gesamt-Release-Flags bleiben unverändert.
+
+## Folge 14 – Eine echte Entlastung (17.11.2026)
+
+Autorenfreigabe zur Veröffentlichung: Innovation und Pilotprojekt stehen im Mittelpunkt. Der Schlussabsatz zur Auslastungsplanung wurde auf Wunsch gestrichen; die übrige Prosa entspricht der gesicherten Manuskriptfassung ohne Arbeitsfassungs-Untertitel. Die 40 Prozent sind eine fiktive interne Simulation. Fiktive Adventskalender-Share-Preview mit Roboter-Bausatz, deterministisch im Build erzeugt. Keine externen Quellenlinks; fiktionaler Hinweis „Interne Dokumentation – nur für den internen Gebrauch.“ außerhalb der Prosa. Die rechtlichen Gesamt-Release-Flags und bisherige Indexierungsfreigabe bleiben unverändert.

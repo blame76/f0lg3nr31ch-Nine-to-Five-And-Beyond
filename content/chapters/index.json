@@ -515,6 +515,46 @@
         "path": "content/references/die-fehlende-uebersetzungsfunktion.json",
         "reviewed_on": "2026-11-13"
       }
+    },
+    {
+      "id": "eine-echte-entlastung",
+      "title": "Eine echte Entlastung",
+      "description": "Alex erlebt, wie die interne KI-Unit den E-Commerce-Service mit automatisierter Analyse, Experimenten und Entwicklung neu denkt.",
+      "source_ref": "4b96faea7cdd2a1b6f5037edef410047a1073761/episodes/texts/eine-echte-entlastung.md",
+      "source_blob_sha": "c2b0101c8cb28ed2a14a96b70e82857c642e9244",
+      "status": "approved",
+      "position": 14,
+      "path": "content/chapters/eine-echte-entlastung.md",
+      "campaign": {
+        "category": "Advent · Fiktive Roboter-Bausatz-Werbung",
+        "headline": "24 Türchen. Ein Roboter.",
+        "subheadline": "Der Adventskalender zum Selberbauen.",
+        "promise": "Jeden Tag ein Bauteil. An Heiligabend steht dein Roboter.",
+        "context": "Fiktive Adventskalender-Werbung aus dem Roman: Hinter jedem Türchen steckt ein kleiner Teil des Roboter-Bausatzes. Keine echten Kaufangebote und keine Bestellmöglichkeit.",
+        "seo_title": "Eine echte Entlastung – KI im E-Commerce-Service",
+        "seo_description": "Fiktive Romanfolge über Alex, die interne KI-Unit, proaktive Shop-Optimierung und ein vielversprechendes Pilotprojekt.",
+        "social_title": "24 Türchen. Ein Roboter. | Eine echte Entlastung",
+        "social_description": "Fiktive Adventskalender-Werbung: Jeden Tag ein Bauteil, an Heiligabend ein Roboter. Romanfolge 14 aus Folgenreich.",
+        "image": "share/eine-echte-entlastung.png",
+        "image_alt": "Fiktive Adventskalender-Werbung mit 24 nummerierten Türchen und einem kleinen selbstgebauten Roboter.",
+        "image_lines": [
+          "24 TUERCHEN.",
+          "EIN ROBOTER."
+        ],
+        "image_detail": [
+          "ADVENTSKALENDER",
+          "JEDEN TAG EIN BAUTEIL"
+        ],
+        "accent": "#E9BC67",
+        "robot_advent_card": true
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-17",
+      "research": {
+        "status": "none",
+        "reviewed_on": "2026-11-17",
+        "reason": "Die fiktive interne Präsentation und Simulation bleiben innerhalb der Romanwelt; keine externen Links. Stattdessen ein klar fiktionaler Hinweis auf interne Dokumentation."
+      }
     }
   ]
 }
