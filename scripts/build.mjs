@@ -136,6 +136,10 @@ for(let i=0;i<list.length;i++){
  let research=c.research.status==='linked' ? renderResearchChapter(raw,readJson(c.research.path),c.id) : {chapterHtml:markdownToHtml(raw),notesHtml:''};
  // Reader exception requested by the author: no academic sources or outbound links
  // for this private-life miniaturе, only a short weekend sign-off.
+ if(c.id==='eine-echte-entlastung'){
+  if(c.research.status!=='none') throw new Error('Interne Dokumentation braucht Quellenentscheidung none');
+  research={...research,notesHtml:'<section class="research-notes" aria-labelledby="internal-doc-title"><p class="eyebrow">Hinter der Geschichte · Fiktive Agenturdokumentation</p><h2 id="internal-doc-title">Weiterführende Informationen</h2><p>Interne Dokumentation – nur für den internen Gebrauch.</p></section>'};
+ }
  if(c.id==='der-t-rex-effekt'){
   if(c.research.status!=='none') throw new Error('Freitagsmorgen braucht Quellenentscheidung none');
   research={...research,notesHtml:'<section class="weekend-note" aria-label="Wochenendgruß"><p>Wochenende! Offline! Make THE WORLD a BETTER place For CHILDREN!</p></section>'};

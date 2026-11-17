@@ -87,7 +87,27 @@ export function renderCampaignImage(chapter){
  // Familienkalender motif: a smiling pixel dinosaur and a readable calendar.
  // No external asset, font or network request; social crawlers receive one 1200x630 PNG.
  // Self-contained fictional bakery and chocolate-cake visuals, generated as PNG.
- if(c.echt_jetzt_card===true){
+ if(c.robot_advent_card===true){
+  const pine=[15,54,47],deep=[9,37,34],cream=[255,244,217],gold=[233,188,103],red=[166,49,53],metal=[177,198,190],dark=[42,68,65],light=[224,235,217];
+  fillRect(0,0,W,H,pine);fillRect(0,0,W,14,gold);
+  for(let i=0;i<50;i++){let x=(i*137+13)%W,y=30+(i*83)%545;fillRect(x,y,2+i%4,2+i%4,gold);}
+  fillRect(45,50,8,35,gold);text('ADVENTSKALENDER',70,55,4,cream);
+  text('24 TUERCHEN.',45,137,9,cream);text('EIN ROBOTER.',45,235,9,gold);
+  fillRect(45,330,610,3,gold);text('JEDEN TAG EIN BAUTEIL',45,361,4,cream);
+  text('AN HEILIGABEND FERTIG.',45,405,4,cream);
+  // 24 numbered doors on a cardboard box.
+  fillRect(690,90,462,440,deep);fillRect(676,74,462,440,red);fillRect(693,91,428,406,cream);
+  for(let i=0;i<24;i++){let x=705+(i%6)*68,y=103+Math.floor(i/6)*96;fillRect(x,y,62,86,i%2?pine:red);text(String(i+1),x+9,y+8,2,cream);fillRect(x+51,y+39,5,8,gold);}
+  // Assembled toy robot in front of the package. Mechanical joints and screws.
+  fillRect(873,203,126,98,deep);fillRect(883,193,126,98,metal);fillRect(895,207,102,67,dark);
+  fillRect(908,224,24,19,gold);fillRect(960,224,24,19,gold);fillRect(929,257,31,4,light);
+  fillRect(938,172,8,21,metal);fillRect(930,165,24,10,gold);
+  fillRect(926,291,38,18,dark);fillRect(869,307,148,105,deep);fillRect(879,297,128,105,metal);
+  fillRect(893,313,99,65,pine);fillRect(905,328,75,5,gold);fillRect(905,348,37,8,light);
+  fillRect(849,310,27,80,metal);fillRect(1010,310,27,80,metal);fillRect(840,378,36,18,dark);fillRect(1010,378,36,18,dark);
+  fillRect(891,402,33,67,metal);fillRect(962,402,33,67,metal);fillRect(881,459,52,19,dark);fillRect(953,459,52,19,dark);
+  fillRect(0,583,W,47,deep);text('FIKTIVE WERBUNG - ROMANFOLGE 14 - KEIN KAUFANGEBOT',45,597,3,cream);
+ } else if(c.echt_jetzt_card===true){
   // Original satirical vector-like raster artwork, generated without external assets.
   const dark=[17,46,38],cream=[255,246,222],gold=[255,205,91],pink=[223,98,91],red=[158,44,54],green=[40,114,76],white=[255,255,248];
   fillRect(0,0,W,H,dark);
