@@ -9,15 +9,16 @@ const manifest=readJson('content/chapters/index.json');
 const readProse=c=>readFileSync(c.path,'utf8').replace(/^# [^\n]+\n+/,'');
 const catalogs=manifest.chapters.filter(c=>c.research?.status==='linked').map(c=>({chapter:c,catalog:readJson(c.research.path),prose:readProse(c)}));
 
-test('All approved chapters have reviewed research decisions; Friday and the internal presentation have no external references',()=>{
+test('All approved chapters have reviewed research decisions; Friday, the internal presentation and the magazine episode have no external references',()=>{
  assert.ok(manifest.chapters.length>=9);
  assert.equal(manifest.chapters.filter(c=>c.status==='approved').length,manifest.chapters.length);
  assert.equal(manifest.chapters.filter(c=>c.status==='release-candidate').length,0);
- assert.equal(manifest.chapters.filter(c=>c.research.status==='linked').length,manifest.chapters.length-2);
+ assert.equal(manifest.chapters.filter(c=>c.research.status==='linked').length,manifest.chapters.length-3);
  assert.equal(manifest.chapters.find(c=>c.id==='der-t-rex-effekt').research.status,'none');
  assert.equal(manifest.chapters.find(c=>c.id==='eine-echte-entlastung').research.status,'none');
+ assert.equal(manifest.chapters.find(c=>c.id==='vorabexemplar').research.status,'none');
  assert.deepEqual(validateManifest(config,manifest),[]);
- assert.equal(catalogs.length,manifest.chapters.length-2);
+ assert.equal(catalogs.length,manifest.chapters.length-3);
 });
 test('All chapter-specific source anchors are distinct, ordered and genuinely in the prose',()=>{
  for(const {chapter,catalog,prose} of catalogs){
