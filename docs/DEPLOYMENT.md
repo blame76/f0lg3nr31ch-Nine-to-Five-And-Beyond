@@ -41,3 +41,6 @@ Der erfolgreiche GitHub-/Cloudflare-Build **belegt allein noch keinen 4/4-Wert a
 6. Danach PageSpeed/Lighthouse auf `https://folgenreich.benjamin-lam.de/` erneut ausführen: Agentic-Browsing-Ziel **4/4** als Abnahmekriterium, nicht als behauptetes Ergebnis. Accessibility Tree, CLS, llms.txt und ARD-Audit einzeln dokumentieren. Bei anderem Nenner oder nicht anwendbaren Audits Einzelresultate statt künstlicher 4/4 berichten.
 
 Wenn die Custom-Domain etwas anderes ausliefert als das erfolgreiche Pages-Deployment, zunächst Custom-Domain/DNS, Cloudflare-Zuordnung, Caching und ggf. Edge-Regeln prüfen. Kein künstliches Setzen von `legal_reviewed_for_launch` oder Kapitelstatus.
+
+## SEO-/GEO-Release 18.11.2026 (ersetzt frühere Aussagen zu noindex, RSS und Discovery)
+Die zentralen Indexierungsentscheidungen sind in `config/publications.json` und dem Kapitelmanifest dokumentiert. Freigegebene Kapitel und statische Publikationen werden unabhängig von der juristischen Gesamtfreigabe indexierbar ausgeliefert; RSS enthält freigegebene redaktionelle Einträge ohne erfundene Daten. `npm run build` führt automatisch den Discovery-Abgleich durch. Live: Custom-Domain, HTTP-Status, Sitemap, llms.txt, RSS, robots, X-Robots-Tag, Cloudflare-Crawlerregeln und Pages-/Preview-Duplikate prüfen. Keine Flags zur juristischen Freigabe stillschweigend setzen. Siehe docs/SEO-GEO.md.

@@ -22,7 +22,9 @@ test('ECHT JETZT has three native disclosure controls, no active external integr
 test('ECHT JETZT has navigation and respects the public indexing decision in the build',()=>{
  assert.match(build,/const echtJetztSlug='partnerwelt\/echt-jetzt\/'/);
  assert.match(build,/href="\/partnerwelt\/echt-jetzt\/"/);
- assert.match(build,/\(ready \|\| publicIndexReady\)\?\[echtJetztSlug\]:\[\]/);
+ const registry=JSON.parse(readFileSync(new URL('../config/publications.json',import.meta.url),'utf8'));
+ assert.ok(registry.site_pages.some(p=>p.slug==='partnerwelt/echt-jetzt/'&&p.index===true));
+ assert.match(build,/synchronizePublications\(dist,site,publications\)/);
 });
 
 test('ECHT JETZT uses a dedicated 1200 by 630 PNG share card',()=>{

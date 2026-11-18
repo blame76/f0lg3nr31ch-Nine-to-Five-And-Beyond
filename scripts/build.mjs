@@ -9,7 +9,8 @@ import {renderResearchChapter} from './references.mjs';
 import {renderAdminBookAd} from './book-ad.mjs';
 import {renderLlmsTxt,renderRss,renderNotFound,renderArdManifest,renderLegacyAiCatalog} from './discovery.mjs';
 import {installPartnerweltRedesign} from './partnerwelt-redesign.mjs';
-import {installPartnerweltSocial,SOCIAL_SLUGS} from './partnerwelt-social.mjs';
+import {installPartnerweltSocial} from './partnerwelt-social.mjs';
+import {publicationEntries,renderSitemap,renderPublicationFeed,synchronizePublications,auditPublications} from './publications.mjs';
 
 const config=readJson('config/site.json');
 const manifest=readJson('content/chapters/index.json');
@@ -20,6 +21,8 @@ const ready=!!site && config.release_approved===true && config.legal_reviewed_fo
 // Indexing decisions are independent of the legal/full-release gate.
 const publicIndexReady=!!site && config.public_pages_indexing_approved===true;
 const chapterIndexReady=!!site && config.published_chapters_indexing_approved===true;
+const publications=publicationEntries({config,chapters:manifest.chapters,ready,publicIndexReady,chapterIndexReady});
+const hasFeed=publications.some(p=>p.index&&p.feed);
 const dist=path.join(root,'dist');
 rmSync(dist,{recursive:true,force:true});mkdirSync(dist,{recursive:true});
 cpSync(path.join(root,'public'),dist,{recursive:true});
@@ -64,19 +67,7 @@ const partnerHtml=readFileSync(partnerIndex,'utf8');
 const partnerNavEnd='</nav></header>';
 if(!partnerHtml.includes(partnerNavEnd))throw new Error('Missing Partnerwelt navigation for ECHT JETZT');
 writeFileSync(partnerIndex,partnerHtml.replace(partnerNavEnd,'<a href="/partnerwelt/echt-jetzt/">ECHT JETZT?!</a>'+partnerNavEnd),'utf8');
-const echtJetztPath=path.join(dist,echtJetztSlug,'index.html');
 writeFileSync(path.join(dist,echtJetztSlug,'share-preview.png'),renderCampaignImage({position:1,campaign:{accent:'#f5ce65',echt_jetzt_card:true}}));
-if(!(ready || publicIndexReady)){
- const html=readFileSync(echtJetztPath,'utf8');
- writeFileSync(echtJetztPath,html.replace('content="index,follow"','content="noindex,follow"'),'utf8');
-}else{
- const partnerSitemap=path.join(dist,'partnerwelt','sitemap.xml');
- const xml=readFileSync(partnerSitemap,'utf8');
- if(!xml.includes('</urlset>'))throw new Error('Invalid Partnerwelt sitemap');
- writeFileSync(partnerSitemap,xml.replace('</urlset>','<url><loc>'+absoluteUrl(site,echtJetztSlug)+'</loc></url></urlset>'),'utf8');
-}
-
-
 const abs=p=>absoluteUrl(site,p);
 const e=escapeHtml, em=escapeMeta;
 function output(f,body){const target=path.join(dist,f);mkdirSync(path.dirname(target),{recursive:true});writeFileSync(target,body,'utf8');}
@@ -102,7 +93,7 @@ function page({title,description=config.description,slug='',type='website',body,
  '<meta name="twitter:description" content="'+em(ogDescription||description)+'">',
  '<meta name="twitter:card" content="summary_large_image">',
  ...(type==='chapter'?['<meta name="author" content="'+em(config.author_name)+'">']:[]),
- ...(ready?['<link rel="alternate" type="application/rss+xml" title="Romanfolgen" href="'+em(abs('feed.xml'))+'">']:[]),
+ ...(hasFeed?['<link rel="alternate" type="application/rss+xml" title="Folgenreich – Veröffentlichungen" href="'+em(abs('feed.xml'))+'">']:[]),
  '<link rel="stylesheet" href="/style.css">'
  ];
  if(site){
@@ -117,10 +108,10 @@ function page({title,description=config.description,slug='',type='website',body,
    head.push('<meta name="twitter:image" content="'+em(abs(ogImage))+'">');
  }
  if(site) head.push('<link rel="describedby" type="text/plain" href="'+em(abs('llms.txt'))+'">');
- if(schema && (ready || (chapterIndexReady && type==='chapter' && indexApprovedChapter))) head.push(structured(schema));
+ if(schema && (ready || (publicIndexReady && type!=='chapter') || (chapterIndexReady && type==='chapter' && indexApprovedChapter))) head.push(structured(schema));
  return '<!doctype html><html lang="de"><head><title>'+em(fullTitle)+'</title>'+head.join('')+'</head><body>'+
  '<a class="skip" href="#main">Zum Inhalt springen</a>'+
- '<header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">f0lg3nr31ch<span class="tagline">Nine to Five. And Beyond.</span></a><nav aria-label="Hauptnavigation"><a href="/roman/">Roman</a><a href="/experiment/">Über das Projekt</a></nav></div></header>'+
+ '<header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">f0lg3nr31ch<span class="tagline">Nine to Five. And Beyond.</span></a><nav aria-label="Hauptnavigation"><a href="/roman/">Roman</a><a href="/magazin/">Magazin</a><a href="/partnerwelt/">Partnerwelt</a><a href="/experiment/">Über das Projekt</a></nav></div></header>'+
  '<main id="main" class="wrap">'+body+'</main>'+
  '<footer class="site-footer"><div class="wrap"><p class="footer-disclosure">Ein Roman über eine fiktive Agentur · <a href="/experiment/">Über das Projekt</a></p><div class="footer-inner"><p>f0lg3nr31ch – Nine to Five. And Beyond.</p><nav aria-label="Rechtliches"><a href="/experiment/">Über</a><a href="/lizenz/">Lizenz</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></nav></div></div></footer></body></html>';
 }
@@ -250,18 +241,26 @@ for(let i=0;i<list.length;i++){
  '<div class="afterword" aria-label="Hintergründe zur Folge">'+bridge+travelAd+'</div>';
  output('roman/'+c.id+'/index.html',page({title:campaign.seo_title,description:campaign.seo_description,ogTitle:campaign.social_title,ogDescription:campaign.social_description,ogImage:campaign.image,ogAlt:campaign.image_alt,slug:'roman/'+c.id+'/',type:'chapter',indexApprovedChapter:c.status==='approved',body,schema:chapter}));
 }
+// Public editorial hub: reliable entry point from the reader, not a new fictional offer.
+const magazineEntries=publications.filter(p=>p.slug.startsWith('magazin/')&&p.slug!=='magazin/');
+const magazineItems='<ul class="list">'+magazineEntries.map(p=>'<li><a href="/'+e(p.slug)+'">'+e(p.title)+'</a><small>'+e(p.description)+'</small></li>').join('')+'</ul>';
+output('magazin/index.html',page({title:'Magazin',slug:'magazin/',description:'WHITE TRASH & WHITEPAPERS – recherchierte Analysen und klar gekennzeichnete fiktive Interviews aus Folgenreich.',body:'<section class="hero"><p class="eyebrow">Redaktion · WHITE TRASH &amp; WHITEPAPERS</p><h1>Magazin</h1><p>Ein fiktives Branchenmagazin mit recherchierten Fachtexten und erfundenen Gesprächen. Reale Quellen und Fiktion bleiben redaktionell getrennt.</p></section><section><h2>Alle Beiträge</h2>'+magazineItems+'</section>',schema:{'@context':'https://schema.org','@type':'CollectionPage','@id':abs('magazin/#collection'),url:abs('magazin/'),name:'WHITE TRASH & WHITEPAPERS – Magazin',inLanguage:'de'}}));
 for(const [slug,title,body] of [['experiment','Über das Experiment',about],['impressum','Impressum',imprint],['datenschutz','Datenschutz',privacy],['lizenz','Lizenz und Urheberschaft',license]]){
  output(slug+'/index.html',page({title,slug:slug+'/',body}));
 }
-if(ready || publicIndexReady || chapterIndexReady){
- // Only indexable URLs belong in the sitemap; no unapproved chapter URLs.
- const slugs=['','roman/',...((ready || chapterIndexReady)?list.filter(c=>c.status==='approved').map(c=>'roman/'+c.id+'/'):[]),'experiment/','impressum/','datenschutz/','lizenz/','partnerwelt/','partnerwelt/palettenpalaver/','partnerwelt/belegballett/','partnerwelt/warteschleifenwunder/',...SOCIAL_SLUGS,...((ready || publicIndexReady)?[echtJetztSlug]:[])];
- output('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+slugs.map(s=>'<url><loc>'+e(abs(s))+'</loc></url>').join('')+'</urlset>');
+// Synchronize canonical and robots policy for all output, including static sub-sites.
+synchronizePublications(dist,site,publications);
+const indexable=publications.filter(p=>p.index);
+if(indexable.length){
+ output('sitemap.xml',renderSitemap(site,publications));
 }
-if(ready)output('feed.xml',renderRss({site,config,chapters:list}));
-output('robots.txt','User-agent: *\nAllow: /\n'+(ready || publicIndexReady?'Sitemap: '+abs('sitemap.xml')+'\n':''));
-output('llms.txt',renderLlmsTxt({site,config,chapters:list,ready,publicIndexReady,chapterIndexReady}));
+output('partnerwelt/sitemap.xml',renderSitemap(site,publications.filter(p=>p.slug.startsWith('partnerwelt/'))));
+if(hasFeed)output('feed.xml',renderPublicationFeed(site,config,publications));
+output('robots.txt','User-agent: *\nAllow: /\n'+(indexable.length?'Sitemap: '+abs('sitemap.xml')+'\n':''));
+output('llms.txt',renderLlmsTxt({site,config,chapters:list,ready,publicIndexReady,chapterIndexReady,entries:publications}));
 output('.well-known/ard.json',renderArdManifest());
 output('.well-known/ai-catalog.json',renderLegacyAiCatalog());
 output('404.html',renderNotFound());
+const audit=auditPublications(dist,site,publications);
+console.log('SEO/GEO build audit: '+JSON.stringify(audit));
 console.log('Pages build finished: '+list.length+' chapters; approved chapter indexing '+(ready || chapterIndexReady?'ENABLED':'DISABLED')+'; full release '+(ready?'ENABLED':'PENDING')+'; URL '+(site||'not set'));
