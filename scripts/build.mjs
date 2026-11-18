@@ -186,7 +186,7 @@ for(let i=0;i<list.length;i++){
  const chapter={'@context':'https://schema.org','@type':'Chapter','@id':abs('roman/'+c.id+'/#chapter'),name:c.title,description:c.description,inLanguage:'de',url:abs('roman/'+c.id+'/'),position:i+1,isPartOf:{'@type':'Book','@id':book['@id'],name:book.name,url:book.url},author:{'@type':'Person',name:config.author_name}};
  const campaign=c.campaign;
  const bridge=campaign.magazine_editorial_card
- ? '<aside class="campaign-bridge" aria-label="Fiktive Magazinwerbung"><p class="eyebrow">Anzeige · Fiktives Branchenmagazin</p><a href="/'+magazineSlug+'"><img src="/'+e(campaign.image)+'" alt="'+e(campaign.image_alt)+'" width="1200" height="630" loading="lazy" style="width:100%;height:auto;display:block"></a><h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p><p><a href="/'+magazineSlug+'">Dezember-Ausgabe lesen →</a></p><p class="campaign-disclaimer">Fiktive Magazinwerbung aus Folgenreich; KI-generiertes Bild.</p></aside>'
+ ? '<aside class="campaign-bridge" aria-label="Fiktive Magazinwerbung"><p class="eyebrow">Anzeige · Fiktives Branchenmagazin</p><h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p><p><a href="/'+magazineSlug+'">Dezember-Ausgabe lesen →</a></p><p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman; KI-generiertes Editorial-Vorschaubild.</p></aside>'
  : campaign.christmas_invitation_card
  ? '<aside class="campaign-bridge" aria-label="Fiktive Einladung zur Weihnachtsfeier"><p class="eyebrow">Einladung · Fiktive Agentur · Romanfolge '+(i+1)+'</p>'+
    '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
