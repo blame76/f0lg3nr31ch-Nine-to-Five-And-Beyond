@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "site_pages": [
+    {
+      "slug": "",
+      "title": "Startseite",
+      "section": "Projekt",
+      "description": "Literatur- und Rechercheprojekt über Arbeit, Technologie und Verantwortung.",
+      "type": "WebSite",
+      "feed": false,
+      "index": true
+    },
+    {
+      "slug": "roman/",
+      "title": "Romanübersicht",
+      "section": "Roman",
+      "description": "Alle Folgen in ihrer Lesereihenfolge.",
+      "type": "Book",
+      "feed": false,
+      "index": true
+    },
+    {
+      "slug": "magazin/",
+      "title": "Magazinübersicht",
+      "section": "Magazin",
+      "description": "Recherchierte Analysen und fiktive Interviews, redaktionell getrennt.",
+      "type": "CollectionPage",
+      "feed": false,
+      "index": true
+    },
+    {
+      "slug": "magazin/white-trash-whitepapers/2026-12/",
+      "title": "Die Agentur hat eine Zukunft. Ihre Mitarbeiter auch?",
+      "section": "Magazin",
+      "description": "Recherchierter Ausblick auf KI, Geschäftsmodelle und Beschäftigung 2027 im fiktiven Magazin.",
+      "type": "Article",
+      "feed": true,
+      "index": true
+    },
+    {
+      "slug": "magazin/white-trash-whitepapers/2026-12/interview/",
+      "title": "Gründerinterview mit Martin",
+      "section": "Fiktive Interviews",
+      "description": "Erfundenes Gespräch über Arbeit, Wachstum und Verantwortung.",
+      "type": "CreativeWork",
+      "feed": true,
+      "index": true
+    },
+    {
+      "slug": "partnerwelt/",
+      "title": "Partnerwelt",
+      "section": "Partnerwelt",
+      "description": "Fiktive Dienstleister und Fachbeispiele aus der Romanwelt.",
+      "type": "CollectionPage",
+      "feed": false,
+      "index": true
+    },
+    {
+      "slug": "partnerwelt/palettenpalaver/",
+      "title": "Palettenpalaver",
+      "section": "Partnerwelt",
+      "description": "Fiktiver Fulfillment-Dienstleister.",
+      "type": "CreativeWork",
+      "feed": false,
+      "index": true
+    },
+    {
+      "slug": "partnerwelt/belegballett/",
+      "title": "Belegballett",
+      "section": "Partnerwelt",
+      "description": "Fiktiver Dienstleister für Commerce Operations.",
+      "type": "CreativeWork",
+      "feed": false,
+      "index": true
+    },
+    {
+      "slug": "partnerwelt/warteschleifenwunder/",
+      "title": "Warteschleifenwunder",
+      "section": "Partnerwelt",
+      "description": "Fiktiver Dienstleister für Kundenservice.",
+      "type": "CreativeWork",
+      "feed": false,
+      "index": true
+    },
+    {
+      "slug": "partnerwelt/share/",
+      "title": "Social-Labor",
+      "section": "Medienexperimente",
+      "description": "Fiktive Kampagnen und nachvollziehbare Kommunikationsprinzipien.",
+      "type": "CollectionPage",
+      "feed": false,
+      "index": true
+    },
+    {
+      "slug": "partnerwelt/echt-jetzt/",
+      "title": "ECHT JETZT?!",
+      "section": "Medienexperimente",
+      "description": "Satire über KI-Werbung und Verifizierung.",
+      "type": "CreativeWork",
+      "feed": true,
+      "index": true
+    },
+    {
+      "slug": "partnerwelt/prscnm/",
+      "title": "prscnm – Es wird wieder spät.",
+      "section": "Medienexperimente",
+      "description": "Fiktiver Streamingkanal ohne tatsächliches Angebot.",
+      "type": "CreativeWork",
+      "feed": true,
+      "index": true
+    },
+    {
+      "slug": "partnerwelt/prscnm/hinter-den-kulissen/",
+      "title": "Wem gehört die Zeit?",
+      "section": "Fachrecherche",
+      "description": "Reale Fachquellen zu KI, Code-Review, Produktivität und Hybridarbeit.",
+      "type": "Article",
+      "feed": true,
+      "index": true
+    },
+    {
+      "slug": "experiment/",
+      "title": "Über das Experiment",
+      "section": "Projekt",
+      "description": "Entstehung, KI-Einsatz und Fiktionskennzeichnung.",
+      "type": "AboutPage",
+      "feed": false,
+      "index": true
+    },
+    {
+      "slug": "lizenz/",
+      "title": "Lizenz und Urheberschaft",
+      "section": "Projekt",
+      "description": "Bedingungen und Grenzen der Nachnutzung.",
+      "type": "WebPage",
+      "feed": false,
+      "index": true
+    },
+    {
+      "slug": "impressum/",
+      "title": "Impressum",
+      "section": "Projekt",
+      "description": "Rechtliche Angaben zum Reader.",
+      "type": "WebPage",
+      "feed": false,
+      "index": true
+    },
+    {
+      "slug": "datenschutz/",
+      "title": "Datenschutz",
+      "section": "Projekt",
+      "description": "Datenschutzhinweise zum Reader.",
+      "type": "WebPage",
+      "feed": false,
+      "index": true
+    },
+    {
+      "slug": "partnerwelt/impressum/",
+      "title": "Partnerwelt – Impressum",
+      "section": "Rechtliches",
+      "description": "Rechtliche Einordnung der fiktiven Partnerwelt.",
+      "type": "WebPage",
+      "feed": false,
+      "index": false
+    },
+    {
+      "slug": "partnerwelt/datenschutz/",
+      "title": "Partnerwelt – Datenschutz",
+      "section": "Rechtliches",
+      "description": "Datenschutzhinweise der Partnerwelt.",
+      "type": "WebPage",
+      "feed": false,
+      "index": false
+    }
+  ],
+  "excluded_html": [
+    "404.html",
+    "google49307dac65ef4a00.html"
+  ],
+  "policy": "Partnerwelt-Rechtsseiten bleiben erreichbar, aber ohne Indexierung. Kein automatisches Trainings-Opt-in/-Opt-out."
+}

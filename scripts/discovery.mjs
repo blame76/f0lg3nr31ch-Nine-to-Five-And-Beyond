@@ -1,37 +1,27 @@
 // Metadata-only discovery. No changes to the visible chapter reader.
+import {publicationEntries} from './publications.mjs';
 const xml = value => String(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;');
 const label = value => String(value).replace(/[\[\]\\]/g,'').replace(/\s+/g,' ').trim();
 const isApproved = chapters => chapters.length > 0 && chapters.every(c=>c.status==='approved' && !!c.approved_by && /^\d{4}-\d{2}-\d{2}$/.test(c.approved_at||''));
 const baseUrl = site => String(site).replace(/\/$/,'');
 
-export function renderLlmsTxt({site,config,chapters,ready,chapterIndexReady=false}) {
+export function renderLlmsTxt({site,config,chapters,ready=false,chapterIndexReady=false,publicIndexReady=config.public_pages_indexing_approved===true,entries}){
  const lines=[
-  '# f0lg3nr31ch – Nine to Five. And Beyond.',
-  '',
-  '> Deutschsprachiger Fortsetzungsroman von '+config.author_name+' über Menschen, Arbeit und die Folgen ihrer Entscheidungen.',
-  '',
-  'Die Agentur f0lg3nr31ch, ihre Stellenanzeigen und ihre Dienstleistungen sind fiktiv.',
+  '# f0lg3nr31ch – Nine to Five. And Beyond. (Folgenreich)','',
+  '> Deutschsprachiges Literatur- und Rechercheprojekt von '+config.author_name+' über Arbeit, Technologie und Verantwortung.','',
+  'Die Agentur f0lg3nr31ch, ihre Stellenanzeigen, Dienstleistungen und Figuren sind fiktiv.',
+  'Roman, Satire, fiktive Interviews und reale Fachquellen sind unterschiedliche redaktionelle Ebenen.',
   'KI unterstützt den Schreibprozess; die redaktionelle Verantwortung liegt bei einem Menschen.',
-  'Diese Datei bietet eine freiwillige Orientierung. Sie ist keine Lizenz und keine Erlaubnis zum Modelltraining.',
-  ''
+  'Diese Datei bietet freiwillige Orientierung. Sie ist keine Lizenz und keine Erlaubnis zum Modelltraining.',''
  ];
- const base=baseUrl(site);
- lines.push('## Projekt und Kontext','',
-  '- [Startseite]('+base+'/): Offizielle Projektseite und Einstieg in die fiktive Romanwelt.',
-  '- [Romanübersicht]('+base+'/roman/): Reihenfolge und kurze Einordnung der Folgen.',
-  '- [Partnerwelt]('+base+'/partnerwelt/): Drei vollständig fiktive Dienstleister mit fachlich plausiblen Beispielen zu Fulfillment, Commerce Operations und Kundenservice; Teamabbildungen sind KI-generiert.',
-  '- [Social-Labor]('+base+'/partnerwelt/share/): Sechs teilbare fiktive Social-Media-Beiträge, eigene Social-Vorschauen und kompakte How-to-Erklärungen zu Hook, Beleg und CTA; KI-unterstützt gestaltete Bilder.',
-  '- [Über das Experiment]('+base+'/experiment/): Entstehung, KI-Einsatz und Fiktionskennzeichnung.',
-  '- [Lizenz und Urheberschaft]('+base+'/lizenz/): Bedingungen und Grenzen der Nachnutzung.',
-  '');
- const indexableChapters=(ready || chapterIndexReady)
-  ? chapters.filter(c=>c.status==='approved' && !!c.approved_by && /^\d{4}-\d{2}-\d{2}$/.test(c.approved_at||''))
-  : [];
- if(indexableChapters.length){
-  lines.push('## Freigegebene Romanfolgen','');
-  for(const c of indexableChapters)lines.push('- ['+label(c.title)+']('+base+'/roman/'+c.id+'/): Romanfolge '+c.position);
+ const rows=(entries??publicationEntries({config,chapters,ready,chapterIndexReady,publicIndexReady})).filter(p=>p.index);
+ const sectionName={'Projekt':'Projekt und Kontext','Romanfolgen':'Freigegebene Romanfolgen'};
+ const sections=[...new Set(rows.map(p=>p.section))];
+ for(const section of sections){
+  lines.push('## '+(sectionName[section]||section),'');
+  for(const p of rows.filter(p=>p.section===section))lines.push('- ['+label(p.title)+']('+baseUrl(site)+'/'+p.slug+'): '+label(p.description));
   lines.push('');
- } else lines.push('Die Kapitel sind bereits öffentlich lesbar, jedoch noch nicht zur Suchmaschinenindexierung freigegeben. Deshalb werden hier keine einzelnen Kapitel-URLs empfohlen.','');
+ }
  return lines.join('\n');
 }
 
