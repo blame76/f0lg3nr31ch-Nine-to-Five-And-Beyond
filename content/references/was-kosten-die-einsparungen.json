@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "chapter_id": "was-kosten-die-einsparungen",
+  "reviewed_on": "2026-11-18",
+  "editorial_note": "Die Geschichte beschreibt eine fiktive Agentur. Wirtschaftlicher Erfolg, Beschäftigung und Verantwortung sind unterschiedliche Größen. Die folgenden Quellen erläutern allgemeine Zusammenhänge und Rechtsgrundlagen; sie sind kein Beleg für die Zahlen oder Entscheidungen der Romanhandlung.",
+  "sources": [
+    {
+      "id": "iab-beschaeftigung",
+      "placement": "inline",
+      "anchor": "Nach der bisherigen Planung wurden weniger Mitarbeiter für die neuen Aufgaben benötigt, als im Service voraussichtlich frei werden würden.",
+      "title": "Technologischer Wandel und Beschäftigung",
+      "description": "Eine Szenarioanalyse des IAB untersucht mögliche Produktivitäts- und Beschäftigungseffekte von KI. Auch wenn die Gesamtbeschäftigung in einem Szenario ähnlich bleibt, können einzelne Tätigkeiten und Arbeitsplätze verschwinden, während anderswo neue entstehen. Das ist keine Prognose für die Agentur.",
+      "publisher": "IAB",
+      "source_title": "Künstliche Intelligenz: Potenzielle Effekte für den deutschen Arbeitsmarkt",
+      "url": "https://iab.de/kuenstliche-intelligenz-potenzielle-effekte-fuer-den-deutschen-arbeitsmarkt/"
+    },
+    {
+      "id": "betriebsrat-ki",
+      "placement": "inline",
+      "anchor": "Die zuständigen Betriebsräte sind über die Planung der neuen Arbeitsverfahren bereits informiert",
+      "title": "Beteiligung des Betriebsrats bei KI-Transformation",
+      "description": "§ 90 BetrVG verlangt rechtzeitige Unterrichtung und Beratung über geplante Arbeitsverfahren einschließlich KI und deren Auswirkungen auf Beschäftigte. Die Beteiligung soll bereits in der Planung stattfinden, sodass Einwände und Vorschläge berücksichtigt werden können.",
+      "publisher": "Gesetze im Internet",
+      "source_title": "§ 90 BetrVG – Unterrichtungs- und Beratungsrechte",
+      "url": "https://www.gesetze-im-internet.de/betrvg/__90.html"
+    },
+    {
+      "id": "geschaeftsfuehrung-sorgfalt",
+      "placement": "inline",
+      "anchor": "Martin hatte Verantwortung für das gesamte Unternehmen übernommen.",
+      "title": "Unternehmerische Verantwortung und Sorgfalt",
+      "description": "§ 43 GmbHG beschreibt den Sorgfaltsmaßstab und die Haftung von GmbH-Geschäftsführern. Daraus ergibt sich keine pauschale Pflicht, jede mögliche Personalkosteneinsparung umzusetzen. Die Rechtsform, Lage und konkreten Pflichten sind im Einzelfall zu prüfen.",
+      "publisher": "Gesetze im Internet",
+      "source_title": "§ 43 GmbHG – Haftung der Geschäftsführer",
+      "url": "https://www.gesetze-im-internet.de/gmbhg/__43.html"
+    },
+    {
+      "id": "abwarten-unsicherheit",
+      "placement": "inline",
+      "anchor": "Vielleicht würde er im Frühjahr vor derselben Entscheidung stehen, allerdings mit einem geringeren finanziellen Handlungsspielraum.",
+      "title": "Entscheidungen unter Unsicherheit",
+      "description": "Die Bundesbank beschreibt das Aufschieben schwer rückgängig zu machender Investitionsentscheidungen als mögliche Reaktion auf Unsicherheit. Auf Martins Situation übertragen kann zusätzliche Zeit Informationen liefern, aber laufende Kosten und der schwindende Handlungsspielraum gehören ebenfalls zur Abwägung. Die Quelle gibt keine Empfehlung für konkrete Personalmaßnahmen.",
+      "publisher": "Deutsche Bundesbank",
+      "source_title": "Unsicherheit und ihre gesamtwirtschaftlichen Auswirkungen",
+      "url": "https://www.bundesbank.de/de/aufgaben/themen/unsicherheit-und-ihre-gesamtwirtschaftlichen-auswirkungen-958736"
+    }
+  ]
+}
