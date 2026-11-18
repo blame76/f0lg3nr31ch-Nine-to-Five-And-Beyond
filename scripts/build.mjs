@@ -93,7 +93,7 @@ function page({title,description=config.description,slug='',type='website',body,
  '<meta name="twitter:description" content="'+em(ogDescription||description)+'">',
  '<meta name="twitter:card" content="summary_large_image">',
  ...(type==='chapter'?['<meta name="author" content="'+em(config.author_name)+'">']:[]),
- ...(hasFeed?['<link rel="alternate" type="application/rss+xml" title="Folgenreich – Veröffentlichungen" href="'+em(abs('feed.xml'))+'">']:[]),
+ ...(hasFeed?['<link rel="alternate" type="application/rss+xml" title="Folgenreich &#8211; Ver&#246;ffentlichungen" href="'+em(abs('feed.xml'))+'">']:[]),
  '<link rel="stylesheet" href="/style.css">'
  ];
  if(site){
