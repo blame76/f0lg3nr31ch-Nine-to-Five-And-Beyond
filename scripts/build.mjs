@@ -125,7 +125,20 @@ function page({title,description=config.description,slug='',type='website',body,
  '<footer class="site-footer"><div class="wrap"><p class="footer-disclosure">Ein Roman über eine fiktive Agentur · <a href="/experiment/">Über das Projekt</a></p><div class="footer-inner"><p>f0lg3nr31ch – Nine to Five. And Beyond.</p><nav aria-label="Rechtliches"><a href="/experiment/">Über</a><a href="/lizenz/">Lizenz</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></nav></div></div></footer></body></html>';
 }
 const list=manifest.chapters;
-for(const chapter of list)output(chapter.campaign.image,renderCampaignImage(chapter));
+// The December magazine uses original AI-generated photographic assets, not the stock card renderer.
+const magazineSlug='magazin/white-trash-whitepapers/2026-12/';
+function installEditorialAsset(source, target, expectedSha) {
+ const encoded=readFileSync(path.join(root,source),'utf8').trim();
+ const bytes=Buffer.from(encoded,'base64');
+ if(createHash('sha256').update(bytes).digest('hex')!==expectedSha)throw new Error('Editorial asset integrity check failed: '+source);
+ output(target,bytes);
+}
+for(const chapter of list){
+ if(chapter.id==='vorabexemplar'){
+  installEditorialAsset('bundles/magazin-2026-12-share.png.base64',chapter.campaign.image,'8d19c6da623a27e403c8377b7a8ebcb098c3ee34330fb986599ac811e5e3cdd3');
+  installEditorialAsset('bundles/magazin-2026-12-interview.webp.base64',magazineSlug+'assets/martin-interview.webp','3a7d4a5b6da62cc0a54ad883a45ab1a666428072987aa5a6a4b6b08bba9f198a');
+ }else output(chapter.campaign.image,renderCampaignImage(chapter));
+}
 const indexItems=list.map((c,i)=>'<li><a href="/roman/'+e(c.id)+'/">'+e(c.title)+'</a><small>Folge '+(i+1)+' · '+e(c.description)+'</small><small>'+((c.campaign.recipe_card||c.campaign.chocolate_card)?'Fiktives Rezept: ':'Fiktive Agenturkampagne: ')+e(c.campaign.headline)+' '+e(c.campaign.subheadline)+'</small></li>').join('');
 const items='<ol class="list">'+indexItems+'</ol>';
 const book={'@context':'https://schema.org','@type':'Book','@id':abs('roman/#book'),url:abs('roman/'),name:'f0lg3nr31ch – Nine to Five. And Beyond.',inLanguage:'de',genre:'Roman',author:{'@type':'Person',name:config.author_name},isAccessibleForFree:true};
@@ -139,6 +152,10 @@ for(let i=0;i<list.length;i++){
  if(c.id==='eine-echte-entlastung'){
   if(c.research.status!=='none') throw new Error('Interne Dokumentation braucht Quellenentscheidung none');
   research={...research,notesHtml:'<section class="research-notes" aria-labelledby="internal-doc-title"><p class="eyebrow">Hinter der Geschichte · Fiktive Agenturdokumentation</p><h2 id="internal-doc-title">Weiterführende Informationen</h2><p>Interne Dokumentation – nur für den internen Gebrauch.</p></section>'};
+ }
+ if(c.id==='vorabexemplar'){
+  if(c.research.status!=='none')throw new Error('Vorabexemplar uses only internal editorial links');
+  research={...research,notesHtml:'<section class="research-notes" aria-labelledby="magazine-links"><p class="eyebrow">Aus der Romanwelt</p><h2 id="magazine-links">Weiterführende Informationen</h2><ul><li><a href="/'+magazineSlug+'">WHITE TRASH &amp; WHITEPAPERS – Dezember-Feature</a></li><li><a href="/'+magazineSlug+'interview/">Das Gespräch mit Martin</a></li></ul><p>Fiktives Magazin und fiktives Interview; die Fachrecherche der Titelgeschichte stützt sich auf reale Quellen.</p></section>'};
  }
  if(c.id==='der-t-rex-effekt'){
   if(c.research.status!=='none') throw new Error('Freitagsmorgen braucht Quellenentscheidung none');
@@ -168,7 +185,9 @@ for(let i=0;i<list.length;i++){
  const next=i+1<list.length?'<a href="/roman/'+e(list[i+1].id)+'/">Nächste Folge →</a>':'';
  const chapter={'@context':'https://schema.org','@type':'Chapter','@id':abs('roman/'+c.id+'/#chapter'),name:c.title,description:c.description,inLanguage:'de',url:abs('roman/'+c.id+'/'),position:i+1,isPartOf:{'@type':'Book','@id':book['@id'],name:book.name,url:book.url},author:{'@type':'Person',name:config.author_name}};
  const campaign=c.campaign;
- const bridge=campaign.christmas_invitation_card
+ const bridge=campaign.magazine_editorial_card
+ ? '<aside class="campaign-bridge" aria-label="Fiktive Magazinwerbung"><p class="eyebrow">Anzeige · Fiktives Branchenmagazin</p><a href="/'+magazineSlug+'"><img src="/'+e(campaign.image)+'" alt="'+e(campaign.image_alt)+'" width="1200" height="630" loading="lazy" style="width:100%;height:auto;display:block"></a><h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p><p><a href="/'+magazineSlug+'">Dezember-Ausgabe lesen →</a></p><p class="campaign-disclaimer">Fiktive Magazinwerbung aus Folgenreich; KI-generiertes Bild.</p></aside>'
+ : campaign.christmas_invitation_card
  ? '<aside class="campaign-bridge" aria-label="Fiktive Einladung zur Weihnachtsfeier"><p class="eyebrow">Einladung · Fiktive Agentur · Romanfolge '+(i+1)+'</p>'+
    '<h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p>'+
    '<p>'+e(campaign.promise)+'</p><p class="campaign-context">'+e(campaign.context)+'</p>'+
