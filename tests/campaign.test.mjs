@@ -79,7 +79,25 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
     const image=readFileSync('dist/'+c.campaign.image);
     assert.equal(image.readUInt32BE(16),1200);
     assert.equal(image.readUInt32BE(20),630);
-    assert.equal(createHash('sha256').update(image).digest('hex'),'8d19c6da623a27e403c8377b7a8ebcb098c3ee34330fb986599ac811e5e3cdd3');
+    assert.equal(createHash('sha256').update(image).digest('hex'),'66ef213bfaa28ae45796d17614f91c5cc0b14d74382fc9524e73ba959814c031');
+    const featureImage=readFileSync('dist'+slug+'share-preview.png');
+    assert.equal(featureImage.readUInt32BE(16),1200);
+    assert.equal(featureImage.readUInt32BE(20),630);
+    assert.equal(createHash('sha256').update(featureImage).digest('hex'),'2bf2077e5d4333803d1f79be2605757f9a1c326c675106c1e9189eb2705774fa');
+    assert.notDeepEqual(featureImage,image);
+    const feature=readFileSync('dist'+slug+'index.html','utf8');
+    assert.ok(feature.includes('property="og:image" content="https://folgenreich.benjamin-lam.de'+slug+'share-preview.png"'));
+    assert.ok(feature.includes('name="twitter:image" content="https://folgenreich.benjamin-lam.de'+slug+'share-preview.png"'));
+    assert.match(feature,/<details class="toc">/);
+    assert.match(feature,/id="saving" type="range"/);
+    assert.match(feature,/id="discount" type="range"/);
+    assert.match(feature,/class="loop"/);
+    const ids=[...feature.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
+    assert.equal(new Set(ids).size,ids.length);
+    for(const ref of feature.matchAll(/href="#([^"]+)"/g))assert.ok(ids.includes(ref[1]),'missing anchor '+ref[1]);
+    assert.equal((feature.match(/<img\b/g)||[]).length,(feature.match(/class="image-label"/g)||[]).length);
+    const conversation=readFileSync('dist'+slug+'interview/index.html','utf8');
+    assert.equal((conversation.match(/<img\b/g)||[]).length,(conversation.match(/class="image-label"/g)||[]).length);
     const portrait=readFileSync('dist'+slug+'assets/martin-interview.webp');
     assert.equal(createHash('sha256').update(portrait).digest('hex'),'3a7d4a5b6da62cc0a54ad883a45ab1a666428072987aa5a6a4b6b08bba9f198a');
     for(const route of ['', 'interview/']){

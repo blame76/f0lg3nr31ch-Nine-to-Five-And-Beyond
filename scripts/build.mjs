@@ -135,7 +135,8 @@ function installEditorialAsset(source, target, expectedSha) {
 }
 for(const chapter of list){
  if(chapter.id==='vorabexemplar'){
-  installEditorialAsset('bundles/magazin-2026-12-share.png.base64',chapter.campaign.image,'8d19c6da623a27e403c8377b7a8ebcb098c3ee34330fb986599ac811e5e3cdd3');
+  installEditorialAsset('bundles/magazin-2026-12-share.png.base64',chapter.campaign.image,'66ef213bfaa28ae45796d17614f91c5cc0b14d74382fc9524e73ba959814c031');
+  installEditorialAsset('bundles/magazin-2026-12-feature-share.png.base64',magazineSlug+'share-preview.png','2bf2077e5d4333803d1f79be2605757f9a1c326c675106c1e9189eb2705774fa');
   installEditorialAsset('bundles/magazin-2026-12-interview.webp.base64',magazineSlug+'assets/martin-interview.webp','3a7d4a5b6da62cc0a54ad883a45ab1a666428072987aa5a6a4b6b08bba9f198a');
  }else output(chapter.campaign.image,renderCampaignImage(chapter));
 }
