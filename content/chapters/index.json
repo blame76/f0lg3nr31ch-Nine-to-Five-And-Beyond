@@ -555,6 +555,46 @@
         "reviewed_on": "2026-11-17",
         "reason": "Die fiktive interne Präsentation und Simulation bleiben innerhalb der Romanwelt; keine externen Links. Stattdessen ein klar fiktionaler Hinweis auf interne Dokumentation."
       }
+    },
+    {
+      "id": "was-kosten-die-einsparungen",
+      "title": "Was kosten die Einsparungen?",
+      "description": "Martin prüft die wirtschaftlichen und personellen Folgen der KI-Transformation im eigenen Unternehmen – und soll auf der Weihnachtsfeier über die gemeinsame Zukunft sprechen.",
+      "source_ref": "f010f9755bc2b17df3b68e05adc86567e3a4e4b7/episodes/texts/was-kosten-die-einsparungen.md",
+      "source_blob_sha": "81889b191001d8625d69dc5f63de93484212746b",
+      "status": "approved",
+      "position": 15,
+      "path": "content/chapters/was-kosten-die-einsparungen.md",
+      "campaign": {
+        "category": "Weihnachten · Fiktive Einladung zur Weihnachtsfeier",
+        "headline": "Ein gemeinsames Jahr. Eine gemeinsame Zukunft.",
+        "subheadline": "Einladung zur Weihnachtsfeier",
+        "promise": "Ein Abend für uns. Ein Rückblick auf das Erreichte. Ein Ausblick auf das, was vor uns liegt. Mit einer Ansprache der Geschäftsführung.",
+        "context": "Eine festliche Einladung aus der fiktiven Agentur. Sie kündigt einen gemeinsamen Abend und die Ansprache der Geschäftsführung an. Keine reale Veranstaltung oder Anmeldung.",
+        "seo_title": "Was kosten die Einsparungen? – KI, Arbeitsplätze und Verantwortung",
+        "seo_description": "Fiktive Romanfolge über Martin, wirtschaftliche Entscheidungen bei der KI-Transformation, Personalplanung und die bevorstehende Weihnachtsfeier.",
+        "social_title": "Ein gemeinsames Jahr. Eine gemeinsame Zukunft. | Einladung zur Weihnachtsfeier",
+        "social_description": "Fiktive Einladung zur Weihnachtsfeier. Ein Rückblick auf das Erreichte und ein Ausblick auf das, was vor uns liegt. Folgenreich, Romanfolge 15.",
+        "image": "share/was-kosten-die-einsparungen.png",
+        "image_alt": "Fiktive Weihnachtsfeier-Einladung auf cremefarbenem Papier mit goldenen Sternen und Tannengrün: Ein gemeinsames Jahr. Eine gemeinsame Zukunft.",
+        "image_lines": [
+          "EIN GEMEINSAMES JAHR.",
+          "EINE GEMEINSAME ZUKUNFT."
+        ],
+        "image_detail": [
+          "EINLADUNG ZUR WEIHNACHTSFEIER",
+          "MIT ANSPRACHE DER GESCHAEFTSFUEHRUNG"
+        ],
+        "accent": "#D4B475",
+        "christmas_invitation_card": true
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-18",
+      "research": {
+        "status": "linked",
+        "path": "content/references/was-kosten-die-einsparungen.json",
+        "reviewed_on": "2026-11-18"
+      }
     }
   ]
 }

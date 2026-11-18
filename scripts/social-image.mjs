@@ -87,7 +87,28 @@ export function renderCampaignImage(chapter){
  // Familienkalender motif: a smiling pixel dinosaur and a readable calendar.
  // No external asset, font or network request; social crawlers receive one 1200x630 PNG.
  // Self-contained fictional bakery and chocolate-cake visuals, generated as PNG.
- if(c.robot_advent_card===true){
+ if(c.christmas_invitation_card===true){
+  // Self-contained festive corporate invitation: no real venue, date or booking.
+  const forest=[18,55,45],deep=[11,36,31],paper=[251,244,227],ink=[27,62,51],gold=[184,142,70],lightGold=[234,203,139],pine=[47,89,66];
+  fillRect(0,0,W,H,forest);fillRect(29,24,1142,582,lightGold);fillRect(31,26,1138,578,deep);
+  fillRect(100,65,1008,518,[7,28,23]);fillRect(90,53,1020,518,paper);
+  fillRect(104,67,992,2,gold);fillRect(104,555,992,2,gold);
+  fillRect(104,67,2,490,gold);fillRect(1094,67,2,490,gold);
+  function centered(line,y,scale,color){const n=letters(line).length,s=Math.min(scale,Math.floor(1040/(Math.max(1,n)*6)));text(line,Math.floor((W-n*6*s+s)/2),y,s,color);}
+  function star(x,y,r,color){fillRect(x-1,y-r,3,r*2+1,color);fillRect(x-r,y-1,r*2+1,3,color);for(let k=1;k<=Math.floor(r/2);k++){fillRect(x+k,y+k,2,2,color);fillRect(x-k,y+k,2,2,color);fillRect(x+k,y-k,2,2,color);fillRect(x-k,y-k,2,2,color);}}
+  // Stylised pine branches and small gold stars, away from text.
+  for(let side of [-1,1]){const ox=600+side*444;for(let i=0;i<48;i++){const y=78+i*2,x=ox-side*i*.83;fillRect(x,y,3,3,pine);if(i%4===0){for(let k=0;k<19;k++){fillRect(x+side*k,y+Math.floor(k*.52),2,2,pine);fillRect(x-side*k,y+Math.floor(k*.73),2,2,forest);}}}}
+  for(const [x,y,r] of [[600,104,16],[550,103,5],[650,103,5],[180,507,10],[1020,507,10],[147,474,6],[1053,474,6]])star(x,y,r,gold);
+  centered('EINLADUNG ZUR',144,4,ink);
+  centered('WEIHNACHTSFEIER',187,7,ink);
+  fillRect(413,260,374,2,gold);
+  centered('EIN GEMEINSAMES JAHR.',291,5,ink);
+  centered('EINE GEMEINSAME ZUKUNFT.',342,5,ink);
+  centered('EIN ABEND FUER UNS.',412,3,ink);
+  centered('MIT ANSPRACHE DER GESCHAEFTSFUEHRUNG',452,3,ink);
+  centered('F0LG3NR31CH',514,3,gold);
+  centered('FIKTIVE EINLADUNG / ROMANFOLGE 15',591,2,lightGold);
+ } else if(c.robot_advent_card===true){
   const pine=[15,54,47],deep=[9,37,34],cream=[255,244,217],gold=[233,188,103],red=[166,49,53],metal=[177,198,190],dark=[42,68,65],light=[224,235,217];
   fillRect(0,0,W,H,pine);fillRect(0,0,W,14,gold);
   for(let i=0;i<50;i++){let x=(i*137+13)%W,y=30+(i*83)%545;fillRect(x,y,2+i%4,2+i%4,gold);}

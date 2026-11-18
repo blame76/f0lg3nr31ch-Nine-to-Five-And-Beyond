@@ -81,3 +81,7 @@ Freigabe: Benjamin Lam, 13.11.2026. Die bestehende Indexierungsfreigabe für ver
 ## Folge 14 – Eine echte Entlastung (17.11.2026)
 
 Autorenfreigabe zur Veröffentlichung: Innovation und Pilotprojekt stehen im Mittelpunkt. Der Schlussabsatz zur Auslastungsplanung wurde auf Wunsch gestrichen; die übrige Prosa entspricht der gesicherten Manuskriptfassung ohne Arbeitsfassungs-Untertitel. Die 40 Prozent sind eine fiktive interne Simulation. Fiktive Adventskalender-Share-Preview mit Roboter-Bausatz, deterministisch im Build erzeugt. Keine externen Quellenlinks; fiktionaler Hinweis „Interne Dokumentation – nur für den internen Gebrauch.“ außerhalb der Prosa. Die rechtlichen Gesamt-Release-Flags und bisherige Indexierungsfreigabe bleiben unverändert.
+
+## Folge 15 – Was kosten die Einsparungen? (18.11.2026)
+
+Autorenfreigabe zur Veröffentlichung der im Manuskript-PR #26 gesicherten und nach Gegenkritik überarbeiteten Fassung. Prosa unverändert bis auf den internen Arbeitsfassungs-Untertitel. Die festliche Share-Preview ist eine fiktive Weihnachtsfeier-Einladung ohne reale Angaben zu Ort, Datum oder Anmeldung; lokal und deterministisch erzeugt. Vier fachliche Hintergründe (IAB, § 90 BetrVG, § 43 GmbHG, Deutsche Bundesbank) sind redaktionell getrennt von der Handlung. Keine Quellen zu realen Agenturangeboten. Keine Änderung der rechtlichen Gesamt-Release-Flags oder vorangegangener Folgen.
