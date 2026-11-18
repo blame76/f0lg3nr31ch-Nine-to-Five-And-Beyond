@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {inflateSync} from 'node:zlib';
 import {spawnSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
 import {renderCampaignImage} from '../scripts/social-image.mjs';
 import {escapeMeta} from '../scripts/lib.mjs';
 
@@ -71,6 +72,24 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
   assert.ok(!html.includes('"@type":"JobPosting"'));
   assert.ok(!html.includes('"@type":"LocalBusiness"'));
   assert.deepEqual([...readFileSync('dist/'+c.campaign.image).subarray(0,8)],[137,80,78,71,13,10,26,10]);
+  if(c.id==='vorabexemplar'){
+    const slug='/magazin/white-trash-whitepapers/2026-12/';
+    assert.ok(html.includes('href="'+slug+'"'));
+    assert.ok(html.includes('href="'+slug+'interview/"'));
+    const image=readFileSync('dist/'+c.campaign.image);
+    assert.equal(image.readUInt32BE(16),1200);
+    assert.equal(image.readUInt32BE(20),630);
+    assert.equal(createHash('sha256').update(image).digest('hex'),'8d19c6da623a27e403c8377b7a8ebcb098c3ee34330fb986599ac811e5e3cdd3');
+    const portrait=readFileSync('dist'+slug+'assets/martin-interview.webp');
+    assert.equal(createHash('sha256').update(portrait).digest('hex'),'3a7d4a5b6da62cc0a54ad883a45ab1a666428072987aa5a6a4b6b08bba9f198a');
+    for(const route of ['', 'interview/']){
+      const page=readFileSync('dist'+slug+route+'index.html','utf8');
+      assert.match(page,/WHITE TRASH/);
+      assert.match(page,/fiktiv/i);
+      assert.match(page,/KI-generiert/i);
+      assert.doesNotMatch(page,/Keine Arbeitsplätze abschaffen/);
+    }
+  }
   if(c.id==='der-t-rex-effekt'){
     assert.ok(html.includes('Wochenende! Offline! Make THE WORLD a BETTER place For CHILDREN!'));
     assert.ok(html.includes('Fiktiver Familienkalender'));

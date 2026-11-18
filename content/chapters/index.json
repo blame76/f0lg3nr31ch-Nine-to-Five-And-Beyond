@@ -595,6 +595,46 @@
         "path": "content/references/was-kosten-die-einsparungen.json",
         "reviewed_on": "2026-11-18"
       }
+    },
+    {
+      "id": "vorabexemplar",
+      "title": "Vorabexemplar",
+      "description": "Ein gedrucktes Magazin erinnert Martin an ein Gespräch über Wachstum, künstliche Intelligenz und die Zukunft der Arbeit.",
+      "source_ref": "b79764cc3aafed215246e62aca7528e0116c6ccc/episodes/texts/vorabexemplar.md",
+      "source_blob_sha": "2a2b6980c9418a7ab399536fe1b61f36a17f4c0b",
+      "status": "approved",
+      "position": 16,
+      "path": "content/chapters/vorabexemplar.md",
+      "campaign": {
+        "category": "Editorial · Fiktive Magazinwerbung",
+        "headline": "Die Agentur hat eine Zukunft. Ihre Mitarbeiter auch?",
+        "subheadline": "WHITE TRASH & WHITEPAPERS · THE 2027 ISSUE",
+        "promise": "Die Dezember-Ausgabe über KI, Jobs und unternehmerische Verantwortung.",
+        "context": "Ein fiktives Branchenmagazin aus Folgenreich mit realer Fachrecherche und einem fiktiven Gründerinterview.",
+        "seo_title": "Vorabexemplar – Interview und Dezember-Feature",
+        "seo_description": "Fiktive Romanfolge über Martin, journalistisches Handwerk und die wirtschaftlichen Folgen der KI-Transformation.",
+        "social_title": "WHITE TRASH & WHITEPAPERS | The 2027 Issue",
+        "social_description": "Fiktive Magazinwerbung aus Folgenreich: KI, Arbeitsplätze und die Agenturbranche 2027. Mit Gründerinterview und real recherchierter Titelgeschichte.",
+        "image": "share/vorabexemplar.png",
+        "image_alt": "Fiktive KI-generierte Editorial-Werbung für WHITE TRASH & WHITEPAPERS, Dezember 2026, mit angeschnittenem Gründerporträt.",
+        "image_lines": [
+          "WHITE TRASH & WHITEPAPERS",
+          "THE 2027 ISSUE"
+        ],
+        "image_detail": [
+          "DEZEMBER 2026",
+          "INTERVIEW / AUSBLICK"
+        ],
+        "accent": "#F3D628",
+        "magazine_editorial_card": true
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-18",
+      "research": {
+        "status": "none",
+        "reviewed_on": "2026-11-18",
+        "reason": "Auf ausdrücklichen Autorenwunsch ausschließlich interne redaktionelle Verweise zum Dezember-Feature und Interview. Reale Quellen sind im Feature eigenständig dokumentiert."
+      }
     }
   ]
 }
