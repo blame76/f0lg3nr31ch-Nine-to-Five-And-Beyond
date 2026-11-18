@@ -16,7 +16,7 @@ Zwischen den Seiten steckte eine Karte.
 
 *Vielen Dank für das Gespräch. Anbei das Vorabexemplar der Dezember-Ausgabe. Bitte bis zum Erscheinungstermin vertraulich behandeln.*
 
-Martin hatte das Interview vor einigen Wochen gegeben. Die Redaktion hatte ihm im Anschluss einzelne Zahlen und Zitate zur Prüfung geschickt.
+Martin hatte das Interview vor einigen Wochen gegeben. Die Redaktion hatte ihm im Anschluss Fragen zu einzelnen Zahlen und später die ausgewählten Zitate im Zusammenhang des redigierten Gesprächs zur Prüfung geschickt.
 
 Das dazugehörige Feature kannte er noch nicht.
 
@@ -60,17 +60,15 @@ Katharina fragte, welche Zahlen benötigt würden.
 
 „Erst einmal keine, die Sie jetzt hier heraussuchen müssen“, sagte Judith. „Wir schicken Ihnen hinterher die Angaben, die wir überprüfen möchten.“
 
-Katharina notierte sich das. Sie hatte Martin gebeten, für die Fotos ein Sakko mitzubringen. Ansonsten hatten sie sich über die möglichen Themen verständigt, nicht über die Antworten.
+Katharina notierte sich das. Mit Judith hatte sie im Vorgespräch die Themen abgestimmt. Am Vortag war sie mit Martin noch einmal die zu erwartenden Fragen durchgegangen, auch die nach möglichen Entlassungen. Sie waren sich einig gewesen, dass er erläutern konnte, welche Alternativen geprüft wurden, aber keine konkreten Personalentscheidungen vorwegnehmen sollte. An das Sakko für die Fotos hatte sie ihn beim Verlassen seines Büros noch einmal erinnert.
 
-Sie würde beim Gespräch dabeibleiben. Für Rückfragen und falls etwas nachgereicht werden musste.
-
-Sie sah auf die Uhr.
+Sie würde beim Gespräch dabeibleiben, falls Rückfragen auftauchten oder etwas nachgereicht werden musste. Sie sah auf die Uhr.
 
 ***
 
 Judith und Nele hatten am Morgen im Zug die Fragen noch einmal durchgesehen.
 
-Einige bezogen sich auf das geplante Dezember-Feature. Andere auf die Unternehmensgeschichte. Nele hatte die älteren Presseberichte über die Agentur zusammengestellt und die Zahlen, die sich aus öffentlich zugänglichen Unterlagen ergaben, separat markiert.
+Einige bezogen sich auf das geplante Dezember-Feature, andere auf die Unternehmensgeschichte. Nele hatte die älteren Presseberichte über die Agentur zusammengestellt und die Zahlen, die sich aus öffentlich zugänglichen Unterlagen ergaben, separat markiert.
 
 Bei einem Artikel über die wachsende Gruppe war nicht klar, ob die Beschäftigtenzahl nur für die Agentur oder für alle Gesellschaften galt.
 
@@ -90,17 +88,15 @@ Die beiden arbeiteten seit knapp zwei Jahren zusammen. Nele hatte ein gutes Gesp
 
 Das fiel Nele manchmal schwer.
 
-Im Konferenzraum legte sie das Aufnahmegerät auf den Tisch und prüfte die Batterien. Katharina hatte ihnen angeboten, den Termin bei Bedarf etwas zu verlängern. Danach würde allerdings ein anderer Raum benötigt.
+Im Konferenzraum legte Nele das Aufnahmegerät auf den Tisch und prüfte die Batterien. Judith stellte ihr Telefon auf Flugmodus und öffnete die Aufnahme-App für die zweite Tonspur. Katharina hatte ihnen angeboten, den Termin bei Bedarf etwas zu verlängern. Danach würde allerdings ein anderer Raum benötigt.
 
 Als Martin kam, standen die beiden auf.
 
 „Moin“, sagte er.
 
-Er hatte noch sein Notebook dabei. Katharina erinnerte ihn daran, dass er es für das Gespräch vermutlich nicht brauchen würde.
+Er hatte noch sein Notebook dabei. Katharina erinnerte ihn daran, dass er es für das Gespräch vermutlich nicht brauchen würde, und er legte es auf den freien Stuhl neben sich.
 
-Er legte es auf den freien Stuhl neben sich.
-
-Judith fragte, ob die Aufzeichnung für ihn in Ordnung sei. Martin nickte. Sie erläuterte kurz den geplanten Beitrag und begann.
+Judith fragte Martin und Katharina, ob die Aufzeichnung auf beiden Geräten für sie in Ordnung sei. Beide nickten. Nele startete das Aufnahmegerät, Judith die Aufnahme auf ihrem Telefon. Dann erläuterte sie kurz den geplanten Beitrag und begann.
 
 ***
 
@@ -120,11 +116,7 @@ Sie machte sich eine Notiz.
 
 Martin erinnerte sich an die Projekte besser als an die Jahreszahlen.
 
-Irgendwann erzählte er von der Ampel. Von einem Kundenshop, der ein ganzes Wochenende nicht erreichbar gewesen war, ohne dass jemand in der Agentur davon erfahren hatte. Und von Sven, der daraufhin eine eigene Überwachung entwickelt hatte.
-
-Er begann, die Funktionsweise zu erklären.
-
-Nach einigen Minuten unterbrach ihn Judith.
+Irgendwann erzählte er von der Ampel, von einem Kundenshop, der ein ganzes Wochenende nicht erreichbar gewesen war, ohne dass jemand in der Agentur davon erfahren hatte, und von Sven, der daraufhin eine eigene Überwachung entwickelt hatte. Martin begann, die Funktionsweise zu erklären. Nach einigen Minuten unterbrach ihn Judith.
 
 „Das heißt, Sie haben damals aus einem konkreten Kundenproblem heraus ein eigenes Produkt entwickelt?“
 
@@ -142,9 +134,7 @@ Die schüttelte den Kopf.
 
 „Reichen wir nach.“
 
-Später ging es um das Wachstum der Gruppe. Um die Unternehmen, die hinzugekommen waren, und um die Frage, warum einige Aufgaben inzwischen zentral organisiert wurden.
-
-Martin erklärte die Vorteile. Nicht jede Gesellschaft musste sich eine eigene technische Infrastruktur leisten. Nicht jede musste sich mit denselben administrativen Fragen beschäftigen.
+Später ging es um das Wachstum der Gruppe, die Unternehmen, die hinzugekommen waren, und die Frage, warum einige Aufgaben inzwischen zentral organisiert wurden. Martin erklärte die Vorteile. Nicht jede Gesellschaft musste sich eine eigene technische Infrastruktur leisten. Nicht jede musste sich mit denselben administrativen Fragen beschäftigen.
 
 „Und die Mitarbeiter, die das bisher gemacht haben?“, fragte Nele.
 
@@ -162,15 +152,15 @@ Das fand Martin vernünftig.
 
 ***
 
-Bei der KI wurde Martin lebhafter.
-
-Er griff nach seinem Notebook.
+Bei der KI wurde Martin lebhafter und griff nach seinem Notebook.
 
 „Ich kann Ihnen das mal zeigen.“
 
-Judith schob das Aufnahmegerät etwas zur Seite.
+„Martin, nur die Demo mit den Beispieldaten“, erinnerte ihn Katharina.
 
-Martin öffnete den Browser, meldete sich an und suchte nach der Anwendung, von der er gerade gesprochen hatte.
+„Ja, natürlich.“
+
+Er hatte das Notebook bereits aufgeklappt. Judith schob das Aufnahmegerät etwas zur Seite. Martin öffnete den Browser, meldete sich an und suchte nach der Anwendung, von der er gerade gesprochen hatte. Katharina sah mit auf den Bildschirm, bis die Demo geladen war.
 
 Die Anmeldung dauerte etwas länger.
 
@@ -186,9 +176,7 @@ Nele hatte währenddessen eine Frage gestellt, die Martin nicht mitbekommen hatt
 
 „Ja.“
 
-Martin begann zu erklären, welche Komponenten bereits vorhanden gewesen waren und welche für das Projekt neu entwickelt werden mussten.
-
-Nele wartete.
+Martin begann zu erklären, welche Komponenten bereits vorhanden gewesen waren und welche für das Projekt neu entwickelt werden mussten. Nele wartete.
 
 „Und wie viele Mitarbeiter waren daran beteiligt?“
 
@@ -216,7 +204,7 @@ Später ging es um die Personalentwicklung.
 
 „Können Sie Entlassungen ausschließen?“, fragte Nele.
 
-Martin antwortete, dass sich die Aufgaben innerhalb der Unternehmensgruppe veränderten. Dass neue Tätigkeitsfelder entstanden und Mitarbeiter entsprechend qualifiziert werden sollten.
+Martin kannte die Frage. Katharina hatte sie ihm am Vortag beinahe wortgleich gestellt. Damals war es ihm leichtgefallen, zu erklären, welche Voraussetzungen erfüllt sein müssten, bevor eine Entscheidung fallen konnte. Jetzt erzählte er zunächst von den neuen Tätigkeitsfeldern, die innerhalb der Gruppe entstanden, und den Möglichkeiten, Mitarbeiter für diese Aufgaben zu qualifizieren. Ihm war wichtig, dass davon im Artikel etwas übrig blieb. Sie hatten in den vergangenen Monaten einiges auf den Weg gebracht.
 
 Nele ließ ihn ausreden.
 
@@ -224,17 +212,13 @@ Nele ließ ihn ausreden.
 
 „Ich weiß, was Ihre Frage war.“
 
-Katharina setzte an, etwas zu sagen, überlegte es sich dann aber anders.
-
-Martin nahm einen Schluck Wasser.
+Katharina setzte an, etwas zu sagen, überlegte es sich dann aber anders. Martin wusste, dass er mit einer Zusage, die er nicht einhalten konnte, niemandem half. Trotzdem fiel es ihm schwer, den Satz auszusprechen, von dem er wusste, dass ihn auch seine Mitarbeiter lesen würden.
 
 „Nein. Ich kann sie nicht grundsätzlich ausschließen.“
 
 Judith fragte nach den Voraussetzungen für eine solche Entscheidung. Ob es bereits konkrete Planungen gebe und welche Alternativen geprüft würden.
 
-Martin antwortete ausführlich.
-
-Diesmal unterbrach ihn niemand.
+Martin antwortete ausführlich. Diesmal unterbrach ihn niemand.
 
 Später fragte Judith, wie er heute ein Unternehmen gründen würde.
 
@@ -274,19 +258,19 @@ Judith hätte gern noch einen Kaffee genommen.
 
 ***
 
-Nach fast zwei Stunden musste Katharina den nächsten Termin verschieben.
-
-Nele hatte noch drei Fragen auf ihrer Liste.
-
-Zwei davon stellte sie nicht mehr.
+Nach fast zwei Stunden musste Katharina den nächsten Termin verschieben. Nele hatte noch drei Fragen auf ihrer Liste. Zwei davon stellte sie nicht mehr.
 
 Für die Fotos blieben noch zehn Minuten. Nele fragte, ob sie ein paar Aufnahmen am Tisch machen dürfe. Martin zog das Sakko an. Er hatte keine Lust auf eine weitere Reihe von Porträts für Unternehmenspräsentationen.
 
 Sie machte einige Aufnahmen von seinen Händen, dem Wasserglas und dem Gespräch am Tisch. Für das Magazin sollte es ein enger Ausschnitt werden.
 
-„Bekomme ich die Zahlen noch einmal?“, fragte Katharina, als die beiden ihre Sachen zusammenpackten.
+„Schicken Sie mir noch die Rückfragen zu den Zahlen?“, fragte Katharina, als die beiden ihre Sachen zusammenpackten.
 
-„Die konkreten Angaben schicken wir Ihnen“, sagte Judith. „Und die Zitate, über die wir uns verständigt haben.“
+„Ja, die bekommen Sie morgen.“
+
+„Und wann können wir mit den Zitaten rechnen?“
+
+„Sobald das Interview redigiert ist“, sagte Judith. „Voraussichtlich nächste Woche. Dann wie vereinbart zur Zitatprüfung, im jeweiligen Zusammenhang.“
 
 Martin verabschiedete sich.
 
