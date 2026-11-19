@@ -3,7 +3,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
 import {root,readJson,escapeHtml,escapeMeta,normUrl,absoluteUrl,validateManifest,markdownToHtml} from './lib.mjs';
-import {renderIntranet} from './intranet.mjs';
+import {renderIntranet,renderIntranetTextIndex} from './intranet.mjs';
 import {about,imprint,privacy,license} from './pages.mjs';
 import {renderCampaignImage} from './social-image.mjs';
 import {renderResearchChapter} from './references.mjs';
@@ -255,7 +255,11 @@ for(const [slug,title,body] of [['experiment','Über das Experiment',about],['im
  output(slug+'/index.html',page({title,slug:slug+'/',body}));
 }
 // Fictional read-only cloud intranet; generated from the versioned planner.
-for(const [file,html] of Object.entries(renderIntranet({site,planner:readJson('public/intranet/365-tage-e-commerce/jahresplaner.json'),markdown:readFileSync(path.join(root,'public/intranet/365-tage-e-commerce/jahresplaner.md'),'utf8')}))) output(file,html);
+const intranetPlanner=readJson('public/intranet/365-tage-e-commerce/jahresplaner.json');
+const intranetMarkdown=readFileSync(path.join(root,'public/intranet/365-tage-e-commerce/jahresplaner.md'),'utf8');
+for(const [file,html] of Object.entries(renderIntranet({site,planner:intranetPlanner,markdown:intranetMarkdown}))) output(file,html);
+output('intranet/365-tage-e-commerce/jahresplaner.txt',intranetMarkdown);
+output('intranet/llms.txt',renderIntranetTextIndex({site,planner:intranetPlanner,markdown:intranetMarkdown}));
 // Synchronize canonical and robots policy for all output, including static sub-sites.
 synchronizePublications(dist,site,publications);
 const indexable=publications.filter(p=>p.index);

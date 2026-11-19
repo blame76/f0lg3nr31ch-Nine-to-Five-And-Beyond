@@ -22,3 +22,8 @@ Live-Prüfung nach Deployment erforderlich: HTTP 200/Content-Type aller Discover
 Keine ungetesteten Cloudflare-Regeln oder DNS-Änderungen aus dem Repository heraus.
 
 Quellen: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap ; https://developers.google.com/search/docs/appearance/ai-features ; https://llmstxt.org/ ; https://developers.cloudflare.com/pages/configuration/serving-pages/
+
+
+## Intranet – direkter KI-Abruf (19.11.2026)
+
+Sieben eigenständige statische Themenrouten mit den tatsächlichen Fachabschnitten, weiterhin ein gemeinsames Volltextdokument und alte Fragmentlinks. Direkte TXT-/Markdown-/JSON-Ressourcen; das Intranet-Textverzeichnis enthält Version und SHA-256 des UTF-8-Volltexts. Root-llms.txt verweist zusätzlich auf diese Formate als einfache URLs, HTML-Registry-Parität bleibt intakt. Die fachlichen Inhalte wurden nicht verändert. Keine Änderung von Cloudflare-WAF, Training-Crawler-Politik oder echten Anmeldefunktionen. Live-HTTP und providerabhängige Zugriffe getrennt prüfen: fehlgeschlagener LLM-Abruf beweist keine WAF-Sperre. Dashboard Security / AI Crawl Control: Search und Agent-Zugriffe, Bot-Ereignisse und ggf. Managed robots.txt prüfen, keine pauschale Abschaltung der Schutzmaßnahmen. Modelle sollen tatsächliche Fundstellen und Rechenwerte nennen oder offen fehlenden Zugriff angeben. Keine Garantie für Abruf oder korrekte Antworten.

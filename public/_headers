@@ -49,3 +49,16 @@
 
 /partnerwelt/sitemap.xml
   Content-Type: application/xml; charset=utf-8
+
+# Direct intranet text resources, not attachment-only
+/intranet/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/intranet/365-tage-e-commerce/jahresplaner.txt
+  Content-Type: text/plain; charset=utf-8
+
+/intranet/365-tage-e-commerce/jahresplaner.md
+  Content-Type: text/markdown; charset=utf-8
+
+/intranet/365-tage-e-commerce/jahresplaner.json
+  Content-Type: application/json; charset=utf-8
