@@ -3,6 +3,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
 import {root,readJson,escapeHtml,escapeMeta,normUrl,absoluteUrl,validateManifest,markdownToHtml} from './lib.mjs';
+import {renderIntranet} from './intranet.mjs';
 import {about,imprint,privacy,license} from './pages.mjs';
 import {renderCampaignImage} from './social-image.mjs';
 import {renderResearchChapter} from './references.mjs';
@@ -145,6 +146,9 @@ for(let i=0;i<list.length;i++){
   if(c.research.status!=='none') throw new Error('Interne Dokumentation braucht Quellenentscheidung none');
   research={...research,notesHtml:'<section class="research-notes" aria-labelledby="internal-doc-title"><p class="eyebrow">Hinter der Geschichte · Fiktive Agenturdokumentation</p><h2 id="internal-doc-title">Weiterführende Informationen</h2><p>Interne Dokumentation – nur für den internen Gebrauch.</p></section>'};
  }
+ if(c.id==='ein-ganz-normaler-donnerstag'){
+  research={...research,notesHtml:research.notesHtml+'<section class="research-notes" aria-labelledby="intranet-link"><p class="eyebrow">Aus der Romanwelt</p><h2 id="intranet-link">Intranet der Agentur</h2><p><a href="/intranet/">Intranet öffnen – Leon, nur Lesezugriff</a></p><p><a href="/intranet/365-tage-e-commerce/">365 Tage E-Commerce – Jahresplaner</a></p><p>Öffentliche fiktive Leseansicht eines Romanexperiments, keine tatsächliche Anmeldung.</p></section>'};
+ }
  if(c.id==='vorabexemplar'){
   if(c.research.status!=='none')throw new Error('Vorabexemplar uses only internal editorial links');
   research={...research,notesHtml:'<section class="research-notes" aria-labelledby="magazine-links"><p class="eyebrow">Aus der Romanwelt</p><h2 id="magazine-links">Weiterführende Informationen</h2><ul><li><a href="/'+magazineSlug+'">WHITE TRASH &amp; WHITEPAPERS – Dezember-Feature</a></li><li><a href="/'+magazineSlug+'interview/">Das Gespräch mit Martin</a></li></ul><p>Fiktives Magazin und fiktives Interview; die Fachrecherche der Titelgeschichte stützt sich auf reale Quellen.</p></section>'};
@@ -177,7 +181,9 @@ for(let i=0;i<list.length;i++){
  const next=i+1<list.length?'<a href="/roman/'+e(list[i+1].id)+'/">Nächste Folge →</a>':'';
  const chapter={'@context':'https://schema.org','@type':'Chapter','@id':abs('roman/'+c.id+'/#chapter'),name:c.title,description:c.description,inLanguage:'de',url:abs('roman/'+c.id+'/'),position:i+1,isPartOf:{'@type':'Book','@id':book['@id'],name:book.name,url:book.url},author:{'@type':'Person',name:config.author_name}};
  const campaign=c.campaign;
- const bridge=campaign.magazine_editorial_card
+ const bridge=campaign.easter_offer_card
+ ? '<aside class="campaign-bridge" aria-label="Fiktives Osterangebot"><p class="eyebrow">Anzeige · Fiktives Osterangebot</p><h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p><p>'+e(campaign.promise)+'</p><p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman. Keine bestellbaren Waren.</p></aside>'
+ : campaign.magazine_editorial_card
  ? '<aside class="campaign-bridge" aria-label="Fiktive Magazinwerbung"><p class="eyebrow">Anzeige · Fiktives Branchenmagazin</p><h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p><p><a href="/'+magazineSlug+'">Dezember-Ausgabe lesen →</a></p><p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman; KI-generiertes Editorial-Vorschaubild.</p></aside>'
  : campaign.christmas_invitation_card
  ? '<aside class="campaign-bridge" aria-label="Fiktive Einladung zur Weihnachtsfeier"><p class="eyebrow">Einladung · Fiktive Agentur · Romanfolge '+(i+1)+'</p>'+
@@ -248,6 +254,8 @@ output('magazin/index.html',page({title:'Magazin',slug:'magazin/',description:'W
 for(const [slug,title,body] of [['experiment','Über das Experiment',about],['impressum','Impressum',imprint],['datenschutz','Datenschutz',privacy],['lizenz','Lizenz und Urheberschaft',license]]){
  output(slug+'/index.html',page({title,slug:slug+'/',body}));
 }
+// Fictional read-only cloud intranet; generated from the versioned planner.
+for(const [file,html] of Object.entries(renderIntranet({site,planner:readJson('public/intranet/365-tage-e-commerce/jahresplaner.json'),markdown:readFileSync(path.join(root,'public/intranet/365-tage-e-commerce/jahresplaner.md'),'utf8')}))) output(file,html);
 // Synchronize canonical and robots policy for all output, including static sub-sites.
 synchronizePublications(dist,site,publications);
 const indexable=publications.filter(p=>p.index);

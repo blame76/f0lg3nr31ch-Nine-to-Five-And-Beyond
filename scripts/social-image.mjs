@@ -87,7 +87,20 @@ export function renderCampaignImage(chapter){
  // Familienkalender motif: a smiling pixel dinosaur and a readable calendar.
  // No external asset, font or network request; social crawlers receive one 1200x630 PNG.
  // Self-contained fictional bakery and chocolate-cake visuals, generated as PNG.
- if(c.christmas_invitation_card===true){
+ if(c.easter_offer_card===true){
+  const cream=[255,249,229],green=[33,79,61],mint=[219,239,214],pink=[239,155,174],yellow=[246,202,91],blue=[124,181,205],white=[255,255,248];
+  fillRect(0,0,W,H,mint);fillRect(0,0,19,H,green);fillRect(45,45,1110,540,cream);
+  fillRect(45,45,1110,8,green);
+  function egg(cx,cy,rx,ry,color,stripe){
+   for(let dy=-ry;dy<=ry;dy++){const taper=0.88+0.12*dy/ry;const dx=rx*Math.sqrt(Math.max(0,1-dy*dy/(ry*ry)))*taper;fillRect(cx-dx,cy+dy,2*dx+1,1,Math.abs(dy)<10||Math.abs(dy+32)<5?stripe:color);}
+  }
+  egg(875,251,83,121,pink,white);egg(1015,319,79,112,yellow,green);egg(820,399,72,101,blue,white);
+  for(let i=0;i<6;i++){const x=760+i*61;fillRect(x,515,3,26,green);fillRect(x-8,510,19,8,i%2?pink:yellow);}
+  text('FRUEHLINGSANGEBOTE',90,112,4,green);
+  text('OSTERN',90,195,11,green);text('KANN KOMMEN.',90,286,8,green);
+  fillRect(90,374,525,3,green);text('GESCHENKE FUERS NEST',90,411,4,green);
+  fillRect(0,585,W,45,green);text('FIKTIVES OSTERANGEBOT / FOLGENREICH',65,599,3,white);
+ } else if(c.christmas_invitation_card===true){
   // Self-contained festive corporate invitation: no real venue, date or booking.
   const forest=[18,55,45],deep=[11,36,31],paper=[251,244,227],ink=[27,62,51],gold=[184,142,70],lightGold=[234,203,139],pine=[47,89,66];
   fillRect(0,0,W,H,forest);fillRect(29,24,1142,582,lightGold);fillRect(31,26,1138,578,deep);

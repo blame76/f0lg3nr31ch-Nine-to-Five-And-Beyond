@@ -1,0 +1,502 @@
+{
+  "schema_version": 2,
+  "status": "draft",
+  "title": "365 Tage E-Commerce – Der Jahresplaner",
+  "scope": "DE, KMU im B2C-Onlinehandel mit physischen Waren; risikobasiert anpassbar; auch für Agenturen und Dienstleister.",
+  "months": [
+    {
+      "monat": "Januar",
+      "anlaesse": "Wintergeschäft, Retouren",
+      "marketing": "Kampagnenbilanz, Abverkauf",
+      "administration_entwicklung": "Peak-Review, Wartung",
+      "logistik": "Retouren, Inventur",
+      "personal": "Resturlaub, Kapazitätsabbau",
+      "controlling": "Jahresabschluss, Retourenkosten",
+      "einkauf": "Restbestände, Frühjahrsdisposition",
+      "kundenservice": "Retouren, Erstattungen, Rückstände"
+    },
+    {
+      "monat": "Februar",
+      "anlaesse": "Valentinstag",
+      "marketing": "Frühjahrs- und Osterplanung",
+      "administration_entwicklung": "Checkout-Änderungen, Regression",
+      "logistik": "Frühjahrskapazität",
+      "personal": "Vertretungen, Schulungen",
+      "controlling": "Kampagnenmargen",
+      "einkauf": "Frühjahrssortiment sichern",
+      "kundenservice": "FAQ Frühjahr, Rückmeldungen aus Retouren"
+    },
+    {
+      "monat": "März",
+      "anlaesse": "Frühling, ggf. Ostern",
+      "marketing": "Osterkampagnen",
+      "administration_entwicklung": "Wartung außerhalb Aktionen",
+      "logistik": "Aktionsbestände, Versand",
+      "personal": "Ostervertretung",
+      "controlling": "Oster-Forecast bzw. Soll-Ist nach Aktion",
+      "einkauf": "Nachbestellung",
+      "kundenservice": "Osteranfragen, Lieferinformationen"
+    },
+    {
+      "monat": "April",
+      "anlaesse": "ggf. Ostern",
+      "marketing": "Sommerkampagnen",
+      "administration_entwicklung": "Nachbereitung, Roadmap",
+      "logistik": "Retouren, Sommerkapazität",
+      "personal": "Sommerurlaub",
+      "controlling": "Q1-Auswertung, ggf. Oster-Soll-Ist",
+      "einkauf": "Sommerbeschaffung",
+      "kundenservice": "Saisonfeedback, Reklamationen"
+    },
+    {
+      "monat": "Mai",
+      "anlaesse": "Muttertag, Vatertag",
+      "marketing": "Aktionskampagnen",
+      "administration_entwicklung": "Monitoring, Tests",
+      "logistik": "Aktionsversand",
+      "personal": "Feiertagsabdeckung",
+      "controlling": "Rabattwirkung",
+      "einkauf": "Q4-Sortiment anbahnen",
+      "kundenservice": "Aktionsfragen, Eskalationen"
+    },
+    {
+      "monat": "Juni",
+      "anlaesse": "Sommergeschäft",
+      "marketing": "Q4-Konzeption",
+      "administration_entwicklung": "Peak-Anforderungen",
+      "logistik": "Q4-Mengen prognostizieren",
+      "personal": "Q4-Bedarf abschätzen",
+      "controlling": "Halbjahresbilanz",
+      "einkauf": "Weihnachtseinkauf",
+      "kundenservice": "Q4-Volumen und Kanäle abschätzen"
+    },
+    {
+      "monat": "Juli",
+      "anlaesse": "Sommerabverkauf",
+      "marketing": "Q4-Mediaplan",
+      "administration_entwicklung": "Kapazitäten modellieren",
+      "logistik": "Peak-Verträge vorbereiten",
+      "personal": "Urlaubsvertretung, Recruiting, Peak-Onboarding planen",
+      "controlling": "Q4-Budget, Szenarien",
+      "einkauf": "Bestellungen mit langen Vorläufen",
+      "kundenservice": "Peak-Servicebedarf, Wissensbasis"
+    },
+    {
+      "monat": "August",
+      "anlaesse": "regional Schulanfang",
+      "marketing": "Assets, Angebote",
+      "administration_entwicklung": "Lasttests vorbereiten",
+      "logistik": "Lagerflächen, Verpackung",
+      "personal": "Schichtbedarf, Einarbeitung temporärer Kräfte, Wissenstransfer",
+      "controlling": "Liquiditätsplanung",
+      "einkauf": "Liefertermine absichern",
+      "kundenservice": "FAQ, Vorlagen, Einarbeitung"
+    },
+    {
+      "monat": "September",
+      "anlaesse": "Herbstgeschäft",
+      "marketing": "Q4-Briefings, Freigaben",
+      "administration_entwicklung": "Last-, Restore- und Checkout-Tests",
+      "logistik": "Versandkapazität bestätigen",
+      "personal": "Schichten, Vertretungen",
+      "controlling": "Margen- und Budgetfreigabe",
+      "einkauf": "Warenzulauf, Risikobestände",
+      "kundenservice": "Servicekapazität, Eskalationsprobe"
+    },
+    {
+      "monat": "Oktober",
+      "anlaesse": "Halloween, Weihnachtsanlauf",
+      "marketing": "Weihnachtskampagnen, Preisverlauf",
+      "administration_entwicklung": "Go/no-go-Proben, Change-Plan",
+      "logistik": "Bestände, Peak-Probe",
+      "personal": "Schulung, Eskalation",
+      "controlling": "Soll-Ist, Prognosen",
+      "einkauf": "Verfügbarkeit, Nachorder",
+      "kundenservice": "FAQ und Lieferzusagen aktualisieren"
+    },
+    {
+      "monat": "November",
+      "anlaesse": "Singles’ Day, Black Friday, Cyber Monday",
+      "marketing": "Kampagnen steuern",
+      "administration_entwicklung": "Monitoring, Incident-Betrieb",
+      "logistik": "Versand, Rückstände",
+      "personal": "Abdeckung, Pausen",
+      "controlling": "Deckungsbeitrag, Liquidität",
+      "einkauf": "Bestände, Nachschub",
+      "kundenservice": "Peak-Besetzung, Rückstände, Erstattungen"
+    },
+    {
+      "monat": "Dezember",
+      "anlaesse": "Weihnachten",
+      "marketing": "Versandfristen, Gutscheine",
+      "administration_entwicklung": "Stabilität, Ausnahmen",
+      "logistik": "Versandfristen, Retouren",
+      "personal": "Feiertagsvertretung",
+      "controlling": "Jahresendprognose",
+      "einkauf": "Nachorder, Restbestände",
+      "kundenservice": "Lieferfristen, Gutscheine, Retouren"
+    }
+  ],
+  "campaign_phases": [
+    {
+      "window": "T−24 bis −12 Wochen",
+      "deliverable": "Ziele, Sortiment, Lieferzeiten, Budget, Nachfrageprognose, Kapazitätsbedarf; bei langen Beschaffungszeiten früher."
+    },
+    {
+      "window": "T−12 bis −6 Wochen",
+      "deliverable": "Kampagnenbriefing, Bestände, Versanddienstleister, Personal/Vertretung, Lastmodell und Testplan verbindlich abstimmen."
+    },
+    {
+      "window": "T−6 bis −2 Wochen",
+      "deliverable": "Preisregeln, Checkout und externe Integrationen testen; Wiederherstellung und Rollback bzw. sichere Korrektur üben; Schichten und Service vorbereiten."
+    },
+    {
+      "window": "T−2 Wochen bis T−1 Tag",
+      "deliverable": "Go/no-go mit Nachweisen, Preisverlauf und Rechtsprüfung, reale Bestände und Lieferzusagen, Eskalationen, Freigaben. Risikobasierter Change-Plan mit Notfallausnahmen."
+    },
+    {
+      "window": "T bis T+7 Tage",
+      "deliverable": "Geschäft und Technik gemeinsam überwachen; bei Engpässen Werbung drosseln, Lieferzusagen korrigieren, definierte Incident-Verantwortliche einsetzen."
+    },
+    {
+      "window": "T+1 bis T+6 Wochen",
+      "deliverable": "Retouren, Stornos, Rückerstattungen, Nettomarge, Arbeitsbelastung und Vorfälle auswerten; Ergebnisse in nächsten Zyklus übernehmen."
+    }
+  ],
+  "task_fields": [
+    "id",
+    "campaign",
+    "department",
+    "market",
+    "campaign_start",
+    "campaign_end",
+    "owner",
+    "backup",
+    "task",
+    "due",
+    "dependency",
+    "evidence",
+    "status",
+    "priority",
+    "risk_level",
+    "stop_criterion",
+    "decision",
+    "review_date",
+    "last_updated",
+    "comment",
+    "approver",
+    "approval_date",
+    "risk_owner",
+    "escalation_contact"
+  ],
+  "status_values": [
+    "open",
+    "in_progress",
+    "blocked",
+    "ready",
+    "not_applicable"
+  ],
+  "limitations": "Alle Zeitfenster, Wiederholungsintervalle, Beispiele und Profile sind redaktionelle Empfehlungen und risikobasiert anzupassen. Keine Rechtsberatung, Zertifizierung oder vollständige Sicherheits-/Logistik-/Controlling-Anleitung. Quellen zum jeweiligen realen Einsatz ergänzen. GTA- und HDE-Kontext gehört zum Roman, nicht zum wiederverwendbaren Arbeitsmittel.",
+  "version": "0.2.0",
+  "date": "2026-11-19",
+  "context": "Internes Arbeitsmittel der fiktiven Agentur im Roman Folgenreich. Öffentliche Leseansicht geplant, keine realen Konten oder Kundendaten.",
+  "columns": [
+    [
+      "monat",
+      "Monat"
+    ],
+    [
+      "anlaesse",
+      "Anlässe"
+    ],
+    [
+      "marketing",
+      "Marketing"
+    ],
+    [
+      "administration_entwicklung",
+      "Administration / Entwicklung"
+    ],
+    [
+      "logistik",
+      "Logistik"
+    ],
+    [
+      "personal",
+      "Personal"
+    ],
+    [
+      "controlling",
+      "Controlling"
+    ],
+    [
+      "einkauf",
+      "Einkauf"
+    ],
+    [
+      "kundenservice",
+      "Kundenservice"
+    ]
+  ],
+  "calendar": {
+    "rules": [
+      "Planungsjahr bei jeder Nutzung wählen; echte Kampagnenstarts und -enden, Region, Zeitzone sowie Feiertage und Carrier-Cutoffs eintragen.",
+      "Black Friday ist der Freitag nach dem vierten Donnerstag im November (US Thanksgiving); Cyber Monday der folgende Montag.",
+      "Ostern und damit verbundene Termine jährlich bestimmen; Schulferien und regionale Feiertage anhand einschlägiger offizieller Kalender prüfen.",
+      "Singles’ Day (11.11.) und Halloween (31.10.) sind optionale Anlässe; keine Pflichtprogramme. Weihnachtsanlauf im Oktober ist ein Sortimentsbeispiel.",
+      "Vorgezogene Aktionen als eigene Starts planen; Versandfristen und Lieferzusagen aus tatsächlicher Kapazität ableiten, nicht aus einem generischen Kalender."
+    ],
+    "example_year": 2026,
+    "example_dates": {
+      "black_friday": "2026-11-27",
+      "cyber_monday": "2026-11-30"
+    }
+  },
+  "recurring": [
+    {
+      "frequency": "Täglich / je Betriebstag",
+      "task": "Fehlerraten, Checkout, Zahlungen, ERP-/WMS-Sync, Backups und Alarmmeldungen prüfen; Bestände, Rückstände, Service, Betrugsindikatoren beobachten.",
+      "owner": "Betrieb, Logistik, Service, Controlling",
+      "evidence": "Ausnahmen im Ticket/Dashboard; Eskalation bei Schwelle"
+    },
+    {
+      "frequency": "Wöchentlich",
+      "task": "Forecast, Lieferfähigkeit, Kampagnen und Schichten abstimmen; Schwachstellen und Patch-Bedarf priorisieren, kritische Fälle sofort bearbeiten.",
+      "owner": "Kampagnenkoordination, Betrieb, Einkauf",
+      "evidence": "Aktualisierter Plan und offene Risiken"
+    },
+    {
+      "frequency": "Monatlich",
+      "task": "Deckungsbeitrag, Liquidität, Retouren und Kapazitätsabweichungen auswerten; Update-Stand, Backup-Nachweise und externe Abhängigkeiten prüfen.",
+      "owner": "Controlling, Betrieb, Einkauf",
+      "evidence": "Soll-Ist, Maßnahmenliste"
+    },
+    {
+      "frequency": "Quartalsweise (Beispiel)",
+      "task": "Berechtigungen und privilegierte Zugänge überprüfen; Restore-Probe und Notfallkontakte nach Risiko; Apps, Dienstleister und Vertretungen überprüfen.",
+      "owner": "Security, Betrieb, Dienstleister",
+      "evidence": "Reviewprotokoll, gemessene Wiederherstellung, Abweichungen"
+    },
+    {
+      "frequency": "Jährlich / vor relevanter Lastspitze",
+      "task": "Notfallübung, Geschäfts- und Kapazitätsplanung, Vertrags-/Compliance-Review, Schulungen, Kalender und Wiederherstellungsziele überprüfen.",
+      "owner": "Geschäftsverantwortung, Fachbereiche",
+      "evidence": "Übungsbericht, freigegebener Plan"
+    },
+    {
+      "frequency": "Anlassbezogen / unverzüglich nach Bedarf",
+      "task": "Ein-/Austritte, kritische Schwachstellen, Sicherheitsvorfälle, Lieferausfälle und geänderte Risiken bearbeiten; Meldepflichten im Einzelfall prüfen.",
+      "owner": "Zuständige Rolle",
+      "evidence": "Ticket, Entscheidung, Nachweis"
+    }
+  ],
+  "profiles": [
+    [
+      "Planungsumfang",
+      "Ein gemeinsames Aufgabenblatt, klare Verantwortliche, realistische Fristen, kurze Abstimmung vor Start.",
+      "Mehrere Teams/Kampagnen, Kapazitätsmodell, Abhängigkeits- und Freigabeliste."
+    ],
+    [
+      "IT und Sicherheit",
+      "Kritische Kaufpfade prüfen, Monitoring, Wiederherstellung nachweisen, Zugänge und Vertretung sichern.",
+      "Last-/Ausfalltests mit Szenarien, abgestimmte externe Limits, Notfallübung und gestaffelte Freigaben."
+    ],
+    [
+      "Waren und Service",
+      "Verkaufbaren Bestand, Lieferzusagen, Tagesleistung und erreichbaren Service bestätigen.",
+      "SKU-/Kanal-Forecasts, Engpasssimulation, Lieferantenalternativen, mehrstufige Serviceplanung."
+    ],
+    [
+      "Entscheidung",
+      "Dokumentierte Go/no-go-Entscheidung; rechtliche und sicherheitskritische Anforderungen gelten unabhängig vom Profil.",
+      "Mehrstufige Freigaben, getrennte Risikoverantwortung, dokumentierte Ausnahmen und Rückfallstrategie."
+    ]
+  ],
+  "required_task_fields": [
+    "id",
+    "campaign",
+    "department",
+    "owner",
+    "task",
+    "due",
+    "status"
+  ],
+  "priority_values": [
+    "critical",
+    "high",
+    "normal",
+    "low"
+  ],
+  "risk_values": [
+    "high",
+    "medium",
+    "low",
+    "not_assessed"
+  ],
+  "decision_values": [
+    "go",
+    "limited_go",
+    "no_go",
+    "pending"
+  ],
+  "approval_fields": [
+    "task_id",
+    "stage",
+    "approver",
+    "decision",
+    "approval_date",
+    "evidence",
+    "risk_owner",
+    "comment"
+  ],
+  "field_notes": [
+    "ID ist eindeutig; campaign referenziert eine Aktion, department eine zuständige Funktion (nicht zwingend eigene Abteilung).",
+    "dependency enthält Aufgaben-IDs; Datumsfelder ISO 8601, bei Uhrzeiten mit Zeitzone; keine erfundenen Termine.",
+    "priority steuert Reihenfolge, risk_level beschreibt Risiko unabhängig vom Status. Nicht bewertetes Risiko nicht als niedrig interpretieren.",
+    "Bei betriebskritischen Aufgaben sind Vertretung, Nachweis, Stop-Kriterium und Entscheidungsbefugnis erforderlich. Freigaben können in separaten Zeilen je task_id und stage dokumentiert werden.",
+    "Keine Passwörter, Zugangstoken oder personenbezogenen Kundendaten in Planer oder Nachweisen. Links nur auf autorisierte Ablagen."
+  ],
+  "change_flow": [
+    "Änderung erfassen: Antragsteller, Zeitpunkt, neue Start-/Endzeit, Rabatt, Sortiment, Werbedruck und Grund; vorherige Freigabe nicht automatisch übertragen.",
+    "Betroffene Fachbereiche prüfen Auswirkungen auf Preisrecht, Bestände, Marge, Versand, Personal, Service, Last und Sicherheitsrisiken; Tests gezielt wiederholen.",
+    "Entscheidungsbefugte Rolle dokumentiert Go, begrenzten Start oder No-go; zwingende rechtliche oder Sicherheitsanforderungen sind nicht disponibel.",
+    "Marketing und Betrieb synchronisieren tatsächlichen Start, Kommunikation und Monitoring; bei fehlender Freigabe Kampagne nicht starten bzw. geeignete sichere Eindämmung vereinbaren.",
+    "Nach Änderung Ist-Werte, Vorfälle und Entscheidungen dokumentieren; bei Incident Wiederherstellung und Kundenkommunikation separat steuern."
+  ],
+  "security": [
+    "MFA insbesondere für privilegierte, E-Mail-, Remote- und Cloud-Zugänge; personenbezogene Konten, geringste notwendige Rechte, Ein-/Austrittsprozess; Notfallzugang gesichert testen.",
+    "System-, App- und Lieferanteninventar, Schwachstellen- und Patchmanagement mit risikobasierten Fristen; kritische Sicherheitsmaßnahmen nicht wegen eines Change-Freeze verschieben.",
+    "Backups getrennt und gegen unberechtigte Änderungen geschützt; Restore anhand RTO (Ziel-Wiederherstellungszeit) und RPO (tolerierbarer Datenverlust) testen.",
+    "Notfallplan mit erreichbaren Rollen, sicheren Kommunikationswegen, Eindämmung, Beweissicherung, Wiederherstellung und Prüfung etwaiger Meldepflichten; Betrug und Missbrauch überwachen.",
+    "Zahlungsdienstleister, eingebundene Skripte und Erweiterungen prüfen; PCI-DSS-Verantwortung und Nachweispflichten mit Acquirer/PSP klären, nicht automatisch durch Outsourcing als erledigt ansehen.",
+    "Datenschutz, Aufbewahrung, Löschung, Produkt-/Preisrecht, Barrierefreiheit und sonstige anwendbare Anforderungen mit zuständiger Stelle prüfen. Kein allgemeiner Compliance-Nachweis durch diese Liste."
+  ],
+  "checklists": [
+    [
+      "Marketing",
+      "Ziel, Kanäle, Werbedruck, Start/Ende, Budget, Rabattregeln und Ausschlüsse, Drosselungsoption; bei angekündigten Preisermäßigungen für Waren im B2C insbesondere § 11 PAngV prüfen (Referenzpreis, Ausnahmen).",
+      "Briefing, Preisverlauf, getestete Regeln, Freigabe"
+    ],
+    [
+      "Administration",
+      "Lastmodell, gleichzeitige Sessions, Checkout, DB, Cache, Queue, APIs/Limits, Backup/Restore, Monitoring, Runbooks, Supportwege; keine Verfügbarkeitsgarantie durch Backup allein.",
+      "Testprotokoll, Dashboard, Vertretungsnachweis"
+    ],
+    [
+      "Entwicklung/QA",
+      "Gutscheine, Ausschlüsse, Kombinationen, Steuern, Versandkosten, Zahlungsarten, ERP/WMS/PSP, Idempotenz, Storno, Mobile und Barrierefreiheit; Deployment/Korrektur, Migrationen nicht pauschal reversibel.",
+      "Kaufpfad-/Integrations-Tests, Korrekturplan"
+    ],
+    [
+      "Logistik",
+      "Verkaufbarer Bestand, Reservierung, Pick/Pack, Verpackung, Carrier-Limits, Cutoffs, Retouren; bei Importen Zoll, Transportverzug und alternative Routen berücksichtigen.",
+      "Bestätigte Leistung und Lieferzusagen"
+    ],
+    [
+      "Personal",
+      "Urlaub, arbeitszeitgerechte Abdeckung, Ruhezeiten, Pausen, ggf. Mitbestimmung, bezahlte Einarbeitung und Wissenstransfer bei saisonalem Mehrbedarf; Urlaub ist keine informelle Rufbereitschaft.",
+      "Schicht-/Vertretungsplan, Übergabe"
+    ],
+    [
+      "Controlling",
+      "Nettoerlös, Wareneinsatz, variable Logistik-, Zahlungs-, Werbe- und Retourenkosten, Deckungsbeitrag, Liquidität; Basisgeschäft und Kannibalisierung berücksichtigen.",
+      "Kostenabgrenzung, Szenarien, Soll-Ist"
+    ],
+    [
+      "Einkauf",
+      "Lieferzeiten, Mindestmengen, Sicherheitsbestand, Nachorder, Lieferantenausfall, Abhängigkeit von Einzelanbietern, Ersatzsortiment; bei Importen Zoll/Transportpuffer.",
+      "Bestätigte Liefertermine, Alternativen"
+    ],
+    [
+      "Kundenservice",
+      "Volumen, Kanäle, Lieferinformationen, Storno/Erstattung, Reklamation, Vorlagen, Eskalation und Rückmeldung an Fachbereiche.",
+      "FAQ, Kapazität, erreichbare Eskalation"
+    ]
+  ],
+  "capacity": {
+    "assumptions": "Reines Rechenbeispiel, keine Ist-Daten. Einheitliche Tagesperiode; ein Auftrag entspricht hier einer Einheit. Mehrartikelbestellungen und Kanäle separat modellieren. Puffer sind lokale Annahmen.",
+    "expected_orders": 400,
+    "available_units": 360,
+    "pick_pack_orders": 320,
+    "carrier_orders": 350,
+    "service_contacts_per_order": 0.15,
+    "service_contacts_other": 30,
+    "service_capacity_contacts": 80,
+    "safe_limit_orders": 320,
+    "notes": [
+      "Verkaufbarer Bestand = physisch verkaufbare Menge minus bereits reservierte Mengen und definierter Sicherheitspuffer; keine unbestätigten Zuläufe zählen.",
+      "Versandgrenze = Minimum aus verfügbarer Ware (in Auftragsäquivalenten), Pick/Pack und Carrier-Kapazität. Personalzeit netto verfügbar × realistische Leistung; Pausen, Abwesenheit und Einarbeitung berücksichtigen.",
+      "Bei 400 Aufträgen entstehen rechnerisch 90 Servicekontakte (400 × 0,15 + 30). Bei 320 sind es 78. Die Technikgrenze muss separat getestet und bestätigt werden; 320 ist hier nur eine rechnerische Obergrenze vor weiterer Risikoprüfung.",
+      "Werbedruck drosseln, Sortiment begrenzen, Kapazität erhöhen oder Lieferzusagen korrekt anpassen; nicht einfach weiterverkaufen."
+    ]
+  },
+  "economics": {
+    "assumptions": "Fiktives Beispiel, netto ohne Umsatzsteuer; erwarteter Nettoerlös nach Erstattungen und zurechenbare variable Kosten je eingegangenem Auftrag inklusive erwarteter Retourenkosten. Keine Fixkosten, kein Gewinnversprechen.",
+    "scenarios": [
+      {
+        "name": "Regelgeschäft",
+        "orders": 100,
+        "net_revenue_per_order": 80,
+        "cost_goods": 40,
+        "cost_fulfillment": 5,
+        "cost_payment": 2,
+        "cost_ads": 5,
+        "cost_returns": 3
+      },
+      {
+        "name": "Rabattaktion",
+        "orders": 150,
+        "net_revenue_per_order": 64,
+        "cost_goods": 40,
+        "cost_fulfillment": 5,
+        "cost_payment": 2,
+        "cost_ads": 8,
+        "cost_returns": 4
+      }
+    ],
+    "notes": [
+      "Deckungsbeitrag = Nettoerlös minus zurechenbare variable Kosten. Bei Retouren Ware/Wertberichtigung und Erstattung konsistent abbilden, nicht doppelt zählen.",
+      "Zusätzliche Fix-/Sprungkosten, Zahlungsziele, Erstattungszeitpunkte und Liquiditätsbedarf separat prüfen; nur inkrementellen Beitrag gegen ein plausibles Basisszenario bewerten."
+    ]
+  },
+  "publication": {
+    "placement": "Intranet der fiktiven Agentur, nicht Magazin und nicht Partnerwerbung",
+    "disclaimer": "Fiktives Intranet zum Roman Folgenreich – Nine to Five. And Beyond. Ein Romanexperiment. Inhalte sind Muster, keine realen Konten, Kundendaten oder verbindlichen Arbeitsanweisungen.",
+    "formats": [
+      "Markdown",
+      "JSON"
+    ],
+    "planned_formats": [
+      "XLSX",
+      "Druckansicht"
+    ],
+    "accessibility": [
+      "Eindeutige Überschriften, Tabellenüberschriften und alternative lineare Monatsansicht",
+      "Status als Text, niemals nur Farbe; ausreichender Kontrast",
+      "XLSX mit klaren Blattnamen und Tabellenköpfen, keine verbundenen Zellen in Datentabellen; Druckansicht lesbar und mit wiederholten Köpfen",
+      "Tastatur- und Screenreader-Prüfung vor Veröffentlichung; kein pauschales WCAG-Konformitätsversprechen"
+    ]
+  },
+  "sources": [
+    {
+      "name": "§ 11 PAngV",
+      "url": "https://www.gesetze-im-internet.de/pangv_2022/__11.html",
+      "note": "Amtliche Norm, am 19.11.2026 erneut geprüft; Anwendungsbereich und Ausnahmen im Einzelfall."
+    },
+    {
+      "name": "PCI SSC – Small Merchant Resources",
+      "url": "https://listings.pcisecuritystandards.org/pci_security/small_merchant_tool_resources",
+      "note": "Am 19.11.2026 geprüft; Branchenleitfaden, kein Gesetz."
+    },
+    {
+      "name": "PCI SSC – Small merchants and PCI DSS",
+      "url": "https://www.pcisecuritystandards.org/faqs/do-small-merchants-with-limited-transaction-volumes-need-comply-with-pci-dss/",
+      "note": "Am 19.11.2026 geprüft; Validierungsanforderungen mit Acquirer/Payment Brand klären."
+    },
+    {
+      "name": "AWS Operational Readiness Review",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/ops05-bp04.html",
+      "note": "Aus v0.1 übernommener Anbieterleitfaden; kein unabhängiger Standard, in diesem Schritt nicht neu verifiziert."
+    }
+  ]
+}

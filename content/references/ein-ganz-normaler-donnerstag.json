@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "chapter_id": "ein-ganz-normaler-donnerstag",
+  "reviewed_on": "2026-11-19",
+  "editorial_note": "Die Agenturen und die beschriebenen Vorgänge sind fiktiv. Die folgenden Links erläutern den realen zeitlichen und fachlichen Hintergrund; der Jahresplaner im Intranet ist eine anpassbare Praxisvorlage.",
+  "sources": [
+    {
+      "id": "black-friday",
+      "placement": "inline",
+      "anchor": "Wer hat denn die Black-Friday-Aktion auf heute vorgezogen?",
+      "title": "Black Friday und Cyber Monday",
+      "description": "Der HDE erwartet für die Aktionstage am 27. und 30. November 2026 zusammen 6,2 Milliarden Euro Umsatz. Das ist eine Umfrageprognose und kein gemessener Umsatz.",
+      "publisher": "Handelsverband Deutschland",
+      "source_title": "Prognose zu den Aktionstagen 2026",
+      "url": "https://einzelhandel.de/presse/aktuellemeldungen/15435-black-friday-und-cyber-monday-hde-rechnet-zu-aktionstagen-mit-umsatz-von-6-2-milliarden-euro"
+    },
+    {
+      "id": "gta-vi",
+      "placement": "inline",
+      "anchor": "Heute erschien GTA VI.",
+      "title": "Veröffentlichung von GTA VI",
+      "description": "Rockstar nennt den 19. November 2026 als Erscheinungstermin für das Spiel. Die beiden Agenturen sind erfunden.",
+      "publisher": "Rockstar Games",
+      "source_title": "Grand Theft Auto VI",
+      "url": "https://www.rockstargames.com/VI"
+    },
+    {
+      "id": "preisangaben",
+      "placement": "further",
+      "title": "Preisermäßigungen im Onlinehandel",
+      "description": "§ 11 PAngV regelt bei der Bekanntgabe von Preisermäßigungen für Waren gegenüber Verbrauchern den anzugebenden Referenzpreis; Anwendungsbereich und Ausnahmen sind zu beachten.",
+      "publisher": "Gesetze im Internet",
+      "source_title": "§ 11 Preisangabenverordnung",
+      "url": "https://www.gesetze-im-internet.de/pangv_2022/__11.html"
+    }
+  ]
+}
