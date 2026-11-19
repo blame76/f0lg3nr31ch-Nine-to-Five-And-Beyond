@@ -22,6 +22,7 @@ export function renderLlmsTxt({site,config,chapters,ready=false,chapterIndexRead
   for(const p of rows.filter(p=>p.section===section))lines.push('- ['+label(p.title)+']('+baseUrl(site)+'/'+p.slug+'): '+label(p.description));
   lines.push('');
  }
+ if(rows.some(p=>p.slug==='intranet/365-tage-e-commerce/'))lines.push('## Alternative Textformate (keine zusätzlichen HTML-Seiten)','','Intranet-Textverzeichnis: '+baseUrl(site)+'/intranet/llms.txt','Jahresplaner als vollständiger UTF-8-Text: '+baseUrl(site)+'/intranet/365-tage-e-commerce/jahresplaner.txt','Markdown: '+baseUrl(site)+'/intranet/365-tage-e-commerce/jahresplaner.md','JSON: '+baseUrl(site)+'/intranet/365-tage-e-commerce/jahresplaner.json','');
  return lines.join('\n');
 }
 

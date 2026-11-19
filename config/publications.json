@@ -191,6 +191,76 @@
       "feed": false,
       "index": true,
       "lastmod": "2026-11-19"
+    },
+    {
+      "slug": "intranet/jahresplanung/",
+      "title": "Jahresplanung – 365 Tage E-Commerce",
+      "section": "Romanwelt · Intranet",
+      "description": "Alle Monate und Aufgaben der sieben Funktionen, mit jährlich anzupassenden Handelsanlässen. Fiktives internes Arbeitsmittel.",
+      "type": "CreativeWork",
+      "feed": false,
+      "index": true,
+      "lastmod": "2026-11-19"
+    },
+    {
+      "slug": "intranet/regelbetrieb/",
+      "title": "Regelbetrieb – 365 Tage E-Commerce",
+      "section": "Romanwelt · Intranet",
+      "description": "Wiederkehrende betriebliche Aufgaben, risikobasierte Basis- und Ausbauprofile. Fiktives internes Arbeitsmittel.",
+      "type": "CreativeWork",
+      "feed": false,
+      "index": true,
+      "lastmod": "2026-11-19"
+    },
+    {
+      "slug": "intranet/kampagnen/",
+      "title": "Kampagnenplanung – 365 Tage E-Commerce",
+      "section": "Romanwelt · Intranet",
+      "description": "Vorlaufzeiten, Verantwortlichkeiten, Freigaben und kurzfristige Änderungen. Fiktives internes Arbeitsmittel.",
+      "type": "CreativeWork",
+      "feed": false,
+      "index": true,
+      "lastmod": "2026-11-19"
+    },
+    {
+      "slug": "intranet/kapazitaet/",
+      "title": "Kapazität – 365 Tage E-Commerce",
+      "section": "Romanwelt · Intranet",
+      "description": "Beispielrechnung für Bestände, Versandkapazität und Kundenservice. Fiktives internes Arbeitsmittel.",
+      "type": "CreativeWork",
+      "feed": false,
+      "index": true,
+      "lastmod": "2026-11-19"
+    },
+    {
+      "slug": "intranet/wirtschaftlichkeit/",
+      "title": "Wirtschaftlichkeit – 365 Tage E-Commerce",
+      "section": "Romanwelt · Intranet",
+      "description": "Beispielrechnung für Nettoerlös, variable Kosten und Deckungsbeitrag. Fiktives internes Arbeitsmittel.",
+      "type": "CreativeWork",
+      "feed": false,
+      "index": true,
+      "lastmod": "2026-11-19"
+    },
+    {
+      "slug": "intranet/betriebssicherheit/",
+      "title": "Betriebssicherheit – 365 Tage E-Commerce",
+      "section": "Romanwelt · Intranet",
+      "description": "Security, Compliance, Wiederherstellung und Notfallorganisation. Fiktives internes Arbeitsmittel.",
+      "type": "CreativeWork",
+      "feed": false,
+      "index": true,
+      "lastmod": "2026-11-19"
+    },
+    {
+      "slug": "intranet/arbeitsvorlagen/",
+      "title": "Arbeitsvorlagen – 365 Tage E-Commerce",
+      "section": "Romanwelt · Intranet",
+      "description": "Datenmodell, Quellen, Grenzen und Ausgabeformate. Fiktives internes Arbeitsmittel.",
+      "type": "CreativeWork",
+      "feed": false,
+      "index": true,
+      "lastmod": "2026-11-19"
     }
   ],
   "excluded_html": [
