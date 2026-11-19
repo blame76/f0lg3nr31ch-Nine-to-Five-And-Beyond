@@ -85,3 +85,8 @@ Autorenfreigabe zur Veröffentlichung: Innovation und Pilotprojekt stehen im Mit
 ## Folge 15 – Was kosten die Einsparungen? (18.11.2026)
 
 Autorenfreigabe zur Veröffentlichung der im Manuskript-PR #26 gesicherten und nach Gegenkritik überarbeiteten Fassung. Prosa unverändert bis auf den internen Arbeitsfassungs-Untertitel. Die festliche Share-Preview ist eine fiktive Weihnachtsfeier-Einladung ohne reale Angaben zu Ort, Datum oder Anmeldung; lokal und deterministisch erzeugt. Vier fachliche Hintergründe (IAB, § 90 BetrVG, § 43 GmbHG, Deutsche Bundesbank) sind redaktionell getrennt von der Handlung. Keine Quellen zu realen Agenturangeboten. Keine Änderung der rechtlichen Gesamt-Release-Flags oder vorangegangener Folgen.
+
+
+## Folge 17 – Ein ganz normaler Donnerstag (19.11.2026)
+
+Autorenfreigabe zur Reader-Veröffentlichung. Manuskript unverändert aus dem privaten Draft #29; Quellen zu GTA VI, HDE-Prognose und § 11 PAngV als zweite Ebene. Fiktive Osterangebot-Share-Preview wird deterministisch als PNG im Build erzeugt. Das Intranet ist eine öffentliche, klar als Romanexperiment gekennzeichnete Cloud-Leseansicht (Leon, nur Lesezugriff; keine echte Authentifizierung). Jahresplaner v0.2 nach Copilot-Teilreview als fachliche Arbeitsfassung, Markdown und JSON zum Download; XLSX und unabhängige Fachabnahme noch offen. Intranet-Routen im Publikationsregister, bestehende Indexierungspolitik unverändert, keine juristische Gesamtfreigabe.

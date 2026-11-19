@@ -171,6 +171,26 @@
       "type": "WebPage",
       "feed": false,
       "index": false
+    },
+    {
+      "slug": "intranet/",
+      "title": "Intranet der fiktiven Agentur",
+      "section": "Romanwelt · Intranet",
+      "description": "Öffentliche fiktive Leseansicht des Agentur-Intranets als Romanexperiment.",
+      "type": "CollectionPage",
+      "feed": false,
+      "index": true,
+      "lastmod": "2026-11-19"
+    },
+    {
+      "slug": "intranet/365-tage-e-commerce/",
+      "title": "365 Tage E-Commerce – Der Jahresplaner",
+      "section": "Romanwelt · Intranet",
+      "description": "Fiktives internes Arbeitsmittel mit Jahresplanung, Regelbetrieb, Freigaben und Kapazitätsbeispielen.",
+      "type": "CreativeWork",
+      "feed": false,
+      "index": true,
+      "lastmod": "2026-11-19"
     }
   ],
   "excluded_html": [

@@ -635,6 +635,45 @@
         "reviewed_on": "2026-11-18",
         "reason": "Auf ausdrücklichen Autorenwunsch ausschließlich interne redaktionelle Verweise zum Dezember-Feature und Interview. Reale Quellen sind im Feature eigenständig dokumentiert."
       }
+    },
+    {
+      "id": "ein-ganz-normaler-donnerstag",
+      "title": "Ein ganz normaler Donnerstag",
+      "description": "Bei RDM beginnt der Tag mit einer vorgezogenen Black-Friday-Kampagne. Alex dagegen beschäftigt sich bereits mit Ostern, während zwei Kollegen Urlaub haben.",
+      "source_ref": "aa05b50594d39f1d7669d1cde3055dc0820a2229/episodes/texts/ein-ganz-normaler-donnerstag.md",
+      "source_blob_sha": "6d66564dd098617ee938388f5770d0b8ed34b01b",
+      "status": "approved",
+      "position": 17,
+      "path": "content/chapters/ein-ganz-normaler-donnerstag.md",
+      "campaign": {
+        "category": "Ostern · Fiktives Osterangebot",
+        "headline": "Ostern kann kommen.",
+        "subheadline": "Frühlingsangebote für kleine und große Entdecker.",
+        "promise": "Bunte Ostern, frische Ideen und Geschenke fürs Nest.",
+        "context": "Eine fiktive saisonale Werbekampagne aus der Romanwelt. Kein tatsächliches Angebot, keine Preise oder Bestellmöglichkeit.",
+        "seo_title": "Ein ganz normaler Donnerstag – GTA VI und Black Friday",
+        "seo_description": "Fiktive Romanfolge: zwei Agenturen, ein Kampagnentag und ein Blick in die Jahresplanung des E-Commerce.",
+        "social_title": "Ostern kann kommen. | Frühlingsangebote",
+        "social_description": "Fiktives Osterangebot aus Folgenreich. Bunte Ostern, frische Ideen und Geschenke fürs Nest.",
+        "image": "share/ein-ganz-normaler-donnerstag.png",
+        "image_alt": "Fiktives Osterangebot mit bunten Ostereiern auf hellem Frühlingsgrün und der Überschrift Ostern kann kommen.",
+        "image_lines": [
+          "OSTERN KANN KOMMEN."
+        ],
+        "image_detail": [
+          "FRUEHLINGSANGEBOTE",
+          "GESCHENKE FUERS NEST"
+        ],
+        "accent": "#75A985",
+        "easter_offer_card": true
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-19",
+      "research": {
+        "status": "linked",
+        "path": "content/references/ein-ganz-normaler-donnerstag.json",
+        "reviewed_on": "2026-11-19"
+      }
     }
   ]
 }
