@@ -269,7 +269,7 @@ const interview=readFileSync(interviewPath,'utf8');
 const editorialCss=feature.match(/<style>([\s\S]*?)<\/style>/)?.[1];
 if(!editorialCss||!feature.includes('<a href="interview/">Gründerinterview</a>')||!interview.includes('<a href="./" aria-current="page">Das Gespräch</a>'))throw Error('December issue navigation or styling missing');
 const articleLink='<a href="/'+contextArticleSlug+'">KI-lesbar. Aber liest die KI auch?</a>';
-const editionCard='<aside class="shell" aria-label="Weiterer Fachartikel in dieser Ausgabe"><div class="data"><p class="label">In dieser Ausgabe · Fachartikel</p><h2>'+articleLink+'</h2><p>Ein praktisches Experiment über die Grenzen von SEO, GEO und maschineller Kontextverifizierung. Reale Fachrecherche, fiktive Fallstudie aus der Agentur.</p></div></aside>';
+const editionCard='<aside class="shell" aria-label="Weiterer Fachartikel in dieser Ausgabe"><div class="data"><p class="label">In dieser Ausgabe · Fachartikel</p><h2>'+articleLink+'</h2><p>Über die Grenzen von SEO, GEO und maschineller Kontextverifizierung. Eigenständige Fachrecherche und ein methodischer Prüfansatz.</p></div></aside>';
 writeFileSync(featurePath,feature.replace('<a href="interview/">Gründerinterview</a>','<a href="interview/">Gründerinterview</a>'+articleLink).replace('</nav></div></header>','</nav></div></header>'+editionCard),'utf8');
 writeFileSync(interviewPath,interview.replace('<a href="./" aria-current="page">Das Gespräch</a>','<a href="./" aria-current="page">Das Gespräch</a>'+articleLink),'utf8');
 output(contextArticleSlug+'index.html',renderContextArticle({markdown:readFileSync(path.join(root,'content/magazine/2026-12/ki-lesbar.md'),'utf8'),stylesheet:editorialCss,site}));
