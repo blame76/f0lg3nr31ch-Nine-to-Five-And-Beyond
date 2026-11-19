@@ -182,7 +182,7 @@ for(let i=0;i<list.length;i++){
  const chapter={'@context':'https://schema.org','@type':'Chapter','@id':abs('roman/'+c.id+'/#chapter'),name:c.title,description:c.description,inLanguage:'de',url:abs('roman/'+c.id+'/'),position:i+1,isPartOf:{'@type':'Book','@id':book['@id'],name:book.name,url:book.url},author:{'@type':'Person',name:config.author_name}};
  const campaign=c.campaign;
  const bridge=campaign.easter_offer_card
- ? '<aside class="campaign-bridge" aria-label="Fiktives Osterangebot"><p class="eyebrow">Anzeige · Fiktives Osterangebot</p><h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p><p>'+e(campaign.promise)+'</p><p class="campaign-disclaimer">Fiktive Werbung aus dem Roman. Keine bestellbaren Waren.</p></aside>'
+ ? '<aside class="campaign-bridge" aria-label="Fiktives Osterangebot"><p class="eyebrow">Anzeige · Fiktives Osterangebot</p><h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p><p>'+e(campaign.promise)+'</p><p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman. Keine bestellbaren Waren.</p></aside>'
  : campaign.magazine_editorial_card
  ? '<aside class="campaign-bridge" aria-label="Fiktive Magazinwerbung"><p class="eyebrow">Anzeige · Fiktives Branchenmagazin</p><h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p><p><a href="/'+magazineSlug+'">Dezember-Ausgabe lesen →</a></p><p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman; KI-generiertes Editorial-Vorschaubild.</p></aside>'
  : campaign.christmas_invitation_card

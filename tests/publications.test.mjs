@@ -12,10 +12,11 @@ test('All approved chapters, magazine, streaming, and six social items share one
  for(const p of indexable){assert.ok(map.includes('<loc>'+site+'/'+p.slug+'</loc>'));assert.ok(llms.includes(']('+site+'/'+p.slug+')'));}
  assert.equal((map.match(/<loc>/g)||[]).length,indexable.length);
  assert.equal((llms.match(/\]\(https:\/\//g)||[]).length,indexable.length);
- for(const slug of ['magazin/','magazin/white-trash-whitepapers/2026-12/','magazin/white-trash-whitepapers/2026-12/interview/','partnerwelt/prscnm/','partnerwelt/prscnm/hinter-den-kulissen/','partnerwelt/echt-jetzt/'])assert.ok(indexable.some(p=>p.slug===slug),slug);
+ for(const slug of ['magazin/','magazin/white-trash-whitepapers/2026-12/','magazin/white-trash-whitepapers/2026-12/interview/','partnerwelt/prscnm/','partnerwelt/prscnm/hinter-den-kulissen/','partnerwelt/echt-jetzt/','intranet/','intranet/365-tage-e-commerce/'])assert.ok(indexable.some(p=>p.slug===slug),slug);
  assert.equal(indexable.filter(p=>p.section==='Social-Labor').length,6);
  for(const p of entries.filter(p=>!p.index))assert.ok(!map.includes('<loc>'+site+'/'+p.slug+'</loc>'));
- assert.doesNotMatch(map,/<lastmod>/,'do not invent dates');
+ assert.equal((map.match(/<lastmod>/g)||[]).length,indexable.filter(p=>p.lastmod).length,'only explicit modification dates');
+ for(const p of indexable.filter(p=>p.lastmod))assert.ok(map.includes('<loc>'+site+'/'+p.slug+'</loc><lastmod>'+p.lastmod+'</lastmod>'));
 });
 test('Editorial policy gates are independent and a pending chapter never becomes indexable',()=>{
  const mixed=[...chapters.slice(0,-1),{...chapters.at(-1),status:'release-candidate'}];
