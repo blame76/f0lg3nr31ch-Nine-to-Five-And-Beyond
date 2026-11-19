@@ -87,7 +87,17 @@ export function renderCampaignImage(chapter){
  // Familienkalender motif: a smiling pixel dinosaur and a readable calendar.
  // No external asset, font or network request; social crawlers receive one 1200x630 PNG.
  // Self-contained fictional bakery and chocolate-cake visuals, generated as PNG.
- if(c.easter_offer_card===true){
+ if(c.context_editorial_card===true){
+  const ink=[21,21,21],paper=[244,241,232],neon=[232,255,0],gray=[87,87,81];
+  fillRect(0,0,W,H,paper);fillRect(0,0,W,112,ink);fillRect(0,112,W,9,neon);
+  text('WHITE TRASH & WHITEPAPERS',50,24,5,paper);
+  text('THE 2027 ISSUE / 12 2026',50,72,3,neon);
+  text('KI-LESBAR.',49,177,13,ink);
+  fillRect(41,290,1118,110,neon);text('ABER LIEST DIE KI AUCH?',59,315,8,ink);
+  text('SEO / GEO / CONTEXT VERIFICATION',50,440,4,gray);
+  fillRect(50,507,1100,3,ink);text('HTTP 200. KONTEXT UNBEKANNT.',50,532,4,ink);
+  fillRect(0,590,W,40,ink);text('FIKTIVES MAGAZIN / REALE FACHRECHERCHE / FOLGENREICH',45,604,3,paper);
+ } else if(c.easter_offer_card===true){
   const cream=[255,249,229],green=[33,79,61],mint=[219,239,214],pink=[239,155,174],yellow=[246,202,91],blue=[124,181,205],white=[255,255,248];
   fillRect(0,0,W,H,mint);fillRect(0,0,19,H,green);fillRect(45,45,1110,540,cream);
   fillRect(45,45,1110,8,green);

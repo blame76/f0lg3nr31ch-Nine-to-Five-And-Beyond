@@ -3,6 +3,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
 import {root,readJson,escapeHtml,escapeMeta,normUrl,absoluteUrl,validateManifest,markdownToHtml} from './lib.mjs';
+import {renderContextArticle,articleSlug as contextArticleSlug} from './context-article.mjs';
 import {renderIntranet,renderIntranetTextIndex} from './intranet.mjs';
 import {about,imprint,privacy,license} from './pages.mjs';
 import {renderCampaignImage} from './social-image.mjs';
@@ -260,6 +261,19 @@ const intranetMarkdown=readFileSync(path.join(root,'public/intranet/365-tage-e-c
 for(const [file,html] of Object.entries(renderIntranet({site,planner:intranetPlanner,markdown:intranetMarkdown}))) output(file,html);
 output('intranet/365-tage-e-commerce/jahresplaner.txt',intranetMarkdown);
 output('intranet/llms.txt',renderIntranetTextIndex({site,planner:intranetPlanner,markdown:intranetMarkdown}));
+// Add the third article to the existing December issue, reusing its editorial styling.
+const featurePath=path.join(dist,magazineSlug,'index.html');
+const interviewPath=path.join(dist,magazineSlug,'interview','index.html');
+const feature=readFileSync(featurePath,'utf8');
+const interview=readFileSync(interviewPath,'utf8');
+const editorialCss=feature.match(/<style>([\s\S]*?)<\/style>/)?.[1];
+if(!editorialCss||!feature.includes('<a href="interview/">Gründerinterview</a>')||!interview.includes('<a href="./" aria-current="page">Das Gespräch</a>'))throw Error('December issue navigation or styling missing');
+const articleLink='<a href="/'+contextArticleSlug+'">KI-lesbar. Aber liest die KI auch?</a>';
+const editionCard='<aside class="shell" aria-label="Weiterer Fachartikel in dieser Ausgabe"><div class="data"><p class="label">In dieser Ausgabe · Fachartikel</p><h2>'+articleLink+'</h2><p>Ein praktisches Experiment über die Grenzen von SEO, GEO und maschineller Kontextverifizierung. Reale Fachrecherche, fiktive Fallstudie aus der Agentur.</p></div></aside>';
+writeFileSync(featurePath,feature.replace('<a href="interview/">Gründerinterview</a>','<a href="interview/">Gründerinterview</a>'+articleLink).replace('</nav></div></header>','</nav></div></header>'+editionCard),'utf8');
+writeFileSync(interviewPath,interview.replace('<a href="./" aria-current="page">Das Gespräch</a>','<a href="./" aria-current="page">Das Gespräch</a>'+articleLink),'utf8');
+output(contextArticleSlug+'index.html',renderContextArticle({markdown:readFileSync(path.join(root,'content/magazine/2026-12/ki-lesbar.md'),'utf8'),stylesheet:editorialCss,site}));
+output(contextArticleSlug+'share-preview.png',renderCampaignImage({position:1,campaign:{accent:'#E8FF00',context_editorial_card:true}}));
 // Synchronize canonical and robots policy for all output, including static sub-sites.
 synchronizePublications(dist,site,publications);
 const indexable=publications.filter(p=>p.index);
