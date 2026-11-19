@@ -1,6 +1,6 @@
 # KI-lesbar. Aber liest die KI auch?
 
-Ein praktisches Experiment über die Grenzen von SEO, GEO und maschineller Kontextverifizierung.
+Über die Grenzen von SEO, GEO und maschineller Kontextverifizierung.
 
 Eine Website ist öffentlich erreichbar, technisch sauber aufgebaut und für Suchmaschinen optimiert. Ihre Inhalte stehen zusätzlich in maschinenlesbaren Formaten zur Verfügung. Dennoch kann ein KI-System bei einer konkreten Anfrage daran scheitern, diese Inhalte abzurufen.
 
@@ -25,98 +25,6 @@ Für Unternehmen ist diese Frage nicht ausschließlich eine Angelegenheit des Ma
 Wer eine KI mit der Prüfung eines Vertrags, einer technischen Dokumentation, eines Angebots oder einer betrieblichen Arbeitsanweisung beauftragt, erwartet mehr als eine allgemein plausible Antwort.
 
 Er erwartet die Verarbeitung einer bestimmten Informationsgrundlage.
-
-## CASE STUDY — HTTP 200. Kontext unbekannt.
-
-*Fiktive Fallstudie aus der Romanwelt von Folgenreich. Die Agentur, die Untersuchung und die nachfolgenden Versuchsergebnisse sind erfunden. Sie orientieren sich an realen technischen Problemstellungen und stellen keine Messungen realer KI-Anbieter dar.*
-
-### Der Auftrag
-
-Die Agentur hatte ihren internen Jahresplaner für den E-Commerce überarbeitet.
-
-Unter dem Titel „365 Tage E-Commerce“ entstand ein abteilungsübergreifendes Arbeitsmittel für Marketing, Administration, Entwicklung, Logistik, Personalplanung, Controlling, Einkauf und Kundenservice.
-
-Leon sollte prüfen lassen, ob das Dokument fachlich vollständig und für kleinere Handelsunternehmen verständlich war.
-
-Für die Untersuchung wurde eine öffentliche Kopie ohne Kunden- oder Unternehmensdaten bereitgestellt. Die Inhalte standen als HTML, Markdown, TXT und JSON zur Verfügung.
-
-Leon übermittelte drei KI-Assistenten denselben Prüfauftrag.
-
-Die erste Antwort war ausführlich. Der Assistent lobte die Struktur, die wirtschaftliche Betrachtung und die Sicherheitsmaßnahmen.
-
-Der zweite Assistent beschrieb die Navigation, erklärte jedoch, die verlinkten Fachbereiche nicht erreichen zu können.
-
-Der dritte Assistent verwies auf einen fehlgeschlagenen Dokumentenabruf und verzichtete auf eine Bewertung.
-
-Leon leitete die Ergebnisse an Alex weiter.
-
-„Kannst du einmal prüfen, warum die nicht auf unsere Seiten kommen?“
-
-### Die technische Prüfung
-
-Alex überprüfte die Erreichbarkeit der veröffentlichten Ressourcen, die Weiterleitungen, HTTP-Header, Crawler-Regeln und die tatsächlich ausgelieferten Inhalte.
-
-Die eigenen Testabrufe verliefen erfolgreich.
-
-Damit war zunächst nur nachgewiesen, dass die Agentur selbst die Dokumente abrufen konnte.
-
-Ob die Antworten der KI-Assistenten auf denselben Dokumenten beruhten, war weiterhin unklar.
-
-Die ausführlichste Bewertung enthielt keine eindeutig überprüfbaren Fundstellen und keine Angaben zur Dokumentversion.
-
-Alex änderte den Prüfauftrag.
-
-Statt den Jahresplaner unmittelbar bewerten zu lassen, sollten die Systeme zunächst einzelne Informationen aus dem Dokument wiedergeben.
-
-### Auszug aus dem internen Prüfbericht
-
-**Dokument:** 365 Tage E-Commerce
-
-**Referenzversion:** 0.2.0
-
-**Prüfgegenstand:** Wirtschaftlichkeit einer Rabattaktion
-
-**Verantwortlich:** Alex
-
-**Fachliche Koordination:** Leon
-
-Die Referenzfassung enthielt folgendes vereinfachtes Rechenbeispiel:
-
-| Kennzahl | Regelgeschäft | Rabattaktion |
-| --- | --- | --- |
-| Bestellungen | 100 | 150 |
-| Nettoerlös | 8.000 € | 9.600 € |
-| Deckungsbeitrag | 2.500 € | 750 € |
-
-Die KI-Assistenten sollten die Dokumentversion, die beiden Deckungsbeiträge und eine konkrete Passage zur Vertretungsregelung wiedergeben.
-
-| Prüfung | Assistent A | Assistent B | Assistent C |
-| --- | --- | --- | --- |
-| Eigener Bericht über Zugriff | Erfolgreich | Unvollständig | Fehlgeschlagen |
-| Dokumentversion richtig | Ja | Nein | Keine Angabe |
-| Beide Deckungsbeiträge richtig | Nein | Keine Angabe | Keine Angabe |
-| Textstelle korrekt zitiert | Nein | Nein | Keine Angabe |
-| Unabhängiger Abrufnachweis | Offen | Offen | Offen |
-| Fehlenden Kontext offengelegt | Nein | Ja | Ja |
-| Grundlage für vollständiges Fachreview ausreichend | Nein | Nein | Nein |
-
-*Illustrative, vollständig fiktive Versuchsergebnisse.*
-
-Keiner der drei Assistenten hatte eine ausreichende Grundlage für die vollständige fachliche Prüfung nachgewiesen.
-
-Die technisch erfolgreiche Bereitstellung der Website hatte daran nichts geändert.
-
-Im Anschluss stellte Leon die Referenzdatei direkt als Dokument bereit. Nun konnten alle drei Assistenten die geforderten Informationen korrekt wiedergeben.
-
-Für Alex war damit noch nicht bewiesen, dass die Systeme sämtliche Inhalte vollständig verarbeitet hatten. Die Ergebnisse lieferten aber wesentlich bessere Anhaltspunkte dafür, dass ihnen zumindest die relevanten Textabschnitte vorlagen.
-
-Der ursprüngliche Prüfauftrag wurde um einen vorgeschalteten Kontextnachweis ergänzt.
-
-In der internen Dokumentation der Agentur entstand daraus eine neue Qualitätsanforderung:
-
-**Vor der Bewertung einer Informationsgrundlage ist deren Identität und ausreichende Verfügbarkeit zu prüfen.**
-
-*Ende der fiktiven Fallstudie.*
 
 ## 02 — HTTP 200 ist kein Nachweis gelesener Inhalte
 
@@ -195,7 +103,7 @@ OpenAI dokumentiert diese Unterschiede beispielsweise anhand der Zugriffskompone
 
 Wer seine Inhalte für KI-gestützte Recherche anbieten möchte, muss deshalb nicht zwangsläufig dieselben Entscheidungen hinsichtlich des Modelltrainings treffen.
 
-Allerdings ist auch eine robots.txt kein Zugriffsschutz im Sinne einer Authentifizierung. Der Robots Exclusion Protocol beschreibt Regeln für kooperierende Crawler, nicht die technische Absicherung vertraulicher Ressourcen. [5]
+Allerdings ist auch eine robots.txt kein Zugriffsschutz im Sinne einer Authentifizierung. Das Robots Exclusion Protocol beschreibt Regeln für kooperierende Crawler, nicht die technische Absicherung vertraulicher Ressourcen. [5]
 
 Eine öffentlich erreichbare Textdatei bleibt öffentlich erreichbar, solange der Server den Zugriff nicht anderweitig beschränkt.
 
@@ -235,7 +143,7 @@ Der Begriff bezeichnet hier keinen etablierten wissenschaftlichen Standard. Er b
 
 ## 07 — Ein reproduzierbares Prüfverfahren
 
-Die fiktive Fallstudie lässt sich in ein reales Prüfverfahren überführen.
+Die Frage nach der tatsächlich verwendeten Informationsgrundlage lässt sich mit einem systematischen Prüfverfahren untersuchen.
 
 Dafür benötigt ein Unternehmen zunächst eine eindeutig identifizierbare Referenzfassung des zu untersuchenden Dokuments.
 
@@ -406,13 +314,6 @@ Auf welcher überprüfbaren Grundlage ist diese Antwort entstanden?
 
 [9] IETF (2022): RFC 9110: HTTP Semantics, § 15.3.1. [Internetstandard](https://www.rfc-editor.org/rfc/rfc9110.html#section-15.3.1)
 
-### Aus der Romanwelt
-
-- [Ein ganz normaler Donnerstag – Folgenreich](/roman/ein-ganz-normaler-donnerstag/)
-- [Das fiktive Intranet der Agentur](/intranet/)
-- [365 Tage E-Commerce – Jahresplanung und operative Betriebsorganisation](/intranet/365-tage-e-commerce/)
-- [Versionierte Markdown-Referenz, Version 0.2.0](https://github.com/blame76/f0lg3nr31ch-Nine-to-Five-And-Beyond/blob/9c870a0e8bfff87e0eff81f447a88b75b4aadeef/public/intranet/365-tage-e-commerce/jahresplaner.md)
-
-*Redaktioneller Hinweis: Dieser Beitrag verbindet reale Fachrecherche mit einer ausdrücklich fiktiven Fallstudie aus dem Romanexperiment Folgenreich – Nine to Five. And Beyond. Die Fallstudie ist keine empirische Anbieteruntersuchung. Das beschriebene Prüfverfahren ist ein methodischer Vorschlag.*
+*Redaktioneller Hinweis: WHITE TRASH & WHITEPAPERS ist ein fiktives Branchenmagazin im Literaturprojekt Folgenreich – Nine to Five. And Beyond. Dieser eigenständige Fachartikel stützt sich auf reale externe Quellen. Das beschriebene Prüfverfahren ist ein methodischer Vorschlag, keine abgeschlossene empirische Anbieteruntersuchung.*
 
 *Recherche-Stand: 19. November 2026. Der Beitrag entstand unter Mitwirkung generativer KI.*

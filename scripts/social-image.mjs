@@ -95,7 +95,7 @@ export function renderCampaignImage(chapter){
   text('KI-LESBAR.',49,177,13,ink);
   fillRect(41,290,1118,110,neon);text('ABER LIEST DIE KI AUCH?',59,315,8,ink);
   text('SEO / GEO / CONTEXT VERIFICATION',50,440,4,gray);
-  fillRect(50,507,1100,3,ink);text('HTTP 200. KONTEXT UNBEKANNT.',50,532,4,ink);
+  fillRect(50,507,1100,3,ink);text('ZUGRIFF IST KEIN KONTEXTNACHWEIS.',50,532,4,ink);
   fillRect(0,590,W,40,ink);text('FIKTIVES MAGAZIN / REALE FACHRECHERCHE / FOLGENREICH',45,604,3,paper);
  } else if(c.easter_offer_card===true){
   const cream=[255,249,229],green=[33,79,61],mint=[219,239,214],pink=[239,155,174],yellow=[246,202,91],blue=[124,181,205],white=[255,255,248];
