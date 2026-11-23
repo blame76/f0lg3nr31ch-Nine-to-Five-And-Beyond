@@ -674,6 +674,46 @@
         "path": "content/references/ein-ganz-normaler-donnerstag.json",
         "reviewed_on": "2026-11-19"
       }
+    },
+    {
+      "id": "nachvollziehbar",
+      "title": "Nachvollziehbar",
+      "description": "Alex stolpert über eine Hamburger Regelung, ein selbst eingeführtes Pflichtfeld und die Frage, wann Nachvollziehbarkeit zur Rechtfertigung wird.",
+      "source_ref": "83f14e5d74a8a5609e9eb5cda914ae0012b0be31/episodes/texts/nachvollziehbar.md",
+      "source_blob_sha": "6915e1a5b759a3f9fcc580a2779f74b68b707d5f",
+      "status": "approved",
+      "position": 18,
+      "path": "content/chapters/nachvollziehbar.md",
+      "campaign": {
+        "category": "Bäckerei · Fiktive Alltagsszene",
+        "headline": "Heißer Kakao mit Sahne",
+        "subheadline": "Ein Abend beim Bäcker",
+        "promise": "Ein Moment zwischen Feierabend und den Fragen, die morgen wieder auf dem Schreibtisch liegen.",
+        "context": "Ein fotografisches Bildmotiv aus dem Alltag der fiktiven Romanfiguren. Keine Produktwerbung und keine moralische Pointe.",
+        "seo_title": "Nachvollziehbar – Arbeitsorganisation, Privatsphäre und Vertrauen",
+        "seo_description": "Fiktive Romanfolge über Alex, Präsenzregelungen, private Grenzen und ein Pflichtfeld, das mehr verlangt, als der Vorgesetzte erwartet hatte.",
+        "social_title": "Nachvollziehbar | Folgenreich – Folge 18",
+        "social_description": "Heißer Kakao beim Bäcker, ein beiläufiges Gespräch und Alex' eigenes altes Pflichtfeld. Fiktive Romanfolge über Vertrauen und Arbeitsorganisation.",
+        "image": "share/nachvollziehbar.jpg",
+        "image_alt": "KI-generiertes Fotomotiv einer fiktiven Alltagsszene: heißer Kakao mit Sahne im Becher an einem Bäckereifenster bei Regen.",
+        "image_lines": [
+          "HEISSER KAKAO",
+          "MIT SAHNE"
+        ],
+        "image_detail": [
+          "BEIM BAECKER"
+        ],
+        "accent": "#987257",
+        "cocoa_card": true,
+        "photo_preview": true
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-23",
+      "research": {
+        "status": "linked",
+        "path": "content/references/nachvollziehbar.json",
+        "reviewed_on": "2026-11-23"
+      }
     }
   ]
 }
