@@ -103,7 +103,7 @@ function page({title,description=config.description,slug='',type='website',body,
    head.push('<meta property="og:url" content="'+em(url)+'">');
    head.push('<meta property="og:image" content="'+em(abs(ogImage))+'">');
    head.push('<meta property="og:image:secure_url" content="'+em(abs(ogImage))+'">');
-   head.push('<meta property="og:image:type" content="image/png">');
+   head.push('<meta property="og:image:type" content="'+(/\.jpe?g$/i.test(ogImage)?'image/jpeg':'image/png')+'">');
    head.push('<meta property="og:image:width" content="1200">');
    head.push('<meta property="og:image:height" content="630">');
    head.push('<meta property="og:image:alt" content="'+em(ogAlt)+'">');
@@ -131,6 +131,8 @@ for(const chapter of list){
   installEditorialAsset('bundles/magazin-2026-12-share.png.base64',chapter.campaign.image,'66ef213bfaa28ae45796d17614f91c5cc0b14d74382fc9524e73ba959814c031');
   installEditorialAsset('bundles/magazin-2026-12-feature-share.png.base64',magazineSlug+'share-preview.png','2bf2077e5d4333803d1f79be2605757f9a1c326c675106c1e9189eb2705774fa');
   installEditorialAsset('bundles/magazin-2026-12-interview.webp.base64',magazineSlug+'assets/martin-interview.webp','3a7d4a5b6da62cc0a54ad883a45ab1a666428072987aa5a6a4b6b08bba9f198a');
+ }else if(chapter.id==='nachvollziehbar'){
+  installEditorialAsset('bundles/folge-18-nachvollziehbar-share.jpg.base64',chapter.campaign.image,'b62d628ea1239ac19557767be491c83801e6a29daca41caba9a7583f4709688d');
  }else output(chapter.campaign.image,renderCampaignImage(chapter));
 }
 const indexItems=list.map((c,i)=>'<li><a href="/roman/'+e(c.id)+'/">'+e(c.title)+'</a><small>Folge '+(i+1)+' · '+e(c.description)+'</small><small>'+((c.campaign.recipe_card||c.campaign.chocolate_card)?'Fiktives Rezept: ':'Fiktive Agenturkampagne: ')+e(c.campaign.headline)+' '+e(c.campaign.subheadline)+'</small></li>').join('');
@@ -182,7 +184,7 @@ for(let i=0;i<list.length;i++){
  const next=i+1<list.length?'<a href="/roman/'+e(list[i+1].id)+'/">Nächste Folge →</a>':'';
  const chapter={'@context':'https://schema.org','@type':'Chapter','@id':abs('roman/'+c.id+'/#chapter'),name:c.title,description:c.description,inLanguage:'de',url:abs('roman/'+c.id+'/'),position:i+1,isPartOf:{'@type':'Book','@id':book['@id'],name:book.name,url:book.url},author:{'@type':'Person',name:config.author_name}};
  const campaign=c.campaign;
- const bridge=campaign.easter_offer_card
+ const bridge=campaign.cocoa_card ? '' : campaign.easter_offer_card
  ? '<aside class="campaign-bridge" aria-label="Fiktives Osterangebot"><p class="eyebrow">Anzeige · Fiktives Osterangebot</p><h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p><p>'+e(campaign.promise)+'</p><p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman. Keine bestellbaren Waren.</p></aside>'
  : campaign.magazine_editorial_card
  ? '<aside class="campaign-bridge" aria-label="Fiktive Magazinwerbung"><p class="eyebrow">Anzeige · Fiktives Branchenmagazin</p><h2>'+e(campaign.headline)+'</h2><p class="campaign-subline">'+e(campaign.subheadline)+'</p><p><a href="/'+magazineSlug+'">Dezember-Ausgabe lesen →</a></p><p class="campaign-disclaimer">Fiktive Agenturkampagne aus dem Roman; KI-generiertes Editorial-Vorschaubild.</p></aside>'
@@ -245,7 +247,7 @@ for(let i=0;i<list.length;i++){
  '<header class="chapter-heading"><p class="meta">Folge '+(i+1)+' · Roman</p><h1 id="chapter-title">'+e(c.title)+'</h1></header>'+
  '<div class="chapter-text">'+chapterHtml+'</div></article>'+
  '<nav class="pager" aria-label="Folgen-Navigation">'+prev+next+'</nav>'+research.notesHtml+
- '<div class="afterword" aria-label="Hintergründe zur Folge">'+bridge+travelAd+'</div>';
+ ((bridge||travelAd)?'<div class="afterword" aria-label="Hintergründe zur Folge">'+bridge+travelAd+'</div>':'');
  output('roman/'+c.id+'/index.html',page({title:campaign.seo_title,description:campaign.seo_description,ogTitle:campaign.social_title,ogDescription:campaign.social_description,ogImage:campaign.image,ogAlt:campaign.image_alt,slug:'roman/'+c.id+'/',type:'chapter',indexApprovedChapter:c.status==='approved',body,schema:chapter}));
 }
 // Public editorial hub: reliable entry point from the reader, not a new fictional offer.
