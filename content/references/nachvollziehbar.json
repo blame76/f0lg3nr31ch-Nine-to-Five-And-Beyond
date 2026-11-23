@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "chapter_id": "nachvollziehbar",
+  "reviewed_on": "2026-11-23",
+  "editorial_note": "Die Agentur und ihre Personen sind fiktiv. Die folgenden Quellen erläutern reale Studienergebnisse und die Rahmenbedingungen für Beschäftigtendaten und mobile Arbeit. Sie belegen keine Rechtsverletzung der fiktiven Agentur; insbesondere bleibt die organisatorische Notwendigkeit konkreter Angaben eine eigenständige Frage.",
+  "sources": [
+    {
+      "id": "menstruation-im-beruf",
+      "placement": "inline",
+      "anchor": "Zwei Zeilen unter dem Toilettenpapier standen Tampons und Binden.",
+      "title": "Menstruationsbeschwerden und Angebote am Arbeitsplatz",
+      "description": "Die IAB-OPAL-Befragung von 2.107 abhängig beschäftigten Frauen (25–55 Jahre, Frühjahr 2026) zeigt: 18 % berichteten Zugang zu kostenfreien Menstruationsprodukten am Arbeitsplatz, 64 % gaben an, Beschwerden dort zu verbergen. Das ist kein Nachweis über den Stand der Ausstattung der fiktiven Agentur.",
+      "publisher": "Institut für Arbeitsmarkt- und Berufsforschung (IAB)",
+      "source_title": "Menstruationsbedingte Beschwerden im Arbeitsalltag: mehr als Fehlzeiten (18.11.2026)",
+      "url": "https://iab-forum.de/menstruationsbedingte-beschwerden-im-arbeitsalltag-mehr-als-fehlzeiten/"
+    },
+    {
+      "id": "datenminimierung",
+      "placement": "inline",
+      "anchor": "Eine freie Textfläche. Keine Auswahl, kein Hinweis darauf, welche Angaben ausreichten und welche niemanden etwas angingen.",
+      "title": "Warum nicht jede nützliche Information nötig ist",
+      "description": "Art. 5 Abs. 1 Buchst. c DSGVO verlangt die Beschränkung personenbezogener Daten auf das für den Zweck notwendige Maß; Art. 9 regelt den besonderen Schutz sensibler Daten einschließlich Gesundheitsdaten. Ob das fiktive Pflichtfeld rechtmäßig wäre, lässt sich allein aus der Szene nicht entscheiden.",
+      "publisher": "Europäische Union / EUR-Lex",
+      "source_title": "Datenschutz-Grundverordnung (EU) 2016/679, Art. 5 und Art. 9",
+      "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679"
+    },
+    {
+      "id": "beschaeftigtendatenschutz",
+      "placement": "inline",
+      "anchor": "Es geht nicht um Diagnosen. Abweichungen müssen für die Teamleitung nachvollziehbar sein.",
+      "title": "Beschäftigtendaten: Erforderlichkeit und Persönlichkeitsrechte",
+      "description": "Die Berliner Datenschutzaufsicht erläutert die Abwägung zwischen Informationsinteressen des Arbeitgebers und dem informationellen Selbstbestimmungsrecht von Beschäftigten. Ein organisatorisches Interesse kann berechtigt sein, rechtfertigt aber nicht automatisch die Erhebung aller denkbaren Begründungen.",
+      "publisher": "Berliner Beauftragte für Datenschutz und Informationsfreiheit",
+      "source_title": "Beschäftigtendatenschutz – Informationen für Arbeitgeber und Beschäftigte",
+      "url": "https://www.datenschutz-berlin.de/themen/arbeit/beschaeftigtendatenschutz/"
+    },
+    {
+      "id": "mitbestimmung",
+      "placement": "further",
+      "title": "Mobile Arbeit kann mitbestimmungspflichtig sein",
+      "description": "§ 87 Abs. 1 Nr. 14 BetrVG nennt die Ausgestaltung mobiler Arbeit mittels Informations- und Kommunikationstechnik als Gegenstand betrieblicher Mitbestimmung, wenn ein zuständiger Betriebsrat vorhanden ist. Daraus folgt weder ein allgemeiner Anspruch auf Homeoffice noch eine Bewertung der fiktiven Agentur.",
+      "publisher": "Bundesministerium der Justiz / Gesetze im Internet",
+      "source_title": "§ 87 Betriebsverfassungsgesetz – Mitbestimmungsrechte",
+      "url": "https://www.gesetze-im-internet.de/betrvg/__87.html"
+    }
+  ]
+}

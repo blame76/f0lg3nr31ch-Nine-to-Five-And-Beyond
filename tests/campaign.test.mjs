@@ -20,9 +20,10 @@ test('Every novel chapter has a distinct fictional campaign and social preview',
  }
 });
 
-test('Each generated social image is a valid 1200x630 PNG, different from others',()=>{
+test('Each algorithmically generated social image is a valid 1200x630 PNG, different from others',()=>{
  const hashes=new Set();
  for(const c of chapters){
+  if(c.campaign.photo_preview)continue; // The photographic preview is verified from its published JPEG below.
   const image=renderCampaignImage(c);
   assert.deepEqual([...image.subarray(0,8)],[137,80,78,71,13,10,26,10]);
   assert.equal(image.readUInt32BE(16),1200);
@@ -35,7 +36,7 @@ test('Each generated social image is a valid 1200x630 PNG, different from others
   assert.equal(inflateSync(image.subarray(41,41+size)).length,630*(1+1200*3));
   hashes.add(image.toString('base64').slice(-1200));
  }
- assert.equal(hashes.size,chapters.length);
+ assert.equal(hashes.size,chapters.filter(c=>!c.campaign.photo_preview).length);
 });
 
 test('Build uses per-chapter OG images, truthful SEO, and preserves noindex before approval',()=>{
@@ -53,13 +54,15 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
   assert.ok(!/[\u0080-\uFFFF]/.test(head),'entire HTML head must be ASCII-only for legacy social crawlers');
   assert.ok(!head.includes('fÃ¼r'));
   assert.ok(!head.includes('â'));
-  assert.ok(html.includes(c.campaign.recipe_card?'Fiktives Rezeptmotiv aus dem Agenturroman':'Fiktive Agenturkampagne aus dem Roman'));
+  if(!c.campaign.cocoa_card)assert.ok(html.includes(c.campaign.recipe_card?'Fiktives Rezeptmotiv aus dem Agenturroman':'Fiktive Agenturkampagne aus dem Roman'));
   // The native browser reader should discover the prose, not a pre-chapter campaign.
   const article=html.indexOf('<article class="reader"');
   const articleEnd=html.indexOf('</article>',article);
   const pager=html.indexOf('<nav class="pager"',articleEnd);
   const campaign=html.indexOf('<aside class="campaign-bridge"',pager);
-  assert.ok(article>0&&articleEnd>article&&pager>articleEnd&&campaign>pager);
+  assert.ok(article>0&&articleEnd>article&&pager>articleEnd);
+  if(c.campaign.cocoa_card)assert.equal(campaign,-1,'Kakao is a share preview, not a separate ad in the novel');
+  else assert.ok(campaign>pager);
   assert.ok(!html.includes('<aside class="notice"'));
   assert.doesNotMatch(html,/Arbeitsfassung|Release-Kandidat|private[srn]? Autorenarchiv|Öffentliche Vorschau/i);
   assert.ok(html.includes('<div class="chapter-text">'));
@@ -71,7 +74,19 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
   assert.ok(html.includes('<h1 id="chapter-title">'+c.title+'</h1>'));
   assert.ok(!html.includes('"@type":"JobPosting"'));
   assert.ok(!html.includes('"@type":"LocalBusiness"'));
-  assert.deepEqual([...readFileSync('dist/'+c.campaign.image).subarray(0,8)],[137,80,78,71,13,10,26,10]);
+  if(c.campaign.photo_preview){
+    const photo=readFileSync('dist/'+c.campaign.image);
+    assert.deepEqual([...photo.subarray(0,3)],[255,216,255],'JPEG signature');
+    assert.equal(createHash('sha256').update(photo).digest('hex'),'b62d628ea1239ac19557767be491c83801e6a29daca41caba9a7583f4709688d');
+    assert.match(html,/property="og:image:type" content="image\/jpeg"/);
+  } else assert.deepEqual([...readFileSync('dist/'+c.campaign.image).subarray(0,8)],[137,80,78,71,13,10,26,10]);
+  if(c.id==='nachvollziehbar'){
+    assert.ok(html.includes('Das Pflichtfeld')===false,'Der genehmigte Kapitelname bleibt Nachvollziehbar');
+    assert.ok(html.includes('Im Formular blieb das rote Sternchen stehen.'));
+    assert.ok(html.includes('Hinter der Geschichte'));
+    assert.ok(html.includes('Warum nicht jede nützliche Information nötig ist'));
+    assert.ok(!html.includes('Heißer Kakao mit Sahne</h2>'),'Keine nachträgliche Kampagne im Lesetext');
+  }
   if(c.id==='vorabexemplar'){
     const slug='/magazin/white-trash-whitepapers/2026-12/';
     assert.ok(html.includes('href="'+slug+'"'));

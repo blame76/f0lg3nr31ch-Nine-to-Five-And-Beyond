@@ -42,7 +42,7 @@ export function validateManifest(config,manifest,base=root) {
     if(!campaign || typeof campaign!=='object'){errors.push('Missing fictional campaign: '+c.id);continue;}
     const fields=['category','headline','subheadline','promise','context','seo_title','seo_description','social_title','social_description','image_alt'];
     for(const name of fields) if(typeof campaign[name]!=='string'||campaign[name].trim().length<6||campaign[name].length>320) errors.push('Invalid campaign '+name+': '+c.id);
-    if(campaign.image!=='share/'+c.id+'.png') errors.push('Invalid social image path: '+c.id);
+    if(campaign.image!=='share/'+c.id+(campaign.photo_preview===true?'.jpg':'.png')) errors.push('Invalid social image path: '+c.id);
     if(!/^#[0-9a-fA-F]{6}$/.test(campaign.accent||'')) errors.push('Invalid image accent: '+c.id);
     for(const name of ['image_lines','image_detail']){
       if(!Array.isArray(campaign[name])||campaign[name].length<1||campaign[name].length>3||
