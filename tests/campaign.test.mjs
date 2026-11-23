@@ -84,7 +84,7 @@ test('Build uses per-chapter OG images, truthful SEO, and preserves noindex befo
     assert.ok(html.includes('Das Pflichtfeld')===false,'Der genehmigte Kapitelname bleibt Nachvollziehbar');
     assert.ok(html.includes('Im Formular blieb das rote Sternchen stehen.'));
     assert.ok(html.includes('Hinter der Geschichte'));
-    assert.ok(html.includes('id="datenminimierung"'));
+    assert.ok(html.includes('Warum nicht jede nützliche Information nötig ist'));
     assert.ok(!html.includes('Heißer Kakao mit Sahne</h2>'),'Keine nachträgliche Kampagne im Lesetext');
   }
   if(c.id==='vorabexemplar'){
