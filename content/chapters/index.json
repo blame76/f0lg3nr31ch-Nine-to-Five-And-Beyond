@@ -714,6 +714,45 @@
         "path": "content/references/nachvollziehbar.json",
         "reviewed_on": "2026-11-23"
       }
+    },
+    {
+      "id": "eigentlich-ganz-okay",
+      "title": "Eigentlich ganz okay",
+      "description": "Drei Entwickler, drei Arbeitgeber und ein Abend, an dem es zunächst um Gehälter, Kollegen und Arbeitgeberbewertungen geht. Bis Tariq von einem KI-Projekt erzählt und Jamal eine Frage stellt, die in einer Agentur unter Umständen ziemlich teuer werden kann.",
+      "source_ref": "57907395a607ae7603999d090543382ff764ae80/episodes/texts/eigentlich-ganz-okay.md",
+      "source_blob_sha": "8c15e0087ac2a3c98b3e78c88353780c78b966a3",
+      "status": "approved",
+      "position": 19,
+      "path": "content/chapters/eigentlich-ganz-okay.md",
+      "campaign": {
+        "category": "Fiktive Arbeitgeberkampagne · RDM",
+        "headline": "Bei uns ist es wie in einer Familie.",
+        "subheadline": "Nur ohne Erbe.",
+        "promise": "Rapid Digital Marketing – Gemeinsam gestalten wir die Zukunft.",
+        "context": "Satirische Arbeitgeberkampagne einer fiktiven Agentur. Keine reale Stellenanzeige.",
+        "seo_title": "Eigentlich ganz okay – Arbeitgeberbewertungen und Agenturgeschäft",
+        "seo_description": "Fiktive Romanfolge über Entwickler, unsichtbare Arbeit, KI-Projekte und wirtschaftliche Zielkonflikte.",
+        "social_title": "Bei uns ist es wie in einer Familie. Nur ohne Erbe.",
+        "social_description": "Fiktive RDM-Arbeitgeberkampagne aus Folgenreich, Folge 19.",
+        "image": "share/eigentlich-ganz-okay.png",
+        "image_alt": "Typografische fiktive Arbeitgeberkampagne: Bei uns ist es wie in einer Familie. Nur ohne Erbe.",
+        "image_lines": [
+          "BEI UNS IST ES",
+          "WIE IN EINER FAMILIE."
+        ],
+        "image_detail": [
+          "NUR OHNE ERBE.",
+          "RAPID DIGITAL MARKETING"
+        ],
+        "accent": "#A7B8A5"
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-24",
+      "research": {
+        "status": "none",
+        "reviewed_on": "2026-11-24",
+        "reason": "Die vollständig fiktiven internen Unterlagen bilden die zweite Erzählebene; externe Quellen würden hier keine der erfundenen Entscheidungen belegen. Der Reiseanwendungsfall ist abstrahiert."
+      }
     }
   ]
 }
