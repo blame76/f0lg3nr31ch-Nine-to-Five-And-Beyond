@@ -2,7 +2,7 @@ import {readFileSync,writeFileSync,mkdirSync,rmSync,cpSync} from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
-import {root,readJson,escapeHtml,escapeMeta,normUrl,absoluteUrl,validateManifest,markdownToHtml} from './lib.mjs';
+import {root,readJson,escapeHtml,escapeMeta,normUrl,absoluteUrl,validateManifest,markdownToHtml,renderDocumentChapter} from './lib.mjs';
 import {renderContextArticle,articleSlug as contextArticleSlug} from './context-article.mjs';
 import {renderIntranet,renderIntranetTextIndex} from './intranet.mjs';
 import {about,imprint,privacy,license} from './pages.mjs';
@@ -142,7 +142,7 @@ output('index.html',page({title:'Nine to Five. And Beyond.',body:'<section class
 output('roman/index.html',page({title:'Alle Folgen',slug:'roman/',body:'<section class="hero"><p class="eyebrow">Roman</p><h1>Alle Folgen</h1><p>Geschichten aus dem Alltag einer fiktiven Agentur.</p></section>'+items,schema:book}));
 for(let i=0;i<list.length;i++){
  const c=list[i],raw=readFileSync(path.join(root,c.path),'utf8').replace(/^# [^\n]+\n+/,'');
- let research=c.research.status==='linked' ? renderResearchChapter(raw,readJson(c.research.path),c.id) : {chapterHtml:markdownToHtml(raw),notesHtml:''};
+ let research=c.research.status==='linked' ? renderResearchChapter(raw,readJson(c.research.path),c.id) : {chapterHtml:c.id==='eigentlich-ganz-okay'?renderDocumentChapter(raw):markdownToHtml(raw),notesHtml:''};
  // Reader exception requested by the author: no academic sources or outbound links
  // for this private-life miniaturе, only a short weekend sign-off.
  if(c.id==='eine-echte-entlastung'){
