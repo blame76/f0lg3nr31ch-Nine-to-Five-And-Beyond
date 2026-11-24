@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-24",
+  "scope": "Reader homepage",
+  "baseline": {
+    "source": "GitHub main before change; Google Search Console status reported by author, not independently verified",
+    "title": "Nine to Five. And Beyond. | f0lg3nr31ch",
+    "websiteName": "f0lg3nr31ch (config.name)",
+    "alternateName": "Folgenreich",
+    "reportedIndexStatus": "Discovered – currently not indexed"
+  },
+  "changes": [
+    "German descriptive homepage title and meta description",
+    "Visible project explanation and first chapter link",
+    "WebSite name Folgenreich with original brand aliases"
+  ],
+  "unchanged": [
+    "chapter prose",
+    "URLs",
+    "index approval flags",
+    "fictional offer policy",
+    "main domain",
+    "crawler policy"
+  ],
+  "verification": {
+    "sourcePatch": "applied",
+    "build": "pending",
+    "live": "pending",
+    "searchConsole": "not accessible"
+  },
+  "followUp": [
+    "npm test",
+    "npm run check",
+    "npm run build",
+    "verify HTTP, canonical, robots, sitemap, JSON-LD and first chapter link on production",
+    "record Search Console coverage on 2026-12-08 and 2026-12-22"
+  ],
+  "causality": "No attribution of index changes to this patch alone."
+}
