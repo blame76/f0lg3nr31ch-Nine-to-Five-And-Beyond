@@ -68,3 +68,35 @@ export function markdownToHtml(markdown){
   }
   flush();return html.join('\n');
 }
+
+/** Fictional documents are part of the narrative, not research notes. */
+export function renderDocumentChapter(markdown){
+  const parts=markdown.split(/^::: (akte|dashboard|ende)\s*$/m);
+  let result='',mode=null,documents=0,dashboards=0;
+  const renderBody=body=>{
+    const blocks=body.trim().split(/\n\s*\n/);
+    return blocks.map(block=>{
+      const lines=block.split('\n');
+      if(lines.length>2&&lines.every(l=>l.trim().startsWith('|'))){
+        const cells=l=>l.trim().slice(1,-1).split('|').map(c=>inline(c.trim()));
+        const head=cells(lines[0]);
+        return '<div class="akte-table-wrap"><table><thead><tr>'+head.map(c=>'<th scope="col">'+c+'</th>').join('')+'</tr></thead><tbody>'+lines.slice(2).map(l=>'<tr>'+cells(l).map(c=>'<td>'+c+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
+      }
+      if(lines.every(l=>l.startsWith('- ')))return '<ul>'+lines.map(l=>'<li>'+inline(l.slice(2))+'</li>').join('')+'</ul>';
+      return markdownToHtml(block);
+    }).join('\n');
+  };
+  for(let i=0;i<parts.length;i++){
+    if(i%2){
+      const token=parts[i];
+      if(token==='ende'){if(!mode)throw new Error('Unexpected document end');mode=null;}
+      else{if(mode)throw new Error('Nested document');mode=token;}
+    }else if(mode){
+      if(mode==='akte')documents++;else dashboards++;
+      const label=mode==='akte'?'Fiktive interne Unterlage':'Fiktives Managementdashboard';
+      result+='<section class="roman-dokument roman-'+mode+'" aria-label="'+label+'"><p class="dokument-label">'+label+'</p>'+renderBody(parts[i])+'</section>\n';
+    }else result+=markdownToHtml(parts[i])+'\n';
+  }
+  if(mode||documents!==4||dashboards!==1)throw new Error('Folge 19: expected four documents and one dashboard');
+  return result;
+}
