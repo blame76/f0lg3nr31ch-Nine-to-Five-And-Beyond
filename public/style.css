@@ -146,3 +146,15 @@ a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}a:
 .fictional-travel-ad h2 { margin-block: .2rem; color: #0e4541; }
 .fictional-travel-ad .travel-kicker { font-weight: 700; font-size: 1.15rem; }
 .fictional-travel-ad .campaign-disclaimer { margin-top: 1.4rem; color: #355957; font-size: .86rem; }
+
+/* Fictional internal records interrupt the narrative in episode 19. */
+.chapter-text .roman-dokument{box-sizing:border-box;margin:2.5rem 0;padding:clamp(1rem,3vw,1.75rem);border:1px solid currentColor;border-left:4px solid currentColor;border-radius:.25rem;font-family:system-ui,sans-serif;font-size:.92em;line-height:1.55;overflow-wrap:anywhere}
+.chapter-text .roman-dokument .dokument-label{font-size:.75em;font-weight:700;text-transform:uppercase;letter-spacing:.09em;border-bottom:1px solid currentColor;padding-bottom:.6rem;margin-top:0}
+.chapter-text .roman-dokument h3{font-size:1.15em;line-height:1.35}
+.chapter-text .roman-dokument p:last-child{margin-bottom:0}
+.chapter-text .akte-table-wrap{overflow-x:auto}
+.chapter-text .roman-dokument table{width:100%;border-collapse:collapse;font-size:.92em}
+.chapter-text .roman-dokument th,.chapter-text .roman-dokument td{text-align:left;padding:.5rem .3rem;border-bottom:1px solid currentColor;vertical-align:top}
+.chapter-text .roman-dokument th:last-child,.chapter-text .roman-dokument td:last-child{text-align:right}
+.chapter-text .roman-dashboard{border-left-width:1px;border-top-width:5px}
+@media print{.chapter-text .roman-dokument{break-inside:auto;color:#000;background:#fff}}
