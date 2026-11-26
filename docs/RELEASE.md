@@ -104,3 +104,7 @@ Auf ausdrücklichen Autorenwunsch ist die Fallstudie HTTP 200. Kontext unbekannt
 ## Folge 20 – Heute leider nicht. (26.11.2026)
 
 Auf ausdrücklichen Veröffentlichungsauftrag: unveränderte Manuskriptfassung aus dem privaten Arbeitsbranch, zehn überprüfte Hintergrundquellen (sechs Textanker, vier Vertiefungen), redaktionell genehmigt. Das Urteil des AG München ist ein erstinstanzlicher Einzelfall; Branchenbefragungen sind keine repräsentativen Arbeitsmarktstatistiken. Fiktives Gewerkschaftsplakat als deterministische Reader-Grafik; das separate KI-generierte Original konnte nicht binär übertragen werden. Keine reale Organisation oder Streikveranstaltung. Die bisherigen Indexierungs- und rechtlichen Gesamt-Release-Flags bleiben unverändert. Live-Auslieferung ist nach Merge gesondert zu prüfen.
+
+## Folge 21 – Bis auf Weiteres. (26.11.2026)
+
+Auf ausdrücklichen Veröffentlichungsauftrag: redaktionell überarbeitete Fortsetzung von Folge 20. Die unterschiedlichen Ursachen bleiben getrennt; nur geprüfte technische Ausnahmen kommen infrage. Keine beschlossenen Entlassungen oder neue Beauftragung der Grafikerin. Zwei fiktive interne Unterlagen. Vier geprüfte Quellen zu Risikomanagement, regionaler Wirtschaftsstruktur, Ausbildung und Beteiligung. Typografische fiktive Arbeitgeberkampagne: „Wir übernehmen Verantwortung. Auch wenn es sich nicht rechnet?“ Die globalen Freigabe- und Rechtsflags bleiben unverändert. Live-Auslieferung nach Merge gesondert prüfen.
