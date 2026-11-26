@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "chapter_id": "heute-leider-nicht",
+  "reviewed_on": "2026-11-26",
+  "editorial_note": "Die Agentur, ihre Aufträge und die Grafikerin sind erfunden. Die folgenden Quellen dokumentieren reale technische Funktionen, rechtliche Rahmenbedingungen und Erfahrungen aus der Kreativwirtschaft. Sie belegen weder einen Rechtsverstoß der fiktiven Agentur noch die Angemessenheit des fiktiven Angebots.",
+  "sources": [
+    {
+      "id": "codefilter",
+      "placement": "inline",
+      "anchor": "Vorschläge mit Übereinstimmungen zu öffentlich verfügbarem Quellcode sollten unterdrückt werden.",
+      "title": "Codevorschläge können durch Organisationsrichtlinien entfallen",
+      "description": "GitHub beschreibt einen konfigurierbaren Abgleich mit öffentlichem Quellcode. Treffer können unterdrückt oder mit Referenzen angezeigt werden. Das ist keine vollständige Lizenzprüfung und kein Verbot von Open Source.",
+      "publisher": "GitHub",
+      "source_title": "Application card: GitHub Copilot inline suggestions",
+      "url": "https://docs.github.com/en/copilot/responsible-use/inline-suggestions"
+    },
+    {
+      "id": "logos",
+      "placement": "inline",
+      "anchor": "Was sie nicht beantworten konnte, war die Frage, an welchen Teilen überhaupt ein ausschließliches Nutzungsrecht entstehen konnte und welche Zusicherungen der Agentur tatsächlich durch den Anbieter gedeckt waren.",
+      "title": "Wann entsteht Urheberrecht an KI-gestützten Gestaltungen?",
+      "description": "Das Amtsgericht München verneinte im konkreten Fall den Urheberrechtsschutz für drei KI-generierte Logos. Entscheidend war der nicht ausreichend dargelegte menschliche schöpferische Beitrag. Das erstinstanzliche Einzelfallurteil ist keine pauschale Aussage über sämtliche KI-gestützten Werke.",
+      "publisher": "Amtsgericht München / Bürgerservice Bayern",
+      "source_title": "Endurteil vom 13.02.2026, 142 C 9786/25",
+      "url": "https://www.gesetze-bayern.de/Content/Document/Y-300-Z-BECKRS-B-2026-N-1513?hl=true"
+    },
+    {
+      "id": "freistellung",
+      "placement": "inline",
+      "anchor": "Für bestimmte Funktionen und Tarife gebe es darüber hinaus eine vertraglich geregelte Haftungsfreistellung.",
+      "title": "Kommerzielle Nutzung und Haftungsfreistellung sind nicht dasselbe",
+      "description": "Adobes Produktbeschreibung nennt vertraglich berechtigte Funktionen, Oberflächen und Exportvorgänge für die IP-Freistellung. Sie weist zugleich darauf hin, dass auch andere Nutzer ähnliche Ergebnisse erzeugen können. Das ist keine Zusage ausschließlicher Rechte.",
+      "publisher": "Adobe",
+      "source_title": "Adobe Firefly | Product Description",
+      "url": "https://helpx.adobe.com/legal/product-descriptions/adobe-firefly.html"
+    },
+    {
+      "id": "dlp",
+      "placement": "inline",
+      "anchor": "Der Upload war blockiert worden.",
+      "title": "Datenschutzrichtlinien können einen Upload tatsächlich blockieren",
+      "description": "Microsoft beschreibt Endpoint-DLP-Regeln für verwaltete Geräte, die unter anderem anhand von Vertraulichkeitskennzeichnungen Uploads und Einfügevorgänge in KI-Anwendungen sperren können. Eine solche Sperre ist eine organisatorische Schutzmaßnahme, kein pauschales gesetzliches KI-Verbot.",
+      "publisher": "Microsoft Learn",
+      "source_title": "Step 3: Block sensitive data going to sanctioned AI apps",
+      "url": "https://learn.microsoft.com/en-us/purview/deploymentmodels/depmod-data-leak-shadow-ai-step3"
+    },
+    {
+      "id": "crawler",
+      "placement": "inline",
+      "anchor": "Erst vor einigen Wochen hatte die Agentur auf Wunsch des Marketings bestimmte KI-Crawler blockiert.",
+      "title": "Webseitenbetreiber können KI-Crawler aussperren",
+      "description": "Cloudflare dokumentiert das gezielte Zulassen oder Blockieren einzelner KI-Crawler. Unvollständige Rechercheergebnisse können auch andere Ursachen haben; die fiktive Anzahl erreichbarer Seiten ist keine Messung des realen Webs.",
+      "publisher": "Cloudflare",
+      "source_title": "Manage AI crawlers",
+      "url": "https://developers.cloudflare.com/ai-crawl-control/features/manage-ai-crawlers/"
+    },
+    {
+      "id": "illustration",
+      "placement": "inline",
+      "anchor": "Zwei ihrer langjährigen Kunden hatten ihre Aufträge inzwischen eingestellt.",
+      "title": "Was Illustratorinnen und Illustratoren berichten",
+      "description": "Die Illustratoren Organisation berichtet aus ihrer Berufsumfrage 2025, dass 63 Prozent der Befragten Auswirkungen auf ihr Geschäft wahrnehmen und 82 Prozent die Entwicklung als bedrohlich bewerten. Die Verbandsbefragung ist keine repräsentative Messung aller Kreativberufe.",
+      "publisher": "Illustratoren Organisation e. V.",
+      "source_title": "Generative künstliche Intelligenz – Wie betroffen sind Illustrator:innen?",
+      "url": "https://illustratoren-organisation.de/kuenstliche-intelligenz/"
+    },
+    {
+      "id": "nutzungsrechte",
+      "placement": "further",
+      "title": "Ausschließliche Nutzungsrechte und ihr Umfang",
+      "description": "§ 31 UrhG unterscheidet einfache und ausschließliche Nutzungsrechte sowie räumliche, zeitliche und sachliche Beschränkungen. Das fiktive Angebot illustriert diese Unterscheidung; der Preis ist kein Honorarrichtwert.",
+      "publisher": "Bundesministerium der Justiz / Gesetze im Internet",
+      "source_title": "§ 31 UrhG – Einräumung von Nutzungsrechten",
+      "url": "https://www.gesetze-im-internet.de/urhg/__31.html"
+    },
+    {
+      "id": "soa",
+      "placement": "further",
+      "title": "Auftragsverlust und KI-Nutzung können gleichzeitig auftreten",
+      "description": "In der britischen Befragung der Society of Authors von Januar 2024 (787 Antworten über mehrere Berufe hinweg) meldeten 26 Prozent der antwortenden Illustratoren Auftragsverluste durch KI; 12 Prozent nutzten selbst generative KI beruflich. Selbstberichte sind keine kausale Arbeitsmarktstatistik.",
+      "publisher": "The Society of Authors",
+      "source_title": "SoA survey reveals a third of translators and quarter of illustrators losing work to AI (11.04.2024)",
+      "url": "https://societyofauthors.org/2024/04/11/soa-survey-reveals-a-third-of-translators-and-quarter-of-illustrators-losing-work-to-ai/"
+    },
+    {
+      "id": "ilo",
+      "placement": "further",
+      "title": "Produktivität, Beschäftigung und Arbeitsorganisation",
+      "description": "Die ILO bündelt 2026 empirische Befunde: Produktivitätsgewinne sind ungleich verteilt und häufig nicht verifiziert; breitflächige Arbeitsplatzverdrängung bleibt in den ausgewerteten Befunden begrenzt. Zeitgewinne übersetzen sich nicht automatisch in höhere gemessene Produktion. Die Studie ist eine Gegenperspektive zu pauschalen Ersetzungsprognosen.",
+      "publisher": "International Labour Organization",
+      "source_title": "The impact of GenAI on jobs, productivity and work organization: a review of the empirical evidence (01.06.2026)",
+      "url": "https://www.ilo.org/publications/impact-genai-jobs-productivity-and-work-organization-review-empirical"
+    },
+    {
+      "id": "adc",
+      "placement": "further",
+      "title": "Was bleibt vom kreativen Handwerk?",
+      "description": "Der Branchenbeitrag diskutiert Preisdruck, den Wegfall von Einstiegsaufgaben und die Bedeutung von Urteilsvermögen in Agenturen. Er ist eine fachliche Perspektive, keine eigenständige repräsentative Studie.",
+      "publisher": "Art Directors Club für Deutschland",
+      "source_title": "Wofür werden Kreative noch gebraucht? (30.10.2026)",
+      "url": "https://www.adc.de/2026/10/30/wofuer-werden-kreative-noch-gebraucht/"
+    }
+  ]
+}

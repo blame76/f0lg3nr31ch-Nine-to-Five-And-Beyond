@@ -87,7 +87,33 @@ export function renderCampaignImage(chapter){
  // Familienkalender motif: a smiling pixel dinosaur and a readable calendar.
  // No external asset, font or network request; social crawlers receive one 1200x630 PNG.
  // Self-contained fictional bakery and chocolate-cake visuals, generated as PNG.
- if(c.context_editorial_card===true){
+ if(c.union_strike_card===true){
+  // Original, deterministic strike-poster alternative. No real organisation or event.
+  const ink=[27,26,24],paper=[248,231,188],red=[186,28,35],bright=[220,42,43],shade=[116,24,29];
+  fillRect(0,0,W,H,paper);
+  function poly(points,color){
+   const min=Math.floor(Math.min(...points.map(p=>p[1]))),max=Math.ceil(Math.max(...points.map(p=>p[1])));
+   for(let y=min;y<=max;y++){const xs=[];for(let i=0,j=points.length-1;i<points.length;j=i++){
+    const [a,b]=points[i],[d,e]=points[j];if((b>y)!==(e>y))xs.push(a+(d-a)*(y-b)/(e-b));
+   }xs.sort((a,b)=>a-b);for(let i=0;i+1<xs.length;i+=2)fillRect(xs[i],y,xs[i+1]-xs[i]+1,1,color);}
+  }
+  function disk(x,y,r,color){for(let dy=-r;dy<=r;dy++){const dx=Math.sqrt(Math.max(0,r*r-dy*dy));fillRect(x-dx,y+dy,dx*2+1,1,color);}}
+  // Screenprint-style diagonal sunburst and many red flags.
+  for(let i=0;i<13;i++){const x=-300+i*155;poly([[600,610],[x,-20],[x+35,-20]], [232,206,163]);}
+  for(let i=0;i<13;i++){const x=35+i*94,y=285+(i*43)%115;poly([[x,y],[x+8,y],[x-20,590],[x-28,590]],ink);
+   poly([[x,y],[x+75,y-24],[x+110,y+5],[x+103,y+72],[x+55,y+45],[x-4,y+68]],i%3===0?shade:i%3===1?bright:red);}
+  // Foreground marchers: faces, shoulders and raised flag poles.
+  for(let i=0;i<14;i++){const x=12+i*91,y=470+(i*29)%47;
+   disk(x,y,23,ink);poly([[x-23,y+18],[x+23,y+18],[x+52,590],[x-51,590]],ink);
+   if(i%3===0)poly([[x+22,y+45],[x+66,y-14],[x+75,y-5],[x+42,y+68]],ink);}
+  fillRect(0,0,W,57,ink);text('FIKTIVE GEWERKSCHAFT',52,17,4,paper);
+  poly([[0,60],[1200,60],[1200,255],[0,284]],red);
+  text('HEUTE STREIKT DIE',48,82,9,paper);
+  text('KREATIVARBEIT.',48,167,12,paper);
+  fillRect(0,268,W,51,paper);text('NICHT GEGEN TECHNIK. GEGEN AUSTAUSCHBARKEIT.',48,282,4,ink);
+  fillRect(0,539,W,48,red);text('MENSCHEN SIND KEINE KOSTENSTELLE.',49,550,4,paper);
+  fillRect(0,587,W,43,ink);text('FIKTIVE ANZEIGE / FOLGENREICH / ROMANFOLGE 20',48,601,3,paper);
+ } else if(c.context_editorial_card===true){
   const ink=[21,21,21],paper=[244,241,232],neon=[232,255,0],gray=[87,87,81];
   fillRect(0,0,W,H,paper);fillRect(0,0,W,112,ink);fillRect(0,112,W,9,neon);
   text('WHITE TRASH & WHITEPAPERS',50,24,5,paper);
