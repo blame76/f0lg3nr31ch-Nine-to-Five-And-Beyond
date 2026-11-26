@@ -753,6 +753,46 @@
         "reviewed_on": "2026-11-24",
         "reason": "Die vollständig fiktiven internen Unterlagen bilden die zweite Erzählebene; externe Quellen würden hier keine der erfundenen Entscheidungen belegen. Der Reiseanwendungsfall ist abstrahiert."
       }
+    },
+    {
+      "id": "heute-leider-nicht",
+      "title": "Heute leider nicht.",
+      "description": "Jamal wartet auf Codevorschläge, Mara auf geklärte Nutzungsrechte. Eine frühere Auftragnehmerin erhält einen Anruf – und macht der Agentur ein Angebot.",
+      "source_ref": "47732dec9bf43eb4626a3951b123de2aab90d3d3/episodes/texts/heute-leider-nicht.md",
+      "source_blob_sha": "1ab41061ea38adc6956b15976ab108b18d329c40",
+      "status": "approved",
+      "position": 20,
+      "path": "content/chapters/heute-leider-nicht.md",
+      "campaign": {
+        "category": "Fiktive Gewerkschaft · Streikplakat",
+        "headline": "Heute streikt die Kreativarbeit.",
+        "subheadline": "Nicht gegen Technik. Gegen Austauschbarkeit.",
+        "promise": "Menschen sind keine Kostenstelle.",
+        "context": "Fiktive Gewerkschaftswerbung aus der Romanwelt. Eine satirische Solidaritätsbekundung; keine reale Organisation, kein tatsächlicher Streikaufruf und keine Veranstaltung.",
+        "seo_title": "Heute leider nicht. – KI, Kreativarbeit und Nutzungsrechte",
+        "seo_description": "Fiktive Romanfolge über Kreativarbeit, KI-gestützte Produktion, Nutzungsrechte und die Grenzen kalkulierter Einsparungen.",
+        "social_title": "Heute streikt die Kreativarbeit.",
+        "social_description": "Fiktives Gewerkschaftsplakat aus Folgenreich. Nicht gegen Technik. Gegen Austauschbarkeit.",
+        "image": "share/heute-leider-nicht.png",
+        "image_alt": "Fiktives rotes Streikplakat mit roten Fahnen, stilisierten Menschen und dem Aufruf Heute streikt die Kreativarbeit.",
+        "image_lines": [
+          "HEUTE STREIKT DIE",
+          "KREATIVARBEIT."
+        ],
+        "image_detail": [
+          "NICHT GEGEN TECHNIK.",
+          "GEGEN AUSTAUSCHBARKEIT."
+        ],
+        "accent": "#C62126",
+        "union_strike_card": true
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-26",
+      "research": {
+        "status": "linked",
+        "path": "content/references/heute-leider-nicht.json",
+        "reviewed_on": "2026-11-26"
+      }
     }
   ]
 }
