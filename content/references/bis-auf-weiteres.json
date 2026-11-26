@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "chapter_id": "bis-auf-weiteres",
+  "reviewed_on": "2026-11-26",
+  "editorial_note": "Die Geschäftsführerrunde, die Zahlen und das Protokoll sind fiktiv. Die Quellen geben Orientierung zu KI-Risikomanagement, regionaler Wirtschaftsstruktur, Ausbildung und betrieblicher Beteiligung. Sie entscheiden nicht, welche Strategie für die fiktive Agentur richtig ist.",
+  "sources": [
+    {
+      "id": "risikomanagement",
+      "placement": "inline",
+      "anchor": "Die wirtschaftlichen und organisatorischen Auswirkungen unserer Empfehlungen haben wir nicht in vergleichbarer Tiefe untersucht.",
+      "title": "KI-Risiken im Zusammenhang bewerten",
+      "description": "Der freiwillige NIST AI RMF 1.0 beschreibt Governance, Kontextanalyse, Messung und Risikobehandlung als miteinander verbundene, iterative Aufgaben. Er berücksichtigt auch Perspektiven außerhalb des Entwicklungsteams. Eine einzelne technische Schutzmaßnahme ersetzt keine Bewertung des Einsatzkontextes.",
+      "publisher": "National Institute of Standards and Technology",
+      "source_title": "AI RMF Core (2023)",
+      "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+    },
+    {
+      "id": "regionalwirtschaft",
+      "placement": "inline",
+      "anchor": "Wir erfassen unsere Lieferanten nicht nach solchen Kriterien.",
+      "title": "Regionale Wertschöpfung und internationale Verflechtung",
+      "description": "Das Statistikportal stellt Wirtschaftsentwicklung, Beschäftigung, Branchenwertschöpfung und Exportquote im Land Bremen gegenüber. Es liefert regionalen Kontext, aber keine Messung von KI-bedingten Zahlungsströmen einzelner Agenturen. Einkaufsvolumen und regionale Wertschöpfung sind nicht dasselbe.",
+      "publisher": "Arbeitnehmerkammer Bremen",
+      "source_title": "Betriebe und Branchen",
+      "url": "https://www.arbeitnehmerkammer.de/politik/statistikportal/betriebe-und-branchen/"
+    },
+    {
+      "id": "ausbildung",
+      "placement": "inline",
+      "anchor": "Weil sich die Aufgaben verändert haben.",
+      "title": "Ausbildung als regionale Zukunftsfrage",
+      "description": "Das Bremer Statistikportal berichtet für 2025 von 67 Ausbildungsstellen je 100 geeigneten Bewerberinnen und Bewerbern. Es beleuchtet Ausbildungsangebot, Vertragsentwicklung und Weiterbildung. Die Angaben betreffen den gesamten regionalen Ausbildungsmarkt und erlauben keine Aussage über KI-bedingte Veränderungen speziell bei Mediengestaltern.",
+      "publisher": "Arbeitnehmerkammer Bremen",
+      "source_title": "Ausbildung und Weiterbildung (aktualisiert 04.09.2026)",
+      "url": "https://www.arbeitnehmerkammer.de/politik/statistikportal/ausbildung-und-weiterbildung/"
+    },
+    {
+      "id": "berufsbildung",
+      "placement": "further",
+      "title": "Betriebliche Berufsbildung und Beteiligung",
+      "description": "§ 96 BetrVG sieht die Förderung der Berufsbildung durch Arbeitgeber und Betriebsrat sowie unter anderem die Ermittlung und Beratung des Berufsbildungsbedarfs auf Verlangen des Betriebsrats vor. Die Vorschrift betrifft den rechtlichen Rahmen in Betrieben mit Betriebsrat; sie entscheidet nicht über das konkrete Ausbildungsangebot der fiktiven Gesellschaften.",
+      "publisher": "Bundesministerium der Justiz / Gesetze im Internet",
+      "source_title": "§ 96 BetrVG – Förderung der Berufsbildung",
+      "url": "https://www.gesetze-im-internet.de/betrvg/__96.html"
+    }
+  ]
+}
