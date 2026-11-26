@@ -793,6 +793,45 @@
         "path": "content/references/heute-leider-nicht.json",
         "reviewed_on": "2026-11-26"
       }
+    },
+    {
+      "id": "bis-auf-weiteres",
+      "title": "Bis auf Weiteres.",
+      "description": "Am Abend der vier gemeldeten Vorgänge diskutieren die Geschäftsführungen über die Grenzen ihrer KI-Kalkulation, Verantwortung und die Zukunft der Agentur.",
+      "source_ref": "32df99b3d871bc6828c91fc8fe1f8946fb98349d/episodes/texts/bis-auf-weiteres.md",
+      "source_blob_sha": "121bbbeab3595bf7b65a912927333faeb05c3911",
+      "status": "approved",
+      "position": 21,
+      "path": "content/chapters/bis-auf-weiteres.md",
+      "campaign": {
+        "category": "Fiktive Arbeitgeberkampagne · Verantwortung",
+        "headline": "Wir übernehmen Verantwortung.",
+        "subheadline": "Auch wenn es sich nicht rechnet?",
+        "promise": "Eine Frage an die Unternehmensführung.",
+        "context": "Fiktive Arbeitgeberkommunikation aus der Romanwelt. Keine reale Stellenanzeige und kein Versprechen eines tatsächlichen Unternehmens.",
+        "seo_title": "Bis auf Weiteres. – KI, Unternehmensführung und Verantwortung",
+        "seo_description": "Fiktive Romanfolge: Eine abendliche Krisensitzung über KI-Richtlinien, Wirtschaftlichkeit, Ausbildung und regionale Verantwortung.",
+        "social_title": "Wir übernehmen Verantwortung. Auch wenn es sich nicht rechnet?",
+        "social_description": "Fiktive Arbeitgeberkampagne aus Folgenreich, Folge 21.",
+        "image": "share/bis-auf-weiteres.png",
+        "image_alt": "Typografische fiktive Arbeitgeberkampagne mit der Frage: Wir übernehmen Verantwortung. Auch wenn es sich nicht rechnet?",
+        "image_lines": [
+          "WIR UEBERNEHMEN",
+          "VERANTWORTUNG."
+        ],
+        "image_detail": [
+          "AUCH WENN ES SICH",
+          "NICHT RECHNET"
+        ],
+        "accent": "#A7B8A5"
+      },
+      "approved_by": "Benjamin Lam",
+      "approved_at": "2026-11-26",
+      "research": {
+        "status": "linked",
+        "path": "content/references/bis-auf-weiteres.json",
+        "reviewed_on": "2026-11-26"
+      }
     }
   ]
 }
